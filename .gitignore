@@ -1,3 +1,13 @@
+# Node / Playwright
+node_modules/
+playwright-report/
+test-results/
+*.log
 
-node_modules
+# Ignore only the top-level data dir (the one Actions writes during runs)
+# The leading slash anchors to repo root so docs/data is NOT ignored.
+# See: gitignore pattern format (leading slash behavior).
+/data/
 
+# macOS
+.DS_Store
