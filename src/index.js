@@ -7,30 +7,37 @@ import crypto from "crypto";
 import { gunzipSync } from "zlib";
 import { URL } from "url";
 
+/* ================================
+   Config
+=================================== */
 const root = process.cwd();
-
-// A realistic desktop Chrome UA helps with bot defenses.
-const REAL_BROWSER_UA =
+const REALISTIC_UA =
+  // override with env if you like
+  process.env.USER_AGENT ||
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36";
 
-const USER_AGENT = REAL_BROWSER_UA;
 const FAIL_ON_ERROR = process.env.FAIL_ON_ERROR === "1";
 const GROUP = process.env.GROUP || ""; // run only checks with matching `group`, if set
+const GOTO_WAIT_UNTIL = (process.env.GOTO_WAIT_UNTIL || "domcontentloaded");
+const NAV_TIMEOUT_MS = Number(process.env.NAV_TIMEOUT_MS || 45000);
 
-// ---------- fs helpers ----------
+/* ================================
+   fs helpers
+=================================== */
 async function ensureDir(p) { await fsp.mkdir(p, { recursive: true }); }
 async function readJson(p) { try { return JSON.parse(await fsp.readFile(p, "utf8")); } catch { return null; } }
 async function writeJson(p, obj) { await ensureDir(path.dirname(p)); await fsp.writeFile(p, JSON.stringify(obj, null, 2) + "\n", "utf8"); }
-// Append a line of UTF-8 text to a file (create if missing)
 async function appendLine(p, line) { await ensureDir(path.dirname(p)); await fsp.appendFile(p, line, "utf8"); }
 
-// ---------- normalize + diff ----------
+/* ================================
+   normalize + diff
+=================================== */
 function normalizeValue(v) {
   if (typeof v === "string") {
     const trimmed = v.replace(/\s+/g, " ").trim();
-    const num = trimmed.replace(/[^\d.,+-]/g, "");
+    const num = trimmed.replace(/[^\d.,-]/g, "");
     if (/\d/.test(num)) {
-      const n = Number(num.replace(/[,+]/g, ""));
+      const n = Number(num.replace(/,/g, ""));
       if (!Number.isNaN(n)) return n;
     }
     return trimmed;
@@ -55,9 +62,11 @@ function simpleDiff(a, b, ignore = []) {
   return changed;
 }
 
-// ---------- utils ----------
+/* ================================
+   utils
+=================================== */
 const delay = (ms) => new Promise((r) => setTimeout(r, ms));
-async function withRetry(label, fn, { tries = 3, baseMs = 1000 } = {}) {
+async function withRetry(label, fn, { tries = 3, baseMs = 800 } = {}) {
   let lastErr;
   for (let i = 1; i <= tries; i++) {
     try { return await fn(); } catch (e) {
@@ -75,8 +84,9 @@ function runUrl() {
   return null;
 }
 
-// ---------- tiny helper for time-series ----------
-// For now we only record price, availability & population to keep series small.
+/* ================================
+   time-series helper
+=================================== */
 function seriesValueFor(type, data) {
   if (type === "price" || type === "psa_price_row") {
     const v = data?.price;
@@ -93,59 +103,46 @@ function seriesValueFor(type, data) {
   return null;
 }
 
-// ---------- page helpers ----------
+/* ================================
+   Playwright: robust page factory
+   - real UA via context
+   - block images/media/fonts only
+   - domcontentloaded + extended timeout
+=================================== */
 async function newPage() {
-  const browser = await chromium.launch({
-    headless: true,
-    args: ["--disable-blink-features=AutomationControlled"]
-  });
-
+  const browser = await chromium.launch({ headless: true });
   const context = await browser.newContext({
-    userAgent: USER_AGENT,
-    viewport: { width: 1366, height: 900 },
+    userAgent: REALISTIC_UA,
     locale: "en-US",
-    timezoneId: "UTC",
-    extraHTTPHeaders: {
-      "Accept-Language": "en-US,en;q=0.9",
-      "Upgrade-Insecure-Requests": "1"
-    }
+    viewport: { width: 1366, height: 900 }
   });
 
-  // Reduce simple bot detection (navigator.webdriver).
-  await context.addInitScript(() => {
-    Object.defineProperty(navigator, "webdriver", { get: () => undefined });
-  });
-
-  const page = await context.newPage();
-  page.setDefaultTimeout(45000);
-  page.setDefaultNavigationTimeout(60000);
-
-  // Trim ad/analytics to speed up "network idle" noise if we wait for it anywhere.
-  const noisyHosts = ["googletagmanager", "doubleclick", "facebook", "adservice", "adnxs"];
-  await context.route("**/*", route => {
-    const url = route.request().url();
-    if (noisyHosts.some(h => url.includes(h))) return route.abort();
+  // block heavy non-critical resources
+  await context.route("**/*", (route) => {
+    const rt = route.request().resourceType();
+    if (rt === "image" || rt === "media" || rt === "font") return route.abort();
     return route.continue();
   });
 
+  const page = await context.newPage();
+  page.setDefaultTimeout(NAV_TIMEOUT_MS);
   return { browser, context, page };
 }
 
-async function smartGoto(page, url) {
-  return withRetry("page.goto", () =>
-    page.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 })
-  );
-}
-
-// ---------- generic table helpers ----------
+/* ================================
+   generic table helpers (DOM)
+=================================== */
 function toNumberLike(s) {
   if (s == null) return null;
-  const cleaned = String(s).replace(/[^\d.-]/g, "").replace(/,/g, "");
+  const cleaned = String(s)
+    .replace(/[^\d.+-]/g, "")
+    .replace(/,/g, "")
+    .replace(/[+–-]+$/g, ""); // "181,900-" -> "181900"
   const n = Number(cleaned);
   return Number.isFinite(n) ? n : null;
 }
 async function scrapeFirstTableMatrix(page) {
-  await page.waitForSelector("table", { timeout: 60000 });
+  await page.waitForSelector("table");
   return await page.evaluate(() => {
     const tbl = document.querySelector("table");
     const headers = Array.from(tbl.querySelectorAll("thead th, thead td")).map(th => th.innerText.trim());
@@ -155,15 +152,98 @@ async function scrapeFirstTableMatrix(page) {
   });
 }
 
-// ---------- check: page (generic field scraping) ----------
+/* ================================
+   HTML fetch helpers (gzip aware)
+=================================== */
+function looksLikeGzip(buf) { return buf && buf.length > 2 && buf[0] === 0x1f && buf[1] === 0x8b; }
+
+async function fetchBuffer(url) {
+  const res = await fetch(url, {
+    headers: {
+      "User-Agent": REALISTIC_UA,
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Cache-Control": "no-cache"
+    }
+  });
+  const buf = Buffer.from(await res.arrayBuffer());
+  return { res, buf };
+}
+async function fetchTextMaybeGzip(url) {
+  const { res, buf } = await withRetry(`fetch ${url}`, () => fetchBuffer(url));
+  if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText || ""}`.trim());
+  const ct = (res.headers.get("content-type") || "").toLowerCase();
+  const ce = (res.headers.get("content-encoding") || "").toLowerCase();
+  const gzByType = ct.includes("application/gzip") || ct.includes("x-gzip");
+  const gzByEnc = ce.includes("gzip");
+  const gzByExt = url.toLowerCase().endsWith(".gz");
+  if (gzByType || gzByEnc || gzByExt || looksLikeGzip(buf)) {
+    try { return gunzipSync(buf).toString("utf8"); } catch { /* fall back */ }
+  }
+  return buf.toString("utf8");
+}
+
+/* ================================
+   tiny HTML table parser (no deps)
+   - returns {headers, rows} of text
+=================================== */
+function stripTags(s) { return s.replace(/<[^>]*>/g, " "); }
+function cleanCell(s) { return stripTags(s).replace(/\s+/g, " ").trim(); }
+function parseFirstTable(html) {
+  const m = html.match(/<table[\s\S]*?<\/table>/i);
+  if (!m) return null;
+  const table = m[0];
+
+  let headers = [];
+  const thead = table.match(/<thead[\s\S]*?<\/thead>/i);
+  if (thead) {
+    headers = [...thead[0].matchAll(/<t[hd][^>]*>([\s\S]*?)<\/t[hd]>/gi)].map((x) => cleanCell(x[1]));
+  } else {
+    // fallback: first <tr> as headers
+    const firstTr = table.match(/<tr[\s\S]*?<\/tr>/i);
+    if (firstTr) headers = [...firstTr[0].matchAll(/<t[hd][^>]*>([\s\S]*?)<\/t[hd]>/gi)].map((x) => cleanCell(x[1]));
+  }
+
+  // grab body rows
+  const bodyHtml = thead
+    ? table.replace(thead[0], "")
+    : table;
+  const trs = [...bodyHtml.matchAll(/<tr[\s\S]*?<\/tr>/gi)].map(x => x[0]);
+
+  const rows = trs.map(tr =>
+    [...tr.matchAll(/<(?:td|th)[^>]*>([\s\S]*?)<\/(?:td|th)>/gi)]
+      .map(x => cleanCell(x[1]))
+  ).filter(r => r.length > 0);
+
+  return { headers, rows };
+}
+
+/* ================================
+   string matching helpers
+=================================== */
+function looseContains(hay, needle) {
+  const H = (hay || "").toLowerCase().replace(/[^a-z0-9]+/g, " ");
+  const N = (needle || "").toLowerCase().replace(/[^a-z0-9]+/g, " ");
+  const toks = N.split(/\s+/).filter(Boolean);
+  return toks.every(t => H.includes(t));
+}
+
+/* ================================
+   generic page checks (Playwright)
+=================================== */
+async function gotoSafely(page, url) {
+  await withRetry("page.goto", () =>
+    page.goto(url, { waitUntil: GOTO_WAIT_UNTIL, timeout: NAV_TIMEOUT_MS })
+  );
+}
 async function runPageCheck(check) {
   const { browser, context, page } = await newPage();
   try {
-    await smartGoto(page, check.url);
+    await gotoSafely(page, check.url);
     const data = {};
     for (const [key, spec] of Object.entries(check.fields)) {
       const { selector, attr = "text" } = spec;
-      await page.waitForSelector(selector, { timeout: 60000 });
+      await page.waitForSelector(selector);
       data[key] = attr === "text"
         ? (await page.textContent(selector))?.trim() ?? null
         : await page.getAttribute(selector, attr);
@@ -175,17 +255,22 @@ async function runPageCheck(check) {
   }
 }
 
-// ---------- check: price ----------
+/* ================================
+   price + availability (Playwright)
+=================================== */
 function parseCurrency(txt = "") {
-  const cleaned = (txt || "").replace(/[^\d.,-]/g, "").replace(/,/g, "");
+  const cleaned = String(txt)
+    .replace(/[^\d.,+–-]/g, "")
+    .replace(/,/g, "")
+    .replace(/[+–-]+$/g, ""); // strip trailing range markers
   const n = Number(cleaned);
   return Number.isFinite(n) ? n : null;
 }
 async function runPriceCheck(check) {
   const { browser, context, page } = await newPage();
   try {
-    await smartGoto(page, check.url);
-    await page.waitForSelector(check.selector, { timeout: 60000 });
+    await gotoSafely(page, check.url);
+    await page.waitForSelector(check.selector);
     const raw = (await page.textContent(check.selector))?.trim() ?? "";
     return { price: parseCurrency(raw), raw };
   } finally {
@@ -193,13 +278,11 @@ async function runPriceCheck(check) {
     await browser.close();
   }
 }
-
-// ---------- check: availability ----------
 async function runAvailabilityCheck(check) {
   const { browser, context, page } = await newPage();
   try {
-    await smartGoto(page, check.url);
-    await page.waitForSelector(check.selector, { timeout: 60000 });
+    await gotoSafely(page, check.url);
+    await page.waitForSelector(check.selector);
     const raw = (await page.textContent(check.selector))?.trim() ?? "";
     const re = check.availableRegex ? new RegExp(check.availableRegex, "i") : /in stock|available/i;
     return { available: re.test(raw), raw };
@@ -209,32 +292,9 @@ async function runAvailabilityCheck(check) {
   }
 }
 
-// ---------- sitemap helpers ----------
-function looksLikeGzip(buf) { return buf && buf.length > 2 && buf[0] === 0x1f && buf[1] === 0x8b; }
-async function fetchBuffer(url) {
-  const res = await fetch(url, { headers: { "User-Agent": USER_AGENT, "Accept": "*/*" } });
-  const buf = Buffer.from(await res.arrayBuffer());
-  return { res, buf };
-}
-async function fetchTextMaybeGzip(url) {
-  const { res, buf } = await withRetry(`fetch ${url}`, () => fetchBuffer(url));
-  if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText || ""}`.trim());
-
-  const ct = (res.headers.get("content-type") || "").toLowerCase();
-  const ce = (res.headers.get("content-encoding") || "").toLowerCase();
-  const gzByType = ct.includes("application/gzip") || ct.includes("x-gzip");
-  const gzByEnc = ce.includes("gzip");
-  const gzByExt = url.toLowerCase().endsWith(".gz");
-  if (gzByType || gzByEnc || gzByExt || looksLikeGzip(buf)) {
-    try { return gunzipSync(buf).toString("utf8"); } catch { /* fall back */ }
-  }
-  return buf.toString("utf8");
-}
-function extractLocsFromXml(xml) {
-  const isIndex = /<\s*sitemapindex[\s>]/i.test(xml);
-  const rawLocs = Array.from(xml.matchAll(/<\s*loc\s*>\s*([^<]+)\s*<\s*\/\s*loc\s*>/gi)).map(m => m[1].trim());
-  return { isIndex, locs: rawLocs };
-}
+/* ================================
+   sitemap helpers
+=================================== */
 async function discoverSitemapsFromRobots(startUrl) {
   const u = new URL(startUrl);
   const robotsUrl = `${u.protocol}//${u.host}/robots.txt`;
@@ -242,6 +302,11 @@ async function discoverSitemapsFromRobots(startUrl) {
     const text = await fetchTextMaybeGzip(robotsUrl);
     return Array.from(text.matchAll(/(?<=^|\n)\s*Sitemap:\s*(\S+)\s*/gi)).map(m => m[1]);
   } catch { return []; }
+}
+function extractLocsFromXml(xml) {
+  const isIndex = /<\s*sitemapindex[\s>]/i.test(xml);
+  const rawLocs = Array.from(xml.matchAll(/<\s*loc\s*>\s*([^<]+)\s*<\s*\/\s*loc\s*>/gi)).map(m => m[1].trim());
+  return { isIndex, locs: rawLocs };
 }
 async function fetchSitemapUrls(url, { indexLimit = 5, limit } = {}) {
   const queue = [url];
@@ -286,7 +351,9 @@ async function fetchSitemapUrls(url, { indexLimit = 5, limit } = {}) {
   throw new Error(`Sitemap fetch failed: ${err}`);
 }
 
-// ---------- check: sitemap (raw) ----------
+/* ================================
+   sitemap checks
+=================================== */
 async function runSitemapCheck(check) {
   const { urls, source } = await fetchSitemapUrls(check.url, {
     indexLimit: check.indexLimit || 5,
@@ -294,8 +361,6 @@ async function runSitemapCheck(check) {
   });
   return { source, count: urls.length, sample: urls.slice(0, 10), all: urls };
 }
-
-// ---------- check: sitemap_diff ----------
 function diffSets(prev = [], next = []) {
   const A = new Set(prev);
   const B = new Set(next);
@@ -316,15 +381,17 @@ async function runSitemapDiffCheck(check, prevRecord) {
   };
 }
 
-// ---------- check: content_watch ----------
+/* ================================
+   content_watch
+=================================== */
 async function runContentWatch(check) {
   const { browser, context, page } = await newPage();
   try {
-    await smartGoto(page, check.url);
+    await gotoSafely(page, check.url);
     const selectors = Array.isArray(check.selectors) ? check.selectors : [check.selector || "body"];
     const parts = [];
     for (const sel of selectors) {
-      await page.waitForSelector(sel, { timeout: 60000 });
+      await page.waitForSelector(sel);
       const t = await page.textContent(sel);
       if (t) parts.push(t);
     }
@@ -348,58 +415,105 @@ async function runContentWatch(check) {
   }
 }
 
-// ---------- PSA custom checks ----------
-// Price page: find the row that matches rowMatch; take the value in gradeCol
+/* ================================
+   PSA custom checks (with HTML fallback)
+=================================== */
+
+// Price page: find the row that matches rowMatch; take value in gradeCol
 async function runPsaPriceRow(check) {
+  // 1) Try simple HTML fetch (price guide is server-rendered)
+  try {
+    const html = await fetchTextMaybeGzip(check.url);
+    const parsed = parseFirstTable(html);
+    if (parsed && parsed.headers.length && parsed.rows.length) {
+      const { headers, rows } = parsed;
+      const colIdx = headers.findIndex(h =>
+        h.replace(/\s+/g, " ").toUpperCase().includes((check.gradeCol || "").toUpperCase())
+      );
+      if (colIdx < 0) throw new Error(`grade column not found: ${check.gradeCol}`);
+
+      // row match: tolerant of punctuation/whitespace
+      const row = rows.find(r => r.some(c => looseContains(c, check.rowMatch)));
+      if (!row) throw new Error(`row not found: ${check.rowMatch}`);
+
+      const raw = row[colIdx] || "";
+      const price = toNumberLike(raw);
+      return { row: row[0], grade: check.gradeCol, price, raw, mode: "html" };
+    }
+  } catch (e) {
+    // fall through to Playwright
+  }
+
+  // 2) Fallback to Playwright if fetch path didn't work
   const { browser, context, page } = await newPage();
   try {
-    await smartGoto(page, check.url);
+    await gotoSafely(page, check.url);
     const { headers, rows } = await scrapeFirstTableMatrix(page);
 
-    const colIdx = headers.findIndex(h =>
-      h.replace(/\s+/g, " ").toUpperCase().includes((check.gradeCol || "").toUpperCase())
-    );
+    const colIdx = headers.findIndex(h => h.replace(/\s+/g, " ").toUpperCase().includes((check.gradeCol || "").toUpperCase()));
     if (colIdx < 0) throw new Error(`grade column not found: ${check.gradeCol}`);
 
-    const row = rows.find(r => (r[0] || "").toLowerCase().includes(check.rowMatch.toLowerCase()));
+    const row = rows.find(r => r.some(c => looseContains(c, check.rowMatch)));
     if (!row) throw new Error(`row not found: ${check.rowMatch}`);
 
     const raw = row[colIdx] || "";
     const price = toNumberLike(raw);
-    return { row: row[0], grade: check.gradeCol, price, raw };
+    return { row: row[0], grade: check.gradeCol, price, raw, mode: "playwright" };
   } finally {
     await context.close();
     await browser.close();
   }
 }
 
-// Pop page: find the row that matches rowMatch; take the numeric TOTAL (or given column)
+// Pop page: find the row that matches rowMatch; take numeric TOTAL (or given column)
 async function runPsaPopRow(check) {
+  // Try HTML fetch first (works on most runs; much lighter than headless)
+  try {
+    const html = await fetchTextMaybeGzip(check.url);
+    const parsed = parseFirstTable(html);
+    if (parsed && parsed.headers.length && parsed.rows.length) {
+      const { headers, rows } = parsed;
+      const colName = (check.column || "TOTAL").toUpperCase();
+      const colIdx = headers.findIndex(h => (h || "").trim().toUpperCase() === colName);
+      if (colIdx < 0) throw new Error(`column not found: ${check.column || "TOTAL"}`);
+
+      // PSA puts "Charizard-Holo" and "1st Edition" as separate lines/cells in some layouts.
+      const row = rows.find(r => looseContains(r.join(" "), check.rowMatch));
+      if (!row) throw new Error(`row not found: ${check.rowMatch}`);
+
+      const raw = row[colIdx] || "";
+      const population = toNumberLike(raw);
+      return { row: row[0], column: check.column || "TOTAL", population, raw, mode: "html" };
+    }
+  } catch (e) {
+    // continue to Playwright
+  }
+
+  // Fallback: Playwright scrape
   const { browser, context, page } = await newPage();
   try {
-    await smartGoto(page, check.url);
+    await gotoSafely(page, check.url);
     const { headers, rows } = await scrapeFirstTableMatrix(page);
 
     const colName = (check.column || "TOTAL").toUpperCase();
     const colIdx = headers.findIndex(h => (h || "").trim().toUpperCase() === colName);
     if (colIdx < 0) throw new Error(`column not found: ${check.column || "TOTAL"}`);
 
-    // On PSA pop page, the name text is in the first TH/TD pair; match name in col 0 or 1
-    const row = rows.find(r =>
-      (r[1] || r[0] || "").toLowerCase().includes(check.rowMatch.toLowerCase())
-    );
+    const row = rows.find(r => looseContains((r[1] || r[0] || ""), check.rowMatch) || looseContains(r.join(" "), check.rowMatch));
     if (!row) throw new Error(`row not found: ${check.rowMatch}`);
 
     const raw = row[colIdx] || "";
     const population = toNumberLike(raw);
-    return { row: row[0], column: check.column || "TOTAL", population, raw };
+    return { row: row[0], column: check.column || "TOTAL", population, raw, mode: "playwright" };
   } finally {
     await context.close();
     await browser.close();
   }
 }
 
-// ---------- webhook ----------
+/* ================================
+   webhook
+=================================== */
 async function sendWebhook({ check, changedKeys, record, previous }) {
   const url = process.env.WEBHOOK_URL;
   if (!url) return { sent: false, reason: "no WEBHOOK_URL set" };
@@ -428,7 +542,9 @@ async function sendWebhook({ check, changedKeys, record, previous }) {
   }
 }
 
-// ---------- main ----------
+/* ================================
+   main
+=================================== */
 async function run() {
   const resultsDir = path.join(root, "data");
   const latestDir = path.join(resultsDir, "latest");
@@ -467,7 +583,7 @@ async function run() {
 
       await writeJson(latestPath, record);
 
-      // --- append time-series (JSONL) for select check types ---
+      // append time-series (JSONL) for select types
       try {
         const tsVal = seriesValueFor(check.type, data);
         if (tsVal !== null) {
