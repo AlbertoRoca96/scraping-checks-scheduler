@@ -9,36 +9,51 @@
       --border:#e5e7eb; --bg:#f9fafb; --muted:#6b7280; --changed:#b45309; --ok:#059669; --err:#b91c1c;
     }
     *{box-sizing:border-box}
-    body{margin:0;padding:16px;font:16px/1.45 ui-sans-serif,system-ui,Segoe UI,Roboto,Helvetica,Arial;color:#111827}
+    body{margin:0;padding:16px;font:16px/1.45 ui-sans-serif,system-ui,Segoe UI,Roboto,Helvetica,Arial;color:#111827;background:#fff}
     header{display:flex;gap:12px;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap}
-    h1{margin:0;font-size:1.5rem}
+    h1{margin:0;font-size:1.6rem}
     .muted{color:var(--muted)}
     .toolbar{display:flex;gap:8px;align-items:center}
     .btn{border:1px solid var(--border);background:#fff;border-radius:8px;padding:6px 10px;font:inherit;cursor:pointer}
     .btn:hover{background:#fafafa}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:16px}
+
+    /* Layout: wider cards so columns have room on desktop */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(460px,1fr));gap:16px}
     section{border:1px solid var(--border);border-radius:12px;padding:12px;background:#fff}
     h2{margin:.25rem 0 .5rem 0;font-size:1rem;display:flex;align-items:center;gap:8px}
     h2 a{font-weight:normal;font-size:.9rem}
-    table{width:100%;border-collapse:collapse;table-layout:auto}
+
+    table{width:100%;border-collapse:collapse;table-layout:fixed}
     th,td{border-top:1px solid var(--border);padding:6px 8px;font-size:.92rem;vertical-align:top}
     th{background:var(--bg);text-align:left;white-space:nowrap}
     td.check code{background:#f3f4f6;padding:2px 4px;border-radius:6px;display:inline-block}
     td.changed{white-space:nowrap}
-    td.keys, td.errcol{word-break:break-word}
-    td.json, td.price{white-space:nowrap}
+    td.keys, td.errcol{overflow-wrap:anywhere;word-break:normal}
+    td.json, td.price, td.avail{white-space:nowrap}
+
+    /* Column sizing on wider screens */
+    @media (min-width:900px){
+      th.check, td.check{width:40%}
+      th.changed, td.changed{width:100px}
+      th.json, td.json{width:84px}
+      th.price, td.price{width:200px}
+      th.avail, td.avail{width:120px}
+    }
+
+    /* Compact on narrow screens: hide verbose columns */
+    @media (max-width:720px){
+      th.keys, td.keys, th.errcol, td.errcol{display:none}
+    }
+
     .changed-badge{color:var(--changed);font-weight:600}
     .dash{color:var(--muted)}
     .err{color:var(--err)}
     .empty{color:var(--muted);padding:6px 0}
     .pos{color:var(--ok)} .neg{color:var(--err)}
+    .pill{padding:2px 8px;border-radius:999px;border:1px solid var(--border)}
+    .pill.ok{color:#065f46;background:#ecfdf5;border-color:#a7f3d0}
+    .pill.no{color:#7c2d12;background:#fef3c7;border-color:#fcd34d}
     .spark{display:block;width:140px;height:32px}
-    @media (min-width:900px){
-      th.check, td.check{width:40%}
-      th.changed, td.changed{width:100px}
-      th.json, td.json{width:80px}
-      th.price, td.price{width:180px}
-    }
   </style>
 </head>
 <body>
@@ -65,12 +80,23 @@
       return res.json();
     }
 
+    async function tryLoadText(path){
+      try {
+        const res = await fetch(`${path}?ts=${Date.now()}`);
+        if(!res.ok) return null;
+        return await res.text();
+      } catch { return null; }
+    }
+
     async function loadSeries(name){
-      const url = `data/timeseries/${name}/series.jsonl?ts=${Date.now()}`;
-      const res = await fetch(url);
-      if(!res.ok) throw new Error("no series");
-      const text = await res.text();
-      return text.trim().split("\n").filter(Boolean).map(JSON.parse);
+      const txt = await tryLoadText(`data/timeseries/${name}/series.jsonl`);
+      if(!txt) return [];
+      return txt.trim().split("\n").filter(Boolean).map(JSON.parse);
+    }
+
+    async function loadLatestRecord(name){
+      try { return await loadJSON(`data/latest/${name}.json`); }
+      catch { return null; }
     }
 
     function sparkline(values){
@@ -93,8 +119,6 @@
       if(!summary?.length){
         return `<section><h2>Group: ${group}</h2><div class="empty">No checks found for this run.</div></section>`;
       }
-
-      // Changed first, then name
       const rows = [...summary]
         .sort((a,b) => Number(b.changed) - Number(a.changed) || a.name.localeCompare(b.name))
         .map(s => `
@@ -105,6 +129,7 @@
             <td class="errcol">${s.error ? `<span class="err">${s.error}</span>` : ""}</td>
             <td class="json"><a href="data/latest/${s.name}.json">latest</a></td>
             <td class="price">${s.type==='price' ? '<span class="muted">loading…</span>' : ''}</td>
+            <td class="avail">${s.type==='availability' ? '<span class="muted">loading…</span>' : ''}</td>
           </tr>`).join("");
 
       const reportHref = `data/reports/report-${group}.html`;
@@ -120,6 +145,7 @@
                 <th class="errcol">Error</th>
                 <th class="json">JSON</th>
                 <th class="price">Price</th>
+                <th class="avail">Avail.</th>
               </tr>
             </thead>
             <tbody>${rows}</tbody>
@@ -127,23 +153,55 @@
         </section>`;
     }
 
-    async function hydratePrices(){
-      const rows = Array.from(document.querySelectorAll('tr[data-type="price"]'));
-      for(const tr of rows){
+    async function hydrateMetrics(){
+      // Price rows
+      for(const tr of document.querySelectorAll('tr[data-type="price"]')){
         const name = tr.getAttribute('data-check');
         const cell = tr.querySelector('.price');
         try{
           const series = await loadSeries(name);
-          if(!series.length){ cell.innerHTML = ""; continue; }
-          const last = series[series.length-1]?.v;
-          const prev = series[series.length-2]?.v ?? last;
-          const delta = (typeof last==="number" && typeof prev==="number") ? (last - prev) : 0;
-          const cls = delta >= 0 ? "pos" : "neg";
-          const spark = sparkline(series.map(p=>p.v));
-          cell.innerHTML = `<div>${Number(last).toFixed(2)} <small class="${cls}">${delta>=0?'+':''}${delta.toFixed(2)}</small></div>${spark}`;
-        }catch{
-          cell.innerHTML = "";
-        }
+          let last = null, prev = null;
+          if(series.length){
+            last = series.at(-1)?.v;
+            prev = series.at(-2)?.v ?? last;
+          }else{
+            const rec = await loadLatestRecord(name);
+            last = rec?.data?.price ?? null;
+            prev = last;
+          }
+          if(typeof last === "number"){
+            const delta = (typeof prev==="number") ? (last - prev) : 0;
+            const cls = delta >= 0 ? "pos" : "neg";
+            const spark = series.length ? sparkline(series.map(p=>p.v)) : "";
+            cell.innerHTML = `<div>${last.toFixed(2)} <small class="${cls}">${delta>=0?'+':''}${delta.toFixed(2)}</small></div>${spark}`;
+          }else{
+            cell.innerHTML = "";
+          }
+        }catch{ cell.innerHTML = ""; }
+      }
+
+      // Availability rows
+      for(const tr of document.querySelectorAll('tr[data-type="availability"]')){
+        const name = tr.getAttribute('data-check');
+        const cell = tr.querySelector('.avail');
+        try{
+          const series = await loadSeries(name);
+          let val = null;
+          if(series.length){
+            val = series.at(-1)?.v; // 1 or 0
+          }else{
+            const rec = await loadLatestRecord(name);
+            val = typeof rec?.data?.available === "boolean" ? (rec.data.available ? 1 : 0) : null;
+          }
+          if(val === 0 || val === 1){
+            const text = val ? "Yes" : "No";
+            const pill = `<span class="pill ${val ? 'ok':'no'}">${text}</span>`;
+            const spark = series.length ? sparkline(series.map(p=>p.v)) : "";
+            cell.innerHTML = `${pill} ${spark}`;
+          }else{
+            cell.innerHTML = "";
+          }
+        }catch{ cell.innerHTML = ""; }
       }
     }
 
@@ -157,10 +215,9 @@
           const div = document.createElement('div');
           div.innerHTML = sectionHTML(r.group || g, r.summary || []);
           grid.appendChild(div.firstElementChild);
-        }catch{ /* group not present */ }
+        }catch{/* group not present; skip */}
       }
-      // After sections render, fetch price series and render sparkline cells
-      hydratePrices();
+      hydrateMetrics();
     })();
   </script>
 </body>
