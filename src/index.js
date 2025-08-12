@@ -51,7 +51,6 @@ function normalizeValue(v) {
   return v;
 }
 
-// generic diff for structured objects
 function simpleDiff(a, b, ignore = []) {
   const A = normalizeValue(a) ?? {};
   const B = normalizeValue(b) ?? {};
@@ -88,7 +87,7 @@ async function loadPage(url, fn) {
 
 // ---------- Check Runners ----------
 
-// type: "page" (kept for simple demo)
+// type: "page"
 async function runPageCheck(check) {
   return loadPage(check.url, async (page) => {
     const data = {};
@@ -226,7 +225,6 @@ async function runContentWatch(check) {
     } else {
       text = await page.content(); // full HTML
     }
-    // Apply ignore patterns (e.g., "Last updated: ..." timestamps)
     const ignore = Array.isArray(check.ignore) ? check.ignore : [];
     const sanitized = ignore.reduce((acc, pattern) => acc.replace(new RegExp(pattern, "gi"), ""), text);
     return {
@@ -237,7 +235,7 @@ async function runContentWatch(check) {
   });
 }
 
-// ---------- Change logic per type ----------
+// change logic per type
 function priceChange(prev, cur, thresholdPct = 1) {
   const a = prev?.price, b = cur?.price;
   if (typeof a === "number" && typeof b === "number") {
@@ -245,15 +243,12 @@ function priceChange(prev, cur, thresholdPct = 1) {
     const changed = Math.abs(pct) >= thresholdPct;
     return { changed, changedKeys: changed ? ["price", "pct"] : [], pct };
   }
-  // first run or missing data
   return { changed: true, changedKeys: ["price"], pct: null };
 }
-
 function availabilityChange(prev, cur) {
   const changed = prev?.available !== cur?.available;
   return { changed, changedKeys: changed ? ["available"] : [] };
 }
-
 function sitemapChange(prev, cur) {
   const prevSet = new Set(prev?.all || []);
   const curSet = new Set(cur?.all || []);
@@ -263,13 +258,12 @@ function sitemapChange(prev, cur) {
   const data = { ...cur, added, removed, addedCount: added.length, removedCount: removed.length };
   return { changed, changedKeys: changed ? ["added", "removed"] : [], data };
 }
-
 function contentChange(prev, cur) {
   const changed = prev?.hash !== cur?.hash;
   return { changed, changedKeys: changed ? ["hash"] : [] };
 }
 
-// ---------- webhook ----------
+// webhook
 async function sendWebhook({ check, changedKeys, record, previous, extraText }) {
   const url = process.env.WEBHOOK_URL;
   if (!url) return { sent: false, reason: "no WEBHOOK_URL set" };
@@ -286,8 +280,8 @@ async function sendWebhook({ check, changedKeys, record, previous, extraText }) 
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
-        text,               // Slack-compatible
-        content: text,      // Discord-compatible
+        text,
+        content: text,
         event: "scrape.changed",
         check,
         changedKeys,
@@ -301,7 +295,7 @@ async function sendWebhook({ check, changedKeys, record, previous, extraText }) 
   }
 }
 
-// ---------- HTML report ----------
+// HTML report helper
 function renderHtml(summary, group) {
   const rows = summary.map(s => `
     <tr>
@@ -314,7 +308,7 @@ function renderHtml(summary, group) {
 
   return `<!doctype html>
 <html lang="en"><meta charset="utf-8">
-<title>Scrape Report</title>
+<title>Scrape Report (${group || "all"})</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
   body { font: 14px/1.4 system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 24px; color:#111;}
@@ -323,13 +317,13 @@ function renderHtml(summary, group) {
   th { background:#f7f7f7; text-align:left; }
   code { background:#f0f0f0; padding:1px 4px; border-radius:4px; }
 </style>
-<h1>Scrape Report</h1>
-<p>Generated: ${new Date().toISOString()} | Group: <code>${group || "all"}</code>${runUrl() ? ` | <a href="${runUrl()}">Run</a>` : ""}</p>
+<h1>Scrape Report — ${group || "all"}</h1>
+<p>Generated: ${new Date().toISOString()} ${runUrl() ? `| <a href="${runUrl()}">Run</a>` : ""}</p>
 <table>
   <thead><tr><th>Check</th><th>Changed</th><th>Keys</th><th>Error</th></tr></thead>
   <tbody>${rows}</tbody>
 </table>
-<p>Browse raw JSON in <code>data/latest/</code> for details.</p>
+<p>Raw JSON in <code>data/latest/</code>.</p>
 </html>`;
 }
 
@@ -338,10 +332,13 @@ async function run() {
   const resultsDir = path.join(root, "data");
   const latestDir = path.join(resultsDir, "latest");
   const historyDir = path.join(resultsDir, "history");
-  await Promise.all([ensureDir(latestDir), ensureDir(historyDir)]);
+  const reportsDir = path.join(resultsDir, "reports");
+  await Promise.all([ensureDir(latestDir), ensureDir(historyDir), ensureDir(reportsDir)]);
 
+  // plan: run current group only
   const todo = checks.filter(c => !GROUP || c.group === GROUP);
-  const checkNames = new Set(todo.map(c => c.name));
+  // for pruning, consider ALL check names (not just group)
+  const allCheckNames = new Set(checks.map(c => c.name));
 
   const summary = [];
   let hadError = false;
@@ -353,47 +350,39 @@ async function run() {
       let data;
       let extraText = null;
 
-      if (check.type === "page") {
-        data = await runPageCheck(check);
-      } else if (check.type === "price") {
-        data = await runPriceCheck(check);
-      } else if (check.type === "availability") {
-        data = await runAvailabilityCheck(check);
-      } else if (check.type === "content_watch") {
-        data = await runContentWatch(check);
-      } else if (check.type === "sitemap" || check.type === "sitemap_diff") {
-        data = await runSitemap(check);
-      } else {
-        throw new Error(`Unknown check type: ${check.type}`);
-      }
+      if (check.type === "page") data = await runPageCheck(check);
+      else if (check.type === "price") data = await runPriceCheck(check);
+      else if (check.type === "availability") data = await runAvailabilityCheck(check);
+      else if (check.type === "content_watch") data = await runContentWatch(check);
+      else if (check.type === "sitemap" || check.type === "sitemap_diff") data = await runSitemap(check);
+      else throw new Error(`Unknown check type: ${check.type}`);
 
-      // Build record and load previous
       record = { name: check.name, type: check.type, url: check.url, checkedAt: startedAt, data };
+
       const latestPath = path.join(latestDir, `${check.name}.json`);
       const prev = await readJson(latestPath);
 
-      // Determine change based on type
+      // decide change type
       if (check.type === "price") {
         const { changed: ch, changedKeys: ck, pct } =
           priceChange(prev?.data, data, check.thresholdPct ?? 1);
         changed = ch; changedKeys = ck;
         if (pct !== null) extraText = `Price move: ${pct.toFixed(2)}%`;
       } else if (check.type === "availability") {
-        const { changed: ch, changedKeys: ck } = availabilityChange(prev?.data, data);
-        changed = ch; changedKeys = ck;
+        const t = availabilityChange(prev?.data, data);
+        changed = t.changed; changedKeys = t.changedKeys;
       } else if (check.type === "content_watch") {
-        const { changed: ch, changedKeys: ck } = contentChange(prev?.data, data);
-        changed = ch; changedKeys = ck;
+        const t = contentChange(prev?.data, data);
+        changed = t.changed; changedKeys = t.changedKeys;
       } else if (check.type === "sitemap" || check.type === "sitemap_diff") {
-        const { changed: ch, changedKeys: ck, data: patched } = sitemapChange(prev?.data, data);
-        changed = ch; changedKeys = ck; record.data = patched;
+        const t = sitemapChange(prev?.data, data);
+        changed = t.changed; changedKeys = t.changedKeys; record.data = t.data;
       } else {
         const ignore = Array.isArray(check.ignoreKeys) ? check.ignoreKeys : [];
         changedKeys = simpleDiff(prev?.data, data, ignore);
         changed = changedKeys.length > 0;
       }
 
-      // Always write "latest"; if changed, also save history, and send webhook
       await writeJson(latestPath, record);
       if (changed) {
         const stamp = startedAt.replace(/[:]/g, "-");
@@ -406,20 +395,20 @@ async function run() {
       console.log(`[${check.name}] changed=${changed} keys=${changedKeys.join(",")}`);
     } catch (e) {
       hadError = true;
-      record = { name: check.name, type: check.type, url: check.url, checkedAt: startedAt, error: String(e) };
+      const record = { name: check.name, type: check.type, url: check.url, checkedAt: startedAt, error: String(e) };
       await writeJson(path.join(latestDir, `${check.name}.json`), record);
       summary.push({ name: check.name, changed: false, changedKeys: [], error: String(e) });
       console.error(`[${check.name}] ERROR: ${String(e)}`);
     }
   }
 
-  // prune stale latest files that no longer correspond to current checks
+  // prune stale latest files that are not part of ANY check (any group)
   try {
     const files = await fsp.readdir(latestDir);
     for (const f of files) {
       if (!f.endsWith(".json")) continue;
       const name = f.replace(/\.json$/, "");
-      if (!checkNames.has(name)) {
+      if (!allCheckNames.has(name)) {
         await fsp.unlink(path.join(latestDir, f));
         console.log(`[prune] removed stale ${f}`);
       }
@@ -428,8 +417,9 @@ async function run() {
     console.warn(`[prune] warning: ${String(e)}`);
   }
 
-  // Write reports (JSON, MD, HTML)
-  await writeJson(path.join(resultsDir, "report.json"), {
+  // Per-group reports
+  const groupKey = (GROUP || "all").replace(/[^a-z0-9_-]/gi, "-").toLowerCase();
+  await writeJson(path.join(reportsDir, `report-${groupKey}.json`), {
     generatedAt: new Date().toISOString(),
     group: GROUP || "all",
     summary
@@ -440,9 +430,8 @@ async function run() {
     `|---|:---:|:--|:--|`,
     ...summary.map(s => `| \`${s.name}\` | ${s.changed ? "✅" : "—"} | ${s.changedKeys.join(", ")} | ${s.error ? "`" + s.error + "`" : ""} |`)
   ];
-  await ensureDir(resultsDir);
-  await fsp.writeFile(path.join(resultsDir, "report.md"), mdLines.join("\n") + "\n", "utf8");
-  await fsp.writeFile(path.join(resultsDir, "report.html"), renderHtml(summary, GROUP), "utf8");
+  await fsp.writeFile(path.join(reportsDir, `report-${groupKey}.md`), mdLines.join("\n") + "\n", "utf8");
+  await fsp.writeFile(path.join(reportsDir, `report-${groupKey}.html`), renderHtml(summary, GROUP), "utf8");
 
   console.log("\nDone. Summary:\n", JSON.stringify(summary, null, 2));
   if (hadError && FAIL_ON_ERROR) process.exit(1);
