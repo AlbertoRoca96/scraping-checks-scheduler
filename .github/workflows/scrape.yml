@@ -20,32 +20,23 @@ jobs:
         group: ["default", "seo", "price", "compliance"]
     runs-on: ubuntu-latest
     timeout-minutes: 30
-
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
 
-      # Lockfile-aware setup + caching
-      - name: Set up Node (with npm cache)
-        if: ${{ hashFiles('package-lock.json') != '' || hashFiles('npm-shrinkwrap.json') != '' || hashFiles('yarn.lock') != '' }}
+      - name: Set up Node (with cache if lockfile present)
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: "npm"
+          cache: ${{ hashFiles('package-lock.json','npm-shrinkwrap.json','yarn.lock') != '' && 'npm' || '' }}
 
-      - name: Set up Node (no cache)
-        if: ${{ hashFiles('package-lock.json') == '' && hashFiles('npm-shrinkwrap.json') == '' && hashFiles('yarn.lock') == '' }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-
-      - name: Install dependencies (npm ci)
-        if: ${{ hashFiles('package-lock.json') != '' || hashFiles('npm-shrinkwrap.json') != '' }}
-        run: npm ci
-
-      - name: Install dependencies (npm install)
-        if: ${{ hashFiles('package-lock.json') == '' && hashFiles('npm-shrinkwrap.json') == '' }}
-        run: npm install
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then
+            npm ci
+          else
+            npm install
+          fi
 
       - name: Install Playwright (browsers + Linux deps)
         run: npx playwright install --with-deps chromium
@@ -53,7 +44,7 @@ jobs:
       - name: Run scrapers (group=${{ matrix.group }})
         env:
           GROUP: ${{ matrix.group }}
-          FAIL_ON_ERROR: "0"
+          FAIL_ON_ERROR: "0"                   # set to "1" to fail on any check error
           WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
         run: npm run scrape
 
@@ -68,61 +59,51 @@ jobs:
   merge_and_commit:
     needs: scrape
     runs-on: ubuntu-latest
-
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
 
-      # Pull down *all* matrix artifacts into this workspace and merge them
-      - name: Download artifacts
+      - name: Download & merge all artifacts
         uses: actions/download-artifact@v4
         with:
           pattern: scrape-results-*
           merge-multiple: true
           path: .
-      # The v4 action supports pattern + merge-multiple to combine artifacts. :contentReference[oaicite:1]{index=1}
 
       - name: Show what merged
         run: |
-          echo "--- merged artifacts (top-level) ---"
-          ls -la
-          echo "--- data dir ---"
-          ls -la data || true
-          echo "--- docs dir (before copy) ---"
-          ls -la docs || true
+          echo "--- top level ---"; ls -la
+          echo "--- data/ ---";    find data -maxdepth 2 -type f -printf "%P\n" | sort || true
+          echo "--- latest/ ---";  find latest -maxdepth 1 -type f -printf "%P\n" | sort || true
 
-      # Copy the data/ folder into docs/ so GitHub Pages can serve a live dashboard
+      # Unify any stray top-level outputs into data/
+      - name: Normalize artifact layout
+        shell: bash
+        run: |
+          mkdir -p data/latest data/history data/reports
+          # If previous runs created top-level latest/history/reports, fold them into data/
+          [ -d latest   ] && rsync -a latest/   data/latest/   && rm -rf latest
+          [ -d history  ] && rsync -a history/  data/history/  && rm -rf history
+          [ -d reports  ] && rsync -a reports/  data/reports/  && rm -rf reports
+          shopt -s nullglob
+          for f in report-*.json report-*.md; do mv "$f" data/; done
+
+      # Copy the unified data set to the site directory
       - name: Copy data to docs for Pages
         run: |
           mkdir -p docs/data
           rsync -a --delete data/ docs/data/
 
-      # Flatten per-group reports so docs/index.html can GET data/report-<group>.json
-      - name: Flatten group reports for dashboard
-        shell: bash
+      - name: Preview docs/data
         run: |
-          shopt -s nullglob
-          # If grouped reports exist under data/reports, copy flat copies into docs/data/
-          if [ -d data/reports ]; then
-            for f in data/reports/report-*.json; do
-              cp "$f" "docs/data/$(basename "$f")"
-            done
-          fi
-          # If any report-*.json were written at repo root by older runs, copy them too
-          for f in report-*.json; do
-            [ -f "$f" ] && cp "$f" docs/data/
-          done
+          echo "--- docs/data ---"
+          find docs/data -maxdepth 2 -type f -printf "%P\n" | sort | sed -n '1,200p'
 
-      - name: Show docs/data after copy
-        run: |
-          echo "--- docs/data (preview) ---"
-          find docs/data -maxdepth 2 -type f -printf "%P\n" | sort | head -200 || true
-
-      # Commit everything that changed, including new files under docs/data/
-      - name: Auto-commit updated data + site
+      # Commit everything (including removals from normalization)
+      - name: Commit updated data + site
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore(site): update docs dashboard & data [skip ci]"
-          file_pattern: "."          # commit all changes (simplest & reliable)
-          skip_dirty_check: true     # commit even if the action's precheck thinks it's clean
-          add_options: "--all"       # stage new/removed files aggressively
+          commit_message: "chore(site): normalize & publish data to docs [skip ci]"
+          file_pattern: "."
+          add_options: "--all"
+          skip_dirty_check: true
