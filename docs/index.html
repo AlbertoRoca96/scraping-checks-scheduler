@@ -10,10 +10,13 @@
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
     section{border:1px solid #e5e7eb;border-radius:12px;padding:12px}
     h2{margin:.25rem 0 .5rem 0;font-size:1rem}
-    table{width:100%;border-collapse:collapse}
-    th,td{border-top:1px solid #e5e7eb;padding:6px 8px;font-size:.9rem;vertical-align:top}
+    table{width:100%;border-collapse:collapse;table-layout:fixed}
+    th,td{border-top:1px solid #e5e7eb;padding:6px 8px;font-size:.9rem;vertical-align:top;overflow-wrap:anywhere}
     th{background:#f9fafb;text-align:left}
-    code{background:#f3f4f6;padding:2px 4px;border-radius:6px}
+    th:nth-child(1){width:45%}         /* check name */
+    th:nth-child(2){width:90px;white-space:nowrap}  /* changed */
+    th:nth-child(5){width:70px;white-space:nowrap}  /* JSON link */
+    code{background:#f3f4f6;padding:2px 4px;border-radius:6px;display:inline-block}
     .ok{color:#059669}.changed{color:#b45309}.err{color:#b91c1c}.muted{color:#6b7280}
   </style>
 </head>
