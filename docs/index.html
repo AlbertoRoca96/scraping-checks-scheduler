@@ -30,13 +30,11 @@
     table{width:100%;border-collapse:collapse; table-layout:auto}
     th,td{border-top:1px solid var(--border);padding:7px 8px;font-size:.95rem;vertical-align:top}
     th{background:var(--bg);text-align:left}
-
     td.check code{background:#f3f4f6;padding:2px 6px;border-radius:6px;display:inline-block}
     td.changed{white-space:nowrap}
     td.json, td.price, td.avail, td.pop{white-space:nowrap}
 
-    td.keys, td.errcol{ overflow-wrap:anywhere; word-break:normal; min-width:160px; }
-
+    td.keys, td.errcol{overflow-wrap:anywhere;word-break:normal;min-width:160px;}
     @media (min-width:900px){
       th.check, td.check{width:40%}
       th.changed, td.changed{width:96px}
@@ -45,13 +43,8 @@
       th.avail, td.avail{width:120px}
       th.pop, td.pop{width:140px}
     }
-
-    @media (max-width:820px){
-      th.keys, td.keys, th.errcol, td.errcol{display:none}
-    }
-    @media (max-width:560px){
-      th.json, td.json{display:none}
-    }
+    @media (max-width:820px){ th.keys, td.keys, th.errcol, td.errcol{display:none} }
+    @media (max-width:560px){ th.json, td.json{display:none} }
 
     .changed-badge{color:var(--changed);font-weight:600}
     .dash{color:var(--muted)}
@@ -63,6 +56,14 @@
     .pill.no{color:#7c2d12;background:#fef3c7;border-color:#fcd34d}
     .spark{display:block;width:140px;height:32px}
     .pricebox{display:flex;align-items:center;gap:10px}
+
+    /* Stocks card */
+    .stockgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:8px}
+    .stock{border:1px solid var(--border);border-radius:12px;padding:10px;background:#fff;box-shadow:var(--shadow)}
+    .stock .head{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+    .stock .sym{font-weight:700}
+    .stock .chg{font-size:.9rem}
+    .stock .big{font-size:1.3rem;font-weight:700}
   </style>
 </head>
 <body>
@@ -79,11 +80,12 @@
   </div>
 
   <script>
-    const groups = ["default","seo","price","compliance"];
+    const groups = ["stocks","default","seo","price","compliance"];
     const grid   = document.getElementById('grid');
     const stamp  = document.getElementById('stamp');
     document.getElementById('refresh').onclick = () => location.reload();
 
+    // --- data helpers ---
     const bust = () => `?ts=${Date.now()}`;
     async function loadJSON(path){
       const res = await fetch(`${path}${bust()}`, { cache: "no-store" });
@@ -103,6 +105,7 @@
       try{ return await loadJSON(`data/latest/${name}.json`); } catch{ return null; }
     }
 
+    // --- tiny viz ---
     function sparkline(values){
       if(values.length < 2) return "";
       const w=140,h=32,n=values.length;
@@ -113,7 +116,9 @@
       </svg>`;
     }
 
+    // --- generic table section ---
     function sectionHTML(group, summary){
+      if(group === "stocks") return stocksSectionHTML(summary);
       if(!summary?.length){
         return `<section><h2>Group: ${group}</h2><div class="empty">No checks found for this run.</div></section>`;
       }
@@ -126,13 +131,12 @@
             <td class="keys">${(s.changedKeys||[]).join(", ")}</td>
             <td class="errcol">${s.error ? `<span class="err">${s.error}</span>` : ""}</td>
             <td class="json"><a href="data/latest/${s.name}.json">latest</a></td>
-            <td class="price">${(s.type==='price'||s.type==='psa_price_row'||s.type==='stock') ? '<span class="muted">loading…</span>' : ''}</td>
+            <td class="price">${(s.type==='price'||s.type==='psa_price_row') ? '<span class="muted">loading…</span>' : ''}</td>
             <td class="avail">${s.type==='availability' ? '<span class="muted">loading…</span>' : ''}</td>
             <td class="pop">${s.type==='psa_pop_row' ? '<span class="muted">loading…</span>' : ''}</td>
           </tr>`).join("");
 
-      // Link to the JSON report (always exists)
-      const reportHref = `data/report-${group}.json`;
+      const reportHref = `data/reports/report-${group}.html`;
       return `
         <section>
           <h2>Group: ${group} <a class="muted" href="${reportHref}">(view group report)</a></h2>
@@ -154,8 +158,31 @@
         </section>`;
     }
 
+    // --- Stocks card section ---
+    function stocksSectionHTML(summary){
+      const items = summary
+        .filter(s => s.type === "stock_quote")
+        .map(s => `
+          <div class="stock" data-check="${s.name}">
+            <div class="head">
+              <div class="sym">${s.name.replace(/^stock_([^_]+).*$/,'$1').toUpperCase()}</div>
+              <a class="muted" href="data/latest/${s.name}.json">json</a>
+            </div>
+            <div class="big" data-role="price">loading…</div>
+            <div class="chg muted" data-role="chg"></div>
+            <div data-role="spark"></div>
+          </div>
+        `).join("");
+      return `
+        <section>
+          <h2>Stocks</h2>
+          ${summary.length ? `<div class="stockgrid">${items}</div>` : `<div class="empty">No stocks configured.</div>`}
+        </section>
+      `;
+    }
+
     async function hydratePrices(){
-      for(const tr of document.querySelectorAll('tr[data-type="price"], tr[data-type="psa_price_row"], tr[data-type="stock"]')){
+      for(const tr of document.querySelectorAll('tr[data-type="price"], tr[data-type="psa_price_row"]')){
         const name = tr.getAttribute('data-check');
         const cell = tr.querySelector('.price');
         try{
@@ -207,6 +234,38 @@
       }
     }
 
+    async function hydrateStocks(){
+      for(const el of document.querySelectorAll('.stock[data-check]')){
+        const name = el.getAttribute('data-check');
+        const priceEl = el.querySelector('[data-role="price"]');
+        const chgEl   = el.querySelector('[data-role="chg"]');
+        const sparkEl = el.querySelector('[data-role="spark"]');
+        try{
+          const series = await loadSeries(name);
+          const latest = await loadLatest(name);
+          const last = series.length ? series.at(-1)?.v : latest?.data?.price ?? null;
+          const prev = series.length > 1 ? series.at(-2)?.v : last;
+          if(typeof last === "number"){
+            const delta = (typeof prev === "number") ? (last - prev) : null;
+            const cls = (delta ?? 0) >= 0 ? "pos" : "neg";
+            const pct = latest?.data?.changePercent;
+            priceEl.innerHTML = `${last.toFixed(2)}`;
+            chgEl.innerHTML = (delta == null)
+              ? ""
+              : `<span class="${cls}">${delta>=0?'+':''}${delta.toFixed(2)}${typeof pct==='number' ? ` (${pct.toFixed(2)}%)` : ""}</span>`;
+            sparkEl.innerHTML = series.length ? sparkline(series.map(p=>p.v)) : "";
+          } else {
+            priceEl.textContent = "";
+          }
+        } catch {
+          priceEl.textContent = "";
+          chgEl.textContent = "";
+          sparkEl.innerHTML = "";
+        }
+      }
+    }
+
+    // --- boot ---
     (async () => {
       for(const g of groups){
         try{
@@ -217,11 +276,12 @@
           const div = document.createElement('div');
           div.innerHTML = sectionHTML(r.group || g, r.summary || []);
           grid.appendChild(div.firstElementChild);
-        }catch{/* group not present */}
+        }catch{/* group may be absent */}
       }
       await hydratePrices();
       await hydrateAvailability();
       await hydratePopulation();
+      await hydrateStocks();
     })();
   </script>
 </body>
