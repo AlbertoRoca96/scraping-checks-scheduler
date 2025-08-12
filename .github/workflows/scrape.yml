@@ -25,7 +25,6 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v4
 
-      # Lockfile-aware setup + caching
       - name: Set up Node (with npm cache)
         if: ${{ hashFiles('package-lock.json') != '' || hashFiles('npm-shrinkwrap.json') != '' || hashFiles('yarn.lock') != '' }}
         uses: actions/setup-node@v4
@@ -53,8 +52,8 @@ jobs:
       - name: Run scrapers (group=${{ matrix.group }})
         env:
           GROUP: ${{ matrix.group }}
-          FAIL_ON_ERROR: "0"             # set "1" to fail job on any check error
-          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}  # optional (Slack/Discord/etc.)
+          FAIL_ON_ERROR: "0"
+          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
         run: npm run scrape
 
       - name: Upload data as artifact (group=${{ matrix.group }})
@@ -70,7 +69,6 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v4
 
-      # Download ALL group artifacts and MERGE their contents into CWD
       - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
@@ -78,21 +76,25 @@ jobs:
           merge-multiple: true
           path: .
 
-      # (Optional) Show what we got
-      - name: Tree
+      - name: Show what merged
         run: |
           echo "--- merged artifacts ---"
           ls -la
           echo "--- data dir ---"
           ls -la data || true
+          echo "--- docs dir (before copy) ---"
+          ls -la docs || true
 
-      # Copy the data/ folder into docs/ so GitHub Pages can serve a live dashboard
       - name: Copy data to docs for Pages
         run: |
           mkdir -p docs/data
           rsync -a --delete data/ docs/data/
 
-      # Commit both data/ and docs/ changes
+      - name: Show docs/data after copy
+        run: |
+          echo "--- docs/data ---"
+          find docs/data -maxdepth 2 -type f -printf "%P\n" | sort | head -200 || true
+
       - name: Auto-commit updated data + site
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
@@ -100,3 +102,4 @@ jobs:
           file_pattern: |
             data/**
             docs/**
+          add_options: "--force" # in case .gitignore ever tries to exclude docs/data
