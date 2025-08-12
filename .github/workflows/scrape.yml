@@ -6,7 +6,6 @@ on:
     - cron: "15 */6 * * *"
   workflow_dispatch: {}
 
-# allow auto-commit of data/
 permissions:
   contents: write
 
@@ -19,7 +18,7 @@ jobs:
   scrape:
     strategy:
       fail-fast: false
-      max-parallel: 1         # run groups sequentially so auto-commits don't clash
+      # We can run in parallel now because we don't push in matrix jobs.
       matrix:
         group: ["default", "seo", "price", "compliance"]
 
@@ -30,7 +29,7 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v4
 
-      # If a lockfile exists, enable npm cache (works off the lockfile key).
+      # If a lockfile exists, enable npm cache (uses lockfile as cache key).
       - name: Set up Node (with npm cache)
         if: ${{ hashFiles('package-lock.json') != '' || hashFiles('npm-shrinkwrap.json') != '' || hashFiles('yarn.lock') != '' }}
         uses: actions/setup-node@v4
@@ -38,7 +37,7 @@ jobs:
           node-version: "20"
           cache: "npm"
 
-      # If no lockfile, set up Node without cache (avoids setup-node "no lockfile" error).
+      # If no lockfile, set up Node without cache (avoids setup-node error).
       - name: Set up Node (no cache)
         if: ${{ hashFiles('package-lock.json') == '' && hashFiles('npm-shrinkwrap.json') == '' && hashFiles('yarn.lock') == '' }}
         uses: actions/setup-node@v4
@@ -64,23 +63,55 @@ jobs:
           GROUP: ${{ matrix.group }}                # run only checks in this group
         run: npm run scrape
 
-      - name: Upload data as artifact
+      - name: Upload data as artifact (per group)
         uses: actions/upload-artifact@v4
         with:
           name: scrape-results-${{ github.run_number }}-${{ matrix.group }}
           path: data
 
-      - name: Job Summary (Markdown table)
+      - name: Job Summary (Markdown table for this group)
         if: always()
         run: |
-          if [ -f data/report.md ]; then
+          FILE="data/reports/report-${{ matrix.group }}.md"
+          if [ -f "$FILE" ]; then
             echo "### Group: \`${{ matrix.group }}\`" >> "$GITHUB_STEP_SUMMARY"
-            cat data/report.md >> "$GITHUB_STEP_SUMMARY"
+            cat "$FILE" >> "$GITHUB_STEP_SUMMARY"
           fi
 
-      # Commit data/ changes back (keeps a history in repo)
-      - name: Auto-commit updated data
+  # NEW: merge artifacts from all groups and commit once
+  merge_and_commit:
+    needs: scrape
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+
+      - name: Download all group artifacts (v4 pattern + merge-multiple)
+        uses: actions/download-artifact@v4
+        with:
+          pattern: scrape-results-${{ github.run_number }}-*
+          merge-multiple: true
+          path: _artifacts
+
+      - name: Merge data/ from artifacts into repository working tree
+        run: |
+          mkdir -p data
+          rsync -a --delete _artifacts/data/ data/
+
+      - name: Build combined top-level report index
+        run: |
+          mkdir -p data/reports
+          OUT="data/report.html"
+          echo '<!doctype html><meta charset="utf-8"><title>Scrape Reports</title>' > "$OUT"
+          echo '<h1>Scrape Reports</h1><ul>' >> "$OUT"
+          for f in data/reports/report-*.html; do
+            n=$(basename "$f")
+            echo "<li><a href=\"reports/$n\">$n</a></li>" >> "$OUT"
+          done
+          echo '</ul>' >> "$OUT"
+
+      - name: Commit merged data
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore(data): update scrape results [skip ci]"
+          commit_message: "chore(data): merge scrape results [skip ci]"
           file_pattern: data/**
