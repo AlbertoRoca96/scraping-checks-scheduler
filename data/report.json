@@ -1,17 +1,24 @@
 {
-  "generatedAt": "2025-08-12T11:20:53.724Z",
+  "generatedAt": "2025-08-12T11:30:36.777Z",
   "summary": [
     {
       "name": "example_h1",
-      "changed": false,
-      "changedKeys": [],
+      "changed": true,
+      "changedKeys": [
+        "moreInfoLink"
+      ],
       "error": null
     },
     {
-      "name": "python_sitemap",
-      "changed": false,
-      "changedKeys": [],
-      "error": "Error: Sitemap fetch failed after trying https://www.python.org/sitemap.xml: HTTP 404 Not Found"
+      "name": "govuk_sitemap",
+      "changed": true,
+      "changedKeys": [
+        "source",
+        "count",
+        "sample",
+        "all"
+      ],
+      "error": null
     }
   ]
 }
