@@ -12,14 +12,16 @@ import { URL } from "url";
 =================================== */
 const root = process.cwd();
 const REALISTIC_UA =
-  // override with env if you like
   process.env.USER_AGENT ||
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36";
 
 const FAIL_ON_ERROR = process.env.FAIL_ON_ERROR === "1";
-const GROUP = process.env.GROUP || ""; // run only checks with matching `group`, if set
+const GROUP = process.env.GROUP || "";
 const GOTO_WAIT_UNTIL = (process.env.GOTO_WAIT_UNTIL || "domcontentloaded");
 const NAV_TIMEOUT_MS = Number(process.env.NAV_TIMEOUT_MS || 45000);
+
+// Stock providers
+const ALPHAVANTAGE_KEY = process.env.ALPHAVANTAGE_KEY || process.env.ALPHA_VANTAGE_KEY;
 
 /* ================================
    fs helpers
@@ -88,7 +90,7 @@ function runUrl() {
    time-series helper
 =================================== */
 function seriesValueFor(type, data) {
-  if (type === "price" || type === "psa_price_row") {
+  if (type === "price" || type === "psa_price_row" || type === "stock") {
     const v = data?.price;
     return (typeof v === "number" && Number.isFinite(v)) ? v : null;
   }
@@ -105,9 +107,6 @@ function seriesValueFor(type, data) {
 
 /* ================================
    Playwright: robust page factory
-   - real UA via context
-   - block images/media/fonts only
-   - domcontentloaded + extended timeout
 =================================== */
 async function newPage() {
   const browser = await chromium.launch({ headless: true });
@@ -116,14 +115,11 @@ async function newPage() {
     locale: "en-US",
     viewport: { width: 1366, height: 900 }
   });
-
-  // block heavy non-critical resources
   await context.route("**/*", (route) => {
     const rt = route.request().resourceType();
     if (rt === "image" || rt === "media" || rt === "font") return route.abort();
     return route.continue();
   });
-
   const page = await context.newPage();
   page.setDefaultTimeout(NAV_TIMEOUT_MS);
   return { browser, context, page };
@@ -134,14 +130,10 @@ async function newPage() {
 =================================== */
 function toNumberLike(s) {
   if (s == null) return null;
-  const cleaned = String(s)
-    .replace(/[^\d.+-]/g, "")
-    .replace(/,/g, "")
-    .replace(/[+–-]+$/g, ""); // "181,900-" -> "181900"
+  const cleaned = String(s).replace(/[^\d.+-]/g, "").replace(/,/g, "").replace(/[+–-]+$/g, "");
   const n = Number(cleaned);
   return Number.isFinite(n) ? n : null;
 }
-
 async function scrapeFirstTableMatrix(page) {
   await page.waitForSelector("table");
   return await page.evaluate(() => {
@@ -153,70 +145,10 @@ async function scrapeFirstTableMatrix(page) {
   });
 }
 
-/**
- * Robust table extractor for DataTables pages.
- * - Skips FixedHeader clones and hidden/empty tables
- * - Optionally prefers tables containing a row that matches `needle`
- * - Falls back to the table with the most body rows
- */
-async function scrapeBestDataTableMatrix(page, needle) {
-  const haveNeedle = typeof needle === "string" && needle.trim().length > 0;
-
-  // wait until at least one table has multiple body rows (Ajax filled)
-  await page.waitForFunction(() => {
-    const tables = Array.from(document.querySelectorAll("table"));
-    return tables.some(t => {
-      const rows = t.querySelectorAll("tbody tr");
-      // skip header-only clones and hidden tables
-      const style = window.getComputedStyle(t);
-      const visible = style && style.display !== "none" && style.visibility !== "hidden";
-      return visible && rows.length >= 3;
-    });
-  });
-
-  return await page.evaluate((needleIn) => {
-    const norm = (s) => (s || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
-    const toks = (needleIn || "").split(/\s+/).filter(Boolean).map(x => x.toLowerCase());
-
-    const tables = Array.from(document.querySelectorAll("table"));
-    const candidates = tables.map((t) => {
-      const style = window.getComputedStyle(t);
-      const visible = style && style.display !== "none" && style.visibility !== "hidden";
-      const rowsEls = Array.from(t.querySelectorAll("tbody tr"));
-      const rows = rowsEls.map(tr => Array.from(tr.querySelectorAll("th,td")).map(td => (td.innerText || "").trim()));
-      const headers = Array.from(t.querySelectorAll("thead th, thead td")).map(th => (th.innerText || "").trim());
-
-      // plausibility score:
-      let score = 0;
-      if (visible) score += 2;
-      if (rows.length >= 3) score += Math.min(10, rows.length); // prefer real data table
-      const headerText = norm(headers.join(" "));
-      if (/\btotal\b/.test(headerText)) score += 3;
-      if (/\bgrade\b/.test(headerText)) score += 2;
-
-      if (toks.length) {
-        const found = rows.some(r => {
-          const H = norm(r.join(" "));
-          return toks.every(tok => H.includes(tok));
-        });
-        if (found) score += 20;
-      }
-
-      return { t, headers, rows, score };
-    }).filter(c => c.rows.length > 0);
-
-    // choose the best-scoring table
-    candidates.sort((a, b) => b.score - a.score);
-    const best = candidates[0];
-    return best ? { headers: best.headers, rows: best.rows } : { headers: [], rows: [] };
-  }, needle);
-}
-
 /* ================================
    HTML fetch helpers (gzip aware)
 =================================== */
 function looksLikeGzip(buf) { return buf && buf.length > 2 && buf[0] === 0x1f && buf[1] === 0x8b; }
-
 async function fetchBuffer(url) {
   const res = await fetch(url, {
     headers: {
@@ -245,7 +177,6 @@ async function fetchTextMaybeGzip(url) {
 
 /* ================================
    tiny HTML table parser (no deps)
-   - returns {headers, rows} of text
 =================================== */
 function stripTags(s) { return s.replace(/<[^>]*>/g, " "); }
 function cleanCell(s) { return stripTags(s).replace(/\s+/g, " ").trim(); }
@@ -259,15 +190,11 @@ function parseFirstTable(html) {
   if (thead) {
     headers = [...thead[0].matchAll(/<t[hd][^>]*>([\s\S]*?)<\/t[hd]>/gi)].map((x) => cleanCell(x[1]));
   } else {
-    // fallback: first <tr> as headers
     const firstTr = table.match(/<tr[\s\S]*?<\/tr>/i);
     if (firstTr) headers = [...firstTr[0].matchAll(/<t[hd][^>]*>([\s\S]*?)<\/t[hd]>/gi)].map((x) => cleanCell(x[1]));
   }
 
-  // grab body rows
-  const bodyHtml = thead
-    ? table.replace(thead[0], "")
-    : table;
+  const bodyHtml = thead ? table.replace(thead[0], "") : table;
   const trs = [...bodyHtml.matchAll(/<tr[\s\S]*?<\/tr>/gi)].map(x => x[0]);
 
   const rows = trs.map(tr =>
@@ -310,8 +237,7 @@ async function runPageCheck(check) {
     }
     return data;
   } finally {
-    await context.close();
-    await browser.close();
+    await context.close(); await browser.close();
   }
 }
 
@@ -319,10 +245,7 @@ async function runPageCheck(check) {
    price + availability (Playwright)
 =================================== */
 function parseCurrency(txt = "") {
-  const cleaned = String(txt)
-    .replace(/[^\d.,+–-]/g, "")
-    .replace(/,/g, "")
-    .replace(/[+–-]+$/g, ""); // strip trailing range markers
+  const cleaned = String(txt).replace(/[^\d.,+–-]/g, "").replace(/,/g, "").replace(/[+–-]+$/g, "");
   const n = Number(cleaned);
   return Number.isFinite(n) ? n : null;
 }
@@ -334,8 +257,7 @@ async function runPriceCheck(check) {
     const raw = (await page.textContent(check.selector))?.trim() ?? "";
     return { price: parseCurrency(raw), raw };
   } finally {
-    await context.close();
-    await browser.close();
+    await context.close(); await browser.close();
   }
 }
 async function runAvailabilityCheck(check) {
@@ -347,8 +269,7 @@ async function runAvailabilityCheck(check) {
     const re = check.availableRegex ? new RegExp(check.availableRegex, "i") : /in stock|available/i;
     return { available: re.test(raw), raw };
   } finally {
-    await context.close();
-    await browser.close();
+    await context.close(); await browser.close();
   }
 }
 
@@ -432,13 +353,7 @@ async function runSitemapDiffCheck(check, prevRecord) {
   const current = await runSitemapCheck(check);
   const prevAll = prevRecord?.data?.all || [];
   const { added, removed } = diffSets(prevAll, current.all);
-  return {
-    source: current.source,
-    nowCount: current.all.length,
-    prevCount: prevAll.length,
-    added,
-    removed
-  };
+  return { source: current.source, nowCount: current.all.length, prevCount: prevAll.length, added, removed };
 }
 
 /* ================================
@@ -470,18 +385,15 @@ async function runContentWatch(check) {
     if (!check.hashOnly) payload.sample = normalized.slice(0, 300);
     return payload;
   } finally {
-    await context.close();
-    await browser.close();
+    await context.close(); await browser.close();
   }
 }
 
 /* ================================
-   PSA custom checks (with HTML fallback)
+   PSA custom checks (HTML fallback)
 =================================== */
-
-// Price page: find the row that matches rowMatch; take value in gradeCol
+// (unchanged helpers for PSA pages)
 async function runPsaPriceRow(check) {
-  // 1) Try simple HTML fetch (price guide is server-rendered)
   try {
     const html = await fetchTextMaybeGzip(check.url);
     const parsed = parseFirstTable(html);
@@ -491,43 +403,29 @@ async function runPsaPriceRow(check) {
         h.replace(/\s+/g, " ").toUpperCase().includes((check.gradeCol || "").toUpperCase())
       );
       if (colIdx < 0) throw new Error(`grade column not found: ${check.gradeCol}`);
-
-      // row match: tolerant of punctuation/whitespace
       const row = rows.find(r => r.some(c => looseContains(c, check.rowMatch)));
       if (!row) throw new Error(`row not found: ${check.rowMatch}`);
-
       const raw = row[colIdx] || "";
       const price = toNumberLike(raw);
       return { row: row[0], grade: check.gradeCol, price, raw, mode: "html" };
     }
-  } catch (e) {
-    // fall through to Playwright
-  }
-
-  // 2) Fallback to Playwright if fetch path didn't work
+  } catch {}
   const { browser, context, page } = await newPage();
   try {
     await gotoSafely(page, check.url);
-    const { headers, rows } = await scrapeBestDataTableMatrix(page, check.rowMatch);
-
+    const { headers, rows } = await scrapeFirstTableMatrix(page);
     const colIdx = headers.findIndex(h => h.replace(/\s+/g, " ").toUpperCase().includes((check.gradeCol || "").toUpperCase()));
     if (colIdx < 0) throw new Error(`grade column not found: ${check.gradeCol}`);
-
     const row = rows.find(r => r.some(c => looseContains(c, check.rowMatch)));
     if (!row) throw new Error(`row not found: ${check.rowMatch}`);
-
     const raw = row[colIdx] || "";
     const price = toNumberLike(raw);
     return { row: row[0], grade: check.gradeCol, price, raw, mode: "playwright" };
   } finally {
-    await context.close();
-    await browser.close();
+    await context.close(); await browser.close();
   }
 }
-
-// Pop page: find the row that matches rowMatch; take numeric TOTAL (or given column)
 async function runPsaPopRow(check) {
-  // Try HTML fetch first (works on most runs; much lighter than headless)
   try {
     const html = await fetchTextMaybeGzip(check.url);
     const parsed = parseFirstTable(html);
@@ -536,41 +434,103 @@ async function runPsaPopRow(check) {
       const colName = (check.column || "TOTAL").toUpperCase();
       const colIdx = headers.findIndex(h => (h || "").trim().toUpperCase() === colName);
       if (colIdx < 0) throw new Error(`column not found: ${check.column || "TOTAL"}`);
-
-      // PSA puts "Charizard-Holo" and "1st Edition" as separate lines/cells in some layouts.
       const row = rows.find(r => looseContains(r.join(" "), check.rowMatch));
       if (!row) throw new Error(`row not found: ${check.rowMatch}`);
-
       const raw = row[colIdx] || "";
       const population = toNumberLike(raw);
       return { row: row[0], column: check.column || "TOTAL", population, raw, mode: "html" };
     }
-  } catch (e) {
-    // continue to Playwright
-  }
-
-  // Fallback: Playwright scrape (robust to FixedHeader + Ajax)
+  } catch {}
   const { browser, context, page } = await newPage();
   try {
     await gotoSafely(page, check.url);
-    const { headers, rows } = await scrapeBestDataTableMatrix(page, check.rowMatch);
-
+    const { headers, rows } = await scrapeFirstTableMatrix(page);
     const colName = (check.column || "TOTAL").toUpperCase();
     const colIdx = headers.findIndex(h => (h || "").trim().toUpperCase() === colName);
     if (colIdx < 0) throw new Error(`column not found: ${check.column || "TOTAL"}`);
-
-    const row = rows.find(r =>
-      looseContains((r[1] || r[0] || ""), check.rowMatch) || looseContains(r.join(" "), check.rowMatch)
-    );
+    const row = rows.find(r => looseContains((r[1] || r[0] || ""), check.rowMatch) || looseContains(r.join(" "), check.rowMatch));
     if (!row) throw new Error(`row not found: ${check.rowMatch}`);
-
     const raw = row[colIdx] || "";
     const population = toNumberLike(raw);
     return { row: row[0], column: check.column || "TOTAL", population, raw, mode: "playwright" };
   } finally {
-    await context.close();
-    await browser.close();
+    await context.close(); await browser.close();
   }
+}
+
+/* ================================
+   STOCK quotes (Alpha Vantage with optional Stooq fallback)
+=================================== */
+async function runStockCheck(check) {
+  const provider = (check.provider || (ALPHAVANTAGE_KEY ? "alphavantage" : "stooq")).toLowerCase();
+
+  if (provider === "alphavantage") {
+    if (!ALPHAVANTAGE_KEY) throw new Error("ALPHAVANTAGE_KEY not set");
+    const func = check.function || "TIME_SERIES_INTRADAY";
+    const interval = check.interval || "5min";
+
+    const url = func === "TIME_SERIES_INTRADAY"
+      ? `https://www.alphavantage.co/query?function=${func}&symbol=${encodeURIComponent(check.symbol)}&interval=${interval}&outputsize=compact&apikey=${ALPHAVANTAGE_KEY}`
+      : `https://www.alphavantage.co/query?function=${func}&symbol=${encodeURIComponent(check.symbol)}&outputsize=compact&apikey=${ALPHAVANTAGE_KEY}`;
+
+    const json = await withRetry("alphavantage", async () => {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return res.json();
+    });
+
+    const series =
+      json["Time Series (5min)"] ||
+      json["Time Series (15min)"] ||
+      json["Time Series (30min)"] ||
+      json["Time Series (60min)"] ||
+      json["Time Series (Daily)"] ||
+      json["Time Series (Daily)"]; // covers daily funcs
+
+    if (!series || typeof series !== "object") {
+      const note = json?.Note || json?.Information || "unexpected response";
+      throw new Error(`Alpha Vantage: ${note}`);
+    }
+
+    const latestTs = Object.keys(series).sort().pop();
+    const row = series[latestTs] || {};
+    const toNum = (k) => toNumberLike(row[k]) ?? toNumberLike(row[k?.toLowerCase?.()]);
+    const price = toNum("4. close");
+
+    return {
+      provider: "alphavantage",
+      symbol: check.symbol,
+      function: func,
+      interval: func.includes("INTRADAY") ? interval : "1d",
+      latest: latestTs,
+      price,
+      open: toNum("1. open"),
+      high: toNum("2. high"),
+      low:  toNum("3. low"),
+      volume: toNum("5. volume")
+    };
+  }
+
+  // Stooq last-quote CSV: symbol, date, time, open, high, low, close, volume
+  // Example pattern: https://stooq.com/q/l/?s=aapl.us&f=sd2t2ohlcv&h&e=csv
+  const stq = check.stooqSymbol || (check.symbol || "").toLowerCase();
+  const url = `https://stooq.com/q/l/?s=${encodeURIComponent(stq)}&f=sd2t2ohlcv&h&e=csv`;
+  const csv = await fetchTextMaybeGzip(url);
+  const line = (csv.trim().split("\n").slice(-1)[0] || "").trim();
+  const parts = line.split(",");
+  if (parts.length < 8) throw new Error(`stooq parse failed (${line})`);
+  const [symbol, date, time, open, high, low, close, volume] = parts;
+
+  return {
+    provider: "stooq",
+    symbol,
+    latest: `${date} ${time}`,
+    price: toNumberLike(close),
+    open: toNumberLike(open),
+    high: toNumberLike(high),
+    low: toNumberLike(low),
+    volume: toNumberLike(volume)
+  };
 }
 
 /* ================================
@@ -635,6 +595,7 @@ async function run() {
       else if (check.type === "content_watch") data = await runContentWatch(check);
       else if (check.type === "psa_price_row") data = await runPsaPriceRow(check);
       else if (check.type === "psa_pop_row") data = await runPsaPopRow(check);
+      else if (check.type === "stock") data = await runStockCheck(check);
       else throw new Error(`Unknown check type: ${check.type}`);
 
       record = { name: check.name, type: check.type, url: check.url, checkedAt: startedAt, data };
@@ -645,7 +606,7 @@ async function run() {
 
       await writeJson(latestPath, record);
 
-      // append time-series (JSONL) for select types
+      // append time-series (JSONL)
       try {
         const tsVal = seriesValueFor(check.type, data);
         if (tsVal !== null) {
@@ -653,7 +614,7 @@ async function run() {
           const tsPath = path.join(resultsDir, "timeseries", check.name, "series.jsonl");
           await appendLine(tsPath, line);
         }
-      } catch { /* non-fatal */ }
+      } catch {}
 
       if (changed) {
         const stamp = startedAt.replace(/[:]/g, "-");
@@ -673,7 +634,7 @@ async function run() {
     }
   }
 
-  // prune stale latest files that no longer correspond to current checks
+  // prune stale latest files
   try {
     const files = await fsp.readdir(latestDir);
     for (const f of files) {
