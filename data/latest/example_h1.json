@@ -2,9 +2,6 @@
   "name": "example_h1",
   "type": "page",
   "url": "https://example.com/",
-  "checkedAt": "2025-08-12T11:30:35.880Z",
-  "data": {
-    "heading": "Example Domain",
-    "moreInfoLink": "https://www.iana.org/domains/example"
-  }
+  "checkedAt": "2025-08-12T12:14:43.154Z",
+  "error": "Error: page.goto failed after 3 attempts: TimeoutError: page.goto: Timeout 20000ms exceeded.\nCall log:\n  - navigating to \"https://example.com/\", waiting until \"domcontentloaded\"\n"
 }
