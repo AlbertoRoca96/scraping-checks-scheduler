@@ -2,45 +2,59 @@ name: Scraping & Checks Scheduler
 
 on:
   schedule:
-    # Every 6 hours (UTC). Add more lines for other times.
-    - cron: "0 */6 * * *"
-  workflow_dispatch: {} # allows manual runs from the Actions tab
+    # Every 6 hours at :15 (UTC) to avoid top-of-hour queueing.
+    - cron: "15 */6 * * *"
+  workflow_dispatch: {}
 
-# So the job can push data updates back to the repo (optional step below)
+# allow auto-commit of data/
 permissions:
   contents: write
 
+# prevent overlapping runs on the same ref
+concurrency:
+  group: scrape-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   scrape:
+    # NOTE: you can expand this to ["a","b","c","default"] later.
+    strategy:
+      fail-fast: false
+      matrix:
+        group: ["default"]
+
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
 
-      - name: Set up Node
+      - name: Set up Node (with npm cache)
         uses: actions/setup-node@v4
         with:
           node-version: "20"
+          cache: "npm"
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci || npm install
 
       - name: Install Playwright (browsers + Linux deps)
         run: npx playwright install --with-deps chromium
 
       - name: Run scrapers
         env:
-          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }} # optional
+          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}   # optional
+          FAIL_ON_ERROR: "0"                        # set "1" to fail job on any check error
+          GROUP: ${{ matrix.group }}                # run only checks in this group
         run: npm run scrape
 
       - name: Upload data as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: scrape-results-${{ github.run_number }}
+          name: scrape-results-${{ github.run_number }}-${{ matrix.group }}
           path: data
 
-      # OPTIONAL: commit data/ changes back to the repo (keeps history)
       - name: Auto-commit updated data
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
