@@ -9,7 +9,7 @@ import { URL } from "url";
 
 const root = process.cwd();
 const USER_AGENT =
-  "Mozilla/5.0 (compatible; ScrapingChecksScheduler/0.3; +https://github.com/)";
+  "Mozilla/5.0 (compatible; ScrapingChecksScheduler/0.4; +https://github.com/)";
 const FAIL_ON_ERROR = process.env.FAIL_ON_ERROR === "1";
 const GROUP = process.env.GROUP || ""; // run only checks with matching `group`, if set
 
@@ -18,7 +18,20 @@ async function ensureDir(p) { await fsp.mkdir(p, { recursive: true }); }
 async function readJson(p) { try { return JSON.parse(await fsp.readFile(p, "utf8")); } catch { return null; } }
 async function writeJson(p, obj) { await ensureDir(path.dirname(p)); await fsp.writeFile(p, JSON.stringify(obj, null, 2) + "\n", "utf8"); }
 
-// ---------- diff + normalization ----------
+// ---------- small utils ----------
+const sha256 = (s) => crypto.createHash("sha256").update(String(s)).digest("hex");
+const delay = (ms) => new Promise((r) => setTimeout(r, ms));
+async function withRetry(label, fn, { tries = 3, baseMs = 800 } = {}) {
+  let lastErr;
+  for (let i = 1; i <= tries; i++) {
+    try { return await fn(); } catch (e) {
+      lastErr = e;
+      if (i < tries) await delay(baseMs * i);
+    }
+  }
+  throw new Error(`${label} failed after ${tries} attempts: ${String(lastErr)}`);
+}
+
 function normalizeValue(v) {
   if (typeof v === "string") {
     const trimmed = v.replace(/\s+/g, " ").trim();
@@ -37,6 +50,8 @@ function normalizeValue(v) {
   }
   return v;
 }
+
+// generic diff for structured objects
 function simpleDiff(a, b, ignore = []) {
   const A = normalizeValue(a) ?? {};
   const B = normalizeValue(b) ?? {};
@@ -49,31 +64,33 @@ function simpleDiff(a, b, ignore = []) {
   return changed;
 }
 
-// ---------- utility ----------
-const delay = (ms) => new Promise((r) => setTimeout(r, ms));
-async function withRetry(label, fn, { tries = 3, baseMs = 800 } = {}) {
-  let lastErr;
-  for (let i = 1; i <= tries; i++) {
-    try { return await fn(); } catch (e) {
-      lastErr = e;
-      if (i < tries) await delay(baseMs * i);
-    }
-  }
-  throw new Error(`${label} failed after ${tries} attempts: ${String(lastErr)}`);
+function runUrl() {
+  const s = process.env.GITHUB_SERVER_URL;
+  const r = process.env.GITHUB_REPOSITORY;
+  const id = process.env.GITHUB_RUN_ID;
+  if (s && r && id) return `${s}/${r}/actions/runs/${id}`;
+  return null;
 }
 
-// ---------- page checks ----------
-async function runPageCheck(check) {
+// ---------- Playwright page loader ----------
+async function loadPage(url, fn) {
   const browser = await chromium.launch({ headless: true });
   try {
     const page = await browser.newPage();
     await page.setExtraHTTPHeaders({ "User-Agent": USER_AGENT });
     page.setDefaultTimeout(20000);
+    await withRetry("page.goto", () => page.goto(url, { waitUntil: "domcontentloaded" }));
+    return await fn(page);
+  } finally {
+    await browser.close();
+  }
+}
 
-    await withRetry("page.goto", () =>
-      page.goto(check.url, { waitUntil: "domcontentloaded" })
-    );
+// ---------- Check Runners ----------
 
+// type: "page" (kept for simple demo)
+async function runPageCheck(check) {
+  return loadPage(check.url, async (page) => {
     const data = {};
     for (const [key, spec] of Object.entries(check.fields)) {
       const { selector, attr = "text" } = spec;
@@ -83,45 +100,54 @@ async function runPageCheck(check) {
         : await page.getAttribute(selector, attr);
     }
     return data;
-  } finally {
-    await browser.close();
-  }
+  });
 }
 
-// ---------- sitemap checks ----------
-function looksLikeGzip(buf) { return buf && buf.length > 2 && buf[0] === 0x1f && buf[1] === 0x8b; }
+// type: "price"
+async function runPriceCheck(check) {
+  return loadPage(check.url, async (page) => {
+    await page.waitForSelector(check.priceSelector);
+    const raw = (await page.textContent(check.priceSelector))?.trim() ?? "";
+    const num = Number(raw.replace(/[^0-9.\-]/g, ""));
+    return { price: Number.isFinite(num) ? num : null, raw };
+  });
+}
 
+// type: "availability"
+async function runAvailabilityCheck(check) {
+  return loadPage(check.url, async (page) => {
+    await page.waitForSelector(check.selector);
+    const raw = (await page.textContent(check.selector))?.trim() ?? "";
+    const available = /in\s*stock/i.test(raw);
+    return { available, raw };
+  });
+}
+
+// Sitemap helpers
+function looksLikeGzip(buf) { return buf && buf.length > 2 && buf[0] === 0x1f && buf[1] === 0x8b; }
 async function fetchBuffer(url) {
   const res = await fetch(url, { headers: { "User-Agent": USER_AGENT, "Accept": "*/*" } });
   const buf = Buffer.from(await res.arrayBuffer());
   return { res, buf };
 }
-
-// Safe gunzip: if headers say gzip but body isn't, fall back to plain text.
 async function fetchTextMaybeGzip(url) {
   const { res, buf } = await withRetry(`fetch ${url}`, () => fetchBuffer(url));
   if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText || ""}`.trim());
-
   const ct = (res.headers.get("content-type") || "").toLowerCase();
   const ce = (res.headers.get("content-encoding") || "").toLowerCase();
   const gzByType = ct.includes("application/gzip") || ct.includes("x-gzip");
   const gzByEnc = ce.includes("gzip");
   const gzByExt = url.toLowerCase().endsWith(".gz");
-
   if (gzByType || gzByEnc || gzByExt || looksLikeGzip(buf)) {
-    try { return gunzipSync(buf).toString("utf8"); }
-    catch { /* fall back */ }
+    try { return gunzipSync(buf).toString("utf8"); } catch { /* fall back */ }
   }
   return buf.toString("utf8");
 }
-
 function extractLocsFromXml(xml) {
   const isIndex = /<\s*sitemapindex[\s>]/i.test(xml);
-  const rawLocs = Array.from(xml.matchAll(/<\s*loc\s*>\s*([^<]+)\s*<\s*\/\s*loc\s*>/gi))
-    .map(m => m[1].trim());
+  const rawLocs = Array.from(xml.matchAll(/<\s*loc\s*>\s*([^<]+)\s*<\s*\/\s*loc\s*>/gi)).map(m => m[1].trim());
   return { isIndex, locs: rawLocs };
 }
-
 async function discoverSitemapsFromRobots(startUrl) {
   const u = new URL(startUrl);
   const robotsUrl = `${u.protocol}//${u.host}/robots.txt`;
@@ -130,24 +156,20 @@ async function discoverSitemapsFromRobots(startUrl) {
     return Array.from(text.matchAll(/(?<=^|\n)\s*Sitemap:\s*(\S+)\s*/gi)).map(m => m[1]);
   } catch { return []; }
 }
-
-async function runSitemapCheck(check) {
+async function resolveSitemap(url, check) {
   const tried = new Set();
-  const queue = [check.url];
+  const queue = [url];
   let firstError = null;
   let triedRobots = false;
 
   while (queue.length) {
-    const url = queue.shift();
-    if (tried.has(url)) continue;
-    tried.add(url);
-
+    const cur = queue.shift();
+    if (tried.has(cur)) continue;
+    tried.add(cur);
     try {
-      const xml = await fetchTextMaybeGzip(url);
+      const xml = await fetchTextMaybeGzip(cur);
       const { isIndex, locs } = extractLocsFromXml(xml);
-
-      // Resolve relative children against the current URL
-      const resolve = (child) => new URL(child, url).href;
+      const resolve = (child) => new URL(child, cur).href;
 
       if (isIndex) {
         const childSitemaps = locs.slice(0, check.indexLimit || 5).map(resolve);
@@ -157,64 +179,115 @@ async function runSitemapCheck(check) {
             const childXml = await fetchTextMaybeGzip(sm);
             const child = extractLocsFromXml(childXml);
             if (!child.isIndex) all.push(...child.locs.map(u => resolve(u)));
-          } catch { /* ignore bad child and continue */ }
+          } catch { /* skip child */ }
           if (check.limit && all.length >= check.limit) break;
         }
         const limited = check.limit ? all.slice(0, check.limit) : all;
-        return { source: url, count: limited.length, sample: limited.slice(0, 10), all: limited };
+        return { source: cur, urls: limited };
       }
 
-      // urlset
       if (locs.length > 0) {
         const absolute = locs.map(resolve);
         const limited = check.limit ? absolute.slice(0, check.limit) : absolute;
-        return { source: url, count: limited.length, sample: limited.slice(0, 10), all: limited };
+        return { source: cur, urls: limited };
       }
 
-      // No locs found: try robots-discovered sitemaps once
       if (!triedRobots) {
         triedRobots = true;
-        const discovered = await discoverSitemapsFromRobots(check.url);
+        const discovered = await discoverSitemapsFromRobots(url);
         for (const d of discovered) queue.push(d);
       }
     } catch (e) {
       if (!firstError) firstError = e;
-      // On fetch/parse failure: try robots-discovered sitemaps once
       if (!triedRobots) {
         triedRobots = true;
-        const discovered = await discoverSitemapsFromRobots(check.url);
+        const discovered = await discoverSitemapsFromRobots(url);
         for (const d of discovered) queue.push(d);
       }
     }
   }
-
   const err = firstError ? firstError.message : "Unknown sitemap error";
   throw new Error(`Sitemap fetch failed after trying ${Array.from(tried).join(", ")}: ${err}`);
 }
 
-// ---------- webhook ----------
-function runUrl() {
-  const s = process.env.GITHUB_SERVER_URL;
-  const r = process.env.GITHUB_REPOSITORY;
-  const id = process.env.GITHUB_RUN_ID;
-  if (s && r && id) return `${s}/${r}/actions/runs/${id}`;
-  return null;
+// type: "sitemap" or "sitemap_diff"
+async function runSitemap(check) {
+  const out = await resolveSitemap(check.url, check);
+  return { source: out.source, count: out.urls.length, sample: out.urls.slice(0, 10), all: out.urls };
 }
-async function sendWebhook({ check, changedKeys, record, previous }) {
+
+// type: "content_watch"
+async function runContentWatch(check) {
+  return loadPage(check.url, async (page) => {
+    let text;
+    if (check.selector) {
+      await page.waitForSelector(check.selector);
+      text = (await page.textContent(check.selector)) ?? "";
+    } else {
+      text = await page.content(); // full HTML
+    }
+    // Apply ignore patterns (e.g., "Last updated: ..." timestamps)
+    const ignore = Array.isArray(check.ignore) ? check.ignore : [];
+    const sanitized = ignore.reduce((acc, pattern) => acc.replace(new RegExp(pattern, "gi"), ""), text);
+    return {
+      selector: check.selector || "FULL_PAGE",
+      textSample: sanitized.trim().slice(0, 400),
+      hash: sha256(sanitized)
+    };
+  });
+}
+
+// ---------- Change logic per type ----------
+function priceChange(prev, cur, thresholdPct = 1) {
+  const a = prev?.price, b = cur?.price;
+  if (typeof a === "number" && typeof b === "number") {
+    const pct = ((b - a) / (a === 0 ? 1 : a)) * 100;
+    const changed = Math.abs(pct) >= thresholdPct;
+    return { changed, changedKeys: changed ? ["price", "pct"] : [], pct };
+  }
+  // first run or missing data
+  return { changed: true, changedKeys: ["price"], pct: null };
+}
+
+function availabilityChange(prev, cur) {
+  const changed = prev?.available !== cur?.available;
+  return { changed, changedKeys: changed ? ["available"] : [] };
+}
+
+function sitemapChange(prev, cur) {
+  const prevSet = new Set(prev?.all || []);
+  const curSet = new Set(cur?.all || []);
+  const added = [...curSet].filter(u => !prevSet.has(u));
+  const removed = [...prevSet].filter(u => !curSet.has(u));
+  const changed = added.length > 0 || removed.length > 0;
+  const data = { ...cur, added, removed, addedCount: added.length, removedCount: removed.length };
+  return { changed, changedKeys: changed ? ["added", "removed"] : [], data };
+}
+
+function contentChange(prev, cur) {
+  const changed = prev?.hash !== cur?.hash;
+  return { changed, changedKeys: changed ? ["hash"] : [] };
+}
+
+// ---------- webhook ----------
+async function sendWebhook({ check, changedKeys, record, previous, extraText }) {
   const url = process.env.WEBHOOK_URL;
   if (!url) return { sent: false, reason: "no WEBHOOK_URL set" };
   const link = runUrl();
-  const text = changedKeys.length
-    ? `✅ ${check} changed (${changedKeys.join(", ")})\n${link ?? ""}`.trim()
-    : `ℹ️ ${check} ran with no changes.\n${link ?? ""}`.trim();
+  const lines = [
+    changedKeys.length ? `✅ **${check}** changed (${changedKeys.join(", ")})` : `ℹ️ **${check}** ran with no changes`,
+    extraText ? extraText : null,
+    link ? `Run: ${link}` : null
+  ].filter(Boolean);
+  const text = lines.join("\n");
 
   try {
     const res = await fetch(url, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
-        text,               // Slack compatible
-        content: text,      // Discord compatible
+        text,               // Slack-compatible
+        content: text,      // Discord-compatible
         event: "scrape.changed",
         check,
         changedKeys,
@@ -228,6 +301,38 @@ async function sendWebhook({ check, changedKeys, record, previous }) {
   }
 }
 
+// ---------- HTML report ----------
+function renderHtml(summary, group) {
+  const rows = summary.map(s => `
+    <tr>
+      <td><code>${s.name}</code></td>
+      <td style="text-align:center;">${s.changed ? "✅" : "—"}</td>
+      <td>${(s.changedKeys || []).join(", ")}</td>
+      <td>${s.error ? `<code>${s.error}</code>` : ""}</td>
+    </tr>
+  `).join("");
+
+  return `<!doctype html>
+<html lang="en"><meta charset="utf-8">
+<title>Scrape Report</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  body { font: 14px/1.4 system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 24px; color:#111;}
+  table { border-collapse: collapse; width: 100%; }
+  th, td { border:1px solid #ddd; padding:8px; }
+  th { background:#f7f7f7; text-align:left; }
+  code { background:#f0f0f0; padding:1px 4px; border-radius:4px; }
+</style>
+<h1>Scrape Report</h1>
+<p>Generated: ${new Date().toISOString()} | Group: <code>${group || "all"}</code>${runUrl() ? ` | <a href="${runUrl()}">Run</a>` : ""}</p>
+<table>
+  <thead><tr><th>Check</th><th>Changed</th><th>Keys</th><th>Error</th></tr></thead>
+  <tbody>${rows}</tbody>
+</table>
+<p>Browse raw JSON in <code>data/latest/</code> for details.</p>
+</html>`;
+}
+
 // ---------- main ----------
 async function run() {
   const resultsDir = path.join(root, "data");
@@ -235,7 +340,6 @@ async function run() {
   const historyDir = path.join(resultsDir, "history");
   await Promise.all([ensureDir(latestDir), ensureDir(historyDir)]);
 
-  // optional grouping
   const todo = checks.filter(c => !GROUP || c.group === GROUP);
   const checkNames = new Set(todo.map(c => c.name));
 
@@ -247,26 +351,55 @@ async function run() {
     let record; let changed = false; let changedKeys = [];
     try {
       let data;
-      if (check.type === "page") data = await runPageCheck(check);
-      else if (check.type === "sitemap") data = await runSitemapCheck(check);
-      else throw new Error(`Unknown check type: ${check.type}`);
+      let extraText = null;
 
+      if (check.type === "page") {
+        data = await runPageCheck(check);
+      } else if (check.type === "price") {
+        data = await runPriceCheck(check);
+      } else if (check.type === "availability") {
+        data = await runAvailabilityCheck(check);
+      } else if (check.type === "content_watch") {
+        data = await runContentWatch(check);
+      } else if (check.type === "sitemap" || check.type === "sitemap_diff") {
+        data = await runSitemap(check);
+      } else {
+        throw new Error(`Unknown check type: ${check.type}`);
+      }
+
+      // Build record and load previous
       record = { name: check.name, type: check.type, url: check.url, checkedAt: startedAt, data };
-
       const latestPath = path.join(latestDir, `${check.name}.json`);
       const prev = await readJson(latestPath);
 
-      const ignore = Array.isArray(check.ignoreKeys) ? check.ignoreKeys : [];
-      changedKeys = simpleDiff(prev?.data, data, ignore);
-      changed = changedKeys.length > 0;
+      // Determine change based on type
+      if (check.type === "price") {
+        const { changed: ch, changedKeys: ck, pct } =
+          priceChange(prev?.data, data, check.thresholdPct ?? 1);
+        changed = ch; changedKeys = ck;
+        if (pct !== null) extraText = `Price move: ${pct.toFixed(2)}%`;
+      } else if (check.type === "availability") {
+        const { changed: ch, changedKeys: ck } = availabilityChange(prev?.data, data);
+        changed = ch; changedKeys = ck;
+      } else if (check.type === "content_watch") {
+        const { changed: ch, changedKeys: ck } = contentChange(prev?.data, data);
+        changed = ch; changedKeys = ck;
+      } else if (check.type === "sitemap" || check.type === "sitemap_diff") {
+        const { changed: ch, changedKeys: ck, data: patched } = sitemapChange(prev?.data, data);
+        changed = ch; changedKeys = ck; record.data = patched;
+      } else {
+        const ignore = Array.isArray(check.ignoreKeys) ? check.ignoreKeys : [];
+        changedKeys = simpleDiff(prev?.data, data, ignore);
+        changed = changedKeys.length > 0;
+      }
 
-      // Always write latest; if changed, also write a history copy
+      // Always write "latest"; if changed, also save history, and send webhook
       await writeJson(latestPath, record);
       if (changed) {
         const stamp = startedAt.replace(/[:]/g, "-");
         const histPath = path.join(historyDir, check.name, `${stamp}.json`);
         await writeJson(histPath, record);
-        await sendWebhook({ check: check.name, changedKeys, record, previous: prev });
+        await sendWebhook({ check: check.name, changedKeys, record, previous: prev, extraText });
       }
 
       summary.push({ name: check.name, changed, changedKeys, error: null });
@@ -295,7 +428,7 @@ async function run() {
     console.warn(`[prune] warning: ${String(e)}`);
   }
 
-  // write machine + human-friendly reports
+  // Write reports (JSON, MD, HTML)
   await writeJson(path.join(resultsDir, "report.json"), {
     generatedAt: new Date().toISOString(),
     group: GROUP || "all",
@@ -303,16 +436,13 @@ async function run() {
   });
 
   const mdLines = [
-    `# Scrape Report (${new Date().toISOString()})`,
-    ``,
-    `Group: \`${GROUP || "all"}\`  |  Run: ${runUrl() ?? "(local)"}`,
-    ``,
     `| Check | Changed | Keys | Error |`,
     `|---|:---:|:--|:--|`,
     ...summary.map(s => `| \`${s.name}\` | ${s.changed ? "✅" : "—"} | ${s.changedKeys.join(", ")} | ${s.error ? "`" + s.error + "`" : ""} |`)
   ];
   await ensureDir(resultsDir);
   await fsp.writeFile(path.join(resultsDir, "report.md"), mdLines.join("\n") + "\n", "utf8");
+  await fsp.writeFile(path.join(resultsDir, "report.html"), renderHtml(summary, GROUP), "utf8");
 
   console.log("\nDone. Summary:\n", JSON.stringify(summary, null, 2));
   if (hadError && FAIL_ON_ERROR) process.exit(1);
