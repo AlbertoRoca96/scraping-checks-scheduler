@@ -1,5 +1,5 @@
 // src/checks.js
-// Groups: default, seo, price, compliance
+// Groups: default, seo, price, compliance, stocks
 
 export default [
   // --- sanity
@@ -52,45 +52,33 @@ export default [
     availableRegex: "in stock"
   },
 
-  // --- NEW: Nintendo stock (ADR: NTDOY) via Alpha Vantage ---
-  // Requires ALPHAVANTAGE_KEY secret. Uses "GLOBAL_QUOTE" to capture the latest price.
-  {
-    name: "stock_ntdoy_global_quote",
-    type: "stock",
-    group: "price",
-    source: "alphavantage",
-    symbol: "NTDOY",
-    ignoreKeys: ["raw"] // ignore verbose JSON in change detection
-  },
-
   // ======================
   // PSA (Charizard, 1999 Pokémon Game)
   // ======================
-
-  // PRICE: take “GEM-MT 10” column from the row that contains Charizard Holo 1st Edition.
-  // (loose token match tolerates punctuation/line-break differences)
   {
+    // PRICE: take “GEM-MT 10” from the Charizard 1st Ed row
     name: "psa_charizard_price_gem10",
     type: "psa_price_row",
     group: "price",
     url: "https://www.psacard.com/priceguide/non-sports-tcg-card-values/1999-poke-mon-game/2432",
-    rowMatch: "Charizard Holo 1st Edition",
+    rowMatch: "Charizard Holo 1st Edition", // tolerant token match
     gradeCol: "GEM-MT 10",
-    ignoreKeys: ["raw", "mode"] // avoid change noise from formatting or scraper path
+    ignoreKeys: ["raw", "mode"]
   },
-
-  // POPULATION: read the “TOTAL” column from the same Charizard row on the Pop Report set page.
   {
+    // POP: read “TOTAL” from the same row on the Pop Report set page
     name: "psa_charizard_pop_total",
     type: "psa_pop_row",
     group: "compliance",
     url: "https://www.psacard.com/pop/tcg-cards/1999/pokemon-game/57801",
-    rowMatch: "Charizard Holo 1st Edition", // tolerant token match
+    rowMatch: "Charizard Holo 1st Edition",
     column: "TOTAL",
-    ignoreKeys: ["raw", "mode"] // formatting/path changes shouldn't flip 'changed'
+    ignoreKeys: ["raw", "mode"]
   },
 
-  // SEC signal (unchanged)
+  // ======================
+  // SEC signal
+  // ======================
   {
     name: "sec_aapl_8k_list_hash",
     type: "content_watch",
@@ -99,5 +87,17 @@ export default [
     selector: "body",
     hashOnly: true,
     stripPatterns: ["\\b\\d{1,2}:\\d{2}:\\d{2}\\b","\\bPage\\s*\\d+\\b"]
+  },
+
+  // ======================
+  // Stocks (Alpha Vantage GLOBAL_QUOTE)
+  // ======================
+  {
+    name: "stock_ntdoy_global_quote",
+    type: "stock_quote",
+    group: "stocks",
+    url: "https://www.alphavantage.co/documentation/#latestprice",
+    symbol: "NTDOY",          // Nintendo ADR in the U.S.
+    ignoreKeys: ["raw"]
   }
 ];
