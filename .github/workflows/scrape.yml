@@ -19,8 +19,9 @@ jobs:
   scrape:
     strategy:
       fail-fast: false
+      max-parallel: 1         # run groups sequentially so auto-commits don't clash
       matrix:
-        group: ["default"]
+        group: ["default", "seo", "price", "compliance"]
 
     runs-on: ubuntu-latest
     timeout-minutes: 30
@@ -29,7 +30,7 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v4
 
-      # If a lockfile exists, enable npm cache.
+      # If a lockfile exists, enable npm cache (works off the lockfile key).
       - name: Set up Node (with npm cache)
         if: ${{ hashFiles('package-lock.json') != '' || hashFiles('npm-shrinkwrap.json') != '' || hashFiles('yarn.lock') != '' }}
         uses: actions/setup-node@v4
@@ -37,7 +38,7 @@ jobs:
           node-version: "20"
           cache: "npm"
 
-      # If no lockfile, set up Node without cache (avoid setup-node error).
+      # If no lockfile, set up Node without cache (avoids setup-node "no lockfile" error).
       - name: Set up Node (no cache)
         if: ${{ hashFiles('package-lock.json') == '' && hashFiles('npm-shrinkwrap.json') == '' && hashFiles('yarn.lock') == '' }}
         uses: actions/setup-node@v4
@@ -69,6 +70,15 @@ jobs:
           name: scrape-results-${{ github.run_number }}-${{ matrix.group }}
           path: data
 
+      - name: Job Summary (Markdown table)
+        if: always()
+        run: |
+          if [ -f data/report.md ]; then
+            echo "### Group: \`${{ matrix.group }}\`" >> "$GITHUB_STEP_SUMMARY"
+            cat data/report.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      # Commit data/ changes back (keeps a history in repo)
       - name: Auto-commit updated data
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
