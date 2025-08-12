@@ -43,7 +43,7 @@
           <td>${s.changed ? '<span class="changed">changed</span>' : '<span class="muted">—</span>'}</td>
           <td>${s.changedKeys?.join(", ") || ""}</td>
           <td>${s.error ? `<span class="err">${s.error}</span>` : ""}</td>
-          <td><a href="../data/latest/${s.name}.json">latest</a></td>
+          <td><a href="data/latest/${s.name}.json">latest</a></td>
         </tr>
       `).join("");
       return `
@@ -59,12 +59,15 @@
     (async () => {
       for (const g of groups) {
         try {
-          const r = await loadJSON(`../data/report-${g}.json`);
+          // NOTE: paths now "data/..." not "../data/..."
+          const r = await loadJSON(`data/report-${g}.json`);
           if (!stamp.textContent) stamp.textContent = "Generated at " + new Date(r.generatedAt).toLocaleString();
           const div = document.createElement('div');
           div.innerHTML = sectionHTML(r.group || g, r.summary || []);
           grid.appendChild(div.firstElementChild);
-        } catch { /* group report not present; skip */ }
+        } catch {
+          // group report not present; skip
+        }
       }
     })();
   </script>
