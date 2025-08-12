@@ -5,75 +5,112 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Scraping & Checks — Live Reports</title>
   <style>
-    body{font:16px/1.4 ui-sans-serif,system-ui,Segoe UI,Roboto,Helvetica,Arial}
-    header{display:flex;justify-content:space-between;align-items:center;margin:1rem 0}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
-    section{border:1px solid #e5e7eb;border-radius:12px;padding:12px}
-    h2{margin:.25rem 0 .5rem 0;font-size:1rem}
-    table{width:100%;border-collapse:collapse;table-layout:fixed}
-    th,td{border-top:1px solid #e5e7eb;padding:6px 8px;font-size:.9rem;vertical-align:top;overflow-wrap:anywhere}
-    th{background:#f9fafb;text-align:left}
-    th:nth-child(1){width:45%}         /* check name */
-    th:nth-child(2){width:90px;white-space:nowrap}  /* changed */
-    th:nth-child(5){width:70px;white-space:nowrap}  /* JSON link */
-    code{background:#f3f4f6;padding:2px 4px;border-radius:6px;display:inline-block}
-    .ok{color:#059669}.changed{color:#b45309}.err{color:#b91c1c}.muted{color:#6b7280}
+    :root{
+      --border:#e5e7eb; --bg:#f9fafb; --muted:#6b7280; --changed:#b45309; --ok:#059669; --err:#b91c1c;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;padding:16px;font:16px/1.45 ui-sans-serif,system-ui,Segoe UI,Roboto,Helvetica,Arial;color:#111827;background:#fff}
+    header{display:flex;gap:12px;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap}
+    h1{margin:0;font-size:1.5rem}
+    .muted{color:var(--muted)}
+    .toolbar{display:flex;gap:8px;align-items:center}
+    .btn{border:1px solid var(--border);background:#fff;border-radius:8px;padding:6px 10px;font:inherit;cursor:pointer}
+    .btn:hover{background:#fafafa}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:16px}
+    section{border:1px solid var(--border);border-radius:12px;padding:12px;background:#fff}
+    h2{margin:.25rem 0 .5rem 0;font-size:1rem;display:flex;align-items:center;gap:8px}
+    h2 a{font-weight:normal;font-size:.9rem}
+    table{width:100%;border-collapse:collapse}
+    th,td{border-top:1px solid var(--border);padding:6px 8px;font-size:.92rem;vertical-align:top}
+    th{background:var(--bg);text-align:left;white-space:nowrap}
+    td.check code{background:#f3f4f6;padding:2px 4px;border-radius:6px;display:inline-block}
+    td.changed{white-space:nowrap}
+    td.keys, td.errcol{word-break:break-word}
+    td.json{white-space:nowrap}
+    .changed-badge{color:var(--changed);font-weight:600}
+    .dash{color:var(--muted)}
+    .err{color:var(--err)}
+    .empty{color:var(--muted);padding:6px 0}
+    @media (min-width:900px){
+      /* gentle column sizing on wider screens */
+      th.check, td.check{width:45%}
+      th.changed, td.changed{width:100px}
+      th.json, td.json{width:80px}
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Scraping & Checks — Live Reports</h1>
-    <div class="muted" id="stamp"></div>
+    <div class="toolbar">
+      <button class="btn" id="refresh">Refresh</button>
+      <span class="muted" id="stamp"></span>
+    </div>
   </header>
 
   <div class="grid" id="grid"></div>
 
   <script>
     const groups = ["default","seo","price","compliance"];
-    const grid = document.getElementById('grid');
-    const stamp = document.getElementById('stamp');
+    const grid   = document.getElementById('grid');
+    const stamp  = document.getElementById('stamp');
+    document.getElementById('refresh').onclick = () => location.reload();
 
-    async function loadJSON(path) {
-      // cache-bust to avoid CDN/browser caching
-      const url = `${path}?ts=${Date.now()}`;
+    async function loadJSON(path){
+      const url = `${path}?ts=${Date.now()}`; // cache-bust
       const res = await fetch(url, { cache: "no-store" });
-      if (!res.ok) throw new Error(path + " -> " + res.status);
+      if(!res.ok) throw new Error(path+" -> "+res.status);
       return res.json();
     }
 
-    function sectionHTML(group, summary) {
-      const rows = summary.map(s => `
-        <tr>
-          <td><code>${s.name}</code></td>
-          <td>${s.changed ? '<span class="changed">changed</span>' : '<span class="muted">—</span>'}</td>
-          <td>${s.changedKeys?.join(", ") || ""}</td>
-          <td>${s.error ? `<span class="err">${s.error}</span>` : ""}</td>
-          <td><a href="data/latest/${s.name}.json">latest</a></td>
-        </tr>
-      `).join("");
+    function sectionHTML(group, summary){
+      if(!summary?.length){
+        return `<section><h2>Group: ${group}</h2><div class="empty">No checks found for this run.</div></section>`;
+      }
+
+      // Changed first, then name
+      const rows = [...summary]
+        .sort((a,b) => Number(b.changed) - Number(a.changed) || a.name.localeCompare(b.name))
+        .map(s => `
+          <tr>
+            <td class="check"><code>${s.name}</code></td>
+            <td class="changed">${s.changed ? '<span class="changed-badge">changed</span>' : '<span class="dash">—</span>'}</td>
+            <td class="keys">${(s.changedKeys||[]).join(", ")}</td>
+            <td class="errcol">${s.error ? `<span class="err">${s.error}</span>` : ""}</td>
+            <td class="json"><a href="data/latest/${s.name}.json">latest</a></td>
+          </tr>`).join("");
+
+      const reportHref = `data/reports/report-${group}.html`;
       return `
         <section>
-          <h2>Group: ${group}</h2>
+          <h2>Group: ${group} <a class="muted" href="${reportHref}">(view group report)</a></h2>
           <table>
-            <thead><tr><th>Check</th><th>Changed</th><th>Keys</th><th>Error</th><th>JSON</th></tr></thead>
+            <thead>
+              <tr>
+                <th class="check">Check</th>
+                <th class="changed">Changed</th>
+                <th class="keys">Keys</th>
+                <th class="errcol">Error</th>
+                <th class="json">JSON</th>
+              </tr>
+            </thead>
             <tbody>${rows}</tbody>
           </table>
         </section>`;
     }
 
     (async () => {
-      for (const g of groups) {
-        try {
-          // All report files are copied into docs/data/ by the workflow
+      for(const g of groups){
+        try{
           const r = await loadJSON(`data/report-${g}.json`);
-          if (!stamp.textContent) {
+          if(!stamp.textContent){
             stamp.textContent = "Generated at " + new Date(r.generatedAt).toLocaleString();
           }
           const div = document.createElement('div');
           div.innerHTML = sectionHTML(r.group || g, r.summary || []);
           grid.appendChild(div.firstElementChild);
-        } catch {
-          // group report not present; skip quietly
+        }catch{
+          // Group not present; skip quietly.
         }
       }
     })();
