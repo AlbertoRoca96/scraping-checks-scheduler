@@ -86,9 +86,17 @@ jobs:
           echo "--- data dir ---"
           ls -la data || true
 
-      # Single, conflict-free commit from merged artifacts
-      - name: Auto-commit updated data
+      # Copy the data/ folder into docs/ so GitHub Pages can serve a live dashboard
+      - name: Copy data to docs for Pages
+        run: |
+          mkdir -p docs/data
+          rsync -a --delete data/ docs/data/
+
+      # Commit both data/ and docs/ changes
+      - name: Auto-commit updated data + site
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore(data): update scrape results [skip ci]"
-          file_pattern: data/**
+          commit_message: "chore(site): update docs dashboard & data [skip ci]"
+          file_pattern: |
+            data/**
+            docs/**
