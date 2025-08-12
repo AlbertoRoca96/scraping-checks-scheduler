@@ -20,9 +20,6 @@ const GROUP = process.env.GROUP || "";
 const GOTO_WAIT_UNTIL = (process.env.GOTO_WAIT_UNTIL || "domcontentloaded");
 const NAV_TIMEOUT_MS = Number(process.env.NAV_TIMEOUT_MS || 45000);
 
-// Stock providers
-const ALPHAVANTAGE_KEY = process.env.ALPHAVANTAGE_KEY || process.env.ALPHA_VANTAGE_KEY;
-
 /* ================================
    fs helpers
 =================================== */
@@ -115,11 +112,13 @@ async function newPage() {
     locale: "en-US",
     viewport: { width: 1366, height: 900 }
   });
+
   await context.route("**/*", (route) => {
     const rt = route.request().resourceType();
     if (rt === "image" || rt === "media" || rt === "font") return route.abort();
     return route.continue();
   });
+
   const page = await context.newPage();
   page.setDefaultTimeout(NAV_TIMEOUT_MS);
   return { browser, context, page };
@@ -130,7 +129,10 @@ async function newPage() {
 =================================== */
 function toNumberLike(s) {
   if (s == null) return null;
-  const cleaned = String(s).replace(/[^\d.+-]/g, "").replace(/,/g, "").replace(/[+–-]+$/g, "");
+  const cleaned = String(s)
+    .replace(/[^\d.+-]/g, "")
+    .replace(/,/g, "")
+    .replace(/[+–-]+$/g, "");
   const n = Number(cleaned);
   return Number.isFinite(n) ? n : null;
 }
@@ -149,6 +151,7 @@ async function scrapeFirstTableMatrix(page) {
    HTML fetch helpers (gzip aware)
 =================================== */
 function looksLikeGzip(buf) { return buf && buf.length > 2 && buf[0] === 0x1f && buf[1] === 0x8b; }
+
 async function fetchBuffer(url) {
   const res = await fetch(url, {
     headers: {
@@ -237,7 +240,8 @@ async function runPageCheck(check) {
     }
     return data;
   } finally {
-    await context.close(); await browser.close();
+    await context.close();
+    await browser.close();
   }
 }
 
@@ -245,7 +249,10 @@ async function runPageCheck(check) {
    price + availability (Playwright)
 =================================== */
 function parseCurrency(txt = "") {
-  const cleaned = String(txt).replace(/[^\d.,+–-]/g, "").replace(/,/g, "").replace(/[+–-]+$/g, "");
+  const cleaned = String(txt)
+    .replace(/[^\d.,+–-]/g, "")
+    .replace(/,/g, "")
+    .replace(/[+–-]+$/g, "");
   const n = Number(cleaned);
   return Number.isFinite(n) ? n : null;
 }
@@ -257,7 +264,8 @@ async function runPriceCheck(check) {
     const raw = (await page.textContent(check.selector))?.trim() ?? "";
     return { price: parseCurrency(raw), raw };
   } finally {
-    await context.close(); await browser.close();
+    await context.close();
+    await browser.close();
   }
 }
 async function runAvailabilityCheck(check) {
@@ -269,12 +277,13 @@ async function runAvailabilityCheck(check) {
     const re = check.availableRegex ? new RegExp(check.availableRegex, "i") : /in stock|available/i;
     return { available: re.test(raw), raw };
   } finally {
-    await context.close(); await browser.close();
+    await context.close();
+    await browser.close();
   }
 }
 
 /* ================================
-   sitemap helpers
+   sitemap helpers & checks
 =================================== */
 async function discoverSitemapsFromRobots(startUrl) {
   const u = new URL(startUrl);
@@ -331,10 +340,6 @@ async function fetchSitemapUrls(url, { indexLimit = 5, limit } = {}) {
   const err = firstError ? firstError.message : "Unknown sitemap error";
   throw new Error(`Sitemap fetch failed: ${err}`);
 }
-
-/* ================================
-   sitemap checks
-=================================== */
 async function runSitemapCheck(check) {
   const { urls, source } = await fetchSitemapUrls(check.url, {
     indexLimit: check.indexLimit || 5,
@@ -353,7 +358,13 @@ async function runSitemapDiffCheck(check, prevRecord) {
   const current = await runSitemapCheck(check);
   const prevAll = prevRecord?.data?.all || [];
   const { added, removed } = diffSets(prevAll, current.all);
-  return { source: current.source, nowCount: current.all.length, prevCount: prevAll.length, added, removed };
+  return {
+    source: current.source,
+    nowCount: current.all.length,
+    prevCount: prevAll.length,
+    added,
+    removed
+  };
 }
 
 /* ================================
@@ -385,14 +396,14 @@ async function runContentWatch(check) {
     if (!check.hashOnly) payload.sample = normalized.slice(0, 300);
     return payload;
   } finally {
-    await context.close(); await browser.close();
+    await context.close();
+    await browser.close();
   }
 }
 
 /* ================================
-   PSA custom checks (HTML fallback)
+   PSA custom checks (with HTML fallback)
 =================================== */
-// (unchanged helpers for PSA pages)
 async function runPsaPriceRow(check) {
   try {
     const html = await fetchTextMaybeGzip(check.url);
@@ -422,7 +433,8 @@ async function runPsaPriceRow(check) {
     const price = toNumberLike(raw);
     return { row: row[0], grade: check.gradeCol, price, raw, mode: "playwright" };
   } finally {
-    await context.close(); await browser.close();
+    await context.close();
+    await browser.close();
   }
 }
 async function runPsaPopRow(check) {
@@ -454,83 +466,40 @@ async function runPsaPopRow(check) {
     const population = toNumberLike(raw);
     return { row: row[0], column: check.column || "TOTAL", population, raw, mode: "playwright" };
   } finally {
-    await context.close(); await browser.close();
+    await context.close();
+    await browser.close();
   }
 }
 
 /* ================================
-   STOCK quotes (Alpha Vantage with optional Stooq fallback)
+   Stocks (Alpha Vantage)
 =================================== */
-async function runStockCheck(check) {
-  const provider = (check.provider || (ALPHAVANTAGE_KEY ? "alphavantage" : "stooq")).toLowerCase();
+async function runStockQuote(check) {
+  const source = (check.source || "alphavantage").toLowerCase();
 
-  if (provider === "alphavantage") {
-    if (!ALPHAVANTAGE_KEY) throw new Error("ALPHAVANTAGE_KEY not set");
-    const func = check.function || "TIME_SERIES_INTRADAY";
-    const interval = check.interval || "5min";
+  if (source === "alphavantage") {
+    const key = process.env.ALPHAVANTAGE_KEY;
+    if (!key) throw new Error("Missing ALPHAVANTAGE_KEY in environment/secrets");
+    const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${encodeURIComponent(check.symbol)}&apikey=${encodeURIComponent(key)}`;
 
-    const url = func === "TIME_SERIES_INTRADAY"
-      ? `https://www.alphavantage.co/query?function=${func}&symbol=${encodeURIComponent(check.symbol)}&interval=${interval}&outputsize=compact&apikey=${ALPHAVANTAGE_KEY}`
-      : `https://www.alphavantage.co/query?function=${func}&symbol=${encodeURIComponent(check.symbol)}&outputsize=compact&apikey=${ALPHAVANTAGE_KEY}`;
+    const res = await withRetry("alphavantage.fetch", async () => fetch(url));
+    if (!res.ok) throw new Error(`Alpha Vantage HTTP ${res.status}`);
+    const json = await res.json();
+    const q = json["Global Quote"];
+    if (!q || typeof q !== "object") throw new Error("No Global Quote in response");
 
-    const json = await withRetry("alphavantage", async () => {
-      const res = await fetch(url);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      return res.json();
-    });
-
-    const series =
-      json["Time Series (5min)"] ||
-      json["Time Series (15min)"] ||
-      json["Time Series (30min)"] ||
-      json["Time Series (60min)"] ||
-      json["Time Series (Daily)"] ||
-      json["Time Series (Daily)"]; // covers daily funcs
-
-    if (!series || typeof series !== "object") {
-      const note = json?.Note || json?.Information || "unexpected response";
-      throw new Error(`Alpha Vantage: ${note}`);
-    }
-
-    const latestTs = Object.keys(series).sort().pop();
-    const row = series[latestTs] || {};
-    const toNum = (k) => toNumberLike(row[k]) ?? toNumberLike(row[k?.toLowerCase?.()]);
-    const price = toNum("4. close");
+    const price = Number(q["05. price"]);
+    if (!Number.isFinite(price)) throw new Error("Invalid price in Global Quote");
 
     return {
-      provider: "alphavantage",
       symbol: check.symbol,
-      function: func,
-      interval: func.includes("INTRADAY") ? interval : "1d",
-      latest: latestTs,
+      source: "alphavantage",
       price,
-      open: toNum("1. open"),
-      high: toNum("2. high"),
-      low:  toNum("3. low"),
-      volume: toNum("5. volume")
+      raw: q
     };
   }
 
-  // Stooq last-quote CSV: symbol, date, time, open, high, low, close, volume
-  // Example pattern: https://stooq.com/q/l/?s=aapl.us&f=sd2t2ohlcv&h&e=csv
-  const stq = check.stooqSymbol || (check.symbol || "").toLowerCase();
-  const url = `https://stooq.com/q/l/?s=${encodeURIComponent(stq)}&f=sd2t2ohlcv&h&e=csv`;
-  const csv = await fetchTextMaybeGzip(url);
-  const line = (csv.trim().split("\n").slice(-1)[0] || "").trim();
-  const parts = line.split(",");
-  if (parts.length < 8) throw new Error(`stooq parse failed (${line})`);
-  const [symbol, date, time, open, high, low, close, volume] = parts;
-
-  return {
-    provider: "stooq",
-    symbol,
-    latest: `${date} ${time}`,
-    price: toNumberLike(close),
-    open: toNumberLike(open),
-    high: toNumberLike(high),
-    low: toNumberLike(low),
-    volume: toNumberLike(volume)
-  };
+  throw new Error(`Unknown stock source: ${check.source}`);
 }
 
 /* ================================
@@ -595,7 +564,7 @@ async function run() {
       else if (check.type === "content_watch") data = await runContentWatch(check);
       else if (check.type === "psa_price_row") data = await runPsaPriceRow(check);
       else if (check.type === "psa_pop_row") data = await runPsaPopRow(check);
-      else if (check.type === "stock") data = await runStockCheck(check);
+      else if (check.type === "stock") data = await runStockQuote(check);
       else throw new Error(`Unknown check type: ${check.type}`);
 
       record = { name: check.name, type: check.type, url: check.url, checkedAt: startedAt, data };
@@ -606,7 +575,7 @@ async function run() {
 
       await writeJson(latestPath, record);
 
-      // append time-series (JSONL)
+      // append time-series (JSONL) for select types
       try {
         const tsVal = seriesValueFor(check.type, data);
         if (tsVal !== null) {
@@ -614,7 +583,7 @@ async function run() {
           const tsPath = path.join(resultsDir, "timeseries", check.name, "series.jsonl");
           await appendLine(tsPath, line);
         }
-      } catch {}
+      } catch { /* non-fatal */ }
 
       if (changed) {
         const stamp = startedAt.replace(/[:]/g, "-");
@@ -634,7 +603,7 @@ async function run() {
     }
   }
 
-  // prune stale latest files
+  // prune stale latest files that no longer correspond to current checks
   try {
     const files = await fsp.readdir(latestDir);
     for (const f of files) {
