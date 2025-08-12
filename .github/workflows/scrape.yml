@@ -17,7 +17,6 @@ concurrency:
 
 jobs:
   scrape:
-    # NOTE: you can expand this to ["a","b","c","default"] later.
     strategy:
       fail-fast: false
       matrix:
@@ -30,14 +29,29 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v4
 
+      # If a lockfile exists, enable npm cache.
       - name: Set up Node (with npm cache)
+        if: ${{ hashFiles('package-lock.json') != '' || hashFiles('npm-shrinkwrap.json') != '' || hashFiles('yarn.lock') != '' }}
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: "npm"
 
-      - name: Install dependencies
-        run: npm ci || npm install
+      # If no lockfile, set up Node without cache (avoid setup-node error).
+      - name: Set up Node (no cache)
+        if: ${{ hashFiles('package-lock.json') == '' && hashFiles('npm-shrinkwrap.json') == '' && hashFiles('yarn.lock') == '' }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # Install deps: use npm ci when lockfile exists; otherwise npm install.
+      - name: Install dependencies (npm ci)
+        if: ${{ hashFiles('package-lock.json') != '' || hashFiles('npm-shrinkwrap.json') != '' }}
+        run: npm ci
+
+      - name: Install dependencies (npm install)
+        if: ${{ hashFiles('package-lock.json') == '' && hashFiles('npm-shrinkwrap.json') == '' }}
+        run: npm install
 
       - name: Install Playwright (browsers + Linux deps)
         run: npx playwright install --with-deps chromium
