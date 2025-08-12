@@ -2,14 +2,12 @@ name: Scraping & Checks Scheduler
 
 on:
   schedule:
-    # Every 6 hours at :15 (UTC) to avoid top-of-hour queueing.
-    - cron: "15 */6 * * *"
+    - cron: "15 */6 * * *"   # every 6h at :15 UTC
   workflow_dispatch: {}
 
 permissions:
   contents: write
 
-# prevent overlapping runs on the same ref
 concurrency:
   group: scrape-${{ github.ref }}
   cancel-in-progress: true
@@ -20,7 +18,6 @@ jobs:
       fail-fast: false
       matrix:
         group: ["default", "seo", "price", "compliance"]
-
     runs-on: ubuntu-latest
     timeout-minutes: 30
 
@@ -28,7 +25,7 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v4
 
-      # If a lockfile exists, enable npm cache.
+      # Lockfile-aware setup + caching
       - name: Set up Node (with npm cache)
         if: ${{ hashFiles('package-lock.json') != '' || hashFiles('npm-shrinkwrap.json') != '' || hashFiles('yarn.lock') != '' }}
         uses: actions/setup-node@v4
@@ -36,14 +33,12 @@ jobs:
           node-version: "20"
           cache: "npm"
 
-      # If no lockfile, set up Node without cache (avoids setup-node error).
       - name: Set up Node (no cache)
         if: ${{ hashFiles('package-lock.json') == '' && hashFiles('npm-shrinkwrap.json') == '' && hashFiles('yarn.lock') == '' }}
         uses: actions/setup-node@v4
         with:
           node-version: "20"
 
-      # Install deps: use npm ci when lockfile exists; otherwise npm install.
       - name: Install dependencies (npm ci)
         if: ${{ hashFiles('package-lock.json') != '' || hashFiles('npm-shrinkwrap.json') != '' }}
         run: npm ci
@@ -55,27 +50,18 @@ jobs:
       - name: Install Playwright (browsers + Linux deps)
         run: npx playwright install --with-deps chromium
 
-      - name: Run scrapers
+      - name: Run scrapers (group=${{ matrix.group }})
         env:
-          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}   # optional
-          FAIL_ON_ERROR: "0"                        # set "1" to fail job on any check error
-          GROUP: ${{ matrix.group }}                # run only checks in this group
+          GROUP: ${{ matrix.group }}
+          FAIL_ON_ERROR: "0"             # set "1" to fail job on any check error
+          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}  # optional (Slack/Discord/etc.)
         run: npm run scrape
 
-      - name: Upload data as artifact (per group)
+      - name: Upload data as artifact (group=${{ matrix.group }})
         uses: actions/upload-artifact@v4
         with:
-          name: scrape-results-${{ github.run_number }}-${{ matrix.group }}
+          name: scrape-results-${{ matrix.group }}
           path: data
-
-      - name: Job Summary (Markdown table for this group)
-        if: always()
-        run: |
-          FILE="data/reports/report-${{ matrix.group }}.md"
-          if [ -f "$FILE" ]; then
-            echo "### Group: \`${{ matrix.group }}\`" >> "$GITHUB_STEP_SUMMARY"
-            cat "$FILE" >> "$GITHUB_STEP_SUMMARY"
-          fi
 
   merge_and_commit:
     needs: scrape
@@ -84,44 +70,25 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v4
 
-      - name: Download all group artifacts (v4 pattern + merge-multiple)
+      # Download ALL group artifacts and MERGE their contents into CWD
+      - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
-          pattern: scrape-results-${{ github.run_number }}-*
+          pattern: scrape-results-*
           merge-multiple: true
-          path: _artifacts
-        # v4 note: with merge-multiple=true, files from all artifacts are extracted
-        # directly into the specified path. No per-artifact folders are created.  :contentReference[oaicite:1]{index=1}
+          path: .
 
-      - name: Merge data/ from artifacts into repo
+      # (Optional) Show what we got
+      - name: Tree
         run: |
-          set -euo pipefail
-          mkdir -p data
-          shopt -s dotglob
-          # If the archive preserved the 'data/' top folder, use it.
-          # Otherwise, assume contents are already the inside of data/
-          if [ -d "_artifacts/data" ]; then
-            echo "Merging from _artifacts/data/ -> data/"
-            rsync -a --delete "_artifacts/data/" "data/"
-          else
-            echo "Merging from _artifacts/ -> data/ (no top-level 'data' folder present)"
-            rsync -a --delete "_artifacts/" "data/"
-          fi
+          echo "--- merged artifacts ---"
+          ls -la
+          echo "--- data dir ---"
+          ls -la data || true
 
-      - name: Build combined top-level report index
-        run: |
-          mkdir -p data/reports
-          OUT="data/report.html"
-          echo '<!doctype html><meta charset="utf-8"><title>Scrape Reports</title>' > "$OUT"
-          echo '<h1>Scrape Reports</h1><ul>' >> "$OUT"
-          for f in data/reports/report-*.html; do
-            n=$(basename "$f")
-            echo "<li><a href=\"reports/$n\">$n</a></li>" >> "$OUT"
-          done
-          echo '</ul>' >> "$OUT"
-
-      - name: Commit merged data
+      # Single, conflict-free commit from merged artifacts
+      - name: Auto-commit updated data
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore(data): merge scrape results [skip ci]"
+          commit_message: "chore(data): update scrape results [skip ci]"
           file_pattern: data/**
