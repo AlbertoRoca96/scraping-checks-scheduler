@@ -17,8 +17,11 @@ const REALISTIC_UA =
 
 const FAIL_ON_ERROR = process.env.FAIL_ON_ERROR === "1";
 const GROUP = process.env.GROUP || "";
-const GOTO_WAIT_UNTIL = (process.env.GOTO_WAIT_UNTIL || "domcontentloaded");
+const GOTO_WAIT_UNTIL = process.env.GOTO_WAIT_UNTIL || "domcontentloaded";
 const NAV_TIMEOUT_MS = Number(process.env.NAV_TIMEOUT_MS || 45000);
+
+/** 🔐 your repo secret name */
+const ALPHAVANTAGE_KEY = process.env.ALPHAVANTAGE_KEY || "";
 
 /* ================================
    fs helpers
@@ -87,7 +90,7 @@ function runUrl() {
    time-series helper
 =================================== */
 function seriesValueFor(type, data) {
-  if (type === "price" || type === "psa_price_row" || type === "stock") {
+  if (type === "price" || type === "psa_price_row" || type === "stock_quote") {
     const v = data?.price;
     return (typeof v === "number" && Number.isFinite(v)) ? v : null;
   }
@@ -113,6 +116,7 @@ async function newPage() {
     viewport: { width: 1366, height: 900 }
   });
 
+  // block heavy non-critical resources
   await context.route("**/*", (route) => {
     const rt = route.request().resourceType();
     if (rt === "image" || rt === "media" || rt === "font") return route.abort();
@@ -125,7 +129,7 @@ async function newPage() {
 }
 
 /* ================================
-   generic table helpers (DOM)
+   DOM table helpers
 =================================== */
 function toNumberLike(s) {
   if (s == null) return null;
@@ -136,14 +140,16 @@ function toNumberLike(s) {
   const n = Number(cleaned);
   return Number.isFinite(n) ? n : null;
 }
-async function scrapeFirstTableMatrix(page) {
+async function scrapeTablesMatrix(page) {
   await page.waitForSelector("table");
   return await page.evaluate(() => {
-    const tbl = document.querySelector("table");
-    const headers = Array.from(tbl.querySelectorAll("thead th, thead td")).map(th => th.innerText.trim());
-    const rows = Array.from(tbl.querySelectorAll("tbody tr"))
-      .map(tr => Array.from(tr.querySelectorAll("th,td")).map(td => td.innerText.trim()));
-    return { headers, rows };
+    function grab(tbl) {
+      const headers = Array.from(tbl.querySelectorAll("thead th, thead td")).map(th => th.innerText.trim());
+      const rows = Array.from(tbl.querySelectorAll("tbody tr"))
+        .map(tr => Array.from(tr.querySelectorAll("th,td")).map(td => td.innerText.trim()));
+      return { headers, rows };
+    }
+    return Array.from(document.querySelectorAll("table")).map(grab);
   });
 }
 
@@ -151,7 +157,6 @@ async function scrapeFirstTableMatrix(page) {
    HTML fetch helpers (gzip aware)
 =================================== */
 function looksLikeGzip(buf) { return buf && buf.length > 2 && buf[0] === 0x1f && buf[1] === 0x8b; }
-
 async function fetchBuffer(url) {
   const res = await fetch(url, {
     headers: {
@@ -179,37 +184,33 @@ async function fetchTextMaybeGzip(url) {
 }
 
 /* ================================
-   tiny HTML table parser (no deps)
+   tiny HTML table parser (scan ALL tables)
 =================================== */
 function stripTags(s) { return s.replace(/<[^>]*>/g, " "); }
 function cleanCell(s) { return stripTags(s).replace(/\s+/g, " ").trim(); }
-function parseFirstTable(html) {
-  const m = html.match(/<table[\s\S]*?<\/table>/i);
-  if (!m) return null;
-  const table = m[0];
-
-  let headers = [];
-  const thead = table.match(/<thead[\s\S]*?<\/thead>/i);
-  if (thead) {
-    headers = [...thead[0].matchAll(/<t[hd][^>]*>([\s\S]*?)<\/t[hd]>/gi)].map((x) => cleanCell(x[1]));
-  } else {
-    const firstTr = table.match(/<tr[\s\S]*?<\/tr>/i);
-    if (firstTr) headers = [...firstTr[0].matchAll(/<t[hd][^>]*>([\s\S]*?)<\/t[hd]>/gi)].map((x) => cleanCell(x[1]));
-  }
-
-  const bodyHtml = thead ? table.replace(thead[0], "") : table;
-  const trs = [...bodyHtml.matchAll(/<tr[\s\S]*?<\/tr>/gi)].map(x => x[0]);
-
-  const rows = trs.map(tr =>
-    [...tr.matchAll(/<(?:td|th)[^>]*>([\s\S]*?)<\/(?:td|th)>/gi)]
-      .map(x => cleanCell(x[1]))
-  ).filter(r => r.length > 0);
-
-  return { headers, rows };
+function parseTables(html) {
+  const tables = [...html.matchAll(/<table[\s\S]*?<\/table>/gi)].map(m => m[0]);
+  return tables.map((table) => {
+    let headers = [];
+    const thead = table.match(/<thead[\s\S]*?<\/thead>/i);
+    if (thead) {
+      headers = [...thead[0].matchAll(/<t[hd][^>]*>([\s\S]*?)<\/t[hd]>/gi)].map((x) => cleanCell(x[1]));
+    } else {
+      const firstTr = table.match(/<tr[\s\S]*?<\/tr>/i);
+      if (firstTr) headers = [...firstTr[0].matchAll(/<t[hd][^>]*>([\s\S]*?)<\/t[hd]>/gi)].map((x) => cleanCell(x[1]));
+    }
+    const bodyHtml = thead ? table.replace(thead[0], "") : table;
+    const trs = [...bodyHtml.matchAll(/<tr[\s\S]*?<\/tr>/gi)].map(x => x[0]);
+    const rows = trs.map(tr =>
+      [...tr.matchAll(/<(?:td|th)[^>]*>([\s\S]*?)<\/(?:td|th)>/gi)]
+        .map(x => cleanCell(x[1]))
+    ).filter(r => r.length > 0);
+    return { headers, rows };
+  });
 }
 
 /* ================================
-   string matching helpers
+   matching helpers
 =================================== */
 function looseContains(hay, needle) {
   const H = (hay || "").toLowerCase().replace(/[^a-z0-9]+/g, " ");
@@ -283,7 +284,7 @@ async function runAvailabilityCheck(check) {
 }
 
 /* ================================
-   sitemap helpers & checks
+   sitemap helpers + checks
 =================================== */
 async function discoverSitemapsFromRobots(startUrl) {
   const u = new URL(startUrl);
@@ -387,7 +388,7 @@ async function runContentWatch(check) {
         try {
           const re = new RegExp(pat, "gim");
           text = text.replace(re, "");
-        } catch { /* ignore bad regex */ }
+        } catch {}
       }
     }
     const normalized = text.replace(/\s+/g, " ").trim();
@@ -402,32 +403,42 @@ async function runContentWatch(check) {
 }
 
 /* ================================
-   PSA custom checks (with HTML fallback)
+   PSA custom checks (robust)
 =================================== */
+function pickTableWithColumn(tables, desiredColUpper) {
+  const want = (desiredColUpper || "").toUpperCase();
+  return tables.find(t => t.headers.some(h => (h || "").trim().toUpperCase().includes(want)));
+}
+
+// Price page: find row by tokens; pull desired grade column
 async function runPsaPriceRow(check) {
+  // 1) HTML fetch – scan all tables
   try {
     const html = await fetchTextMaybeGzip(check.url);
-    const parsed = parseFirstTable(html);
-    if (parsed && parsed.headers.length && parsed.rows.length) {
-      const { headers, rows } = parsed;
-      const colIdx = headers.findIndex(h =>
-        h.replace(/\s+/g, " ").toUpperCase().includes((check.gradeCol || "").toUpperCase())
-      );
+    const tables = parseTables(html);
+    const target = pickTableWithColumn(tables, check.gradeCol || "");
+    if (target) {
+      const { headers, rows } = target;
+      const colIdx = headers.findIndex(h => h.replace(/\s+/g, " ").toUpperCase().includes((check.gradeCol || "").toUpperCase()));
       if (colIdx < 0) throw new Error(`grade column not found: ${check.gradeCol}`);
-      const row = rows.find(r => r.some(c => looseContains(c, check.rowMatch)));
+      const row = rows.find(r => r.some(c => looseContains(c, check.rowMatch)) || looseContains(r.join(" "), check.rowMatch));
       if (!row) throw new Error(`row not found: ${check.rowMatch}`);
       const raw = row[colIdx] || "";
       const price = toNumberLike(raw);
       return { row: row[0], grade: check.gradeCol, price, raw, mode: "html" };
     }
   } catch {}
+
+  // 2) Playwright fallback – also scan all tables
   const { browser, context, page } = await newPage();
   try {
     await gotoSafely(page, check.url);
-    const { headers, rows } = await scrapeFirstTableMatrix(page);
+    const tables = await scrapeTablesMatrix(page);
+    const target = pickTableWithColumn(tables, check.gradeCol || "");
+    if (!target) throw new Error(`grade column not found: ${check.gradeCol}`);
+    const { headers, rows } = target;
     const colIdx = headers.findIndex(h => h.replace(/\s+/g, " ").toUpperCase().includes((check.gradeCol || "").toUpperCase()));
-    if (colIdx < 0) throw new Error(`grade column not found: ${check.gradeCol}`);
-    const row = rows.find(r => r.some(c => looseContains(c, check.rowMatch)));
+    const row = rows.find(r => r.some(c => looseContains(c, check.rowMatch)) || looseContains(r.join(" "), check.rowMatch));
     if (!row) throw new Error(`row not found: ${check.rowMatch}`);
     const raw = row[colIdx] || "";
     const price = toNumberLike(raw);
@@ -437,14 +448,18 @@ async function runPsaPriceRow(check) {
     await browser.close();
   }
 }
+
+// Pop page: take numeric TOTAL (or given column)
 async function runPsaPopRow(check) {
+  // HTML fetch first
   try {
     const html = await fetchTextMaybeGzip(check.url);
-    const parsed = parseFirstTable(html);
-    if (parsed && parsed.headers.length && parsed.rows.length) {
-      const { headers, rows } = parsed;
-      const colName = (check.column || "TOTAL").toUpperCase();
-      const colIdx = headers.findIndex(h => (h || "").trim().toUpperCase() === colName);
+    const tables = parseTables(html);
+    const colName = (check.column || "TOTAL").toUpperCase();
+    const target = pickTableWithColumn(tables, colName);
+    if (target) {
+      const { headers, rows } = target;
+      const colIdx = headers.findIndex(h => (h || "").trim().toUpperCase().includes(colName));
       if (colIdx < 0) throw new Error(`column not found: ${check.column || "TOTAL"}`);
       const row = rows.find(r => looseContains(r.join(" "), check.rowMatch));
       if (!row) throw new Error(`row not found: ${check.rowMatch}`);
@@ -453,14 +468,20 @@ async function runPsaPopRow(check) {
       return { row: row[0], column: check.column || "TOTAL", population, raw, mode: "html" };
     }
   } catch {}
+
+  // Playwright fallback
   const { browser, context, page } = await newPage();
   try {
     await gotoSafely(page, check.url);
-    const { headers, rows } = await scrapeFirstTableMatrix(page);
+    const tables = await scrapeTablesMatrix(page);
     const colName = (check.column || "TOTAL").toUpperCase();
-    const colIdx = headers.findIndex(h => (h || "").trim().toUpperCase() === colName);
-    if (colIdx < 0) throw new Error(`column not found: ${check.column || "TOTAL"}`);
-    const row = rows.find(r => looseContains((r[1] || r[0] || ""), check.rowMatch) || looseContains(r.join(" "), check.rowMatch));
+    const target = pickTableWithColumn(tables, colName);
+    if (!target) throw new Error(`column not found: ${check.column || "TOTAL"}`);
+    const { headers, rows } = target;
+    const colIdx = headers.findIndex(h => (h || "").trim().toUpperCase().includes(colName));
+    const row = rows.find(r =>
+      looseContains((r[1] || r[0] || ""), check.rowMatch) || looseContains(r.join(" "), check.rowMatch)
+    );
     if (!row) throw new Error(`row not found: ${check.rowMatch}`);
     const raw = row[colIdx] || "";
     const population = toNumberLike(raw);
@@ -472,34 +493,33 @@ async function runPsaPopRow(check) {
 }
 
 /* ================================
-   Stocks (Alpha Vantage)
+   Stocks (Alpha Vantage GLOBAL_QUOTE)
 =================================== */
 async function runStockQuote(check) {
-  const source = (check.source || "alphavantage").toLowerCase();
+  if (!ALPHAVANTAGE_KEY) throw new Error("ALPHAVANTAGE_KEY not set");
+  const symbol = check.symbol;
+  const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${encodeURIComponent(symbol)}&apikey=${ALPHAVANTAGE_KEY}`;
+  const res = await withRetry("alphaVantage.globalQuote", async () => {
+    const r = await fetch(url, { headers: { "User-Agent": REALISTIC_UA } });
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    return r.json();
+  }, { tries: 3, baseMs: 800 });
 
-  if (source === "alphavantage") {
-    const key = process.env.ALPHAVANTAGE_KEY;
-    if (!key) throw new Error("Missing ALPHAVANTAGE_KEY in environment/secrets");
-    const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${encodeURIComponent(check.symbol)}&apikey=${encodeURIComponent(key)}`;
+  const q = res?.["Global Quote"] || {};
+  const price = Number(q["05. price"]);
+  const change = Number(q["09. change"]);
+  const changePercent = (q["10. change percent"] || "").replace("%", "");
+  const changePct = Number(changePercent);
 
-    const res = await withRetry("alphavantage.fetch", async () => fetch(url));
-    if (!res.ok) throw new Error(`Alpha Vantage HTTP ${res.status}`);
-    const json = await res.json();
-    const q = json["Global Quote"];
-    if (!q || typeof q !== "object") throw new Error("No Global Quote in response");
-
-    const price = Number(q["05. price"]);
-    if (!Number.isFinite(price)) throw new Error("Invalid price in Global Quote");
-
-    return {
-      symbol: check.symbol,
-      source: "alphavantage",
-      price,
-      raw: q
-    };
-  }
-
-  throw new Error(`Unknown stock source: ${check.source}`);
+  if (!Number.isFinite(price)) throw new Error("quote missing price");
+  return {
+    symbol,
+    source: "alphavantage",
+    price,
+    change: Number.isFinite(change) ? change : null,
+    changePercent: Number.isFinite(changePct) ? changePct : null,
+    raw: q
+  };
 }
 
 /* ================================
@@ -564,7 +584,7 @@ async function run() {
       else if (check.type === "content_watch") data = await runContentWatch(check);
       else if (check.type === "psa_price_row") data = await runPsaPriceRow(check);
       else if (check.type === "psa_pop_row") data = await runPsaPopRow(check);
-      else if (check.type === "stock") data = await runStockQuote(check);
+      else if (check.type === "stock_quote") data = await runStockQuote(check);
       else throw new Error(`Unknown check type: ${check.type}`);
 
       record = { name: check.name, type: check.type, url: check.url, checkedAt: startedAt, data };
@@ -575,7 +595,7 @@ async function run() {
 
       await writeJson(latestPath, record);
 
-      // append time-series (JSONL) for select types
+      // Append time-series for select types
       try {
         const tsVal = seriesValueFor(check.type, data);
         if (tsVal !== null) {
@@ -583,7 +603,7 @@ async function run() {
           const tsPath = path.join(resultsDir, "timeseries", check.name, "series.jsonl");
           await appendLine(tsPath, line);
         }
-      } catch { /* non-fatal */ }
+      } catch {}
 
       if (changed) {
         const stamp = startedAt.replace(/[:]/g, "-");
@@ -596,14 +616,15 @@ async function run() {
       console.log(`[${check.name}] changed=${changed} keys=${changedKeys.join(",")}`);
     } catch (e) {
       hadError = true;
-      record = { name: check.name, type: check.type, url: check.url, checkedAt: startedAt, error: String(e) };
-      await writeJson(path.join(latestDir, `${check.name}.json`), record);
+      const latestPath = path.join(latestDir, `${check.name}.json`);
+      const recordErr = { name: check.name, type: check.type, url: check.url, checkedAt: startedAt, error: String(e) };
+      await writeJson(latestPath, recordErr);
       summary.push({ name: check.name, type: check.type, changed: false, changedKeys: [], error: String(e) });
       console.error(`[${check.name}] ERROR: ${String(e)}`);
     }
   }
 
-  // prune stale latest files that no longer correspond to current checks
+  // prune stale latest files
   try {
     const files = await fsp.readdir(latestDir);
     for (const f of files) {
