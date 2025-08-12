@@ -20,7 +20,6 @@
     .btn{border:1px solid var(--border);background:#fff;border-radius:10px;padding:6px 12px;font:inherit;cursor:pointer}
     .btn:hover{background:#fafafa}
 
-    /* Cards grid */
     .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(520px,1fr))}
     @media (max-width:600px){ .grid{grid-template-columns:1fr} }
 
@@ -28,7 +27,6 @@
     h2{margin:.25rem 0 .5rem 0;font-size:1rem;display:flex;align-items:center;gap:8px}
     h2 a{font-weight:normal;font-size:.9rem}
 
-    /* Table */
     table{width:100%;border-collapse:collapse; table-layout:auto}
     th,td{border-top:1px solid var(--border);padding:7px 8px;font-size:.95rem;vertical-align:top}
     th{background:var(--bg);text-align:left}
@@ -37,14 +35,8 @@
     td.changed{white-space:nowrap}
     td.json, td.price, td.avail, td.pop{white-space:nowrap}
 
-    /* Prevent the “one letter per line” look */
-    td.keys, td.errcol{
-      overflow-wrap:anywhere;
-      word-break:normal;
-      min-width:160px;
-    }
+    td.keys, td.errcol{ overflow-wrap:anywhere; word-break:normal; min-width:160px; }
 
-    /* Desktop sizing hints */
     @media (min-width:900px){
       th.check, td.check{width:40%}
       th.changed, td.changed{width:96px}
@@ -54,7 +46,6 @@
       th.pop, td.pop{width:140px}
     }
 
-    /* Hide verbose columns on small screens */
     @media (max-width:820px){
       th.keys, td.keys, th.errcol, td.errcol{display:none}
     }
@@ -93,7 +84,6 @@
     const stamp  = document.getElementById('stamp');
     document.getElementById('refresh').onclick = () => location.reload();
 
-    // --- data helpers ---
     const bust = () => `?ts=${Date.now()}`;
     async function loadJSON(path){
       const res = await fetch(`${path}${bust()}`, { cache: "no-store" });
@@ -113,7 +103,6 @@
       try{ return await loadJSON(`data/latest/${name}.json`); } catch{ return null; }
     }
 
-    // --- tiny viz ---
     function sparkline(values){
       if(values.length < 2) return "";
       const w=140,h=32,n=values.length;
@@ -124,7 +113,6 @@
       </svg>`;
     }
 
-    // --- table render ---
     function sectionHTML(group, summary){
       if(!summary?.length){
         return `<section><h2>Group: ${group}</h2><div class="empty">No checks found for this run.</div></section>`;
@@ -138,12 +126,13 @@
             <td class="keys">${(s.changedKeys||[]).join(", ")}</td>
             <td class="errcol">${s.error ? `<span class="err">${s.error}</span>` : ""}</td>
             <td class="json"><a href="data/latest/${s.name}.json">latest</a></td>
-            <td class="price">${(s.type==='price'||s.type==='psa_price_row') ? '<span class="muted">loading…</span>' : ''}</td>
+            <td class="price">${(s.type==='price'||s.type==='psa_price_row'||s.type==='stock') ? '<span class="muted">loading…</span>' : ''}</td>
             <td class="avail">${s.type==='availability' ? '<span class="muted">loading…</span>' : ''}</td>
             <td class="pop">${s.type==='psa_pop_row' ? '<span class="muted">loading…</span>' : ''}</td>
           </tr>`).join("");
 
-      const reportHref = `data/reports/report-${group}.html`;
+      // Link to the JSON report (always exists)
+      const reportHref = `data/report-${group}.json`;
       return `
         <section>
           <h2>Group: ${group} <a class="muted" href="${reportHref}">(view group report)</a></h2>
@@ -166,7 +155,7 @@
     }
 
     async function hydratePrices(){
-      for(const tr of document.querySelectorAll('tr[data-type="price"], tr[data-type="psa_price_row"]')){
+      for(const tr of document.querySelectorAll('tr[data-type="price"], tr[data-type="psa_price_row"], tr[data-type="stock"]')){
         const name = tr.getAttribute('data-check');
         const cell = tr.querySelector('.price');
         try{
@@ -218,7 +207,6 @@
       }
     }
 
-    // --- boot ---
     (async () => {
       for(const g of groups){
         try{
