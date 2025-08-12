@@ -29,28 +29,29 @@
     h2 a{font-weight:normal;font-size:.9rem}
 
     /* Table */
-    table{width:100%;border-collapse:collapse; /* auto layout prevents 1-char wrapping */ table-layout:auto}
+    table{width:100%;border-collapse:collapse; table-layout:auto}
     th,td{border-top:1px solid var(--border);padding:7px 8px;font-size:.95rem;vertical-align:top}
     th{background:var(--bg);text-align:left}
 
     td.check code{background:#f3f4f6;padding:2px 6px;border-radius:6px;display:inline-block}
     td.changed{white-space:nowrap}
-    td.json, td.price, td.avail{white-space:nowrap}
+    td.json, td.price, td.avail, td.pop{white-space:nowrap}
 
     /* Prevent the “one letter per line” look */
     td.keys, td.errcol{
-      overflow-wrap: anywhere;   /* allow breaks in long tokens */
-      word-break: normal;        /* but don’t force per-character breaks */
-      min-width: 160px;
+      overflow-wrap:anywhere;
+      word-break:normal;
+      min-width:160px;
     }
 
     /* Desktop sizing hints */
     @media (min-width:900px){
-      th.check, td.check{width:42%}
+      th.check, td.check{width:40%}
       th.changed, td.changed{width:96px}
       th.json, td.json{width:84px}
       th.price, td.price{width:200px}
       th.avail, td.avail{width:120px}
+      th.pop, td.pop{width:140px}
     }
 
     /* Hide verbose columns on small screens */
@@ -137,8 +138,9 @@
             <td class="keys">${(s.changedKeys||[]).join(", ")}</td>
             <td class="errcol">${s.error ? `<span class="err">${s.error}</span>` : ""}</td>
             <td class="json"><a href="data/latest/${s.name}.json">latest</a></td>
-            <td class="price">${s.type==='price' ? '<span class="muted">loading…</span>' : ''}</td>
+            <td class="price">${(s.type==='price'||s.type==='psa_price_row') ? '<span class="muted">loading…</span>' : ''}</td>
             <td class="avail">${s.type==='availability' ? '<span class="muted">loading…</span>' : ''}</td>
+            <td class="pop">${s.type==='psa_pop_row' ? '<span class="muted">loading…</span>' : ''}</td>
           </tr>`).join("");
 
       const reportHref = `data/reports/report-${group}.html`;
@@ -155,6 +157,7 @@
                 <th class="json">JSON</th>
                 <th class="price">Price</th>
                 <th class="avail">Avail.</th>
+                <th class="pop">Pop.</th>
               </tr>
             </thead>
             <tbody>${rows}</tbody>
@@ -162,9 +165,8 @@
         </section>`;
     }
 
-    async function hydrateMetrics(){
-      // Price rows
-      for(const tr of document.querySelectorAll('tr[data-type="price"]')){
+    async function hydratePrices(){
+      for(const tr of document.querySelectorAll('tr[data-type="price"], tr[data-type="psa_price_row"]')){
         const name = tr.getAttribute('data-check');
         const cell = tr.querySelector('.price');
         try{
@@ -180,7 +182,9 @@
           }else{ cell.innerHTML = ""; }
         }catch{ cell.innerHTML = ""; }
       }
-      // Availability rows
+    }
+
+    async function hydrateAvailability(){
       for(const tr of document.querySelectorAll('tr[data-type="availability"]')){
         const name = tr.getAttribute('data-check');
         const cell = tr.querySelector('.avail');
@@ -193,6 +197,23 @@
             const spark = series.length ? sparkline(series.map(p=>p.v)) : "";
             cell.innerHTML = `<div class="pricebox">${pill}${spark}</div>`;
           } else { cell.innerHTML = ""; }
+        }catch{ cell.innerHTML = ""; }
+      }
+    }
+
+    async function hydratePopulation(){
+      for(const tr of document.querySelectorAll('tr[data-type="psa_pop_row"]')){
+        const name = tr.getAttribute('data-check');
+        const cell = tr.querySelector('.pop');
+        try{
+          const series = await loadSeries(name);
+          let last=null;
+          if(series.length){ last = series.at(-1)?.v; }
+          else{ const rec = await loadLatest(name); last = rec?.data?.population ?? null; }
+          if(typeof last === "number"){
+            const spark = series.length ? sparkline(series.map(p=>p.v)) : "";
+            cell.innerHTML = `<div class="pricebox"><div>${last.toLocaleString()}</div>${spark}</div>`;
+          }else{ cell.innerHTML = ""; }
         }catch{ cell.innerHTML = ""; }
       }
     }
@@ -210,7 +231,9 @@
           grid.appendChild(div.firstElementChild);
         }catch{/* group not present */}
       }
-      hydrateMetrics();
+      await hydratePrices();
+      await hydrateAvailability();
+      await hydratePopulation();
     })();
   </script>
 </body>
