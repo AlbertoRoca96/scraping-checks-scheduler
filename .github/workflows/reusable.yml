@@ -1,0 +1,49 @@
+name: Scrape Engine (Reusable)
+
+on:
+  workflow_call:
+    inputs:
+      group:
+        description: "Which group of checks to run"
+        required: false
+        type: string
+        default: "default"
+      node:
+        description: "Node major version"
+        required: false
+        type: string
+        default: "20"
+      playwright_browsers:
+        description: "Which Playwright browsers to install"
+        required: false
+        type: string
+        default: "chromium"
+    secrets:
+      WEBHOOK_URL:
+        required: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ inputs.node }}
+
+      - run: npm ci || npm install
+
+      - run: npx playwright install --with-deps ${{ inputs.playwright_browsers }}
+
+      - name: Run scrapers
+        env:
+          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+          GROUP: ${{ inputs.group }}
+          FAIL_ON_ERROR: "0"
+        run: npm run scrape
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: scrape-results-${{ github.run_number }}-${{ inputs.group }}
+          path: data
