@@ -1,0 +1,48 @@
+name: Scraping & Checks Scheduler
+
+on:
+  schedule:
+    # Every 6 hours (UTC). Add more lines for other times.
+    - cron: "0 */6 * * *"
+  workflow_dispatch: {} # allows manual runs from the Actions tab
+
+# So the job can push data updates back to the repo (optional step below)
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Playwright (browsers + Linux deps)
+        run: npx playwright install --with-deps chromium
+
+      - name: Run scrapers
+        env:
+          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }} # optional
+        run: npm run scrape
+
+      - name: Upload data as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: scrape-results-${{ github.run_number }}
+          path: data
+
+      # OPTIONAL: commit data/ changes back to the repo (keeps history)
+      - name: Auto-commit updated data
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(data): update scrape results [skip ci]"
+          file_pattern: data/**
