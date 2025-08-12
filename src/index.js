@@ -74,13 +74,17 @@ function runUrl() {
 // ---------- tiny helper for time-series ----------
 // For now we only record price & availability to keep series small.
 function seriesValueFor(type, data) {
-  if (type === "price") {
+  if (type === "price" || type === "psa_price_row") {
     const v = data?.price;
     return (typeof v === "number" && Number.isFinite(v)) ? v : null;
   }
   if (type === "availability") {
     if (typeof data?.available === "boolean") return data.available ? 1 : 0;
     return null;
+  }
+  if (type === "psa_pop_row") {
+    const v = data?.population;
+    return (typeof v === "number" && Number.isFinite(v)) ? v : null;
   }
   return null;
 }
@@ -92,6 +96,24 @@ async function newPage() {
   await page.setExtraHTTPHeaders({ "User-Agent": USER_AGENT });
   page.setDefaultTimeout(20000);
   return { browser, page };
+}
+
+// ---------- generic table helpers ----------
+function toNumberLike(s) {
+  if (s == null) return null;
+  const cleaned = String(s).replace(/[^\d.-]/g, "").replace(/,/g, "");
+  const n = Number(cleaned);
+  return Number.isFinite(n) ? n : null;
+}
+async function scrapeFirstTableMatrix(page) {
+  await page.waitForSelector("table");
+  return await page.evaluate(() => {
+    const tbl = document.querySelector("table");
+    const headers = Array.from(tbl.querySelectorAll("thead th, thead td")).map(th => th.innerText.trim());
+    const rows = Array.from(tbl.querySelectorAll("tbody tr"))
+      .map(tr => Array.from(tr.querySelectorAll("th,td")).map(td => td.innerText.trim()));
+    return { headers, rows };
+  });
 }
 
 // ---------- check: page (generic field scraping) ----------
@@ -284,6 +306,52 @@ async function runContentWatch(check) {
   }
 }
 
+// ---------- PSA custom checks ----------
+// Price page: find the row that matches rowMatch; take the value in gradeCol
+async function runPsaPriceRow(check) {
+  const { browser, page } = await newPage();
+  try {
+    await withRetry("page.goto", () => page.goto(check.url, { waitUntil: "domcontentloaded" }));
+    const { headers, rows } = await scrapeFirstTableMatrix(page);
+
+    const colIdx = headers.findIndex(h => h.replace(/\s+/g, " ").toUpperCase().includes((check.gradeCol || "").toUpperCase()));
+    if (colIdx < 0) throw new Error(`grade column not found: ${check.gradeCol}`);
+
+    const row = rows.find(r => (r[0] || "").toLowerCase().includes(check.rowMatch.toLowerCase()));
+    if (!row) throw new Error(`row not found: ${check.rowMatch}`);
+
+    const raw = row[colIdx] || "";
+    const price = toNumberLike(raw);
+    return { row: row[0], grade: check.gradeCol, price, raw };
+  } finally {
+    await browser.close();
+  }
+}
+
+// Pop page: find the row that matches rowMatch; take the numeric TOTAL (or given column)
+async function runPsaPopRow(check) {
+  const { browser, page } = await newPage();
+  try {
+    await withRetry("page.goto", () => page.goto(check.url, { waitUntil: "domcontentloaded" }));
+    const { headers, rows } = await scrapeFirstTableMatrix(page);
+
+    const colName = (check.column || "TOTAL").toUpperCase();
+    const colIdx = headers.findIndex(h => (h || "").trim().toUpperCase() === colName);
+    if (colIdx < 0) throw new Error(`column not found: ${check.column || "TOTAL"}`);
+
+    const row = rows.find(r =>
+      (r[1] || r[0] || "").toLowerCase().includes(check.rowMatch.toLowerCase())
+    );
+    if (!row) throw new Error(`row not found: ${check.rowMatch}`);
+
+    const raw = row[colIdx] || "";
+    const population = toNumberLike(raw);
+    return { row: row[0], column: check.column || "TOTAL", population, raw };
+  } finally {
+    await browser.close();
+  }
+}
+
 // ---------- webhook ----------
 async function sendWebhook({ check, changedKeys, record, previous }) {
   const url = process.env.WEBHOOK_URL;
@@ -340,6 +408,8 @@ async function run() {
       else if (check.type === "sitemap") data = await runSitemapCheck(check);
       else if (check.type === "sitemap_diff") data = await runSitemapDiffCheck(check, prev);
       else if (check.type === "content_watch") data = await runContentWatch(check);
+      else if (check.type === "psa_price_row") data = await runPsaPriceRow(check);
+      else if (check.type === "psa_pop_row") data = await runPsaPopRow(check);
       else throw new Error(`Unknown check type: ${check.type}`);
 
       record = { name: check.name, type: check.type, url: check.url, checkedAt: startedAt, data };
