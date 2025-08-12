@@ -2,6 +2,6 @@
   "name": "psa_charizard_price_gem10",
   "type": "psa_price_row",
   "url": "https://www.psacard.com/priceguide/non-sports-tcg-card-values/1999-poke-mon-game/2432",
-  "checkedAt": "2025-08-12T19:57:48.871Z",
-  "error": "Error: row not found: Charizard - Holo-1st Edition"
+  "checkedAt": "2025-08-12T20:39:05.945Z",
+  "error": "Error: page.goto failed after 3 attempts: TimeoutError: page.goto: Timeout 20000ms exceeded.\nCall log:\n  - navigating to \"https://www.psacard.com/priceguide/non-sports-tcg-card-values/1999-poke-mon-game/2432\", waiting until \"networkidle\"\n"
 }

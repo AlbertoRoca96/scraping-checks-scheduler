@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-12T19:57:55.810Z",
+  "generatedAt": "2025-08-12T20:39:23.857Z",
   "group": "compliance",
   "summary": [
     {
@@ -7,7 +7,7 @@
       "type": "psa_pop_row",
       "changed": false,
       "changedKeys": [],
-      "error": "Error: row not found: Charizard - Holo-1st Edition"
+      "error": "Error: page.goto failed after 3 attempts: TimeoutError: page.goto: Timeout 20000ms exceeded.\nCall log:\n  - navigating to \"https://www.psacard.com/pop/tcg-cards/1999/pokemon-game/57801\", waiting until \"networkidle\"\n"
     },
     {
       "name": "sec_aapl_8k_list_hash",
