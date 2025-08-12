@@ -1,0 +1,22 @@
+{
+  "name": "stock_ntdoy_global_quote",
+  "type": "stock",
+  "checkedAt": "2025-08-12T23:06:55.136Z",
+  "data": {
+    "symbol": "NTDOY",
+    "source": "alphavantage",
+    "price": 23.84,
+    "raw": {
+      "01. symbol": "NTDOY",
+      "02. open": "23.8200",
+      "03. high": "24.0800",
+      "04. low": "23.8200",
+      "05. price": "23.8400",
+      "06. volume": "2675867",
+      "07. latest trading day": "2025-08-12",
+      "08. previous close": "24.2800",
+      "09. change": "-0.4400",
+      "10. change percent": "-1.8122%"
+    }
+  }
+}
