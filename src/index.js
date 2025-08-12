@@ -17,6 +17,8 @@ const GROUP = process.env.GROUP || ""; // run only checks with matching `group`,
 async function ensureDir(p) { await fsp.mkdir(p, { recursive: true }); }
 async function readJson(p) { try { return JSON.parse(await fsp.readFile(p, "utf8")); } catch { return null; } }
 async function writeJson(p, obj) { await ensureDir(path.dirname(p)); await fsp.writeFile(p, JSON.stringify(obj, null, 2) + "\n", "utf8"); }
+// Append a line of UTF-8 text to a file (create if missing)
+async function appendLine(p, line) { await ensureDir(path.dirname(p)); await fsp.appendFile(p, line, "utf8"); }
 
 // ---------- normalize + diff ----------
 function normalizeValue(v) {
@@ -66,6 +68,20 @@ function runUrl() {
   const r = process.env.GITHUB_REPOSITORY;
   const id = process.env.GITHUB_RUN_ID;
   if (s && r && id) return `${s}/${r}/actions/runs/${id}`;
+  return null;
+}
+
+// ---------- tiny helper for time-series ----------
+// For now we only record price & availability to keep series small.
+function seriesValueFor(type, data) {
+  if (type === "price") {
+    const v = data?.price;
+    return (typeof v === "number" && Number.isFinite(v)) ? v : null;
+  }
+  if (type === "availability") {
+    if (typeof data?.available === "boolean") return data.available ? 1 : 0;
+    return null;
+  }
   return null;
 }
 
@@ -333,6 +349,17 @@ async function run() {
       changed = changedKeys.length > 0;
 
       await writeJson(latestPath, record);
+
+      // --- append time-series (JSONL) for select check types ---
+      try {
+        const tsVal = seriesValueFor(check.type, data);
+        if (tsVal !== null) {
+          const line = JSON.stringify({ t: startedAt, v: tsVal }) + "\n";
+          const tsPath = path.join(resultsDir, "timeseries", check.name, "series.jsonl");
+          await appendLine(tsPath, line);
+        }
+      } catch { /* non-fatal */ }
+
       if (changed) {
         const stamp = startedAt.replace(/[:]/g, "-");
         const histPath = path.join(historyDir, check.name, `${stamp}.json`);
@@ -340,13 +367,13 @@ async function run() {
         await sendWebhook({ check: check.name, changedKeys, record, previous: prev });
       }
 
-      summary.push({ name: check.name, changed, changedKeys, error: null });
+      summary.push({ name: check.name, type: check.type, changed, changedKeys, error: null });
       console.log(`[${check.name}] changed=${changed} keys=${changedKeys.join(",")}`);
     } catch (e) {
       hadError = true;
       record = { name: check.name, type: check.type, url: check.url, checkedAt: startedAt, error: String(e) };
       await writeJson(path.join(latestDir, `${check.name}.json`), record);
-      summary.push({ name: check.name, changed: false, changedKeys: [], error: String(e) });
+      summary.push({ name: check.name, type: check.type, changed: false, changedKeys: [], error: String(e) });
       console.error(`[${check.name}] ERROR: ${String(e)}`);
     }
   }
