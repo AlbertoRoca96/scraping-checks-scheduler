@@ -9,7 +9,7 @@
       --border:#e5e7eb; --bg:#f9fafb; --muted:#6b7280; --changed:#b45309; --ok:#059669; --err:#b91c1c;
     }
     *{box-sizing:border-box}
-    body{margin:0;padding:16px;font:16px/1.45 ui-sans-serif,system-ui,Segoe UI,Roboto,Helvetica,Arial;color:#111827;background:#fff}
+    body{margin:0;padding:16px;font:16px/1.45 ui-sans-serif,system-ui,Segoe UI,Roboto,Helvetica,Arial;color:#111827}
     header{display:flex;gap:12px;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap}
     h1{margin:0;font-size:1.5rem}
     .muted{color:var(--muted)}
@@ -20,22 +20,24 @@
     section{border:1px solid var(--border);border-radius:12px;padding:12px;background:#fff}
     h2{margin:.25rem 0 .5rem 0;font-size:1rem;display:flex;align-items:center;gap:8px}
     h2 a{font-weight:normal;font-size:.9rem}
-    table{width:100%;border-collapse:collapse}
+    table{width:100%;border-collapse:collapse;table-layout:auto}
     th,td{border-top:1px solid var(--border);padding:6px 8px;font-size:.92rem;vertical-align:top}
     th{background:var(--bg);text-align:left;white-space:nowrap}
     td.check code{background:#f3f4f6;padding:2px 4px;border-radius:6px;display:inline-block}
     td.changed{white-space:nowrap}
     td.keys, td.errcol{word-break:break-word}
-    td.json{white-space:nowrap}
+    td.json, td.price{white-space:nowrap}
     .changed-badge{color:var(--changed);font-weight:600}
     .dash{color:var(--muted)}
     .err{color:var(--err)}
     .empty{color:var(--muted);padding:6px 0}
+    .pos{color:var(--ok)} .neg{color:var(--err)}
+    .spark{display:block;width:140px;height:32px}
     @media (min-width:900px){
-      /* gentle column sizing on wider screens */
-      th.check, td.check{width:45%}
+      th.check, td.check{width:40%}
       th.changed, td.changed{width:100px}
       th.json, td.json{width:80px}
+      th.price, td.price{width:180px}
     }
   </style>
 </head>
@@ -63,6 +65,30 @@
       return res.json();
     }
 
+    async function loadSeries(name){
+      const url = `data/timeseries/${name}/series.jsonl?ts=${Date.now()}`;
+      const res = await fetch(url);
+      if(!res.ok) throw new Error("no series");
+      const text = await res.text();
+      return text.trim().split("\n").filter(Boolean).map(JSON.parse);
+    }
+
+    function sparkline(values){
+      if(values.length < 2) return "";
+      const w = 140, h = 32, n = values.length;
+      const min = Math.min(...values), max = Math.max(...values);
+      const rng = (max-min) || 1;
+      const pts = values.map((v,i)=>{
+        const x = (i/(n-1))* (w-2) + 1;
+        const y = h - ((v-min)/rng)*(h-2) - 1;
+        return `${x.toFixed(1)},${y.toFixed(1)}`;
+      });
+      const d = "M"+pts[0]+" L "+pts.slice(1).join(" L ");
+      return `<svg class="spark" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">
+        <path d="${d}" fill="none" stroke="currentColor" stroke-width="2"/>
+      </svg>`;
+    }
+
     function sectionHTML(group, summary){
       if(!summary?.length){
         return `<section><h2>Group: ${group}</h2><div class="empty">No checks found for this run.</div></section>`;
@@ -72,12 +98,13 @@
       const rows = [...summary]
         .sort((a,b) => Number(b.changed) - Number(a.changed) || a.name.localeCompare(b.name))
         .map(s => `
-          <tr>
+          <tr data-check="${s.name}" data-type="${s.type}">
             <td class="check"><code>${s.name}</code></td>
             <td class="changed">${s.changed ? '<span class="changed-badge">changed</span>' : '<span class="dash">—</span>'}</td>
             <td class="keys">${(s.changedKeys||[]).join(", ")}</td>
             <td class="errcol">${s.error ? `<span class="err">${s.error}</span>` : ""}</td>
             <td class="json"><a href="data/latest/${s.name}.json">latest</a></td>
+            <td class="price">${s.type==='price' ? '<span class="muted">loading…</span>' : ''}</td>
           </tr>`).join("");
 
       const reportHref = `data/reports/report-${group}.html`;
@@ -92,11 +119,32 @@
                 <th class="keys">Keys</th>
                 <th class="errcol">Error</th>
                 <th class="json">JSON</th>
+                <th class="price">Price</th>
               </tr>
             </thead>
             <tbody>${rows}</tbody>
           </table>
         </section>`;
+    }
+
+    async function hydratePrices(){
+      const rows = Array.from(document.querySelectorAll('tr[data-type="price"]'));
+      for(const tr of rows){
+        const name = tr.getAttribute('data-check');
+        const cell = tr.querySelector('.price');
+        try{
+          const series = await loadSeries(name);
+          if(!series.length){ cell.innerHTML = ""; continue; }
+          const last = series[series.length-1]?.v;
+          const prev = series[series.length-2]?.v ?? last;
+          const delta = (typeof last==="number" && typeof prev==="number") ? (last - prev) : 0;
+          const cls = delta >= 0 ? "pos" : "neg";
+          const spark = sparkline(series.map(p=>p.v));
+          cell.innerHTML = `<div>${Number(last).toFixed(2)} <small class="${cls}">${delta>=0?'+':''}${delta.toFixed(2)}</small></div>${spark}`;
+        }catch{
+          cell.innerHTML = "";
+        }
+      }
     }
 
     (async () => {
@@ -109,10 +157,10 @@
           const div = document.createElement('div');
           div.innerHTML = sectionHTML(r.group || g, r.summary || []);
           grid.appendChild(div.firstElementChild);
-        }catch{
-          // Group not present; skip quietly.
-        }
+        }catch{ /* group not present */ }
       }
+      // After sections render, fetch price series and render sparkline cells
+      hydratePrices();
     })();
   </script>
 </body>
