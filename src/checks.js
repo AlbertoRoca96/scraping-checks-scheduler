@@ -56,26 +56,27 @@ export default [
   // PSA (Charizard, 1999 Pokémon Game)
   // ======================
 
-  // PRICE: take “GEM-MT 10” column from the row that contains “Charizard - Holo-1st Edition”
-  // (Columns on that page include NM 7, NM-MT 8, MT 9, GEM-MT 10. The Charizard row exists.) :contentReference[oaicite:0]{index=0}
+  // PRICE: take “GEM-MT 10” column from the row that contains Charizard Holo 1st Edition.
+  // (loose token match tolerates punctuation/line-break differences)
   {
     name: "psa_charizard_price_gem10",
     type: "psa_price_row",
     group: "price",
     url: "https://www.psacard.com/priceguide/non-sports-tcg-card-values/1999-poke-mon-game/2432",
-    rowMatch: "Charizard - Holo-1st Edition",
-    gradeCol: "GEM-MT 10"
+    rowMatch: "Charizard Holo 1st Edition",
+    gradeCol: "GEM-MT 10",
+    ignoreKeys: ["raw", "mode"] // avoid change noise from formatting or scraper path
   },
 
-  // POPULATION: read the “TOTAL” column from the “Charizard - Holo-1st Edition” row
-  // on the Pop Report set page. (This page lists set rows by card with grade columns + TOTAL.) :contentReference[oaicite:1]{index=1}
+  // POPULATION: read the “TOTAL” column from the same Charizard row on the Pop Report set page.
   {
     name: "psa_charizard_pop_total",
     type: "psa_pop_row",
     group: "compliance",
     url: "https://www.psacard.com/pop/tcg-cards/1999/pokemon-game/57801",
-    rowMatch: "Charizard - Holo-1st Edition",  // case-insensitive substring match
-    column: "TOTAL"                             // which Pop column to record
+    rowMatch: "Charizard Holo 1st Edition", // tolerant token match
+    column: "TOTAL",
+    ignoreKeys: ["raw", "mode"] // formatting/path changes shouldn't flip 'changed'
   },
 
   // SEC signal (unchanged)
