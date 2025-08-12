@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-12T12:32:41.690Z",
+  "generatedAt": "2025-08-12T12:40:09.909Z",
   "group": "default",
   "summary": [
     {
@@ -10,11 +10,8 @@
     },
     {
       "name": "govuk_sitemap",
-      "changed": true,
-      "changedKeys": [
-        "all",
-        "sample"
-      ],
+      "changed": false,
+      "changedKeys": [],
       "error": null
     }
   ]
