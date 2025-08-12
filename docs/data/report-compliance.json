@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-12T22:25:05.314Z",
+  "generatedAt": "2025-08-12T22:28:37.295Z",
   "group": "compliance",
   "summary": [
     {
@@ -8,9 +8,7 @@
       "changed": true,
       "changedKeys": [
         "column",
-        "mode",
         "population",
-        "raw",
         "row"
       ],
       "error": null

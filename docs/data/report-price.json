@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-12T21:55:13.221Z",
+  "generatedAt": "2025-08-12T22:28:34.925Z",
   "group": "price",
   "summary": [
     {
@@ -28,9 +28,7 @@
       "changed": true,
       "changedKeys": [
         "grade",
-        "mode",
         "price",
-        "raw",
         "row"
       ],
       "error": null
