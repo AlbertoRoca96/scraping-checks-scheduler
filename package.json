@@ -1,0 +1,12 @@
+{
+  "name": "scraping-checks-scheduler",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "scrape": "node src/index.js"
+  },
+  "dependencies": {
+    "playwright": "^1.45.0"
+  }
+}
