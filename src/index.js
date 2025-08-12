@@ -9,9 +9,9 @@ import { URL } from "url";
 
 const root = process.cwd();
 const USER_AGENT =
-  "Mozilla/5.0 (compatible; ScrapingChecksScheduler/0.2; +https://github.com/)";
+  "Mozilla/5.0 (compatible; ScrapingChecksScheduler/0.3; +https://github.com/)";
 const FAIL_ON_ERROR = process.env.FAIL_ON_ERROR === "1";
-const GROUP = process.env.GROUP || ""; // if set, run only checks with matching `group`
+const GROUP = process.env.GROUP || ""; // run only checks with matching `group`, if set
 
 // ---------- fs helpers ----------
 async function ensureDir(p) { await fsp.mkdir(p, { recursive: true }); }
@@ -22,16 +22,14 @@ async function writeJson(p, obj) { await ensureDir(path.dirname(p)); await fsp.w
 function normalizeValue(v) {
   if (typeof v === "string") {
     const trimmed = v.replace(/\s+/g, " ").trim();
-    // try to normalize currency-like strings into numbers (best-effort)
     const num = trimmed.replace(/[^\d.,-]/g, "");
-    const looksNumeric = /[\d]/.test(num);
-    if (looksNumeric) {
-      const normalized = Number(num.replace(/,/g, "")); // "1,234.56" -> 1234.56
-      if (!Number.isNaN(normalized)) return normalized;
+    if (/\d/.test(num)) {
+      const n = Number(num.replace(/,/g, ""));
+      if (!Number.isNaN(n)) return n;
     }
     return trimmed;
   }
-  if (Array.isArray(v)) return v.map(normalizeValue).sort(); // stable order for sets like sitemaps
+  if (Array.isArray(v)) return v.map(normalizeValue).sort();
   if (v && typeof v === "object") {
     const out = {};
     for (const k of Object.keys(v).sort()) out[k] = normalizeValue(v[k]);
@@ -39,7 +37,6 @@ function normalizeValue(v) {
   }
   return v;
 }
-
 function simpleDiff(a, b, ignore = []) {
   const A = normalizeValue(a) ?? {};
   const B = normalizeValue(b) ?? {};
@@ -81,11 +78,9 @@ async function runPageCheck(check) {
     for (const [key, spec] of Object.entries(check.fields)) {
       const { selector, attr = "text" } = spec;
       await page.waitForSelector(selector);
-      if (attr === "text") {
-        data[key] = (await page.textContent(selector))?.trim() ?? null;
-      } else {
-        data[key] = await page.getAttribute(selector, attr);
-      }
+      data[key] = attr === "text"
+        ? (await page.textContent(selector))?.trim() ?? null
+        : await page.getAttribute(selector, attr);
     }
     return data;
   } finally {
@@ -98,24 +93,33 @@ function looksLikeGzip(buf) { return buf && buf.length > 2 && buf[0] === 0x1f &&
 
 async function fetchBuffer(url) {
   const res = await fetch(url, { headers: { "User-Agent": USER_AGENT, "Accept": "*/*" } });
-  return { res, buf: Buffer.from(await res.arrayBuffer()) };
+  const buf = Buffer.from(await res.arrayBuffer());
+  return { res, buf };
 }
+
+// Safe gunzip: if headers say gzip but body isn't, fall back to plain text.
 async function fetchTextMaybeGzip(url) {
   const { res, buf } = await withRetry(`fetch ${url}`, () => fetchBuffer(url));
   if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText || ""}`.trim());
+
   const ct = (res.headers.get("content-type") || "").toLowerCase();
   const ce = (res.headers.get("content-encoding") || "").toLowerCase();
   const gzByType = ct.includes("application/gzip") || ct.includes("x-gzip");
   const gzByEnc = ce.includes("gzip");
   const gzByExt = url.toLowerCase().endsWith(".gz");
-  if (gzByType || gzByEnc || gzByExt || looksLikeGzip(buf)) return gunzipSync(buf).toString("utf8");
+
+  if (gzByType || gzByEnc || gzByExt || looksLikeGzip(buf)) {
+    try { return gunzipSync(buf).toString("utf8"); }
+    catch { /* fall back */ }
+  }
   return buf.toString("utf8");
 }
 
 function extractLocsFromXml(xml) {
   const isIndex = /<\s*sitemapindex[\s>]/i.test(xml);
-  const locs = Array.from(xml.matchAll(/<\s*loc\s*>\s*([^<]+)\s*<\s*\/\s*loc\s*>/gi)).map(m => m[1].trim());
-  return { isIndex, locs };
+  const rawLocs = Array.from(xml.matchAll(/<\s*loc\s*>\s*([^<]+)\s*<\s*\/\s*loc\s*>/gi))
+    .map(m => m[1].trim());
+  return { isIndex, locs: rawLocs };
 }
 
 async function discoverSitemapsFromRobots(startUrl) {
@@ -128,37 +132,56 @@ async function discoverSitemapsFromRobots(startUrl) {
 }
 
 async function runSitemapCheck(check) {
-  const tried = [];
+  const tried = new Set();
   const queue = [check.url];
   let firstError = null;
+  let triedRobots = false;
 
   while (queue.length) {
     const url = queue.shift();
-    tried.push(url);
+    if (tried.has(url)) continue;
+    tried.add(url);
+
     try {
       const xml = await fetchTextMaybeGzip(url);
       const { isIndex, locs } = extractLocsFromXml(xml);
 
+      // Resolve relative children against the current URL
+      const resolve = (child) => new URL(child, url).href;
+
       if (isIndex) {
-        const childSm = locs.slice(0, check.indexLimit || 5);
+        const childSitemaps = locs.slice(0, check.indexLimit || 5).map(resolve);
         const all = [];
-        for (const sm of childSm) {
+        for (const sm of childSitemaps) {
           try {
             const childXml = await fetchTextMaybeGzip(sm);
             const child = extractLocsFromXml(childXml);
-            if (!child.isIndex) all.push(...child.locs);
-          } catch { /* ignore bad child */ }
+            if (!child.isIndex) all.push(...child.locs.map(u => resolve(u)));
+          } catch { /* ignore bad child and continue */ }
           if (check.limit && all.length >= check.limit) break;
         }
         const limited = check.limit ? all.slice(0, check.limit) : all;
         return { source: url, count: limited.length, sample: limited.slice(0, 10), all: limited };
       }
 
-      const limited = check.limit ? locs.slice(0, check.limit) : locs;
-      return { source: url, count: limited.length, sample: limited.slice(0, 10), all: limited };
+      // urlset
+      if (locs.length > 0) {
+        const absolute = locs.map(resolve);
+        const limited = check.limit ? absolute.slice(0, check.limit) : absolute;
+        return { source: url, count: limited.length, sample: limited.slice(0, 10), all: limited };
+      }
+
+      // No locs found: try robots-discovered sitemaps once
+      if (!triedRobots) {
+        triedRobots = true;
+        const discovered = await discoverSitemapsFromRobots(check.url);
+        for (const d of discovered) queue.push(d);
+      }
     } catch (e) {
       if (!firstError) firstError = e;
-      if (queue.length === 0 && tried.length === 1) {
+      // On fetch/parse failure: try robots-discovered sitemaps once
+      if (!triedRobots) {
+        triedRobots = true;
         const discovered = await discoverSitemapsFromRobots(check.url);
         for (const d of discovered) queue.push(d);
       }
@@ -166,7 +189,7 @@ async function runSitemapCheck(check) {
   }
 
   const err = firstError ? firstError.message : "Unknown sitemap error";
-  throw new Error(`Sitemap fetch failed after trying ${tried.join(", ")}: ${err}`);
+  throw new Error(`Sitemap fetch failed after trying ${Array.from(tried).join(", ")}: ${err}`);
 }
 
 // ---------- webhook ----------
@@ -189,10 +212,9 @@ async function sendWebhook({ check, changedKeys, record, previous }) {
     const res = await fetch(url, {
       method: "POST",
       headers: { "content-type": "application/json" },
-      // Slack-compatible: {text} ; Discord-compatible: {content}; raw JSON payload too
       body: JSON.stringify({
-        text,
-        content: text,
+        text,               // Slack compatible
+        content: text,      // Discord compatible
         event: "scrape.changed",
         check,
         changedKeys,
@@ -215,6 +237,7 @@ async function run() {
 
   // optional grouping
   const todo = checks.filter(c => !GROUP || c.group === GROUP);
+  const checkNames = new Set(todo.map(c => c.name));
 
   const summary = [];
   let hadError = false;
@@ -233,7 +256,6 @@ async function run() {
       const latestPath = path.join(latestDir, `${check.name}.json`);
       const prev = await readJson(latestPath);
 
-      // ignoreKeys support
       const ignore = Array.isArray(check.ignoreKeys) ? check.ignoreKeys : [];
       changedKeys = simpleDiff(prev?.data, data, ignore);
       changed = changedKeys.length > 0;
@@ -244,16 +266,7 @@ async function run() {
         const stamp = startedAt.replace(/[:]/g, "-");
         const histPath = path.join(historyDir, check.name, `${stamp}.json`);
         await writeJson(histPath, record);
-      }
-
-      // Optional webhook on change
-      if (changed) {
-        await sendWebhook({
-          check: check.name,
-          changedKeys,
-          record,
-          previous: prev
-        });
+        await sendWebhook({ check: check.name, changedKeys, record, previous: prev });
       }
 
       summary.push({ name: check.name, changed, changedKeys, error: null });
@@ -267,8 +280,27 @@ async function run() {
     }
   }
 
+  // prune stale latest files that no longer correspond to current checks
+  try {
+    const files = await fsp.readdir(latestDir);
+    for (const f of files) {
+      if (!f.endsWith(".json")) continue;
+      const name = f.replace(/\.json$/, "");
+      if (!checkNames.has(name)) {
+        await fsp.unlink(path.join(latestDir, f));
+        console.log(`[prune] removed stale ${f}`);
+      }
+    }
+  } catch (e) {
+    console.warn(`[prune] warning: ${String(e)}`);
+  }
+
   // write machine + human-friendly reports
-  await writeJson(path.join(resultsDir, "report.json"), { generatedAt: new Date().toISOString(), group: GROUP || "all", summary });
+  await writeJson(path.join(resultsDir, "report.json"), {
+    generatedAt: new Date().toISOString(),
+    group: GROUP || "all",
+    summary
+  });
 
   const mdLines = [
     `# Scrape Report (${new Date().toISOString()})`,
@@ -283,7 +315,6 @@ async function run() {
   await fsp.writeFile(path.join(resultsDir, "report.md"), mdLines.join("\n") + "\n", "utf8");
 
   console.log("\nDone. Summary:\n", JSON.stringify(summary, null, 2));
-
   if (hadError && FAIL_ON_ERROR) process.exit(1);
 }
 
