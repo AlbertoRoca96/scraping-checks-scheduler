@@ -1,25 +1,43 @@
-# Scraping & Checks Scheduler
+Scraping & Checks Scheduler
+A “headless Playwright on a cron” that scrapes sources, diffs them, and emits JSON + optional webhooks — all running in GitHub Actions. Data lands in docs/data/ so GitHub Pages can render a live dashboard. 
+GitHub
 
-A “headless Playwright on a cron” that scrapes sources, diffs them, and emits JSON + optional webhooks. Runs entirely in **GitHub Actions**.
+Live dashboard: https://<your-username>.github.io/scraping-checks-scheduler/
+(Uses docs/index.html to visualize the latest run + mini sparklines from time-series files.)
 
-## What’s included
+What’s included
+Check types & groups
+default
 
-- **SEO/content ops**: `sitemap_diff` for PlayStation Blog and Nintendo US News (detect newly published pages).  
-- **Price/stock**: `price` + `availability` for a Pokémon PDP on a demo WooCommerce store.  
-- **Compliance/signals**: `content_watch` for **PSA pop** page and **SEC EDGAR 8-K** (hashes list page).
+page – basic DOM extraction (example.com H1 + link)
 
-## How it works
+seo
 
-- Each check writes `data/latest/<check>.json`. If the payload changed, it also writes a versioned file under `data/history/<check>/...json` and posts a webhook (if `WEBHOOK_URL` set).
-- The workflow runs 4 groups in parallel, uploads their `data/` dirs as artifacts, then a final job merges and commits.
+sitemap_diff – PlayStation Blog, Nintendo US News (detect new/removed URLs)
 
-## Setup
+price
 
-1) Fork/clone → push.  
-2) (Optional) Add **WEBHOOK_URL** (Slack/Discord) to: **Settings → Secrets and variables → Actions → New repository secret**.  
-3) Run manually: **Actions → Scraping & Checks Scheduler → Run workflow**.
+price – numeric price from a CSS selector (demo WooCommerce page)
 
-## Add your own checks
+availability – boolean stock flag via regex match
 
-Edit `src/checks.js`. Available `type`s: `page`, `price`, `availability`, `sitemap`, `sitemap_diff`, `content_watch`.
+psa_price_row – PSA price guide: find a row by fuzzy tokens and pull a specific grade column (e.g., GEM-MT 10)
 
+compliance
+
+psa_pop_row – PSA pop report: read TOTAL (or a named column) for a fuzzy-matched row
+
+content_watch – content hash of a page (e.g., SEC EDGAR list); stores a normalized hash only
+
+stocks
+
+stock_quote – Alpha Vantage GLOBAL_QUOTE for a ticker (e.g., NTDOY); stores price + change
+Docs for the Quote endpoint (aka function=GLOBAL_QUOTE) and response fields are here. 
+Alpha Vantage
+
+Every run writes data/latest/<check>.json. If the payload changed, a copy is also written under data/history/<check>/*.json, and a webhook is posted if WEBHOOK_URL is set. 
+GitHub
+
+Time-series
+For checks that have a numeric signal (price, availability, psa_price_row, psa_pop_row, stock_quote), the runner also appends
+data/timeseries/<check>/series.jsonl with { t, v } points. The dashboard shows tiny sparklines from these files.
