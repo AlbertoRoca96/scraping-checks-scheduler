@@ -1,0 +1,7 @@
+{
+  "name": "nasa_jpl_sitemap",
+  "type": "sitemap",
+  "url": "https://www.jpl.nasa.gov/sitemap.xml",
+  "checkedAt": "2025-08-12T12:46:47.504Z",
+  "error": "Error: Sitemap fetch failed after trying https://www.jpl.nasa.gov/sitemap.xml, https://www.jpl.nasa.gov/sitemap.xml: incorrect header check"
+}

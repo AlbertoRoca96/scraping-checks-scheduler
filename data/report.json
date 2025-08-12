@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-12T12:40:09.909Z",
+  "generatedAt": "2025-08-12T12:46:47.802Z",
   "group": "default",
   "summary": [
     {
@@ -13,6 +13,23 @@
       "changed": false,
       "changedKeys": [],
       "error": null
+    },
+    {
+      "name": "nasa_climate_sitemap",
+      "changed": true,
+      "changedKeys": [
+        "all",
+        "count",
+        "sample",
+        "source"
+      ],
+      "error": null
+    },
+    {
+      "name": "nasa_jpl_sitemap",
+      "changed": false,
+      "changedKeys": [],
+      "error": "Error: Sitemap fetch failed after trying https://www.jpl.nasa.gov/sitemap.xml, https://www.jpl.nasa.gov/sitemap.xml: incorrect header check"
     }
   ]
 }
