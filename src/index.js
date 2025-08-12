@@ -71,6 +71,16 @@ function runUrl() {
   return null;
 }
 
+// Text normalizer for tolerant comparisons (handles hyphens/whitespace/case)
+function norm(s = "") {
+  return String(s)
+    // normalize all dash variants to a simple hyphen
+    .replace(/[\u2010-\u2015\u2212]/g, "-")
+    .toLowerCase()
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 // ---------- tiny helper for time-series ----------
 // For now we only record price & availability to keep series small.
 function seriesValueFor(type, data) {
@@ -105,15 +115,43 @@ function toNumberLike(s) {
   const n = Number(cleaned);
   return Number.isFinite(n) ? n : null;
 }
-async function scrapeFirstTableMatrix(page) {
-  await page.waitForSelector("table");
-  return await page.evaluate(() => {
-    const tbl = document.querySelector("table");
+
+// Scrape a single table into headers/rows
+async function scrapeFirstTableMatrix(page, tableSelector = "table") {
+  await page.waitForSelector(tableSelector);
+  return await page.evaluate((sel) => {
+    const tbl = document.querySelector(sel);
     const headers = Array.from(tbl.querySelectorAll("thead th, thead td")).map(th => th.innerText.trim());
     const rows = Array.from(tbl.querySelectorAll("tbody tr"))
       .map(tr => Array.from(tr.querySelectorAll("th,td")).map(td => td.innerText.trim()));
     return { headers, rows };
+  }, tableSelector);
+}
+
+// Scrape **all** tables on the page (some PSA pages have multiple tables)
+async function scrapeAllTables(page) {
+  await page.waitForSelector("table");
+  return await page.evaluate(() => {
+    const tables = Array.from(document.querySelectorAll("table"));
+    return tables.map(tbl => {
+      const headers = Array.from(tbl.querySelectorAll("thead th, thead td")).map(th => th.innerText.trim());
+      const rows = Array.from(tbl.querySelectorAll("tbody tr"))
+        .map(tr => Array.from(tr.querySelectorAll("th,td")).map(td => td.innerText.trim()));
+      return { headers, rows };
+    });
   });
+}
+
+// Try to use a page-level search/filter input to avoid virtualized rows not being present
+async function tryUseTableSearch(page, query) {
+  const searchSel = 'input[type="search"], input[placeholder*="Search" i], input[aria-label*="Search" i]';
+  const search = await page.$(searchSel);
+  if (!search) return false;
+  await search.fill(query);
+  // Some UIs re-filter on input, others on Enter — do both
+  try { await search.press("Enter"); } catch {}
+  await page.waitForTimeout(350);
+  return true;
 }
 
 // ---------- check: page (generic field scraping) ----------
@@ -307,19 +345,32 @@ async function runContentWatch(check) {
 }
 
 // ---------- PSA custom checks ----------
+
 // Price page: find the row that matches rowMatch; take the value in gradeCol
 async function runPsaPriceRow(check) {
   const { browser, page } = await newPage();
   try {
-    await withRetry("page.goto", () => page.goto(check.url, { waitUntil: "domcontentloaded" }));
-    const { headers, rows } = await scrapeFirstTableMatrix(page);
+    // PSA pages are JS-heavy; wait for network to settle
+    await withRetry("page.goto", () => page.goto(check.url, { waitUntil: "networkidle" }));
 
-    const colIdx = headers.findIndex(h => h.replace(/\s+/g, " ").toUpperCase().includes((check.gradeCol || "").toUpperCase()));
-    if (colIdx < 0) throw new Error(`grade column not found: ${check.gradeCol}`);
+    // Try to filter to the specific row so we don't depend on long/virtualized tables
+    await tryUseTableSearch(page, check.rowMatch);
 
-    const row = rows.find(r => (r[0] || "").toLowerCase().includes(check.rowMatch.toLowerCase()));
+    // There may be more than one table; choose the one that has the requested grade column
+    const tables = await scrapeAllTables(page);
+    const wantCol = norm(check.gradeCol || "GEM-MT 10");
+    const table = tables.find(t => t.headers.some(h => norm(h).includes(wantCol)));
+    if (!table) throw new Error(`grade column not found: ${check.gradeCol}`);
+
+    const needle = norm(check.rowMatch);
+    const row = table.rows.find(r => {
+      const a = norm(r[0] || "");
+      const b = norm(r[1] || "");
+      return a.includes(needle) || b.includes(needle);
+    });
     if (!row) throw new Error(`row not found: ${check.rowMatch}`);
 
+    const colIdx = table.headers.findIndex(h => norm(h).includes(wantCol));
     const raw = row[colIdx] || "";
     const price = toNumberLike(raw);
     return { row: row[0], grade: check.gradeCol, price, raw };
@@ -332,18 +383,24 @@ async function runPsaPriceRow(check) {
 async function runPsaPopRow(check) {
   const { browser, page } = await newPage();
   try {
-    await withRetry("page.goto", () => page.goto(check.url, { waitUntil: "domcontentloaded" }));
-    const { headers, rows } = await scrapeFirstTableMatrix(page);
+    // Heavier wait to ensure dynamic rows load; then use the page's search box
+    await withRetry("page.goto", () => page.goto(check.url, { waitUntil: "networkidle" }));
+    await tryUseTableSearch(page, check.rowMatch);
 
-    const colName = (check.column || "TOTAL").toUpperCase();
-    const colIdx = headers.findIndex(h => (h || "").trim().toUpperCase() === colName);
-    if (colIdx < 0) throw new Error(`column not found: ${check.column || "TOTAL"}`);
+    const tables = await scrapeAllTables(page);
+    const wantCol = norm(check.column || "TOTAL");
+    const table = tables.find(t => t.headers.some(h => norm(h).includes(wantCol)));
+    if (!table) throw new Error(`column not found: ${check.column || "TOTAL"}`);
 
-    const row = rows.find(r =>
-      (r[1] || r[0] || "").toLowerCase().includes(check.rowMatch.toLowerCase())
-    );
+    const needle = norm(check.rowMatch);
+    const row = table.rows.find(r => {
+      const a = norm(r[0] || "");
+      const b = norm(r[1] || "");
+      return a.includes(needle) || b.includes(needle);
+    });
     if (!row) throw new Error(`row not found: ${check.rowMatch}`);
 
+    const colIdx = table.headers.findIndex(h => norm(h).includes(wantCol));
     const raw = row[colIdx] || "";
     const population = toNumberLike(raw);
     return { row: row[0], column: check.column || "TOTAL", population, raw };
