@@ -73,7 +73,7 @@ export default [
     name: "psa_charizard_pop_hash",
     type: "content_watch",
     group: "compliance",
-    url: "https://www.psacard.com/Pop/pokemon/pokemon-base-set-1999/charizard-holo/52618",
+    url: "https://www.psacard.com/pop/tcg-cards/1999/pokemon-game/57801",
     selector: "body",
     hashOnly: true,
     // Strip common dynamic noise (dates, commas in big numbers won't matter due to hashing text).
