@@ -1,11 +1,8 @@
-# Scrape Report (2025-08-12T20:39:23.858Z)
+# Scrape Report (2025-08-12T20:56:52.915Z)
 
-Group: `compliance`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/16920302954
+Group: `compliance`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/16920685897
 
 | Check | Changed | Keys | Error |
 |---|:---:|:--|:--|
-| `psa_charizard_pop_total` | — |  | `Error: page.goto failed after 3 attempts: TimeoutError: page.goto: Timeout 20000ms exceeded.
-Call log:
-  - navigating to "https://www.psacard.com/pop/tcg-cards/1999/pokemon-game/57801", waiting until "networkidle"
-` |
+| `psa_charizard_pop_total` | — |  | `Error: row not found: Charizard - Holo-1st Edition` |
 | `sec_aapl_8k_list_hash` | ✅ | hash, length |  |
