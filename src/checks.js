@@ -1,30 +1,25 @@
-// Each "check" is either a simple page scrape or a sitemap diff.
-// Start with two safe demos you can run immediately.
+// src/checks.js
+// Two example checks:
+// 1) A simple page scrape (stable, fast) to prove Playwright is working.
+// 2) A sitemap scrape against GOV.UK's official sitemap index.
 
 export default [
   {
     name: "example_h1",
     type: "page",
-    url: "https://example.com",
-    // Grab text from a selector on the page:
+    url: "https://example.com/",
     fields: {
-      heading: { selector: "h1", attr: "text" } // => "Example Domain"
+      heading: { selector: "h1", attr: "text" }, // -> "Example Domain"
+      moreInfoLink: { selector: "a[href*='iana.org']", attr: "href" }
     }
   },
-  {
-    name: "python_sitemap",
-    type: "sitemap",
-    url: "https://www.python.org/sitemap.xml",
-    limit: 200 // keep it small for the demo
-  }
 
-  // Add your own:
-  // {
-  //   name: "my_product_price",
-  //   type: "page",
-  //   url: "https://example.com/product/123",
-  //   fields: {
-  //     price: { selector: ".product-price", attr: "text" }
-  //   }
-  // }
+  {
+    name: "govuk_sitemap",
+    type: "sitemap",
+    // GOV.UK’s official sitemap index; it links to ~30 sub-sitemaps.
+    // This URL is stable and updated via a daily cron job.
+    url: "https://www.gov.uk/sitemap.xml",
+    limit: 500 // keep runs snappy; bump if you want more
+  }
 ];
