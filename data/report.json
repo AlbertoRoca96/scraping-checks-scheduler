@@ -1,12 +1,10 @@
 {
-  "generatedAt": "2025-08-12T11:10:53.072Z",
+  "generatedAt": "2025-08-12T11:20:53.724Z",
   "summary": [
     {
       "name": "example_h1",
-      "changed": true,
-      "changedKeys": [
-        "heading"
-      ],
+      "changed": false,
+      "changedKeys": [],
       "error": null
     },
     {
