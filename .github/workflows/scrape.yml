@@ -1,8 +1,9 @@
+# .github/workflows/scrape.yml
 name: Scraping & Checks Scheduler
 
 on:
   schedule:
-    - cron: "15 */6 * * *"   # every 6h at :15 UTC
+    - cron: "0 */2 * * *"   # every 1h at :15 UTC
   workflow_dispatch: {}
 
 permissions:
@@ -76,19 +77,16 @@ jobs:
           echo "--- data/ ---";    find data -maxdepth 2 -type f -printf "%P\n" | sort || true
           echo "--- latest/ ---";  find latest -maxdepth 1 -type f -printf "%P\n" | sort || true
 
-      # Unify any stray top-level outputs into data/
       - name: Normalize artifact layout
         shell: bash
         run: |
           mkdir -p data/latest data/history data/reports
-          # If previous runs created top-level latest/history/reports, fold them into data/
           [ -d latest   ] && rsync -a latest/   data/latest/   && rm -rf latest
           [ -d history  ] && rsync -a history/  data/history/  && rm -rf history
           [ -d reports  ] && rsync -a reports/  data/reports/  && rm -rf reports
           shopt -s nullglob
           for f in report-*.json report-*.md; do mv "$f" data/; done
 
-      # Copy the unified data set to the site directory
       - name: Copy data to docs for Pages
         run: |
           mkdir -p docs/data
@@ -99,7 +97,6 @@ jobs:
           echo "--- docs/data ---"
           find docs/data -maxdepth 2 -type f -printf "%P\n" | sort | sed -n '1,200p'
 
-      # Commit everything (including removals from normalization)
       - name: Commit updated data + site
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
