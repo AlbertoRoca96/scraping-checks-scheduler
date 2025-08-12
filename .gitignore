@@ -1,2 +1,8 @@
-node_modules
+# Ignore only the top-level scrape outputs (we publish a copy under docs/data)
+#/data means "just the one at repo root"
+#/docs/data remains tracked
+/data/
 
+# Node / Playwright
+node_modules/
+.playwright/
