@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-12T12:46:47.802Z",
+  "generatedAt": "2025-08-12T12:58:46.766Z",
   "group": "default",
   "summary": [
     {
@@ -20,16 +20,20 @@
       "changedKeys": [
         "all",
         "count",
-        "sample",
-        "source"
+        "sample"
       ],
       "error": null
     },
     {
       "name": "nasa_jpl_sitemap",
-      "changed": false,
-      "changedKeys": [],
-      "error": "Error: Sitemap fetch failed after trying https://www.jpl.nasa.gov/sitemap.xml, https://www.jpl.nasa.gov/sitemap.xml: incorrect header check"
+      "changed": true,
+      "changedKeys": [
+        "all",
+        "count",
+        "sample",
+        "source"
+      ],
+      "error": null
     }
   ]
 }

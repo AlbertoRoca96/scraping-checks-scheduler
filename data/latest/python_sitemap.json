@@ -1,7 +1,0 @@
-{
-  "name": "python_sitemap",
-  "type": "sitemap",
-  "url": "https://www.python.org/sitemap.xml",
-  "checkedAt": "2025-08-12T11:20:53.631Z",
-  "error": "Error: Sitemap fetch failed after trying https://www.python.org/sitemap.xml: HTTP 404 Not Found"
-}
