@@ -4,10 +4,15 @@ playwright-report/
 test-results/
 *.log
 
-# Ignore only the top-level data dir (the one Actions writes during runs)
-# The leading slash anchors to repo root so docs/data is NOT ignored.
-# See: gitignore pattern format (leading slash behavior).
+# Ignore only the root-level data dir (Actions outputs)
+# Leading slash anchors to repo root; docs/data is NOT ignored.
+# https://git-scm.com/docs/gitignore
 /data/
+
+# Make doubly sure docs/data is tracked even if a future rule ignores docs/**
+!docs/
+!docs/data/
+!docs/data/**
 
 # macOS
 .DS_Store
