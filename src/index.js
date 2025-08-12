@@ -8,8 +8,12 @@ import { gunzipSync } from "zlib";
 import { URL } from "url";
 
 const root = process.cwd();
-const USER_AGENT =
-  "Mozilla/5.0 (compatible; ScrapingChecksScheduler/0.4; +https://github.com/)";
+
+// A realistic desktop Chrome UA helps with bot defenses.
+const REAL_BROWSER_UA =
+  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36";
+
+const USER_AGENT = REAL_BROWSER_UA;
 const FAIL_ON_ERROR = process.env.FAIL_ON_ERROR === "1";
 const GROUP = process.env.GROUP || ""; // run only checks with matching `group`, if set
 
@@ -24,9 +28,9 @@ async function appendLine(p, line) { await ensureDir(path.dirname(p)); await fsp
 function normalizeValue(v) {
   if (typeof v === "string") {
     const trimmed = v.replace(/\s+/g, " ").trim();
-    const num = trimmed.replace(/[^\d.,-]/g, "");
+    const num = trimmed.replace(/[^\d.,+-]/g, "");
     if (/\d/.test(num)) {
-      const n = Number(num.replace(/,/g, ""));
+      const n = Number(num.replace(/[,+]/g, ""));
       if (!Number.isNaN(n)) return n;
     }
     return trimmed;
@@ -53,7 +57,7 @@ function simpleDiff(a, b, ignore = []) {
 
 // ---------- utils ----------
 const delay = (ms) => new Promise((r) => setTimeout(r, ms));
-async function withRetry(label, fn, { tries = 3, baseMs = 800 } = {}) {
+async function withRetry(label, fn, { tries = 3, baseMs = 1000 } = {}) {
   let lastErr;
   for (let i = 1; i <= tries; i++) {
     try { return await fn(); } catch (e) {
@@ -71,18 +75,8 @@ function runUrl() {
   return null;
 }
 
-// Text normalizer for tolerant comparisons (handles hyphens/whitespace/case)
-function norm(s = "") {
-  return String(s)
-    // normalize all dash variants to a simple hyphen
-    .replace(/[\u2010-\u2015\u2212]/g, "-")
-    .toLowerCase()
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
 // ---------- tiny helper for time-series ----------
-// For now we only record price & availability to keep series small.
+// For now we only record price, availability & population to keep series small.
 function seriesValueFor(type, data) {
   if (type === "price" || type === "psa_price_row") {
     const v = data?.price;
@@ -101,11 +95,46 @@ function seriesValueFor(type, data) {
 
 // ---------- page helpers ----------
 async function newPage() {
-  const browser = await chromium.launch({ headless: true });
-  const page = await browser.newPage();
-  await page.setExtraHTTPHeaders({ "User-Agent": USER_AGENT });
-  page.setDefaultTimeout(20000);
-  return { browser, page };
+  const browser = await chromium.launch({
+    headless: true,
+    args: ["--disable-blink-features=AutomationControlled"]
+  });
+
+  const context = await browser.newContext({
+    userAgent: USER_AGENT,
+    viewport: { width: 1366, height: 900 },
+    locale: "en-US",
+    timezoneId: "UTC",
+    extraHTTPHeaders: {
+      "Accept-Language": "en-US,en;q=0.9",
+      "Upgrade-Insecure-Requests": "1"
+    }
+  });
+
+  // Reduce simple bot detection (navigator.webdriver).
+  await context.addInitScript(() => {
+    Object.defineProperty(navigator, "webdriver", { get: () => undefined });
+  });
+
+  const page = await context.newPage();
+  page.setDefaultTimeout(45000);
+  page.setDefaultNavigationTimeout(60000);
+
+  // Trim ad/analytics to speed up "network idle" noise if we wait for it anywhere.
+  const noisyHosts = ["googletagmanager", "doubleclick", "facebook", "adservice", "adnxs"];
+  await context.route("**/*", route => {
+    const url = route.request().url();
+    if (noisyHosts.some(h => url.includes(h))) return route.abort();
+    return route.continue();
+  });
+
+  return { browser, context, page };
+}
+
+async function smartGoto(page, url) {
+  return withRetry("page.goto", () =>
+    page.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 })
+  );
 }
 
 // ---------- generic table helpers ----------
@@ -115,60 +144,33 @@ function toNumberLike(s) {
   const n = Number(cleaned);
   return Number.isFinite(n) ? n : null;
 }
-
-// Scrape a single table into headers/rows
-async function scrapeFirstTableMatrix(page, tableSelector = "table") {
-  await page.waitForSelector(tableSelector);
-  return await page.evaluate((sel) => {
-    const tbl = document.querySelector(sel);
+async function scrapeFirstTableMatrix(page) {
+  await page.waitForSelector("table", { timeout: 60000 });
+  return await page.evaluate(() => {
+    const tbl = document.querySelector("table");
     const headers = Array.from(tbl.querySelectorAll("thead th, thead td")).map(th => th.innerText.trim());
     const rows = Array.from(tbl.querySelectorAll("tbody tr"))
       .map(tr => Array.from(tr.querySelectorAll("th,td")).map(td => td.innerText.trim()));
     return { headers, rows };
-  }, tableSelector);
-}
-
-// Scrape **all** tables on the page (some PSA pages have multiple tables)
-async function scrapeAllTables(page) {
-  await page.waitForSelector("table");
-  return await page.evaluate(() => {
-    const tables = Array.from(document.querySelectorAll("table"));
-    return tables.map(tbl => {
-      const headers = Array.from(tbl.querySelectorAll("thead th, thead td")).map(th => th.innerText.trim());
-      const rows = Array.from(tbl.querySelectorAll("tbody tr"))
-        .map(tr => Array.from(tr.querySelectorAll("th,td")).map(td => td.innerText.trim()));
-      return { headers, rows };
-    });
   });
-}
-
-// Try to use a page-level search/filter input to avoid virtualized rows not being present
-async function tryUseTableSearch(page, query) {
-  const searchSel = 'input[type="search"], input[placeholder*="Search" i], input[aria-label*="Search" i]';
-  const search = await page.$(searchSel);
-  if (!search) return false;
-  await search.fill(query);
-  // Some UIs re-filter on input, others on Enter — do both
-  try { await search.press("Enter"); } catch {}
-  await page.waitForTimeout(350);
-  return true;
 }
 
 // ---------- check: page (generic field scraping) ----------
 async function runPageCheck(check) {
-  const { browser, page } = await newPage();
+  const { browser, context, page } = await newPage();
   try {
-    await withRetry("page.goto", () => page.goto(check.url, { waitUntil: "domcontentloaded" }));
+    await smartGoto(page, check.url);
     const data = {};
     for (const [key, spec] of Object.entries(check.fields)) {
       const { selector, attr = "text" } = spec;
-      await page.waitForSelector(selector);
+      await page.waitForSelector(selector, { timeout: 60000 });
       data[key] = attr === "text"
         ? (await page.textContent(selector))?.trim() ?? null
         : await page.getAttribute(selector, attr);
     }
     return data;
   } finally {
+    await context.close();
     await browser.close();
   }
 }
@@ -180,27 +182,29 @@ function parseCurrency(txt = "") {
   return Number.isFinite(n) ? n : null;
 }
 async function runPriceCheck(check) {
-  const { browser, page } = await newPage();
+  const { browser, context, page } = await newPage();
   try {
-    await withRetry("page.goto", () => page.goto(check.url, { waitUntil: "domcontentloaded" }));
-    await page.waitForSelector(check.selector);
+    await smartGoto(page, check.url);
+    await page.waitForSelector(check.selector, { timeout: 60000 });
     const raw = (await page.textContent(check.selector))?.trim() ?? "";
     return { price: parseCurrency(raw), raw };
   } finally {
+    await context.close();
     await browser.close();
   }
 }
 
 // ---------- check: availability ----------
 async function runAvailabilityCheck(check) {
-  const { browser, page } = await newPage();
+  const { browser, context, page } = await newPage();
   try {
-    await withRetry("page.goto", () => page.goto(check.url, { waitUntil: "domcontentloaded" }));
-    await page.waitForSelector(check.selector);
+    await smartGoto(page, check.url);
+    await page.waitForSelector(check.selector, { timeout: 60000 });
     const raw = (await page.textContent(check.selector))?.trim() ?? "";
     const re = check.availableRegex ? new RegExp(check.availableRegex, "i") : /in stock|available/i;
     return { available: re.test(raw), raw };
   } finally {
+    await context.close();
     await browser.close();
   }
 }
@@ -314,18 +318,17 @@ async function runSitemapDiffCheck(check, prevRecord) {
 
 // ---------- check: content_watch ----------
 async function runContentWatch(check) {
-  const { browser, page } = await newPage();
+  const { browser, context, page } = await newPage();
   try {
-    await withRetry("page.goto", () => page.goto(check.url, { waitUntil: "domcontentloaded" }));
+    await smartGoto(page, check.url);
     const selectors = Array.isArray(check.selectors) ? check.selectors : [check.selector || "body"];
     const parts = [];
     for (const sel of selectors) {
-      await page.waitForSelector(sel);
+      await page.waitForSelector(sel, { timeout: 60000 });
       const t = await page.textContent(sel);
       if (t) parts.push(t);
     }
     let text = parts.join("\n\n");
-    // strip dynamic noise if configured
     if (Array.isArray(check.stripPatterns)) {
       for (const pat of check.stripPatterns) {
         try {
@@ -340,71 +343,58 @@ async function runContentWatch(check) {
     if (!check.hashOnly) payload.sample = normalized.slice(0, 300);
     return payload;
   } finally {
+    await context.close();
     await browser.close();
   }
 }
 
 // ---------- PSA custom checks ----------
-
 // Price page: find the row that matches rowMatch; take the value in gradeCol
 async function runPsaPriceRow(check) {
-  const { browser, page } = await newPage();
+  const { browser, context, page } = await newPage();
   try {
-    // PSA pages are JS-heavy; wait for network to settle
-    await withRetry("page.goto", () => page.goto(check.url, { waitUntil: "networkidle" }));
+    await smartGoto(page, check.url);
+    const { headers, rows } = await scrapeFirstTableMatrix(page);
 
-    // Try to filter to the specific row so we don't depend on long/virtualized tables
-    await tryUseTableSearch(page, check.rowMatch);
+    const colIdx = headers.findIndex(h =>
+      h.replace(/\s+/g, " ").toUpperCase().includes((check.gradeCol || "").toUpperCase())
+    );
+    if (colIdx < 0) throw new Error(`grade column not found: ${check.gradeCol}`);
 
-    // There may be more than one table; choose the one that has the requested grade column
-    const tables = await scrapeAllTables(page);
-    const wantCol = norm(check.gradeCol || "GEM-MT 10");
-    const table = tables.find(t => t.headers.some(h => norm(h).includes(wantCol)));
-    if (!table) throw new Error(`grade column not found: ${check.gradeCol}`);
-
-    const needle = norm(check.rowMatch);
-    const row = table.rows.find(r => {
-      const a = norm(r[0] || "");
-      const b = norm(r[1] || "");
-      return a.includes(needle) || b.includes(needle);
-    });
+    const row = rows.find(r => (r[0] || "").toLowerCase().includes(check.rowMatch.toLowerCase()));
     if (!row) throw new Error(`row not found: ${check.rowMatch}`);
 
-    const colIdx = table.headers.findIndex(h => norm(h).includes(wantCol));
     const raw = row[colIdx] || "";
     const price = toNumberLike(raw);
     return { row: row[0], grade: check.gradeCol, price, raw };
   } finally {
+    await context.close();
     await browser.close();
   }
 }
 
 // Pop page: find the row that matches rowMatch; take the numeric TOTAL (or given column)
 async function runPsaPopRow(check) {
-  const { browser, page } = await newPage();
+  const { browser, context, page } = await newPage();
   try {
-    // Heavier wait to ensure dynamic rows load; then use the page's search box
-    await withRetry("page.goto", () => page.goto(check.url, { waitUntil: "networkidle" }));
-    await tryUseTableSearch(page, check.rowMatch);
+    await smartGoto(page, check.url);
+    const { headers, rows } = await scrapeFirstTableMatrix(page);
 
-    const tables = await scrapeAllTables(page);
-    const wantCol = norm(check.column || "TOTAL");
-    const table = tables.find(t => t.headers.some(h => norm(h).includes(wantCol)));
-    if (!table) throw new Error(`column not found: ${check.column || "TOTAL"}`);
+    const colName = (check.column || "TOTAL").toUpperCase();
+    const colIdx = headers.findIndex(h => (h || "").trim().toUpperCase() === colName);
+    if (colIdx < 0) throw new Error(`column not found: ${check.column || "TOTAL"}`);
 
-    const needle = norm(check.rowMatch);
-    const row = table.rows.find(r => {
-      const a = norm(r[0] || "");
-      const b = norm(r[1] || "");
-      return a.includes(needle) || b.includes(needle);
-    });
+    // On PSA pop page, the name text is in the first TH/TD pair; match name in col 0 or 1
+    const row = rows.find(r =>
+      (r[1] || r[0] || "").toLowerCase().includes(check.rowMatch.toLowerCase())
+    );
     if (!row) throw new Error(`row not found: ${check.rowMatch}`);
 
-    const colIdx = table.headers.findIndex(h => norm(h).includes(wantCol));
     const raw = row[colIdx] || "";
     const population = toNumberLike(raw);
     return { row: row[0], column: check.column || "TOTAL", population, raw };
   } finally {
+    await context.close();
     await browser.close();
   }
 }
@@ -423,8 +413,8 @@ async function sendWebhook({ check, changedKeys, record, previous }) {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
-        text,               // Slack-compatible
-        content: text,      // Discord-compatible
+        text,
+        content: text,
         event: "scrape.changed",
         check,
         changedKeys,
