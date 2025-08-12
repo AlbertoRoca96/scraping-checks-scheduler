@@ -3,7 +3,7 @@ name: Scraping & Checks Scheduler
 
 on:
   schedule:
-    - cron: "0 */2 * * *"   # every 2h at :00 UTC
+    - cron: "0 */2 * * *"   # every 2h
   workflow_dispatch: {}
 
 permissions:
@@ -18,7 +18,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        group: ["default", "seo", "price", "compliance"]
+        group: ["default", "seo", "price", "compliance", "stocks"]
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -45,9 +45,10 @@ jobs:
       - name: Run scrapers (group=${{ matrix.group }})
         env:
           GROUP: ${{ matrix.group }}
-          FAIL_ON_ERROR: "0"                         # set to "1" to fail on any check error
+          FAIL_ON_ERROR: "0"
           WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
-          ALPHAVANTAGE_KEY: ${{ secrets.ALPHAVANTAGE_KEY }}   # <-- add this secret in repo settings
+          # 🔐 uses your existing secret name
+          ALPHAVANTAGE_KEY: ${{ secrets.ALPHAVANTAGE_KEY }}
         run: npm run scrape
 
       - name: Upload data as artifact (group=${{ matrix.group }})
@@ -72,14 +73,7 @@ jobs:
           merge-multiple: true
           path: .
 
-      - name: Show what merged
-        run: |
-          echo "--- top level ---"; ls -la
-          echo "--- data/ ---";    find data -maxdepth 2 -type f -printf "%P\n" | sort || true
-          echo "--- latest/ ---";  find latest -maxdepth 1 -type f -printf "%P\n" | sort || true
-
-      - name: Normalize artifact layout
-        shell: bash
+      - name: Normalize + publish data
         run: |
           mkdir -p data/latest data/history data/reports
           [ -d latest   ] && rsync -a latest/   data/latest/   && rm -rf latest
@@ -87,21 +81,13 @@ jobs:
           [ -d reports  ] && rsync -a reports/  data/reports/  && rm -rf reports
           shopt -s nullglob
           for f in report-*.json report-*.md; do mv "$f" data/; done
-
-      - name: Copy data to docs for Pages
-        run: |
           mkdir -p docs/data
           rsync -a --delete data/ docs/data/
-
-      - name: Preview docs/data
-        run: |
-          echo "--- docs/data ---"
-          find docs/data -maxdepth 2 -type f -printf "%P\n" | sort | sed -n '1,200p'
 
       - name: Commit updated data + site
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore(site): normalize & publish data to docs [skip ci]"
+          commit_message: "chore(site): publish data [skip ci]"
           file_pattern: "."
           add_options: "--all"
           skip_dirty_check: true
