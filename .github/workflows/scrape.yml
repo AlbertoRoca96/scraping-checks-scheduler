@@ -25,6 +25,7 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v4
 
+      # Lockfile-aware setup + caching
       - name: Set up Node (with npm cache)
         if: ${{ hashFiles('package-lock.json') != '' || hashFiles('npm-shrinkwrap.json') != '' || hashFiles('yarn.lock') != '' }}
         uses: actions/setup-node@v4
@@ -61,45 +62,67 @@ jobs:
         with:
           name: scrape-results-${{ matrix.group }}
           path: data
+          if-no-files-found: error
+          retention-days: 7
 
   merge_and_commit:
     needs: scrape
     runs-on: ubuntu-latest
+
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
 
+      # Pull down *all* matrix artifacts into this workspace and merge them
       - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
           pattern: scrape-results-*
           merge-multiple: true
           path: .
+      # The v4 action supports pattern + merge-multiple to combine artifacts. :contentReference[oaicite:1]{index=1}
 
       - name: Show what merged
         run: |
-          echo "--- merged artifacts ---"
+          echo "--- merged artifacts (top-level) ---"
           ls -la
           echo "--- data dir ---"
           ls -la data || true
           echo "--- docs dir (before copy) ---"
           ls -la docs || true
 
+      # Copy the data/ folder into docs/ so GitHub Pages can serve a live dashboard
       - name: Copy data to docs for Pages
         run: |
           mkdir -p docs/data
           rsync -a --delete data/ docs/data/
 
+      # Flatten per-group reports so docs/index.html can GET data/report-<group>.json
+      - name: Flatten group reports for dashboard
+        shell: bash
+        run: |
+          shopt -s nullglob
+          # If grouped reports exist under data/reports, copy flat copies into docs/data/
+          if [ -d data/reports ]; then
+            for f in data/reports/report-*.json; do
+              cp "$f" "docs/data/$(basename "$f")"
+            done
+          fi
+          # If any report-*.json were written at repo root by older runs, copy them too
+          for f in report-*.json; do
+            [ -f "$f" ] && cp "$f" docs/data/
+          done
+
       - name: Show docs/data after copy
         run: |
-          echo "--- docs/data ---"
+          echo "--- docs/data (preview) ---"
           find docs/data -maxdepth 2 -type f -printf "%P\n" | sort | head -200 || true
 
+      # Commit everything that changed, including new files under docs/data/
       - name: Auto-commit updated data + site
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore(site): update docs dashboard & data [skip ci]"
-          file_pattern: |
-            data/**
-            docs/**
-          add_options: "--force" # in case .gitignore ever tries to exclude docs/data
+          file_pattern: "."          # commit all changes (simplest & reliable)
+          skip_dirty_check: true     # commit even if the action's precheck thinks it's clean
+          add_options: "--all"       # stage new/removed files aggressively
