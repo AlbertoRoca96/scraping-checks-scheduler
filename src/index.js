@@ -141,6 +141,7 @@ function toNumberLike(s) {
   const n = Number(cleaned);
   return Number.isFinite(n) ? n : null;
 }
+
 async function scrapeFirstTableMatrix(page) {
   await page.waitForSelector("table");
   return await page.evaluate(() => {
@@ -150,6 +151,65 @@ async function scrapeFirstTableMatrix(page) {
       .map(tr => Array.from(tr.querySelectorAll("th,td")).map(td => td.innerText.trim()));
     return { headers, rows };
   });
+}
+
+/**
+ * Robust table extractor for DataTables pages.
+ * - Skips FixedHeader clones and hidden/empty tables
+ * - Optionally prefers tables containing a row that matches `needle`
+ * - Falls back to the table with the most body rows
+ */
+async function scrapeBestDataTableMatrix(page, needle) {
+  const haveNeedle = typeof needle === "string" && needle.trim().length > 0;
+
+  // wait until at least one table has multiple body rows (Ajax filled)
+  await page.waitForFunction(() => {
+    const tables = Array.from(document.querySelectorAll("table"));
+    return tables.some(t => {
+      const rows = t.querySelectorAll("tbody tr");
+      // skip header-only clones and hidden tables
+      const style = window.getComputedStyle(t);
+      const visible = style && style.display !== "none" && style.visibility !== "hidden";
+      return visible && rows.length >= 3;
+    });
+  });
+
+  return await page.evaluate((needleIn) => {
+    const norm = (s) => (s || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+    const toks = (needleIn || "").split(/\s+/).filter(Boolean).map(x => x.toLowerCase());
+
+    const tables = Array.from(document.querySelectorAll("table"));
+    const candidates = tables.map((t) => {
+      const style = window.getComputedStyle(t);
+      const visible = style && style.display !== "none" && style.visibility !== "hidden";
+      const rowsEls = Array.from(t.querySelectorAll("tbody tr"));
+      const rows = rowsEls.map(tr => Array.from(tr.querySelectorAll("th,td")).map(td => (td.innerText || "").trim()));
+      const headers = Array.from(t.querySelectorAll("thead th, thead td")).map(th => (th.innerText || "").trim());
+
+      // plausibility score:
+      let score = 0;
+      if (visible) score += 2;
+      if (rows.length >= 3) score += Math.min(10, rows.length); // prefer real data table
+      const headerText = norm(headers.join(" "));
+      if (/\btotal\b/.test(headerText)) score += 3;
+      if (/\bgrade\b/.test(headerText)) score += 2;
+
+      if (toks.length) {
+        const found = rows.some(r => {
+          const H = norm(r.join(" "));
+          return toks.every(tok => H.includes(tok));
+        });
+        if (found) score += 20;
+      }
+
+      return { t, headers, rows, score };
+    }).filter(c => c.rows.length > 0);
+
+    // choose the best-scoring table
+    candidates.sort((a, b) => b.score - a.score);
+    const best = candidates[0];
+    return best ? { headers: best.headers, rows: best.rows } : { headers: [], rows: [] };
+  }, needle);
 }
 
 /* ================================
@@ -448,7 +508,7 @@ async function runPsaPriceRow(check) {
   const { browser, context, page } = await newPage();
   try {
     await gotoSafely(page, check.url);
-    const { headers, rows } = await scrapeFirstTableMatrix(page);
+    const { headers, rows } = await scrapeBestDataTableMatrix(page, check.rowMatch);
 
     const colIdx = headers.findIndex(h => h.replace(/\s+/g, " ").toUpperCase().includes((check.gradeCol || "").toUpperCase()));
     if (colIdx < 0) throw new Error(`grade column not found: ${check.gradeCol}`);
@@ -489,17 +549,19 @@ async function runPsaPopRow(check) {
     // continue to Playwright
   }
 
-  // Fallback: Playwright scrape
+  // Fallback: Playwright scrape (robust to FixedHeader + Ajax)
   const { browser, context, page } = await newPage();
   try {
     await gotoSafely(page, check.url);
-    const { headers, rows } = await scrapeFirstTableMatrix(page);
+    const { headers, rows } = await scrapeBestDataTableMatrix(page, check.rowMatch);
 
     const colName = (check.column || "TOTAL").toUpperCase();
     const colIdx = headers.findIndex(h => (h || "").trim().toUpperCase() === colName);
     if (colIdx < 0) throw new Error(`column not found: ${check.column || "TOTAL"}`);
 
-    const row = rows.find(r => looseContains((r[1] || r[0] || ""), check.rowMatch) || looseContains(r.join(" "), check.rowMatch));
+    const row = rows.find(r =>
+      looseContains((r[1] || r[0] || ""), check.rowMatch) || looseContains(r.join(" "), check.rowMatch)
+    );
     if (!row) throw new Error(`row not found: ${check.rowMatch}`);
 
     const raw = row[colIdx] || "";
