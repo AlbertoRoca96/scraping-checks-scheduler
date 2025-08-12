@@ -2,7 +2,7 @@
 // Groups: default, seo, price, compliance
 
 export default [
-  // --- Sanity check (kept tiny)
+  // --- sanity
   {
     name: "example_h1",
     type: "page",
@@ -17,20 +17,14 @@ export default [
   // ======================
   // SEO / Content Ops
   // ======================
-
-  // WordPress sites usually expose /sitemap_index.xml (robots can list exact paths).
-  // PlayStation Blog news posts -> detect new URLs (added) / removals.
   {
     name: "playstation_blog_sitemap_diff",
     type: "sitemap_diff",
     group: "seo",
-    url: "https://blog.playstation.com/sitemap_index.xml", // will fall back to robots if needed
+    url: "https://blog.playstation.com/sitemap_index.xml",
     limit: 800,
     indexLimit: 12
   },
-
-  // Nintendo US News sitemap (explicitly listed in robots.txt -> sitemaps on S3)
-  // Robots reference (shows sitemap locations): https://www.nintendo.com/robots.txt
   {
     name: "nintendo_us_news_sitemap_diff",
     type: "sitemap_diff",
@@ -40,11 +34,8 @@ export default [
   },
 
   // ======================
-  // Price & Availability (Pokémon demo store)
+  // Demo price & stock
   // ======================
-
-  // Price watch: Pikachu on a WooCommerce demo shop (intentionally scrape-friendly)
-  // CSS is stable: p.price span.woocommerce-Price-amount
   {
     name: "scrapeme_pikachu_price",
     type: "price",
@@ -52,50 +43,49 @@ export default [
     url: "https://scrapeme.live/shop/Pikachu/",
     selector: "p.price span.woocommerce-Price-amount"
   },
-
-  // Availability watch: same PDP; "In stock" text under p.stock
   {
     name: "scrapeme_pikachu_availability",
     type: "availability",
     group: "price",
     url: "https://scrapeme.live/shop/Pikachu/",
     selector: "p.stock",
-    availableRegex: "in stock"   // case-insensitive
+    availableRegex: "in stock"
   },
 
   // ======================
-  // Compliance / Market Signals
+  // PSA (Charizard, 1999 Pokémon Game)
   // ======================
 
-  // PSA Population Report content hash (alerts when table changes).
-  // Example: 1999 Base Set Charizard Holo (PSA page)
+  // PRICE: take “GEM-MT 10” column from the row that contains “Charizard - Holo-1st Edition”
+  // (Columns on that page include NM 7, NM-MT 8, MT 9, GEM-MT 10. The Charizard row exists.) :contentReference[oaicite:0]{index=0}
   {
-    name: "psa_charizard_pop_hash",
-    type: "content_watch",
+    name: "psa_charizard_price_gem10",
+    type: "psa_price_row",
+    group: "price",
+    url: "https://www.psacard.com/priceguide/non-sports-tcg-card-values/1999-poke-mon-game/2432",
+    rowMatch: "Charizard - Holo-1st Edition",
+    gradeCol: "GEM-MT 10"
+  },
+
+  // POPULATION: read the “TOTAL” column from the “Charizard - Holo-1st Edition” row
+  // on the Pop Report set page. (This page lists set rows by card with grade columns + TOTAL.) :contentReference[oaicite:1]{index=1}
+  {
+    name: "psa_charizard_pop_total",
+    type: "psa_pop_row",
     group: "compliance",
     url: "https://www.psacard.com/pop/tcg-cards/1999/pokemon-game/57801",
-    selector: "body",
-    hashOnly: true,
-    // Strip common dynamic noise (dates, commas in big numbers won't matter due to hashing text).
-    stripPatterns: [
-      "\\bUpdated\\s*\\d{1,2}/\\d{1,2}/\\d{2,4}\\b",
-      "\\b\\d{1,2}:\\d{2}\\s*(AM|PM)\\b"
-    ]
+    rowMatch: "Charizard - Holo-1st Edition",  // case-insensitive substring match
+    column: "TOTAL"                             // which Pop column to record
   },
 
-  // SEC EDGAR: new 8-Ks show up on the company filings list; hashing the list section
-  // gives you material-event heads-ups (Item 1.01, 2.02, 5.02, etc.).
+  // SEC signal (unchanged)
   {
     name: "sec_aapl_8k_list_hash",
     type: "content_watch",
     group: "compliance",
-    url: "https://www.sec.gov/edgar/browse/?CIK=0000320193&owner=exclude", // Apple Inc
+    url: "https://www.sec.gov/edgar/browse/?CIK=0000320193&owner=exclude",
     selector: "body",
     hashOnly: true,
-    stripPatterns: [
-      // Strip obvious timestamps or pagination counters to reduce noise.
-      "\\b\\d{1,2}:\\d{2}:\\d{2}\\b",
-      "\\bPage\\s*\\d+\\b"
-    ]
+    stripPatterns: ["\\b\\d{1,2}:\\d{2}:\\d{2}\\b","\\bPage\\s*\\d+\\b"]
   }
 ];
