@@ -18,20 +18,7 @@ async function ensureDir(p) { await fsp.mkdir(p, { recursive: true }); }
 async function readJson(p) { try { return JSON.parse(await fsp.readFile(p, "utf8")); } catch { return null; } }
 async function writeJson(p, obj) { await ensureDir(path.dirname(p)); await fsp.writeFile(p, JSON.stringify(obj, null, 2) + "\n", "utf8"); }
 
-// ---------- small utils ----------
-const sha256 = (s) => crypto.createHash("sha256").update(String(s)).digest("hex");
-const delay = (ms) => new Promise((r) => setTimeout(r, ms));
-async function withRetry(label, fn, { tries = 3, baseMs = 800 } = {}) {
-  let lastErr;
-  for (let i = 1; i <= tries; i++) {
-    try { return await fn(); } catch (e) {
-      lastErr = e;
-      if (i < tries) await delay(baseMs * i);
-    }
-  }
-  throw new Error(`${label} failed after ${tries} attempts: ${String(lastErr)}`);
-}
-
+// ---------- normalize + diff ----------
 function normalizeValue(v) {
   if (typeof v === "string") {
     const trimmed = v.replace(/\s+/g, " ").trim();
@@ -50,7 +37,6 @@ function normalizeValue(v) {
   }
   return v;
 }
-
 function simpleDiff(a, b, ignore = []) {
   const A = normalizeValue(a) ?? {};
   const B = normalizeValue(b) ?? {};
@@ -63,6 +49,18 @@ function simpleDiff(a, b, ignore = []) {
   return changed;
 }
 
+// ---------- utils ----------
+const delay = (ms) => new Promise((r) => setTimeout(r, ms));
+async function withRetry(label, fn, { tries = 3, baseMs = 800 } = {}) {
+  let lastErr;
+  for (let i = 1; i <= tries; i++) {
+    try { return await fn(); } catch (e) {
+      lastErr = e;
+      if (i < tries) await delay(baseMs * i);
+    }
+  }
+  throw new Error(`${label} failed after ${tries} attempts: ${String(lastErr)}`);
+}
 function runUrl() {
   const s = process.env.GITHUB_SERVER_URL;
   const r = process.env.GITHUB_REPOSITORY;
@@ -71,25 +69,20 @@ function runUrl() {
   return null;
 }
 
-// ---------- Playwright page loader ----------
-async function loadPage(url, fn) {
+// ---------- page helpers ----------
+async function newPage() {
   const browser = await chromium.launch({ headless: true });
-  try {
-    const page = await browser.newPage();
-    await page.setExtraHTTPHeaders({ "User-Agent": USER_AGENT });
-    page.setDefaultTimeout(20000);
-    await withRetry("page.goto", () => page.goto(url, { waitUntil: "domcontentloaded" }));
-    return await fn(page);
-  } finally {
-    await browser.close();
-  }
+  const page = await browser.newPage();
+  await page.setExtraHTTPHeaders({ "User-Agent": USER_AGENT });
+  page.setDefaultTimeout(20000);
+  return { browser, page };
 }
 
-// ---------- Check Runners ----------
-
-// type: "page"
+// ---------- check: page (generic field scraping) ----------
 async function runPageCheck(check) {
-  return loadPage(check.url, async (page) => {
+  const { browser, page } = await newPage();
+  try {
+    await withRetry("page.goto", () => page.goto(check.url, { waitUntil: "domcontentloaded" }));
     const data = {};
     for (const [key, spec] of Object.entries(check.fields)) {
       const { selector, attr = "text" } = spec;
@@ -99,30 +92,44 @@ async function runPageCheck(check) {
         : await page.getAttribute(selector, attr);
     }
     return data;
-  });
+  } finally {
+    await browser.close();
+  }
 }
 
-// type: "price"
+// ---------- check: price ----------
+function parseCurrency(txt = "") {
+  const cleaned = (txt || "").replace(/[^\d.,-]/g, "").replace(/,/g, "");
+  const n = Number(cleaned);
+  return Number.isFinite(n) ? n : null;
+}
 async function runPriceCheck(check) {
-  return loadPage(check.url, async (page) => {
-    await page.waitForSelector(check.priceSelector);
-    const raw = (await page.textContent(check.priceSelector))?.trim() ?? "";
-    const num = Number(raw.replace(/[^0-9.\-]/g, ""));
-    return { price: Number.isFinite(num) ? num : null, raw };
-  });
-}
-
-// type: "availability"
-async function runAvailabilityCheck(check) {
-  return loadPage(check.url, async (page) => {
+  const { browser, page } = await newPage();
+  try {
+    await withRetry("page.goto", () => page.goto(check.url, { waitUntil: "domcontentloaded" }));
     await page.waitForSelector(check.selector);
     const raw = (await page.textContent(check.selector))?.trim() ?? "";
-    const available = /in\s*stock/i.test(raw);
-    return { available, raw };
-  });
+    return { price: parseCurrency(raw), raw };
+  } finally {
+    await browser.close();
+  }
 }
 
-// Sitemap helpers
+// ---------- check: availability ----------
+async function runAvailabilityCheck(check) {
+  const { browser, page } = await newPage();
+  try {
+    await withRetry("page.goto", () => page.goto(check.url, { waitUntil: "domcontentloaded" }));
+    await page.waitForSelector(check.selector);
+    const raw = (await page.textContent(check.selector))?.trim() ?? "";
+    const re = check.availableRegex ? new RegExp(check.availableRegex, "i") : /in stock|available/i;
+    return { available: re.test(raw), raw };
+  } finally {
+    await browser.close();
+  }
+}
+
+// ---------- sitemap helpers ----------
 function looksLikeGzip(buf) { return buf && buf.length > 2 && buf[0] === 0x1f && buf[1] === 0x8b; }
 async function fetchBuffer(url) {
   const res = await fetch(url, { headers: { "User-Agent": USER_AGENT, "Accept": "*/*" } });
@@ -132,6 +139,7 @@ async function fetchBuffer(url) {
 async function fetchTextMaybeGzip(url) {
   const { res, buf } = await withRetry(`fetch ${url}`, () => fetchBuffer(url));
   if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText || ""}`.trim());
+
   const ct = (res.headers.get("content-type") || "").toLowerCase();
   const ce = (res.headers.get("content-encoding") || "").toLowerCase();
   const gzByType = ct.includes("application/gzip") || ct.includes("x-gzip");
@@ -155,133 +163,127 @@ async function discoverSitemapsFromRobots(startUrl) {
     return Array.from(text.matchAll(/(?<=^|\n)\s*Sitemap:\s*(\S+)\s*/gi)).map(m => m[1]);
   } catch { return []; }
 }
-async function resolveSitemap(url, check) {
-  const tried = new Set();
+async function fetchSitemapUrls(url, { indexLimit = 5, limit } = {}) {
   const queue = [url];
+  const tried = new Set();
   let firstError = null;
-  let triedRobots = false;
 
   while (queue.length) {
     const cur = queue.shift();
     if (tried.has(cur)) continue;
     tried.add(cur);
+
     try {
       const xml = await fetchTextMaybeGzip(cur);
       const { isIndex, locs } = extractLocsFromXml(xml);
       const resolve = (child) => new URL(child, cur).href;
 
       if (isIndex) {
-        const childSitemaps = locs.slice(0, check.indexLimit || 5).map(resolve);
+        const child = locs.slice(0, indexLimit).map(resolve);
         const all = [];
-        for (const sm of childSitemaps) {
+        for (const sm of child) {
           try {
-            const childXml = await fetchTextMaybeGzip(sm);
-            const child = extractLocsFromXml(childXml);
-            if (!child.isIndex) all.push(...child.locs.map(u => resolve(u)));
-          } catch { /* skip child */ }
-          if (check.limit && all.length >= check.limit) break;
+            const subXml = await fetchTextMaybeGzip(sm);
+            const sub = extractLocsFromXml(subXml);
+            if (!sub.isIndex) all.push(...sub.locs.map(resolve));
+          } catch { /* ignore bad child */ }
+          if (limit && all.length >= limit) break;
         }
-        const limited = check.limit ? all.slice(0, check.limit) : all;
-        return { source: cur, urls: limited };
-      }
-
-      if (locs.length > 0) {
-        const absolute = locs.map(resolve);
-        const limited = check.limit ? absolute.slice(0, check.limit) : absolute;
-        return { source: cur, urls: limited };
-      }
-
-      if (!triedRobots) {
-        triedRobots = true;
-        const discovered = await discoverSitemapsFromRobots(url);
-        for (const d of discovered) queue.push(d);
+        return { source: cur, urls: limit ? all.slice(0, limit) : all };
+      } else {
+        const urls = (limit ? locs.slice(0, limit) : locs).map(resolve);
+        return { source: cur, urls };
       }
     } catch (e) {
       if (!firstError) firstError = e;
-      if (!triedRobots) {
-        triedRobots = true;
+      if (queue.length === 0 && tried.size === 1) {
         const discovered = await discoverSitemapsFromRobots(url);
         for (const d of discovered) queue.push(d);
       }
     }
   }
   const err = firstError ? firstError.message : "Unknown sitemap error";
-  throw new Error(`Sitemap fetch failed after trying ${Array.from(tried).join(", ")}: ${err}`);
+  throw new Error(`Sitemap fetch failed: ${err}`);
 }
 
-// type: "sitemap" or "sitemap_diff"
-async function runSitemap(check) {
-  const out = await resolveSitemap(check.url, check);
-  return { source: out.source, count: out.urls.length, sample: out.urls.slice(0, 10), all: out.urls };
-}
-
-// type: "content_watch"
-async function runContentWatch(check) {
-  return loadPage(check.url, async (page) => {
-    let text;
-    if (check.selector) {
-      await page.waitForSelector(check.selector);
-      text = (await page.textContent(check.selector)) ?? "";
-    } else {
-      text = await page.content(); // full HTML
-    }
-    const ignore = Array.isArray(check.ignore) ? check.ignore : [];
-    const sanitized = ignore.reduce((acc, pattern) => acc.replace(new RegExp(pattern, "gi"), ""), text);
-    return {
-      selector: check.selector || "FULL_PAGE",
-      textSample: sanitized.trim().slice(0, 400),
-      hash: sha256(sanitized)
-    };
+// ---------- check: sitemap (raw) ----------
+async function runSitemapCheck(check) {
+  const { urls, source } = await fetchSitemapUrls(check.url, {
+    indexLimit: check.indexLimit || 5,
+    limit: check.limit
   });
+  return { source, count: urls.length, sample: urls.slice(0, 10), all: urls };
 }
 
-// change logic per type
-function priceChange(prev, cur, thresholdPct = 1) {
-  const a = prev?.price, b = cur?.price;
-  if (typeof a === "number" && typeof b === "number") {
-    const pct = ((b - a) / (a === 0 ? 1 : a)) * 100;
-    const changed = Math.abs(pct) >= thresholdPct;
-    return { changed, changedKeys: changed ? ["price", "pct"] : [], pct };
+// ---------- check: sitemap_diff ----------
+function diffSets(prev = [], next = []) {
+  const A = new Set(prev);
+  const B = new Set(next);
+  const added = [...B].filter(x => !A.has(x)).sort();
+  const removed = [...A].filter(x => !B.has(x)).sort();
+  return { added, removed };
+}
+async function runSitemapDiffCheck(check, prevRecord) {
+  const current = await runSitemapCheck(check);
+  const prevAll = prevRecord?.data?.all || [];
+  const { added, removed } = diffSets(prevAll, current.all);
+  return {
+    source: current.source,
+    nowCount: current.all.length,
+    prevCount: prevAll.length,
+    added,
+    removed
+  };
+}
+
+// ---------- check: content_watch ----------
+async function runContentWatch(check) {
+  const { browser, page } = await newPage();
+  try {
+    await withRetry("page.goto", () => page.goto(check.url, { waitUntil: "domcontentloaded" }));
+    const selectors = Array.isArray(check.selectors) ? check.selectors : [check.selector || "body"];
+    const parts = [];
+    for (const sel of selectors) {
+      await page.waitForSelector(sel);
+      const t = await page.textContent(sel);
+      if (t) parts.push(t);
+    }
+    let text = parts.join("\n\n");
+    // strip dynamic noise if configured
+    if (Array.isArray(check.stripPatterns)) {
+      for (const pat of check.stripPatterns) {
+        try {
+          const re = new RegExp(pat, "gim");
+          text = text.replace(re, "");
+        } catch { /* ignore bad regex */ }
+      }
+    }
+    const normalized = text.replace(/\s+/g, " ").trim();
+    const hash = crypto.createHash("sha256").update(normalized).digest("hex");
+    const payload = { hash, length: normalized.length };
+    if (!check.hashOnly) payload.sample = normalized.slice(0, 300);
+    return payload;
+  } finally {
+    await browser.close();
   }
-  return { changed: true, changedKeys: ["price"], pct: null };
-}
-function availabilityChange(prev, cur) {
-  const changed = prev?.available !== cur?.available;
-  return { changed, changedKeys: changed ? ["available"] : [] };
-}
-function sitemapChange(prev, cur) {
-  const prevSet = new Set(prev?.all || []);
-  const curSet = new Set(cur?.all || []);
-  const added = [...curSet].filter(u => !prevSet.has(u));
-  const removed = [...prevSet].filter(u => !curSet.has(u));
-  const changed = added.length > 0 || removed.length > 0;
-  const data = { ...cur, added, removed, addedCount: added.length, removedCount: removed.length };
-  return { changed, changedKeys: changed ? ["added", "removed"] : [], data };
-}
-function contentChange(prev, cur) {
-  const changed = prev?.hash !== cur?.hash;
-  return { changed, changedKeys: changed ? ["hash"] : [] };
 }
 
-// webhook
-async function sendWebhook({ check, changedKeys, record, previous, extraText }) {
+// ---------- webhook ----------
+async function sendWebhook({ check, changedKeys, record, previous }) {
   const url = process.env.WEBHOOK_URL;
   if (!url) return { sent: false, reason: "no WEBHOOK_URL set" };
   const link = runUrl();
-  const lines = [
-    changedKeys.length ? `✅ **${check}** changed (${changedKeys.join(", ")})` : `ℹ️ **${check}** ran with no changes`,
-    extraText ? extraText : null,
-    link ? `Run: ${link}` : null
-  ].filter(Boolean);
-  const text = lines.join("\n");
+  const text = changedKeys.length
+    ? `✅ ${check} changed (${changedKeys.join(", ")})\n${link ?? ""}`.trim()
+    : `ℹ️ ${check} ran with no changes.\n${link ?? ""}`.trim();
 
   try {
     const res = await fetch(url, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
-        text,
-        content: text,
+        text,               // Slack-compatible
+        content: text,      // Discord-compatible
         event: "scrape.changed",
         check,
         changedKeys,
@@ -295,50 +297,15 @@ async function sendWebhook({ check, changedKeys, record, previous, extraText }) 
   }
 }
 
-// HTML report helper
-function renderHtml(summary, group) {
-  const rows = summary.map(s => `
-    <tr>
-      <td><code>${s.name}</code></td>
-      <td style="text-align:center;">${s.changed ? "✅" : "—"}</td>
-      <td>${(s.changedKeys || []).join(", ")}</td>
-      <td>${s.error ? `<code>${s.error}</code>` : ""}</td>
-    </tr>
-  `).join("");
-
-  return `<!doctype html>
-<html lang="en"><meta charset="utf-8">
-<title>Scrape Report (${group || "all"})</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<style>
-  body { font: 14px/1.4 system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 24px; color:#111;}
-  table { border-collapse: collapse; width: 100%; }
-  th, td { border:1px solid #ddd; padding:8px; }
-  th { background:#f7f7f7; text-align:left; }
-  code { background:#f0f0f0; padding:1px 4px; border-radius:4px; }
-</style>
-<h1>Scrape Report — ${group || "all"}</h1>
-<p>Generated: ${new Date().toISOString()} ${runUrl() ? `| <a href="${runUrl()}">Run</a>` : ""}</p>
-<table>
-  <thead><tr><th>Check</th><th>Changed</th><th>Keys</th><th>Error</th></tr></thead>
-  <tbody>${rows}</tbody>
-</table>
-<p>Raw JSON in <code>data/latest/</code>.</p>
-</html>`;
-}
-
 // ---------- main ----------
 async function run() {
   const resultsDir = path.join(root, "data");
   const latestDir = path.join(resultsDir, "latest");
   const historyDir = path.join(resultsDir, "history");
-  const reportsDir = path.join(resultsDir, "reports");
-  await Promise.all([ensureDir(latestDir), ensureDir(historyDir), ensureDir(reportsDir)]);
+  await Promise.all([ensureDir(latestDir), ensureDir(historyDir)]);
 
-  // plan: run current group only
   const todo = checks.filter(c => !GROUP || c.group === GROUP);
-  // for pruning, consider ALL check names (not just group)
-  const allCheckNames = new Set(checks.map(c => c.name));
+  const checkNames = new Set(todo.map(c => c.name));
 
   const summary = [];
   let hadError = false;
@@ -347,68 +314,50 @@ async function run() {
     const startedAt = new Date().toISOString();
     let record; let changed = false; let changedKeys = [];
     try {
-      let data;
-      let extraText = null;
+      const latestPath = path.join(latestDir, `${check.name}.json`);
+      const prev = await readJson(latestPath);
 
+      let data;
       if (check.type === "page") data = await runPageCheck(check);
       else if (check.type === "price") data = await runPriceCheck(check);
       else if (check.type === "availability") data = await runAvailabilityCheck(check);
+      else if (check.type === "sitemap") data = await runSitemapCheck(check);
+      else if (check.type === "sitemap_diff") data = await runSitemapDiffCheck(check, prev);
       else if (check.type === "content_watch") data = await runContentWatch(check);
-      else if (check.type === "sitemap" || check.type === "sitemap_diff") data = await runSitemap(check);
       else throw new Error(`Unknown check type: ${check.type}`);
 
       record = { name: check.name, type: check.type, url: check.url, checkedAt: startedAt, data };
 
-      const latestPath = path.join(latestDir, `${check.name}.json`);
-      const prev = await readJson(latestPath);
-
-      // decide change type
-      if (check.type === "price") {
-        const { changed: ch, changedKeys: ck, pct } =
-          priceChange(prev?.data, data, check.thresholdPct ?? 1);
-        changed = ch; changedKeys = ck;
-        if (pct !== null) extraText = `Price move: ${pct.toFixed(2)}%`;
-      } else if (check.type === "availability") {
-        const t = availabilityChange(prev?.data, data);
-        changed = t.changed; changedKeys = t.changedKeys;
-      } else if (check.type === "content_watch") {
-        const t = contentChange(prev?.data, data);
-        changed = t.changed; changedKeys = t.changedKeys;
-      } else if (check.type === "sitemap" || check.type === "sitemap_diff") {
-        const t = sitemapChange(prev?.data, data);
-        changed = t.changed; changedKeys = t.changedKeys; record.data = t.data;
-      } else {
-        const ignore = Array.isArray(check.ignoreKeys) ? check.ignoreKeys : [];
-        changedKeys = simpleDiff(prev?.data, data, ignore);
-        changed = changedKeys.length > 0;
-      }
+      const ignore = Array.isArray(check.ignoreKeys) ? check.ignoreKeys : [];
+      changedKeys = simpleDiff(prev?.data, data, ignore);
+      changed = changedKeys.length > 0;
 
       await writeJson(latestPath, record);
       if (changed) {
         const stamp = startedAt.replace(/[:]/g, "-");
         const histPath = path.join(historyDir, check.name, `${stamp}.json`);
         await writeJson(histPath, record);
-        await sendWebhook({ check: check.name, changedKeys, record, previous: prev, extraText });
+        await sendWebhook({ check: check.name, changedKeys, record, previous: prev });
       }
 
       summary.push({ name: check.name, changed, changedKeys, error: null });
       console.log(`[${check.name}] changed=${changed} keys=${changedKeys.join(",")}`);
     } catch (e) {
       hadError = true;
-      const record = { name: check.name, type: check.type, url: check.url, checkedAt: startedAt, error: String(e) };
+      record = { name: check.name, type: check.type, url: check.url, checkedAt: startedAt, error: String(e) };
       await writeJson(path.join(latestDir, `${check.name}.json`), record);
       summary.push({ name: check.name, changed: false, changedKeys: [], error: String(e) });
       console.error(`[${check.name}] ERROR: ${String(e)}`);
     }
   }
 
-  // prune stale latest files that are not part of ANY check (any group)
+  // prune stale latest files that no longer correspond to current checks
   try {
     const files = await fsp.readdir(latestDir);
     for (const f of files) {
       if (!f.endsWith(".json")) continue;
       const name = f.replace(/\.json$/, "");
-      if (!allCheckNames.has(name)) {
+      if (!checkNames.has(name)) {
         await fsp.unlink(path.join(latestDir, f));
         console.log(`[prune] removed stale ${f}`);
       }
@@ -417,21 +366,22 @@ async function run() {
     console.warn(`[prune] warning: ${String(e)}`);
   }
 
-  // Per-group reports
-  const groupKey = (GROUP || "all").replace(/[^a-z0-9_-]/gi, "-").toLowerCase();
-  await writeJson(path.join(reportsDir, `report-${groupKey}.json`), {
+  // write per-group reports
+  await writeJson(path.join(resultsDir, `report-${GROUP || "all"}.json`), {
     generatedAt: new Date().toISOString(),
     group: GROUP || "all",
     summary
   });
-
   const mdLines = [
+    `# Scrape Report (${new Date().toISOString()})`,
+    ``,
+    `Group: \`${GROUP || "all"}\`  |  Run: ${runUrl() ?? "(local)"}`,
+    ``,
     `| Check | Changed | Keys | Error |`,
     `|---|:---:|:--|:--|`,
     ...summary.map(s => `| \`${s.name}\` | ${s.changed ? "✅" : "—"} | ${s.changedKeys.join(", ")} | ${s.error ? "`" + s.error + "`" : ""} |`)
   ];
-  await fsp.writeFile(path.join(reportsDir, `report-${groupKey}.md`), mdLines.join("\n") + "\n", "utf8");
-  await fsp.writeFile(path.join(reportsDir, `report-${groupKey}.html`), renderHtml(summary, GROUP), "utf8");
+  await fsp.writeFile(path.join(resultsDir, `report-${GROUP || "all"}.md`), mdLines.join("\n") + "\n", "utf8");
 
   console.log("\nDone. Summary:\n", JSON.stringify(summary, null, 2));
   if (hadError && FAIL_ON_ERROR) process.exit(1);
