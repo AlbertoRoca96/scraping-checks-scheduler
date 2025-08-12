@@ -1,0 +1,33 @@
+name: Publish Report to Pages
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'data/**'
+
+permissions:
+  pages: write      # for pages deployments
+  id-token: write   # for OIDC token
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Upload Pages artifact (data/)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: data
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
