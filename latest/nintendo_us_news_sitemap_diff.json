@@ -1,0 +1,22 @@
+{
+  "name": "nintendo_us_news_sitemap_diff",
+  "type": "sitemap_diff",
+  "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
+  "checkedAt": "2025-08-12T16:50:19.432Z",
+  "data": {
+    "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
+    "nowCount": 8,
+    "prevCount": 0,
+    "added": [
+      "https://www.nintendo.com/us/whatsnew/catch-the-latest-on-drag-x-drive-before-tip-off-time/",
+      "https://www.nintendo.com/us/whatsnew/ea-sports-fc-25-is-available-now/",
+      "https://www.nintendo.com/us/whatsnew/forge-your-baseball-journey-in-mlb-r-the-show-tm-25/",
+      "https://www.nintendo.com/us/whatsnew/grab-your-board-and-drop-into-tony-hawks-pro-skater-3-4/",
+      "https://www.nintendo.com/us/whatsnew/play-like-the-pros-in-nba-2k25/",
+      "https://www.nintendo.com/us/whatsnew/want-to-hit-the-court-in-drag-x-drive/",
+      "https://www.nintendo.com/us/whatsnew/were-a-soccer-for-the-next-classic-nintendo-gamecube-game/",
+      "https://www.nintendo.com/us/whatsnew/your-ea-sports-fc-tm-25-team-of-the-year-is-here/"
+    ],
+    "removed": []
+  }
+}
