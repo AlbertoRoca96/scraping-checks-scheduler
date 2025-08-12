@@ -52,6 +52,17 @@ export default [
     availableRegex: "in stock"
   },
 
+  // --- NEW: Nintendo stock (ADR: NTDOY) via Alpha Vantage ---
+  // Requires ALPHAVANTAGE_KEY secret. Uses "GLOBAL_QUOTE" to capture the latest price.
+  {
+    name: "stock_ntdoy_global_quote",
+    type: "stock",
+    group: "price",
+    source: "alphavantage",
+    symbol: "NTDOY",
+    ignoreKeys: ["raw"] // ignore verbose JSON in change detection
+  },
+
   // ======================
   // PSA (Charizard, 1999 Pokémon Game)
   // ======================
