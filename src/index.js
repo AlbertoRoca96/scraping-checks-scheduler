@@ -20,7 +20,7 @@ const GROUP = process.env.GROUP || "";
 const GOTO_WAIT_UNTIL = process.env.GOTO_WAIT_UNTIL || "domcontentloaded";
 const NAV_TIMEOUT_MS = Number(process.env.NAV_TIMEOUT_MS || 45000);
 
-/** 🔐 your repo secret name */
+/** 🔐 your repo secret name (do not change) */
 const ALPHAVANTAGE_KEY = process.env.ALPHAVANTAGE_KEY || "";
 
 /* ================================
@@ -106,17 +106,18 @@ function seriesValueFor(type, data) {
 }
 
 /* ================================
-   Playwright: robust page factory
+   Playwright: page factory
+   - blocks heavy resources
+   - default wide viewport (helps DataTables show all columns)
 =================================== */
-async function newPage() {
+async function newPage({ viewport } = {}) {
   const browser = await chromium.launch({ headless: true });
   const context = await browser.newContext({
     userAgent: REALISTIC_UA,
     locale: "en-US",
-    viewport: { width: 1366, height: 900 }
+    viewport: viewport || { width: 1920, height: 1080 }
   });
 
-  // block heavy non-critical resources
   await context.route("**/*", (route) => {
     const rt = route.request().resourceType();
     if (rt === "image" || rt === "media" || rt === "font") return route.abort();
@@ -178,7 +179,7 @@ async function fetchTextMaybeGzip(url) {
   const gzByEnc = ce.includes("gzip");
   const gzByExt = url.toLowerCase().endsWith(".gz");
   if (gzByType || gzByEnc || gzByExt || looksLikeGzip(buf)) {
-    try { return gunzipSync(buf).toString("utf8"); } catch { /* fall back */ }
+    try { return gunzipSync(buf).toString("utf8"); } catch {}
   }
   return buf.toString("utf8");
 }
@@ -220,7 +221,7 @@ function looseContains(hay, needle) {
 }
 
 /* ================================
-   generic page checks (Playwright)
+   generic page checks
 =================================== */
 async function gotoSafely(page, url) {
   await withRetry("page.goto", () =>
@@ -247,7 +248,7 @@ async function runPageCheck(check) {
 }
 
 /* ================================
-   price + availability (Playwright)
+   price + availability
 =================================== */
 function parseCurrency(txt = "") {
   const cleaned = String(txt)
@@ -284,7 +285,7 @@ async function runAvailabilityCheck(check) {
 }
 
 /* ================================
-   sitemap helpers + checks
+   sitemaps
 =================================== */
 async function discoverSitemapsFromRobots(startUrl) {
   const u = new URL(startUrl);
@@ -322,13 +323,13 @@ async function fetchSitemapUrls(url, { indexLimit = 5, limit } = {}) {
             const subXml = await fetchTextMaybeGzip(sm);
             const sub = extractLocsFromXml(subXml);
             if (!sub.isIndex) all.push(...sub.locs.map(resolve));
-          } catch { /* ignore bad child */ }
+          } catch {}
           if (limit && all.length >= limit) break;
         }
         return { source: cur, urls: limit ? all.slice(0, limit) : all };
       } else {
         const urls = (limit ? locs.slice(0, limit) : locs).map(resolve);
-        return { source: cur, urls };
+        return { source, urls };
       }
     } catch (e) {
       if (!firstError) firstError = e;
@@ -410,9 +411,9 @@ function pickTableWithColumn(tables, desiredColUpper) {
   return tables.find(t => t.headers.some(h => (h || "").trim().toUpperCase().includes(want)));
 }
 
-// Price page: find row by tokens; pull desired grade column
+// Price page
 async function runPsaPriceRow(check) {
-  // 1) HTML fetch – scan all tables
+  // Try HTML
   try {
     const html = await fetchTextMaybeGzip(check.url);
     const tables = parseTables(html);
@@ -429,8 +430,8 @@ async function runPsaPriceRow(check) {
     }
   } catch {}
 
-  // 2) Playwright fallback – also scan all tables
-  const { browser, context, page } = await newPage();
+  // Playwright fallback
+  const { browser, context, page } = await newPage({ viewport: { width: 2200, height: 1300 } });
   try {
     await gotoSafely(page, check.url);
     const tables = await scrapeTablesMatrix(page);
@@ -449,9 +450,9 @@ async function runPsaPriceRow(check) {
   }
 }
 
-// Pop page: take numeric TOTAL (or given column)
+// Pop page (TOTAL column)
 async function runPsaPopRow(check) {
-  // HTML fetch first
+  // HTML first
   try {
     const html = await fetchTextMaybeGzip(check.url);
     const tables = parseTables(html);
@@ -469,20 +470,32 @@ async function runPsaPopRow(check) {
     }
   } catch {}
 
-  // Playwright fallback
-  const { browser, context, page } = await newPage();
+  // Playwright fallback with bigger viewport + search-box assist
+  const { browser, context, page } = await newPage({ viewport: { width: 2400, height: 1400 } });
   try {
     await gotoSafely(page, check.url);
+
+    // Try to use the page's own DataTables search to filter the row into view.
+    try {
+      const searchSel = "input[type='search'], .dataTables_filter input";
+      await page.waitForSelector(searchSel, { timeout: 4000 });
+      await page.fill(searchSel, check.rowMatch);
+      await delay(750); // let DT redraw
+    } catch {} // non-fatal
+
     const tables = await scrapeTablesMatrix(page);
     const colName = (check.column || "TOTAL").toUpperCase();
     const target = pickTableWithColumn(tables, colName);
     if (!target) throw new Error(`column not found: ${check.column || "TOTAL"}`);
+
     const { headers, rows } = target;
     const colIdx = headers.findIndex(h => (h || "").trim().toUpperCase().includes(colName));
+
     const row = rows.find(r =>
       looseContains((r[1] || r[0] || ""), check.rowMatch) || looseContains(r.join(" "), check.rowMatch)
     );
     if (!row) throw new Error(`row not found: ${check.rowMatch}`);
+
     const raw = row[colIdx] || "";
     const population = toNumberLike(raw);
     return { row: row[0], column: check.column || "TOTAL", population, raw, mode: "playwright" };
@@ -595,7 +608,7 @@ async function run() {
 
       await writeJson(latestPath, record);
 
-      // Append time-series for select types
+      // time-series (JSONL)
       try {
         const tsVal = seriesValueFor(check.type, data);
         if (tsVal !== null) {
@@ -639,7 +652,7 @@ async function run() {
     console.warn(`[prune] warning: ${String(e)}`);
   }
 
-  // write per-group reports
+  // per-group reports
   await writeJson(path.join(resultsDir, `report-${GROUP || "all"}.json`), {
     generatedAt: new Date().toISOString(),
     group: GROUP || "all",
