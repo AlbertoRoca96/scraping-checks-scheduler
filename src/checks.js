@@ -34,7 +34,7 @@ export default [
   },
 
   // ======================
-  // Demo price & stock
+  // Demo price & stock (site demo)
   // ======================
   {
     name: "scrapeme_pikachu_price",
@@ -56,20 +56,23 @@ export default [
   // PSA (Charizard, 1999 Pokémon Game)
   // ======================
   {
+    // PRICE: take “GEM-MT 10” from the Charizard 1st Ed row
     name: "psa_charizard_price_gem10",
     type: "psa_price_row",
     group: "price",
     url: "https://www.psacard.com/priceguide/non-sports-tcg-card-values/1999-poke-mon-game/2432",
-    rowMatch: "Charizard Holo 1st Edition", // tolerant
+    rowMatch: "Charizard Holo 1st Edition", // tolerant token match
     gradeCol: "GEM-MT 10",
     ignoreKeys: ["raw", "mode"]
   },
   {
+    // POP: read “TOTAL” from the same row on the Pop Report set page
     name: "psa_charizard_pop_total",
     type: "psa_pop_row",
     group: "compliance",
     url: "https://www.psacard.com/pop/tcg-cards/1999/pokemon-game/57801",
-    rowMatch: "Charizard Holo 1st Edition",
+    // Use the exact text you'll see on the page; hyphen/space differences are tolerated by the scraper
+    rowMatch: "Charizard-Holo 1st Edition",
     column: "TOTAL",
     ignoreKeys: ["raw", "mode"]
   },
