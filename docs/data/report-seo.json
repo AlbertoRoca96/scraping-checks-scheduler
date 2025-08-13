@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-12T23:32:01.244Z",
+  "generatedAt": "2025-08-13T00:08:24.555Z",
   "group": "seo",
   "summary": [
     {
@@ -18,15 +18,9 @@
     {
       "name": "nintendo_us_news_sitemap_diff",
       "type": "sitemap_diff",
-      "changed": true,
-      "changedKeys": [
-        "added",
-        "nowCount",
-        "prevCount",
-        "removed",
-        "source"
-      ],
-      "error": null
+      "changed": false,
+      "changedKeys": [],
+      "error": "Error: Sitemap fetch failed: source is not defined"
     }
   ]
 }
