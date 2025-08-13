@@ -18,7 +18,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        group: ["default", "seo", "price", "compliance", "stocks"]
+        group: ["stocks", "default", "seo", "price", "compliance"]
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -47,7 +47,7 @@ jobs:
           GROUP: ${{ matrix.group }}
           FAIL_ON_ERROR: "0"
           WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
-          # 🔐 keep your existing secret name
+          # 🔐 keep your existing secret NAME
           ALPHAVANTAGE_KEY: ${{ secrets.ALPHAVANTAGE_KEY }}
         run: npm run scrape
 
