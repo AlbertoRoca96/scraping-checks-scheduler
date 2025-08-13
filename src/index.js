@@ -20,7 +20,7 @@ const GROUP = process.env.GROUP || "";
 const GOTO_WAIT_UNTIL = process.env.GOTO_WAIT_UNTIL || "domcontentloaded";
 const NAV_TIMEOUT_MS = Number(process.env.NAV_TIMEOUT_MS || 45000);
 
-/** 🔐 your repo secret name (do not change) */
+/** 🔐 keep your secret name exactly */
 const ALPHAVANTAGE_KEY = process.env.ALPHAVANTAGE_KEY || "";
 
 /* ================================
@@ -106,18 +106,17 @@ function seriesValueFor(type, data) {
 }
 
 /* ================================
-   Playwright: page factory
-   - blocks heavy resources
-   - default wide viewport (helps DataTables show all columns)
+   Playwright: robust page factory
 =================================== */
-async function newPage({ viewport } = {}) {
+async function newPage() {
   const browser = await chromium.launch({ headless: true });
   const context = await browser.newContext({
     userAgent: REALISTIC_UA,
     locale: "en-US",
-    viewport: viewport || { width: 1920, height: 1080 }
+    viewport: { width: 1366, height: 900 }
   });
 
+  // block heavy non-critical resources
   await context.route("**/*", (route) => {
     const rt = route.request().resourceType();
     if (rt === "image" || rt === "media" || rt === "font") return route.abort();
@@ -134,21 +133,23 @@ async function newPage({ viewport } = {}) {
 =================================== */
 function toNumberLike(s) {
   if (s == null) return null;
-  const cleaned = String(s)
-    .replace(/[^\d.+-]/g, "")
-    .replace(/,/g, "")
-    .replace(/[+–-]+$/g, "");
+  const cleaned = String(s).replace(/[^\d.+-]/g, "").replace(/,/g, "").replace(/[+–-]+$/g, "");
   const n = Number(cleaned);
   return Number.isFinite(n) ? n : null;
 }
 async function scrapeTablesMatrix(page) {
   await page.waitForSelector("table");
+  // wait until DataTables-style tables finish populating (rows > X)
+  await page.waitForFunction(() => {
+    const rows = Array.from(document.querySelectorAll("table tbody tr"));
+    return rows.length > 20; // PSA pages usually have many rows
+  }, { timeout: 15000 }).catch(() => {});
   return await page.evaluate(() => {
     function grab(tbl) {
       const headers = Array.from(tbl.querySelectorAll("thead th, thead td")).map(th => th.innerText.trim());
       const rows = Array.from(tbl.querySelectorAll("tbody tr"))
         .map(tr => Array.from(tr.querySelectorAll("th,td")).map(td => td.innerText.trim()));
-      return { headers, rows };
+      return { headers, rows, size: tbl.innerText.length };
     }
     return Array.from(document.querySelectorAll("table")).map(grab);
   });
@@ -206,7 +207,7 @@ function parseTables(html) {
       [...tr.matchAll(/<(?:td|th)[^>]*>([\s\S]*?)<\/(?:td|th)>/gi)]
         .map(x => cleanCell(x[1]))
     ).filter(r => r.length > 0);
-    return { headers, rows };
+    return { headers, rows, size: table.length };
   });
 }
 
@@ -219,9 +220,13 @@ function looseContains(hay, needle) {
   const toks = N.split(/\s+/).filter(Boolean);
   return toks.every(t => H.includes(t));
 }
+function tokensFound(hay, tokens) {
+  const H = (hay || "").toLowerCase().replace(/[^a-z0-9]+/g, " ");
+  return tokens.every(t => H.includes(t.toLowerCase()));
+}
 
 /* ================================
-   generic page checks
+   generic page checks (Playwright)
 =================================== */
 async function gotoSafely(page, url) {
   await withRetry("page.goto", () =>
@@ -248,13 +253,10 @@ async function runPageCheck(check) {
 }
 
 /* ================================
-   price + availability
+   price + availability (Playwright)
 =================================== */
 function parseCurrency(txt = "") {
-  const cleaned = String(txt)
-    .replace(/[^\d.,+–-]/g, "")
-    .replace(/,/g, "")
-    .replace(/[+–-]+$/g, "");
+  const cleaned = String(txt).replace(/[^\d.,+–-]/g, "").replace(/,/g, "").replace(/[+–-]+$/g, "");
   const n = Number(cleaned);
   return Number.isFinite(n) ? n : null;
 }
@@ -285,7 +287,7 @@ async function runAvailabilityCheck(check) {
 }
 
 /* ================================
-   sitemaps
+   sitemap helpers + checks
 =================================== */
 async function discoverSitemapsFromRobots(startUrl) {
   const u = new URL(startUrl);
@@ -329,7 +331,7 @@ async function fetchSitemapUrls(url, { indexLimit = 5, limit } = {}) {
         return { source: cur, urls: limit ? all.slice(0, limit) : all };
       } else {
         const urls = (limit ? locs.slice(0, limit) : locs).map(resolve);
-        return { source, urls };
+        return { source: cur, urls };
       }
     } catch (e) {
       if (!firstError) firstError = e;
@@ -404,25 +406,38 @@ async function runContentWatch(check) {
 }
 
 /* ================================
-   PSA custom checks (robust)
+   PSA custom checks (more robust)
 =================================== */
-function pickTableWithColumn(tables, desiredColUpper) {
+function pickBestTable(tables, desiredColUpper, tokens = []) {
   const want = (desiredColUpper || "").toUpperCase();
-  return tables.find(t => t.headers.some(h => (h || "").trim().toUpperCase().includes(want)));
+  // score: has desired column, many rows, contains any token in content
+  let best = null; let bestScore = -1;
+  for (const t of tables) {
+    const hasCol = t.headers.some(h => (h || "").trim().toUpperCase().includes(want));
+    if (!hasCol) continue;
+    const content = [t.headers.join(" "), ...t.rows.map(r => r.join(" "))].join(" ");
+    const tokenHit = tokens.length ? tokensFound(content, tokens) ? 5 : 0 : 0;
+    const score = (hasCol ? 10 : 0) + Math.min(t.rows.length, 200) + tokenHit + Math.min(t.size/1000, 50);
+    if (score > bestScore) { bestScore = score; best = t; }
+  }
+  return best;
 }
 
-// Price page
+// Price page: find row by tokens; pull desired grade column
 async function runPsaPriceRow(check) {
-  // Try HTML
+  const tokens = (check.rowMatch || "").split(/\s+/).filter(Boolean);
+
+  // HTML fetch – scan all tables
   try {
     const html = await fetchTextMaybeGzip(check.url);
     const tables = parseTables(html);
-    const target = pickTableWithColumn(tables, check.gradeCol || "");
+    const target = pickBestTable(tables, check.gradeCol || "", tokens);
     if (target) {
       const { headers, rows } = target;
       const colIdx = headers.findIndex(h => h.replace(/\s+/g, " ").toUpperCase().includes((check.gradeCol || "").toUpperCase()));
       if (colIdx < 0) throw new Error(`grade column not found: ${check.gradeCol}`);
-      const row = rows.find(r => r.some(c => looseContains(c, check.rowMatch)) || looseContains(r.join(" "), check.rowMatch));
+      // tolerate punctuation / multi-cell variants
+      const row = rows.find(r => looseContains(r.join(" "), check.rowMatch));
       if (!row) throw new Error(`row not found: ${check.rowMatch}`);
       const raw = row[colIdx] || "";
       const price = toNumberLike(raw);
@@ -430,16 +445,16 @@ async function runPsaPriceRow(check) {
     }
   } catch {}
 
-  // Playwright fallback
-  const { browser, context, page } = await newPage({ viewport: { width: 2200, height: 1300 } });
+  // Playwright fallback – also scan all tables
+  const { browser, context, page } = await newPage();
   try {
     await gotoSafely(page, check.url);
     const tables = await scrapeTablesMatrix(page);
-    const target = pickTableWithColumn(tables, check.gradeCol || "");
+    const target = pickBestTable(tables, check.gradeCol || "", tokens);
     if (!target) throw new Error(`grade column not found: ${check.gradeCol}`);
     const { headers, rows } = target;
     const colIdx = headers.findIndex(h => h.replace(/\s+/g, " ").toUpperCase().includes((check.gradeCol || "").toUpperCase()));
-    const row = rows.find(r => r.some(c => looseContains(c, check.rowMatch)) || looseContains(r.join(" "), check.rowMatch));
+    const row = rows.find(r => looseContains(r.join(" "), check.rowMatch));
     if (!row) throw new Error(`row not found: ${check.rowMatch}`);
     const raw = row[colIdx] || "";
     const price = toNumberLike(raw);
@@ -450,19 +465,28 @@ async function runPsaPriceRow(check) {
   }
 }
 
-// Pop page (TOTAL column)
+// Pop page: take numeric TOTAL (or given column) — smarter table+row pick
 async function runPsaPopRow(check) {
+  const colName = (check.column || "TOTAL").toUpperCase();
+  const searchTokens = ["Charizard", "Holo"]; // help pick the right table
+  const rowNeedles = [
+    check.rowMatch,
+    "Charizard-Holo 1st Edition",
+    "Charizard Holo 1st Edition"
+  ].filter(Boolean);
+
   // HTML first
   try {
     const html = await fetchTextMaybeGzip(check.url);
     const tables = parseTables(html);
-    const colName = (check.column || "TOTAL").toUpperCase();
-    const target = pickTableWithColumn(tables, colName);
+    const target = pickBestTable(tables, colName, searchTokens);
     if (target) {
       const { headers, rows } = target;
       const colIdx = headers.findIndex(h => (h || "").trim().toUpperCase().includes(colName));
       if (colIdx < 0) throw new Error(`column not found: ${check.column || "TOTAL"}`);
-      const row = rows.find(r => looseContains(r.join(" "), check.rowMatch));
+      let row = rows.find(r => rowNeedles.some(n => looseContains(r.join(" "), n)));
+      // extra tolerance: split tokens
+      if (!row) row = rows.find(r => tokensFound(r.join(" "), ["charizard","holo","1st","edition"]));
       if (!row) throw new Error(`row not found: ${check.rowMatch}`);
       const raw = row[colIdx] || "";
       const population = toNumberLike(raw);
@@ -470,32 +494,18 @@ async function runPsaPopRow(check) {
     }
   } catch {}
 
-  // Playwright fallback with bigger viewport + search-box assist
-  const { browser, context, page } = await newPage({ viewport: { width: 2400, height: 1400 } });
+  // Playwright fallback
+  const { browser, context, page } = await newPage();
   try {
     await gotoSafely(page, check.url);
-
-    // Try to use the page's own DataTables search to filter the row into view.
-    try {
-      const searchSel = "input[type='search'], .dataTables_filter input";
-      await page.waitForSelector(searchSel, { timeout: 4000 });
-      await page.fill(searchSel, check.rowMatch);
-      await delay(750); // let DT redraw
-    } catch {} // non-fatal
-
     const tables = await scrapeTablesMatrix(page);
-    const colName = (check.column || "TOTAL").toUpperCase();
-    const target = pickTableWithColumn(tables, colName);
+    const target = pickBestTable(tables, colName, searchTokens);
     if (!target) throw new Error(`column not found: ${check.column || "TOTAL"}`);
-
     const { headers, rows } = target;
     const colIdx = headers.findIndex(h => (h || "").trim().toUpperCase().includes(colName));
-
-    const row = rows.find(r =>
-      looseContains((r[1] || r[0] || ""), check.rowMatch) || looseContains(r.join(" "), check.rowMatch)
-    );
+    let row = rows.find(r => rowNeedles.some(n => looseContains(r.join(" "), n)));
+    if (!row) row = rows.find(r => tokensFound(r.join(" "), ["charizard","holo","1st","edition"]));
     if (!row) throw new Error(`row not found: ${check.rowMatch}`);
-
     const raw = row[colIdx] || "";
     const population = toNumberLike(raw);
     return { row: row[0], column: check.column || "TOTAL", population, raw, mode: "playwright" };
@@ -583,7 +593,6 @@ async function run() {
 
   for (const check of todo) {
     const startedAt = new Date().toISOString();
-    let record; let changed = false; let changedKeys = [];
     try {
       const latestPath = path.join(latestDir, `${check.name}.json`);
       const prev = await readJson(latestPath);
@@ -600,15 +609,15 @@ async function run() {
       else if (check.type === "stock_quote") data = await runStockQuote(check);
       else throw new Error(`Unknown check type: ${check.type}`);
 
-      record = { name: check.name, type: check.type, url: check.url, checkedAt: startedAt, data };
+      const record = { name: check.name, type: check.type, url: check.url, checkedAt: startedAt, data };
 
       const ignore = Array.isArray(check.ignoreKeys) ? check.ignoreKeys : [];
-      changedKeys = simpleDiff(prev?.data, data, ignore);
-      changed = changedKeys.length > 0;
+      const changedKeys = simpleDiff(prev?.data, data, ignore);
+      const changed = changedKeys.length > 0;
 
       await writeJson(latestPath, record);
 
-      // time-series (JSONL)
+      // append time-series for select types
       try {
         const tsVal = seriesValueFor(check.type, data);
         if (tsVal !== null) {
@@ -639,12 +648,12 @@ async function run() {
 
   // prune stale latest files
   try {
-    const files = await fsp.readdir(latestDir);
+    const files = await fsp.readdir(path.join(resultsDir, "latest"));
     for (const f of files) {
       if (!f.endsWith(".json")) continue;
       const name = f.replace(/\.json$/, "");
       if (!checkNames.has(name)) {
-        await fsp.unlink(path.join(latestDir, f));
+        await fsp.unlink(path.join(resultsDir, "latest", f));
         console.log(`[prune] removed stale ${f}`);
       }
     }
@@ -652,7 +661,7 @@ async function run() {
     console.warn(`[prune] warning: ${String(e)}`);
   }
 
-  // per-group reports
+  // write per-group reports
   await writeJson(path.join(resultsDir, `report-${GROUP || "all"}.json`), {
     generatedAt: new Date().toISOString(),
     group: GROUP || "all",
