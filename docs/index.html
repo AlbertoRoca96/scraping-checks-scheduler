@@ -33,7 +33,6 @@
     td.check code{background:#f3f4f6;padding:2px 6px;border-radius:6px;display:inline-block}
     td.changed{white-space:nowrap}
     td.json, td.price, td.avail, td.pop{white-space:nowrap}
-
     td.keys, td.errcol{overflow-wrap:anywhere;word-break:normal;min-width:160px;}
     @media (min-width:900px){
       th.check, td.check{width:40%}
@@ -58,12 +57,15 @@
     .pricebox{display:flex;align-items:center;gap:10px}
 
     /* Stocks card */
-    .stockgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:8px}
+    .stockgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:8px}
     .stock{border:1px solid var(--border);border-radius:12px;padding:10px;background:#fff;box-shadow:var(--shadow)}
     .stock .head{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
     .stock .sym{font-weight:700}
     .stock .chg{font-size:.9rem}
     .stock .big{font-size:1.3rem;font-weight:700}
+    .stock canvas{width:100%;height:120px;display:block}
+    .stocks-toolbar{display:flex;gap:8px;align-items:center;margin-bottom:6px}
+    .mini{font-size:.85rem;color:var(--muted)}
   </style>
 </head>
 <body>
@@ -116,6 +118,37 @@
       </svg>`;
     }
 
+    // --- simple canvas line chart (no libs) ---
+    function drawLineChart(canvas, xs, ys) {
+      const ctx = canvas.getContext('2d');
+      const w = canvas.width = canvas.clientWidth * devicePixelRatio;
+      const h = canvas.height = canvas.clientHeight * devicePixelRatio;
+      ctx.clearRect(0,0,w,h);
+      if(ys.length < 2) return;
+
+      const min = Math.min(...ys), max = Math.max(...ys), rng = (max - min) || 1;
+      const left = 36*devicePixelRatio, right = 8*devicePixelRatio, top = 8*devicePixelRatio, bottom = 20*devicePixelRatio;
+      const W = w - left - right, H = h - top - bottom;
+      const xAt = (i) => left + (i/(ys.length-1))*W;
+      const yAt = (v) => top + (1 - (v - min)/rng)*H;
+
+      // grid
+      ctx.globalAlpha = 0.15;
+      ctx.beginPath(); ctx.moveTo(left, top); ctx.lineTo(left, top+H); ctx.lineTo(left+W, top+H); ctx.stroke();
+      ctx.globalAlpha = 1;
+
+      // line
+      ctx.lineWidth = 2*devicePixelRatio;
+      ctx.beginPath(); ctx.moveTo(xAt(0), yAt(ys[0]));
+      for(let i=1;i<ys.length;i++) ctx.lineTo(xAt(i), yAt(ys[i]));
+      ctx.stroke();
+
+      // last value label
+      const lastY = yAt(ys.at(-1));
+      ctx.font = `${12*devicePixelRatio}px system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial`;
+      ctx.fillText(ys.at(-1).toFixed(2), left+4, lastY-6);
+    }
+
     // --- generic table section ---
     function sectionHTML(group, summary){
       if(group === "stocks") return stocksSectionHTML(summary);
@@ -158,7 +191,7 @@
         </section>`;
     }
 
-    // --- Stocks card section ---
+    // --- Stocks card (with auto-updating chart) ---
     function stocksSectionHTML(summary){
       const items = summary
         .filter(s => s.type === "stock_quote")
@@ -168,9 +201,13 @@
               <div class="sym">${s.name.replace(/^stock_([^_]+).*$/,'$1').toUpperCase()}</div>
               <a class="muted" href="data/latest/${s.name}.json">json</a>
             </div>
+            <div class="stocks-toolbar mini">
+              <span>Auto refresh</span>
+              <label><input type="checkbox" data-role="autorefresh" checked> 60s</label>
+            </div>
             <div class="big" data-role="price">loading…</div>
             <div class="chg muted" data-role="chg"></div>
-            <div data-role="spark"></div>
+            <canvas data-role="chart" height="120"></canvas>
           </div>
         `).join("");
       return `
@@ -235,33 +272,49 @@
     }
 
     async function hydrateStocks(){
+      // draw & schedule per-card
       for(const el of document.querySelectorAll('.stock[data-check]')){
         const name = el.getAttribute('data-check');
         const priceEl = el.querySelector('[data-role="price"]');
         const chgEl   = el.querySelector('[data-role="chg"]');
-        const sparkEl = el.querySelector('[data-role="spark"]');
-        try{
-          const series = await loadSeries(name);
-          const latest = await loadLatest(name);
-          const last = series.length ? series.at(-1)?.v : latest?.data?.price ?? null;
-          const prev = series.length > 1 ? series.at(-2)?.v : last;
-          if(typeof last === "number"){
-            const delta = (typeof prev === "number") ? (last - prev) : null;
-            const cls = (delta ?? 0) >= 0 ? "pos" : "neg";
-            const pct = latest?.data?.changePercent;
-            priceEl.innerHTML = `${last.toFixed(2)}`;
-            chgEl.innerHTML = (delta == null)
-              ? ""
-              : `<span class="${cls}">${delta>=0?'+':''}${delta.toFixed(2)}${typeof pct==='number' ? ` (${pct.toFixed(2)}%)` : ""}</span>`;
-            sparkEl.innerHTML = series.length ? sparkline(series.map(p=>p.v)) : "";
-          } else {
-            priceEl.textContent = "";
+        const canvas  = el.querySelector('[data-role="chart"]');
+        const autoRef = el.querySelector('[data-role="autorefresh"]');
+
+        async function render(){
+          try{
+            const series = await loadSeries(name);
+            const latest = await loadLatest(name);
+            const ys = series.map(p=>p.v);
+            const xs = series.map(p=>new Date(p.t));
+            const last = ys.at(-1) ?? latest?.data?.price ?? null;
+            const prev = ys.length>1 ? ys.at(-2) : last;
+
+            if(typeof last === "number"){
+              const delta = (typeof prev === "number") ? (last - prev) : null;
+              const cls = (delta ?? 0) >= 0 ? "pos" : "neg";
+              const pct = latest?.data?.changePercent;
+              priceEl.innerHTML = `${last.toFixed(2)}`;
+              chgEl.innerHTML = (delta == null)
+                ? ""
+                : `<span class="${cls}">${delta>=0?'+':''}${delta.toFixed(2)}${typeof pct==='number' ? ` (${pct.toFixed(2)}%)` : ""}</span>`;
+            } else {
+              priceEl.textContent = "";
+              chgEl.textContent = "";
+            }
+            drawLineChart(canvas, xs, ys);
+          } catch {
+            // fail silently
           }
-        } catch {
-          priceEl.textContent = "";
-          chgEl.textContent = "";
-          sparkEl.innerHTML = "";
         }
+
+        await render();
+
+        // auto-refresh every 60s (polls series.jsonl only)
+        let timer = setInterval(()=>autoRef.checked && render(), 60000);
+        autoRef.addEventListener('change', ()=>{
+          clearInterval(timer);
+          if(autoRef.checked) timer = setInterval(()=>render(), 60000);
+        });
       }
     }
 
