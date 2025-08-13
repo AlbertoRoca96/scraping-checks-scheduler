@@ -56,17 +56,15 @@ export default [
   // PSA (Charizard, 1999 Pokémon Game)
   // ======================
   {
-    // PRICE: take “GEM-MT 10” from the Charizard 1st Ed row
     name: "psa_charizard_price_gem10",
     type: "psa_price_row",
     group: "price",
     url: "https://www.psacard.com/priceguide/non-sports-tcg-card-values/1999-poke-mon-game/2432",
-    rowMatch: "Charizard Holo 1st Edition", // tolerant token match
+    rowMatch: "Charizard Holo 1st Edition", // tolerant
     gradeCol: "GEM-MT 10",
     ignoreKeys: ["raw", "mode"]
   },
   {
-    // POP: read “TOTAL” from the same row on the Pop Report set page
     name: "psa_charizard_pop_total",
     type: "psa_pop_row",
     group: "compliance",
@@ -97,7 +95,7 @@ export default [
     type: "stock_quote",
     group: "stocks",
     url: "https://www.alphavantage.co/documentation/#latestprice",
-    symbol: "NTDOY",          // Nintendo ADR in the U.S.
+    symbol: "NTDOY",
     ignoreKeys: ["raw"]
   }
 ];
