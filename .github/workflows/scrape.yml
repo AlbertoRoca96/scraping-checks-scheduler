@@ -3,10 +3,10 @@ name: Scraping & Checks Scheduler
 
 on:
   schedule:
-    - cron: "*/16 * * * *"   # stocks every ~16 minutes (≈90/day)
-    # Tip: to avoid :00/:16/:32/:48 crowding you can offset:
-    # - cron: "8/16 * * * *"
-    - cron: "0 */2 * * *"    # full scrape every 2 hours (UTC)
+    # Fast lane (offset every ~16 minutes)
+    - cron: "8/16 * * * *"
+    # Full scrape every 2 hours (UTC)
+    - cron: "0 */2 * * *"
   workflow_dispatch: {}
 
 permissions:
@@ -17,10 +17,10 @@ jobs:
   # Full matrix every 2 hours
   # -------------------------
   scrape_full:
+    # Run on manual dispatch OR when the 2-hour schedule fired
     if: ${{ github.event_name != 'schedule' || github.event.schedule == '0 */2 * * *' }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    # Include matrix.group so siblings don't cancel each other.
     concurrency:
       group: full-${{ github.ref }}-${{ matrix.group }}
       cancel-in-progress: true
@@ -30,6 +30,9 @@ jobs:
         group: ["stocks", "default", "seo", "price", "compliance"]
 
     steps:
+      - name: Debug schedule
+        run: echo "event=${{ github.event_name }} schedule='${{ github.event.schedule }}'"
+
       - name: Check out the repo
         uses: actions/checkout@v4
 
@@ -87,7 +90,9 @@ jobs:
   # Fast lane: stocks only, every ~16 minutes
   # -----------------------------------------
   scrape_stocks_fast:
-    if: ${{ github.event_name == 'schedule' && github.event.schedule == '*/16 * * * *' }}
+    # Run on scheduled events that are NOT the 2-hour full scrape.
+    # This makes the job robust to future changes to the "fast" cron string.
+    if: ${{ github.event_name == 'schedule' && github.event.schedule != '0 */2 * * *' }}
     runs-on: ubuntu-latest
     timeout-minutes: 20
     concurrency:
@@ -95,6 +100,9 @@ jobs:
       cancel-in-progress: true
 
     steps:
+      - name: Debug schedule
+        run: echo "event=${{ github.event_name }} schedule='${{ github.event.schedule }}'"
+
       - name: Check out the repo
         uses: actions/checkout@v4
 
@@ -142,6 +150,7 @@ jobs:
   # -----------------------------
   merge_and_commit:
     needs: [scrape_full, scrape_stocks_fast]
+    # Run if either lane succeeded (even if the other was skipped)
     if: ${{ always() && (needs.scrape_full.result == 'success' || needs.scrape_stocks_fast.result == 'success') }}
     runs-on: ubuntu-latest
     concurrency:
@@ -197,10 +206,6 @@ jobs:
         shell: bash
         run: |
           set -euxo pipefail
-
-          # Helper merges either layout:
-          #   artifacts/<group>/data/{latest,timeseries,...}
-          #   artifacts/<group>/{latest,timeseries,...}
           merge_group() {
             local g="$1"
             if [ -d "artifacts/$g/data" ]; then
@@ -212,14 +217,11 @@ jobs:
               fi
             done
           }
-
-          # Overlay in deterministic order; stocks last so its new point can't be overwritten
           for d in default seo price compliance; do
             [ -d "artifacts/$d" ] && merge_group "$d"
           done
           [ -d "artifacts/stocks" ] && merge_group "stocks"
 
-          # Publish to GitHub Pages directory
           mkdir -p docs/data
           rsync -a --delete data/ docs/data/
 
