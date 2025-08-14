@@ -26,7 +26,14 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v4
 
-      # Use cache ONLY if a lockfile exists somewhere
+      # Seed prev run data so we APPEND to timeseries and have a previous 'latest' for diffs
+      - name: Seed previous site data (latest + timeseries)
+        run: |
+          mkdir -p data/{latest,timeseries}
+          rsync -a docs/data/latest/     data/latest/     2>/dev/null || true
+          rsync -a docs/data/timeseries/ data/timeseries/ 2>/dev/null || true
+
+      # Use Node cache only when a lockfile exists
       - name: Set up Node (with npm cache)
         if: ${{ hashFiles('**/package-lock.json', '**/npm-shrinkwrap.json', '**/yarn.lock') != '' }}
         uses: actions/setup-node@v4
@@ -78,30 +85,30 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v4
 
-      - name: Download & merge all artifacts
+      # Start from the already-published site data so history/timeseries accumulate
+      - name: Seed working data from docs/data
+        run: |
+          mkdir -p data
+          rsync -a docs/data/ data/ 2>/dev/null || true
+
+      - name: Download all group artifacts
         uses: actions/download-artifact@v4
         with:
           pattern: scrape-results-*
           merge-multiple: true
           path: .
 
-      - name: Normalize + publish data (merge all groups)
+      - name: Merge artifacts into working data and publish
         shell: bash
         run: |
           set -euxo pipefail
 
-          # Ensure target dirs
-          mkdir -p data/{latest,history,reports,timeseries}
-
-          # Artifacts usually unpack under ./data/*
+          # If artifacts unpacked to ./data/, overlay them onto our seeded ./data
           if [ -d "./data" ]; then
-            rsync -a ./data/latest/     data/latest/     || true
-            rsync -a ./data/history/    data/history/    || true
-            rsync -a ./data/reports/    data/reports/    || true
-            rsync -a ./data/timeseries/ data/timeseries/ || true
+            rsync -a ./data/ data/
           fi
 
-          # Safety: if any group artifact unpacked flat (./latest, ./timeseries, …), fold them in
+          # Safety: if an artifact unpacked flat (./latest, ./timeseries...), fold it in
           for d in latest history reports timeseries; do
             if [ -d "./$d" ]; then
               rsync -a "./$d/" "data/$d/"
@@ -113,7 +120,7 @@ jobs:
           shopt -s nullglob
           for f in ./report-*.json ./report-*.md; do mv "$f" data/; done
 
-          # Publish to GitHub Pages (docs/)
+          # Publish to GitHub Pages directory
           mkdir -p docs/data
           rsync -a --delete data/ docs/data/
 
