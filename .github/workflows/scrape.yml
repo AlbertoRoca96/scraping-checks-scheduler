@@ -20,6 +20,7 @@ jobs:
     if: ${{ github.event_name != 'schedule' || github.event.schedule == '0 */2 * * *' }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    # Include matrix.group so siblings don't cancel each other.
     concurrency:
       group: full-${{ github.ref }}-${{ matrix.group }}
       cancel-in-progress: true
@@ -31,11 +32,6 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
-
-      - name: Debug schedule
-        run: |
-          echo "event.name=${{ github.event_name }}"
-          echo "event.schedule=${{ github.event.schedule }}"
 
       - name: Seed previous site data (latest + timeseries)
         run: |
@@ -102,11 +98,6 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v4
 
-      - name: Debug schedule
-        run: |
-          echo "event.name=${{ github.event_name }}"
-          echo "event.schedule=${{ github.event.schedule }}"
-
       - name: Seed previous site data (latest + timeseries)
         run: |
           mkdir -p data/{latest,timeseries}
@@ -166,71 +157,76 @@ jobs:
           mkdir -p data
           rsync -a docs/data/ data/ 2>/dev/null || true
 
-      # Clean out any previous run's downloads so we never commit stale paths
-      - name: Reset artifacts folder
-        run: |
-          rm -rf artifacts
-          mkdir -p artifacts
-
-      # ✅ Download whatever artifacts exist (fast run = only stocks; full run = all groups)
-      - name: Download all scrape artifacts
+      # Download each matrix artifact into its own folder
+      - name: Download artifact (default)
         uses: actions/download-artifact@v4
         with:
-          path: artifacts
-          pattern: scrape-results-*
-          # keep per-artifact subfolders:
-          #   artifacts/scrape-results-<group>/** (v4 "pattern" layout)
-          merge-multiple: false
+          name: scrape-results-default
+          path: artifacts/default
+        continue-on-error: true
 
-      - name: Show downloaded artifacts (debug)
-        run: |
-          echo "Downloaded artifacts:"
-          find artifacts -maxdepth 3 -type d -print | sed 's/^/ - /'
+      - name: Download artifact (seo)
+        uses: actions/download-artifact@v4
+        with:
+          name: scrape-results-seo
+          path: artifacts/seo
+        continue-on-error: true
+
+      - name: Download artifact (price)
+        uses: actions/download-artifact@v4
+        with:
+          name: scrape-results-price
+          path: artifacts/price
+        continue-on-error: true
+
+      - name: Download artifact (compliance)
+        uses: actions/download-artifact@v4
+        with:
+          name: scrape-results-compliance
+          path: artifacts/compliance
+        continue-on-error: true
+
+      - name: Download artifact (stocks)
+        uses: actions/download-artifact@v4
+        with:
+          name: scrape-results-stocks
+          path: artifacts/stocks
+        continue-on-error: true
 
       - name: Merge artifacts into working data and publish
         shell: bash
         run: |
           set -euxo pipefail
 
-          # Resolve either layout:
-          #   artifacts/<group>/...                     (old manual naming)
-          #   artifacts/scrape-results-<group>/...      (download-all default)
-          resolve_dir() {
-            local g="$1"
-            if [ -d "artifacts/$g" ]; then echo "artifacts/$g"; return; fi
-            if [ -d "artifacts/scrape-results-$g" ]; then echo "artifacts/scrape-results-$g"; return; fi
-            echo ""
-          }
-
+          # Helper merges either layout:
+          #   artifacts/<group>/data/{latest,timeseries,...}
+          #   artifacts/<group>/{latest,timeseries,...}
           merge_group() {
-            local gdir
-            gdir="$(resolve_dir "$1")"
-            [ -n "$gdir" ] || return 0
-            if [ -d "$gdir/data" ]; then
-              rsync -a "$gdir/data/" data/
+            local g="$1"
+            if [ -d "artifacts/$g/data" ]; then
+              rsync -a "artifacts/$g/data/" data/
             fi
             for sub in latest timeseries history reports; do
-              if [ -d "$gdir/$sub" ]; then
-                rsync -a "$gdir/$sub/" "data/$sub/"
+              if [ -d "artifacts/$g/$sub" ]; then
+                rsync -a "artifacts/$g/$sub/" "data/$sub/"
               fi
             done
           }
 
           # Overlay in deterministic order; stocks last so its new point can't be overwritten
           for d in default seo price compliance; do
-            merge_group "$d"
+            [ -d "artifacts/$d" ] && merge_group "$d"
           done
-          merge_group stocks
+          [ -d "artifacts/stocks" ] && merge_group "stocks"
 
           # Publish to GitHub Pages directory
           mkdir -p docs/data
           rsync -a --delete data/ docs/data/
 
-      - name: Commit updated data + site (only docs/**)
+      - name: Commit updated data + site
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore(site): publish data [skip ci]"
-          file_pattern: "docs/**"
+          file_pattern: "."
           add_options: "--all"
-          # leave skip_dirty_check true so a commit is created even if identical
           skip_dirty_check: true
