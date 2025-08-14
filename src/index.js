@@ -27,9 +27,38 @@ const ALPHAVANTAGE_KEY = process.env.ALPHAVANTAGE_KEY || "";
    fs helpers
 =================================== */
 async function ensureDir(p) { await fsp.mkdir(p, { recursive: true }); }
+async function exists(p) { try { await fsp.access(p); return true; } catch { return false; } }
 async function readJson(p) { try { return JSON.parse(await fsp.readFile(p, "utf8")); } catch { return null; } }
 async function writeJson(p, obj) { await ensureDir(path.dirname(p)); await fsp.writeFile(p, JSON.stringify(obj, null, 2) + "\n", "utf8"); }
 async function appendLine(p, line) { await ensureDir(path.dirname(p)); await fsp.appendFile(p, line, "utf8"); }
+
+/** Merge-copy directory contents from src -> dst, skipping files that already exist in dst */
+async function mergeCopyDir(src, dst) {
+  if (!(await exists(src))) return;
+  await ensureDir(dst);
+  for (const entry of await fsp.readdir(src, { withFileTypes: true })) {
+    const s = path.join(src, entry.name);
+    const d = path.join(dst, entry.name);
+    if (entry.isDirectory()) {
+      await mergeCopyDir(s, d);
+    } else {
+      if (!(await exists(d))) {
+        await ensureDir(path.dirname(d));
+        await fsp.copyFile(s, d);
+      }
+    }
+  }
+}
+
+/** Seed state from previous published site so appends & diffs work on fresh runners */
+async function seedFromDocsData(resultsDir) {
+  const docsData = path.join(root, "docs", "data");
+  if (!(await exists(docsData))) return;
+  // latest -> for diffs
+  await mergeCopyDir(path.join(docsData, "latest"), path.join(resultsDir, "latest"));
+  // timeseries -> so we append to the existing series
+  await mergeCopyDir(path.join(docsData, "timeseries"), path.join(resultsDir, "timeseries"));
+}
 
 /* ================================
    normalize + diff
@@ -139,10 +168,9 @@ function toNumberLike(s) {
 }
 async function scrapeTablesMatrix(page) {
   await page.waitForSelector("table");
-  // wait until DataTables-style tables finish populating (rows > X)
   await page.waitForFunction(() => {
     const rows = Array.from(document.querySelectorAll("table tbody tr"));
-    return rows.length > 20; // PSA pages usually have many rows
+    return rows.length > 20;
   }, { timeout: 15000 }).catch(() => {});
   return await page.evaluate(() => {
     function grab(tbl) {
@@ -406,28 +434,24 @@ async function runContentWatch(check) {
 }
 
 /* ================================
-   PSA custom checks (more robust)
+   PSA custom checks
 =================================== */
 function pickBestTable(tables, desiredColUpper, tokens = []) {
   const want = (desiredColUpper || "").toUpperCase();
-  // score: has desired column, many rows, contains any token in content
   let best = null; let bestScore = -1;
   for (const t of tables) {
     const hasCol = t.headers.some(h => (h || "").trim().toUpperCase().includes(want));
     if (!hasCol) continue;
     const content = [t.headers.join(" "), ...t.rows.map(r => r.join(" "))].join(" ");
-    const tokenHit = tokens.length ? tokensFound(content, tokens) ? 5 : 0 : 0;
+    const tokenHit = tokens.length ? (tokensFound(content, tokens) ? 5 : 0) : 0;
     const score = (hasCol ? 10 : 0) + Math.min(t.rows.length, 200) + tokenHit + Math.min(t.size/1000, 50);
     if (score > bestScore) { bestScore = score; best = t; }
   }
   return best;
 }
 
-// Price page: find row by tokens; pull desired grade column
 async function runPsaPriceRow(check) {
   const tokens = (check.rowMatch || "").split(/\s+/).filter(Boolean);
-
-  // HTML fetch – scan all tables
   try {
     const html = await fetchTextMaybeGzip(check.url);
     const tables = parseTables(html);
@@ -436,7 +460,6 @@ async function runPsaPriceRow(check) {
       const { headers, rows } = target;
       const colIdx = headers.findIndex(h => h.replace(/\s+/g, " ").toUpperCase().includes((check.gradeCol || "").toUpperCase()));
       if (colIdx < 0) throw new Error(`grade column not found: ${check.gradeCol}`);
-      // tolerate punctuation / multi-cell variants
       const row = rows.find(r => looseContains(r.join(" "), check.rowMatch));
       if (!row) throw new Error(`row not found: ${check.rowMatch}`);
       const raw = row[colIdx] || "";
@@ -444,8 +467,6 @@ async function runPsaPriceRow(check) {
       return { row: row[0], grade: check.gradeCol, price, raw, mode: "html" };
     }
   } catch {}
-
-  // Playwright fallback – also scan all tables
   const { browser, context, page } = await newPage();
   try {
     await gotoSafely(page, check.url);
@@ -465,17 +486,10 @@ async function runPsaPriceRow(check) {
   }
 }
 
-// Pop page: take numeric TOTAL (or given column) — smarter table+row pick
 async function runPsaPopRow(check) {
   const colName = (check.column || "TOTAL").toUpperCase();
-  const searchTokens = ["Charizard", "Holo"]; // help pick the right table
-  const rowNeedles = [
-    check.rowMatch,
-    "Charizard-Holo 1st Edition",
-    "Charizard Holo 1st Edition"
-  ].filter(Boolean);
-
-  // HTML first
+  const searchTokens = ["Charizard", "Holo"];
+  const rowNeedles = [check.rowMatch, "Charizard-Holo 1st Edition", "Charizard Holo 1st Edition"].filter(Boolean);
   try {
     const html = await fetchTextMaybeGzip(check.url);
     const tables = parseTables(html);
@@ -485,7 +499,6 @@ async function runPsaPopRow(check) {
       const colIdx = headers.findIndex(h => (h || "").trim().toUpperCase().includes(colName));
       if (colIdx < 0) throw new Error(`column not found: ${check.column || "TOTAL"}`);
       let row = rows.find(r => rowNeedles.some(n => looseContains(r.join(" "), n)));
-      // extra tolerance: split tokens
       if (!row) row = rows.find(r => tokensFound(r.join(" "), ["charizard","holo","1st","edition"]));
       if (!row) throw new Error(`row not found: ${check.rowMatch}`);
       const raw = row[colIdx] || "";
@@ -493,8 +506,6 @@ async function runPsaPopRow(check) {
       return { row: row[0], column: check.column || "TOTAL", population, raw, mode: "html" };
     }
   } catch {}
-
-  // Playwright fallback
   const { browser, context, page } = await newPage();
   try {
     await gotoSafely(page, check.url);
@@ -577,6 +588,34 @@ async function sendWebhook({ check, changedKeys, record, previous }) {
 }
 
 /* ================================
+   tiny report writer (HTML)
+=================================== */
+async function writeGroupReportHTML(dir, group, summary) {
+  const rows = (summary || []).map(s => `
+    <tr>
+      <td><code>${s.name}</code></td>
+      <td style="text-align:center">${s.changed ? "✅" : "—"}</td>
+      <td>${(s.changedKeys||[]).join(", ")}</td>
+      <td>${s.error ? `<code>${String(s.error)}</code>` : ""}</td>
+      <td><a href="../latest/${s.name}.json">latest</a></td>
+    </tr>
+  `).join("");
+  const html = `<!doctype html><meta charset="utf-8">
+  <title>Report — ${group}</title>
+  <style>
+    body{font:14px ui-sans-serif,system-ui,Segoe UI,Roboto,Helvetica,Arial;padding:20px;max-width:900px;margin:auto}
+    table{border-collapse:collapse;width:100%} th,td{border:1px solid #e5e7eb;padding:6px} th{background:#f9fafb;text-align:left}
+    code{background:#f3f4f6;padding:2px 6px;border-radius:6px}
+  </style>
+  <h1>Scrape Report — ${group}</h1>
+  <table><thead><tr><th>Check</th><th>Changed</th><th>Keys</th><th>Error</th><th>JSON</th></tr></thead>
+  <tbody>${rows}</tbody></table>`;
+  const out = path.join(dir, "reports", `report-${group}.html`);
+  await ensureDir(path.dirname(out));
+  await fsp.writeFile(out, html, "utf8");
+}
+
+/* ================================
    main
 =================================== */
 async function run() {
@@ -584,6 +623,9 @@ async function run() {
   const latestDir = path.join(resultsDir, "latest");
   const historyDir = path.join(resultsDir, "history");
   await Promise.all([ensureDir(latestDir), ensureDir(historyDir)]);
+
+  // Seed state from previous published site (docs/data) so appends/diffs work
+  await seedFromDocsData(resultsDir);
 
   const todo = checks.filter(c => !GROUP || c.group === GROUP);
   const checkNames = new Set(todo.map(c => c.name));
@@ -617,7 +659,7 @@ async function run() {
 
       await writeJson(latestPath, record);
 
-      // append time-series for select types
+      // --- append time-series for select types (ALWAYS append) ---
       try {
         const tsVal = seriesValueFor(check.type, data);
         if (tsVal !== null) {
@@ -627,6 +669,7 @@ async function run() {
         }
       } catch {}
 
+      // --- write history only when something changed ---
       if (changed) {
         const stamp = startedAt.replace(/[:]/g, "-");
         const histPath = path.join(historyDir, check.name, `${stamp}.json`);
@@ -661,12 +704,13 @@ async function run() {
     console.warn(`[prune] warning: ${String(e)}`);
   }
 
-  // write per-group reports
+  // write per-group reports (JSON + MD + HTML)
   await writeJson(path.join(resultsDir, `report-${GROUP || "all"}.json`), {
     generatedAt: new Date().toISOString(),
     group: GROUP || "all",
     summary
   });
+
   const mdLines = [
     `# Scrape Report (${new Date().toISOString()})`,
     ``,
@@ -677,6 +721,8 @@ async function run() {
     ...summary.map(s => `| \`${s.name}\` | ${s.changed ? "✅" : "—"} | ${s.changedKeys.join(", ")} | ${s.error ? "`" + s.error + "`" : ""} |`)
   ];
   await fsp.writeFile(path.join(resultsDir, `report-${GROUP || "all"}.md`), mdLines.join("\n") + "\n", "utf8");
+
+  await writeGroupReportHTML(resultsDir, GROUP || "all", summary);
 
   console.log("\nDone. Summary:\n", JSON.stringify(summary, null, 2));
   if (hadError && FAIL_ON_ERROR) process.exit(1);
