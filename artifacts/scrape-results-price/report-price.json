@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2025-08-14T17:16:12.601Z",
+  "group": "price",
+  "summary": [
+    {
+      "name": "scrapeme_pikachu_price",
+      "type": "price",
+      "changed": false,
+      "changedKeys": [],
+      "error": null
+    },
+    {
+      "name": "scrapeme_pikachu_availability",
+      "type": "availability",
+      "changed": false,
+      "changedKeys": [],
+      "error": null
+    },
+    {
+      "name": "psa_charizard_price_gem10",
+      "type": "psa_price_row",
+      "changed": false,
+      "changedKeys": [],
+      "error": null
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "generatedAt": "2025-08-12T14:30:07.402Z",
+  "group": "seo",
+  "summary": [
+    {
+      "name": "govuk_sitemap_diff",
+      "changed": true,
+      "changedKeys": [
+        "added",
+        "removed"
+      ],
+      "error": null
+    },
+    {
+      "name": "nasa_climate_sitemap_diff",
+      "changed": true,
+      "changedKeys": [
+        "added",
+        "removed"
+      ],
+      "error": null
+    }
+  ]
+}
