@@ -3,7 +3,7 @@ name: Scraping & Checks Scheduler
 
 on:
   schedule:
-    - cron: "0 */2 * * *"   # every 2h
+    - cron: "0 */2 * * *"   # every 2 hours
   workflow_dispatch: {}
 
 permissions:
@@ -25,11 +25,12 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v4
 
-      - name: Set up Node (with cache if lockfile present)
+      - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: ${{ hashFiles('package-lock.json','npm-shrinkwrap.json','yarn.lock') != '' && 'npm' || '' }}
+          cache: "npm"
+          cache-dependency-path: package-lock.json
 
       - name: Install dependencies
         run: |
@@ -42,16 +43,16 @@ jobs:
       - name: Install Playwright (browsers + Linux deps)
         run: npx playwright install --with-deps chromium
 
-      - name: Run scrapers (group=${{ matrix.group }})
+      - name: Run scrapers (group = ${{ matrix.group }})
         env:
           GROUP: ${{ matrix.group }}
           FAIL_ON_ERROR: "0"
           WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
-          # 🔐 keep your existing secret NAME
+          # 🔐 uses your existing secret name
           ALPHAVANTAGE_KEY: ${{ secrets.ALPHAVANTAGE_KEY }}
         run: npm run scrape
 
-      - name: Upload data as artifact (group=${{ matrix.group }})
+      - name: Upload data as artifact (group = ${{ matrix.group }})
         uses: actions/upload-artifact@v4
         with:
           name: scrape-results-${{ matrix.group }}
@@ -73,14 +74,35 @@ jobs:
           merge-multiple: true
           path: .
 
-      - name: Normalize + publish data
+      - name: Normalize + publish data (merge all groups)
+        shell: bash
         run: |
-          mkdir -p data/latest data/history data/reports
-          [ -d latest   ] && rsync -a latest/   data/latest/   && rm -rf latest
-          [ -d history  ] && rsync -a history/  data/history/  && rm -rf history
-          [ -d reports  ] && rsync -a reports/  data/reports/  && rm -rf reports
+          set -euxo pipefail
+
+          # Ensure target dirs
+          mkdir -p data/{latest,history,reports,timeseries}
+
+          # Artifacts typically unpack to ./data/*
+          if [ -d "./data" ]; then
+            rsync -a ./data/latest/     data/latest/     || true
+            rsync -a ./data/history/    data/history/    || true
+            rsync -a ./data/reports/    data/reports/    || true
+            rsync -a ./data/timeseries/ data/timeseries/ || true
+          fi
+
+          # Safety: if any group artifact unpacked flat (./latest, ./timeseries, …), fold them in.
+          for d in latest history reports timeseries; do
+            if [ -d "./$d" ]; then
+              rsync -a "./$d/" "data/$d/"
+              rm -rf "./$d"
+            fi
+          done
+
+          # Move any top-level report-* files produced by scripts
           shopt -s nullglob
-          for f in report-*.json report-*.md; do mv "$f" data/; done
+          for f in ./report-*.json ./report-*.md; do mv "$f" data/; done
+
+          # Publish to GitHub Pages (docs/)
           mkdir -p docs/data
           rsync -a --delete data/ docs/data/
 
