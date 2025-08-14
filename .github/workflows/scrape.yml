@@ -4,8 +4,8 @@ name: Scraping & Checks Scheduler
 on:
   schedule:
     - cron: "*/16 * * * *"   # stocks every ~16 minutes (≈90/day)
-    # If you ever see delays at :00, :16, :32, :48, try offsetting:
-    # - cron: "8/16 * * * *"  # start at :08 instead of :00 (reduces contention)
+    # Tip: to avoid :00/:16/:32/:48 crowding you can offset:
+    # - cron: "8/16 * * * *"
     - cron: "0 */2 * * *"    # full scrape every 2 hours (UTC)
   workflow_dispatch: {}
 
@@ -20,7 +20,7 @@ jobs:
     if: ${{ github.event_name != 'schedule' || github.event.schedule == '0 */2 * * *' }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    # Important: include matrix.group so siblings don't cancel each other
+    # Include matrix.group so siblings don't cancel each other.
     concurrency:
       group: full-${{ github.ref }}-${{ matrix.group }}
       cancel-in-progress: true
@@ -157,6 +157,7 @@ jobs:
           mkdir -p data
           rsync -a docs/data/ data/ 2>/dev/null || true
 
+      # Download each matrix artifact into its own folder
       - name: Download artifact (default)
         uses: actions/download-artifact@v4
         with:
@@ -196,20 +197,29 @@ jobs:
         shell: bash
         run: |
           set -euxo pipefail
+
+          # Helper merges either layout:
+          #   artifacts/<group>/data/{latest,timeseries,...}
+          #   artifacts/<group>/{latest,timeseries,...}
+          merge_group() {
+            local g="$1"
+            if [ -d "artifacts/$g/data" ]; then
+              rsync -a "artifacts/$g/data/" data/
+            fi
+            for sub in latest timeseries history reports; do
+              if [ -d "artifacts/$g/$sub" ]; then
+                rsync -a "artifacts/$g/$sub/" "data/$sub/"
+              fi
+            done
+          }
+
+          # Overlay in deterministic order; stocks last so its new point can't be overwritten
           for d in default seo price compliance; do
-            if [ -d "artifacts/$d/data" ]; then
-              rsync -a "artifacts/$d/data/" data/
-            fi
+            [ -d "artifacts/$d" ] && merge_group "$d"
           done
-          if [ -d "artifacts/stocks/data" ]; then
-            rsync -a "artifacts/stocks/data/" data/
-          fi
-          for d in latest history reports timeseries; do
-            if [ -d "./$d" ]; then
-              rsync -a "./$d/" "data/$d/"
-              rm -rf "./$d"
-            fi
-          done
+          [ -d "artifacts/stocks" ] && merge_group "stocks"
+
+          # Publish to GitHub Pages directory
           mkdir -p docs/data
           rsync -a --delete data/ docs/data/
 
