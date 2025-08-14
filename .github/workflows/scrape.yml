@@ -4,22 +4,25 @@ name: Scraping & Checks Scheduler
 on:
   schedule:
     - cron: "*/16 * * * *"   # stocks every ~16 minutes (≈90/day)
+    # If you ever see delays at :00, :16, :32, :48, try offsetting:
+    # - cron: "8/16 * * * *"  # start at :08 instead of :00 (reduces contention)
     - cron: "0 */2 * * *"    # full scrape every 2 hours (UTC)
   workflow_dispatch: {}
 
 permissions:
   contents: write
 
-# -------------------------
-# Full matrix every 2 hours
-# -------------------------
 jobs:
+  # -------------------------
+  # Full matrix every 2 hours
+  # -------------------------
   scrape_full:
     if: ${{ github.event_name != 'schedule' || github.event.schedule == '0 */2 * * *' }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    # Important: include matrix.group so siblings don't cancel each other
     concurrency:
-      group: full-${{ github.ref }}
+      group: full-${{ github.ref }}-${{ matrix.group }}
       cancel-in-progress: true
     strategy:
       fail-fast: false
@@ -36,7 +39,6 @@ jobs:
           rsync -a docs/data/latest/     data/latest/     2>/dev/null || true
           rsync -a docs/data/timeseries/ data/timeseries/ 2>/dev/null || true
 
-      # Use Node cache only when a lockfile exists
       - name: Set up Node (with npm cache)
         if: ${{ hashFiles('**/package-lock.json', '**/npm-shrinkwrap.json', '**/yarn.lock') != '' }}
         uses: actions/setup-node@v4
@@ -82,7 +84,7 @@ jobs:
           retention-days: 7
 
   # -----------------------------------------
-  # Fast lane: stocks only, every 16 minutes
+  # Fast lane: stocks only, every ~16 minutes
   # -----------------------------------------
   scrape_stocks_fast:
     if: ${{ github.event_name == 'schedule' && github.event.schedule == '*/16 * * * *' }}
@@ -115,7 +117,7 @@ jobs:
             npm install
           fi
 
-      # (Playwright is installed even though stocks don't use it, because it's a top-level import.)
+      # Playwright is imported at top-level, so install it here too
       - name: Install Playwright (browsers + Linux deps)
         run: npx playwright install --with-deps chromium
 
@@ -155,7 +157,6 @@ jobs:
           mkdir -p data
           rsync -a docs/data/ data/ 2>/dev/null || true
 
-      # Download each matrix artifact into its own folder
       - name: Download artifact (default)
         uses: actions/download-artifact@v4
         with:
@@ -195,8 +196,6 @@ jobs:
         shell: bash
         run: |
           set -euxo pipefail
-
-          # Overlay in deterministic order; stocks last so its new point can't be overwritten
           for d in default seo price compliance; do
             if [ -d "artifacts/$d/data" ]; then
               rsync -a "artifacts/$d/data/" data/
@@ -205,16 +204,12 @@ jobs:
           if [ -d "artifacts/stocks/data" ]; then
             rsync -a "artifacts/stocks/data/" data/
           fi
-
-          # Fold in any flat unpacked dirs just in case
           for d in latest history reports timeseries; do
             if [ -d "./$d" ]; then
               rsync -a "./$d/" "data/$d/"
               rm -rf "./$d"
             fi
           done
-
-          # Publish to GitHub Pages directory
           mkdir -p docs/data
           rsync -a --delete data/ docs/data/
 
