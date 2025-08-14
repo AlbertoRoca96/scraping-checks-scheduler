@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Scraping & Checks — Live Reports</title>
 
-  <!-- Chart.js (CDN) -->
+  <!-- Chart.js (official CDN include) -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <style>
@@ -86,21 +86,27 @@
   </div>
 
   <script>
-    const groups = ["stocks","default","seo","price","compliance"];
-    const grid   = document.getElementById('grid');
-    const stamp  = document.getElementById('stamp');
+    // We will always try 'all' first, but render any group that exists.
+    const GROUPS_TO_TRY = ["all","stocks","default","seo","price","compliance"];
+
+    const grid  = document.getElementById('grid');
+    const stamp = document.getElementById('stamp');
     document.getElementById('refresh').onclick = () => location.reload();
 
     // --- data helpers ---
     const bust = () => `?ts=${Date.now()}`;
+
     async function loadJSON(path){
       const res = await fetch(`${path}${bust()}`, { cache: "no-store" });
       if(!res.ok) throw new Error(path+" -> "+res.status);
       return res.json();
     }
     async function tryText(path){
-      try{ const r = await fetch(`${path}${bust()}`); if(!r.ok) return null; return await r.text(); }
-      catch{ return null; }
+      try{
+        const r = await fetch(`${path}${bust()}`, { cache: "no-store" });
+        if(!r.ok) return null;
+        return await r.text();
+      }catch{ return null; }
     }
     async function loadSeries(name){
       const txt = await tryText(`data/timeseries/${name}/series.jsonl`);
@@ -182,7 +188,7 @@
       return `
         <section>
           <h2>Stocks</h2>
-          ${summary.length ? `<div class="stockgrid">${items}</div>` : `<div class="empty">No stocks configured.</div>`}
+          ${items ? `<div class="stockgrid">${items}</div>` : `<div class="empty">No stocks configured.</div>`}
         </section>
       `;
     }
@@ -285,7 +291,6 @@
               ? ""
               : `<span class="${cls}">${delta>=0?'+':''}${delta.toFixed(2)}${typeof pct==='number' ? ` (${pct.toFixed(2)}%)` : ""}</span>`;
 
-            // Chart data
             const labels = series.map(p => new Date(p.t).toLocaleString());
             const values = series.map(p => p.v);
             if(labels.length > 1) upsertLineChart(canvas, labels, values);
@@ -302,17 +307,36 @@
 
     // --- boot ---
     (async () => {
-      for(const g of groups){
+      const seenGroups = new Set();
+      const allSummary = [];
+
+      for(const g of GROUPS_TO_TRY){
         try{
           const r = await loadJSON(`data/report-${g}.json`);
-          if(!stamp.textContent){
-            stamp.textContent = "Generated at " + new Date(r.generatedAt).toLocaleString();
-          }
+          const groupName = r.group || g;
+          if(!stamp.textContent) stamp.textContent = "Generated at " + new Date(r.generatedAt).toLocaleString();
+
+          // avoid rendering the same logical group twice
+          if(seenGroups.has(groupName)) continue;
+          seenGroups.add(groupName);
+
+          allSummary.push(...(r.summary || []));
           const div = document.createElement('div');
-          div.innerHTML = sectionHTML(r.group || g, r.summary || []);
+          div.innerHTML = sectionHTML(groupName, r.summary || []);
           grid.appendChild(div.firstElementChild);
         }catch{/* group may be absent */}
       }
+
+      // If no dedicated stocks report exists, synthesize a Stocks section from whatever we loaded.
+      if(!seenGroups.has("stocks")){
+        const stockItems = allSummary.filter(s => s.type === "stock_quote");
+        if(stockItems.length){
+          const div = document.createElement('div');
+          div.innerHTML = sectionHTML("stocks", stockItems);
+          grid.prepend(div.firstElementChild); // put it first
+        }
+      }
+
       await hydratePrices();
       await hydrateAvailability();
       await hydratePopulation();
