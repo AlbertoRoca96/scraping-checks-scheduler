@@ -1,133 +1,52 @@
-# .github/workflows/scrape.yml
-name: Scraping & Checks Scheduler
+# Instead of one "download all" with merge-multiple:true,
+# download each artifact into a separate dir
+- name: Download artifact (stocks)
+  uses: actions/download-artifact@v4
+  with:
+    name: scrape-results-stocks
+    path: artifacts/stocks
+  continue-on-error: true
 
-on:
-  schedule:
-    - cron: "0 */2 * * *"   # every 2 hours
-  workflow_dispatch: {}
+- name: Download artifact (default)
+  uses: actions/download-artifact@v4
+  with:
+    name: scrape-results-default
+    path: artifacts/default
+  continue-on-error: true
 
-permissions:
-  contents: write
+- name: Download artifact (seo)
+  uses: actions/download-artifact@v4
+  with:
+    name: scrape-results-seo
+    path: artifacts/seo
+  continue-on-error: true
 
-concurrency:
-  group: scrape-${{ github.ref }}
-  cancel-in-progress: true
+- name: Download artifact (price)
+  uses: actions/download-artifact@v4
+  with:
+    name: scrape-results-price
+    path: artifacts/price
+  continue-on-error: true
 
-jobs:
-  scrape:
-    strategy:
-      fail-fast: false
-      matrix:
-        group: ["stocks", "default", "seo", "price", "compliance"]
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
+- name: Download artifact (compliance)
+  uses: actions/download-artifact@v4
+  with:
+    name: scrape-results-compliance
+    path: artifacts/compliance
+  continue-on-error: true
 
-    steps:
-      - name: Check out the repo
-        uses: actions/checkout@v4
+# Merge in a fixed order; put stocks LAST so its series.jsonl wins
+- name: Merge artifacts into working data and publish
+  shell: bash
+  run: |
+    set -euxo pipefail
+    mkdir -p data
+    rsync -a docs/data/ data/ 2>/dev/null || true
 
-      # Seed prev run data so we APPEND to timeseries and have a previous 'latest' for diffs
-      - name: Seed previous site data (latest + timeseries)
-        run: |
-          mkdir -p data/{latest,timeseries}
-          rsync -a docs/data/latest/     data/latest/     2>/dev/null || true
-          rsync -a docs/data/timeseries/ data/timeseries/ 2>/dev/null || true
+    for d in default seo price compliance; do
+      [ -d "artifacts/$d/data" ] && rsync -a "artifacts/$d/data/" data/
+    done
+    [ -d "artifacts/stocks/data" ] && rsync -a "artifacts/stocks/data/" data/
 
-      # Use Node cache only when a lockfile exists
-      - name: Set up Node (with npm cache)
-        if: ${{ hashFiles('**/package-lock.json', '**/npm-shrinkwrap.json', '**/yarn.lock') != '' }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-          cache-dependency-path: |
-            **/package-lock.json
-            **/npm-shrinkwrap.json
-            **/yarn.lock
-
-      - name: Set up Node (no cache)
-        if: ${{ hashFiles('**/package-lock.json', '**/npm-shrinkwrap.json', '**/yarn.lock') == '' }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-
-      - name: Install dependencies
-        run: |
-          if [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then
-            npm ci
-          else
-            npm install
-          fi
-
-      - name: Install Playwright (browsers + Linux deps)
-        run: npx playwright install --with-deps chromium
-
-      - name: Run scrapers (group = ${{ matrix.group }})
-        env:
-          GROUP: ${{ matrix.group }}
-          FAIL_ON_ERROR: "0"
-          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
-          ALPHAVANTAGE_KEY: ${{ secrets.ALPHAVANTAGE_KEY }}
-        run: npm run scrape
-
-      - name: Upload data as artifact (group = ${{ matrix.group }})
-        uses: actions/upload-artifact@v4
-        with:
-          name: scrape-results-${{ matrix.group }}
-          path: data
-          if-no-files-found: error
-          retention-days: 7
-
-  merge_and_commit:
-    needs: scrape
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out the repo
-        uses: actions/checkout@v4
-
-      # Start from the already-published site data so history/timeseries accumulate
-      - name: Seed working data from docs/data
-        run: |
-          mkdir -p data
-          rsync -a docs/data/ data/ 2>/dev/null || true
-
-      - name: Download all group artifacts
-        uses: actions/download-artifact@v4
-        with:
-          pattern: scrape-results-*
-          merge-multiple: true
-          path: .
-
-      - name: Merge artifacts into working data and publish
-        shell: bash
-        run: |
-          set -euxo pipefail
-
-          # If artifacts unpacked to ./data/, overlay them onto our seeded ./data
-          if [ -d "./data" ]; then
-            rsync -a ./data/ data/
-          fi
-
-          # Safety: if an artifact unpacked flat (./latest, ./timeseries...), fold it in
-          for d in latest history reports timeseries; do
-            if [ -d "./$d" ]; then
-              rsync -a "./$d/" "data/$d/"
-              rm -rf "./$d"
-            fi
-          done
-
-          # Move any top-level report-* files produced by scripts
-          shopt -s nullglob
-          for f in ./report-*.json ./report-*.md; do mv "$f" data/; done
-
-          # Publish to GitHub Pages directory
-          mkdir -p docs/data
-          rsync -a --delete data/ docs/data/
-
-      - name: Commit updated data + site
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "chore(site): publish data [skip ci]"
-          file_pattern: "."
-          add_options: "--all"
-          skip_dirty_check: true
+    mkdir -p docs/data
+    rsync -a --delete data/ docs/data/
