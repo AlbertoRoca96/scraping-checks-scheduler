@@ -309,12 +309,16 @@
     (async () => {
       const seenGroups = new Set();
       const allSummary = [];
+      let newestGeneratedAt = 0; // <-- pick the newest stamp across all loaded reports
 
       for(const g of GROUPS_TO_TRY){
         try{
           const r = await loadJSON(`data/report-${g}.json`);
           const groupName = r.group || g;
-          if(!stamp.textContent) stamp.textContent = "Generated at " + new Date(r.generatedAt).toLocaleString();
+
+          // Track newest generatedAt across all successfully loaded reports
+          const t = Date.parse(r.generatedAt || "");
+          if(!Number.isNaN(t) && t > newestGeneratedAt) newestGeneratedAt = t;
 
           // avoid rendering the same logical group twice
           if(seenGroups.has(groupName)) continue;
@@ -325,6 +329,11 @@
           div.innerHTML = sectionHTML(groupName, r.summary || []);
           grid.appendChild(div.firstElementChild);
         }catch{/* group may be absent */}
+      }
+
+      // If we saw any generatedAt, render the newest one
+      if(newestGeneratedAt){
+        stamp.textContent = "Generated at " + new Date(newestGeneratedAt).toLocaleString();
       }
 
       // If no dedicated stocks report exists, synthesize a Stocks section from whatever we loaded.
