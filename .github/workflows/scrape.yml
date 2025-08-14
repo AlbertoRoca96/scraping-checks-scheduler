@@ -3,7 +3,7 @@ name: Scraping & Checks Scheduler
 
 on:
   schedule:
-    - cron: "*8/16 * * * *"   # stocks every ~16 minutes (≈90/day)
+    - cron: "8/16 * * * *"   # stocks every ~16 minutes (≈90/day)
     # Tip: to avoid :00/:16/:32/:48 crowding you can offset:
     # - cron: "8/16 * * * *"
     - cron: "0 */2 * * *"    # full scrape every 2 hours (UTC)
