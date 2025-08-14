@@ -157,67 +157,49 @@ jobs:
           mkdir -p data
           rsync -a docs/data/ data/ 2>/dev/null || true
 
-      # Download each matrix artifact into its own folder
-      - name: Download artifact (default)
+      # ✅ Download whatever artifacts exist (fast run = only stocks; full run = all groups)
+      - name: Download all scrape artifacts
         uses: actions/download-artifact@v4
         with:
-          name: scrape-results-default
-          path: artifacts/default
-        continue-on-error: true
-
-      - name: Download artifact (seo)
-        uses: actions/download-artifact@v4
-        with:
-          name: scrape-results-seo
-          path: artifacts/seo
-        continue-on-error: true
-
-      - name: Download artifact (price)
-        uses: actions/download-artifact@v4
-        with:
-          name: scrape-results-price
-          path: artifacts/price
-        continue-on-error: true
-
-      - name: Download artifact (compliance)
-        uses: actions/download-artifact@v4
-        with:
-          name: scrape-results-compliance
-          path: artifacts/compliance
-        continue-on-error: true
-
-      - name: Download artifact (stocks)
-        uses: actions/download-artifact@v4
-        with:
-          name: scrape-results-stocks
-          path: artifacts/stocks
-        continue-on-error: true
+          path: artifacts
+          pattern: scrape-results-*
+          # Keep per-artifact subfolders (default) so we can overlay in a known order
+          merge-multiple: false
 
       - name: Merge artifacts into working data and publish
         shell: bash
         run: |
           set -euxo pipefail
 
-          # Helper merges either layout:
-          #   artifacts/<group>/data/{latest,timeseries,...}
-          #   artifacts/<group>/{latest,timeseries,...}
-          merge_group() {
+          # Resolve either layout:
+          #   artifacts/<group>/...                     (manual naming)
+          #   artifacts/scrape-results-<group>/...      (download-all default)
+          resolve_dir() {
             local g="$1"
-            if [ -d "artifacts/$g/data" ]; then
-              rsync -a "artifacts/$g/data/" data/
+            if [ -d "artifacts/$g" ]; then echo "artifacts/$g"; return; fi
+            if [ -d "artifacts/scrape-results-$g" ]; then echo "artifacts/scrape-results-$g"; return; fi
+            echo ""
+          }
+
+          merge_group() {
+            local gdir
+            gdir="$(resolve_dir "$1")"
+            [ -n "$gdir" ] || return 0
+            if [ -d "$gdir/data" ]; then
+              rsync -a "$gdir/data/" data/
             fi
             for sub in latest timeseries history reports; do
-              if [ -d "artifacts/$g/$sub" ]; then
-                rsync -a "artifacts/$g/$sub/" "data/$sub/"
+              if [ -d "$gdir/$sub" ]; then
+                rsync -a "$gdir/$sub/" "data/$sub/"
               fi
             done
           }
 
           # Overlay in deterministic order; stocks last so its new point can't be overwritten
           for d in default seo price compliance; do
-            [ -d "artifacts/$d" ] && merge_group "$d"
+            merge_group "$d"
           done
-          [ -d "artifacts/stocks" ] && merge_group "stocks"
+          merge_group stocks
 
           # Publish to GitHub Pages directory
           mkdir -p docs/data
