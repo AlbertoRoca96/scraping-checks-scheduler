@@ -3,30 +3,33 @@ name: Scraping & Checks Scheduler
 
 on:
   schedule:
-    - cron: "0 */2 * * *"   # every 2 hours (UTC)
+    - cron: "*/16 * * * *"   # stocks every ~16 minutes (≈90/day)
+    - cron: "0 */2 * * *"    # full scrape every 2 hours (UTC)
   workflow_dispatch: {}
 
 permissions:
   contents: write
 
-concurrency:
-  group: scrape-${{ github.ref }}
-  cancel-in-progress: true
-
+# -------------------------
+# Full matrix every 2 hours
+# -------------------------
 jobs:
-  scrape:
+  scrape_full:
+    if: ${{ github.event_name != 'schedule' || github.event.schedule == '0 */2 * * *' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    concurrency:
+      group: full-${{ github.ref }}
+      cancel-in-progress: true
     strategy:
       fail-fast: false
       matrix:
         group: ["stocks", "default", "seo", "price", "compliance"]
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
 
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
 
-      # Seed prev run data so we APPEND to timeseries and have a previous 'latest' for diffs
       - name: Seed previous site data (latest + timeseries)
         run: |
           mkdir -p data/{latest,timeseries}
@@ -78,14 +81,75 @@ jobs:
           if-no-files-found: error
           retention-days: 7
 
-  merge_and_commit:
-    needs: scrape
+  # -----------------------------------------
+  # Fast lane: stocks only, every 16 minutes
+  # -----------------------------------------
+  scrape_stocks_fast:
+    if: ${{ github.event_name == 'schedule' && github.event.schedule == '*/16 * * * *' }}
     runs-on: ubuntu-latest
+    timeout-minutes: 20
+    concurrency:
+      group: stocks-${{ github.ref }}
+      cancel-in-progress: true
+
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
 
-      # Start from the already-published site data so history/timeseries accumulate
+      - name: Seed previous site data (latest + timeseries)
+        run: |
+          mkdir -p data/{latest,timeseries}
+          rsync -a docs/data/latest/     data/latest/     2>/dev/null || true
+          rsync -a docs/data/timeseries/ data/timeseries/ 2>/dev/null || true
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      # (Playwright is installed even though stocks don't use it, because it's a top-level import.)
+      - name: Install Playwright (browsers + Linux deps)
+        run: npx playwright install --with-deps chromium
+
+      - name: Run scrapers (stocks only)
+        env:
+          GROUP: stocks
+          FAIL_ON_ERROR: "0"
+          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+          ALPHAVANTAGE_KEY: ${{ secrets.ALPHAVANTAGE_KEY }}
+        run: npm run scrape
+
+      - name: Upload data as artifact (stocks)
+        uses: actions/upload-artifact@v4
+        with:
+          name: scrape-results-stocks
+          path: data
+          if-no-files-found: error
+          retention-days: 7
+
+  # -----------------------------
+  # Merge artifacts & publish web
+  # -----------------------------
+  merge_and_commit:
+    needs: [scrape_full, scrape_stocks_fast]
+    if: ${{ always() && (needs.scrape_full.result == 'success' || needs.scrape_stocks_fast.result == 'success') }}
+    runs-on: ubuntu-latest
+    concurrency:
+      group: publish-${{ github.ref }}
+      cancel-in-progress: true
+
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+
       - name: Seed working data from docs/data
         run: |
           mkdir -p data
@@ -127,14 +191,12 @@ jobs:
           path: artifacts/stocks
         continue-on-error: true
 
-      # Merge artifacts in a fixed order; place 'stocks' LAST so its timeseries (with the new point)
-      # cannot be overwritten by seeded copies from other groups.
       - name: Merge artifacts into working data and publish
         shell: bash
         run: |
           set -euxo pipefail
 
-          # Overlay in deterministic order; stocks last
+          # Overlay in deterministic order; stocks last so its new point can't be overwritten
           for d in default seo price compliance; do
             if [ -d "artifacts/$d/data" ]; then
               rsync -a "artifacts/$d/data/" data/
@@ -144,7 +206,7 @@ jobs:
             rsync -a "artifacts/stocks/data/" data/
           fi
 
-          # Safety: if any artifact unpacked flat (./latest, ./timeseries...), fold those in
+          # Fold in any flat unpacked dirs just in case
           for d in latest history reports timeseries; do
             if [ -d "./$d" ]; then
               rsync -a "./$d/" "data/$d/"
