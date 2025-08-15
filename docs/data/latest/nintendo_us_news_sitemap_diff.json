@@ -2,15 +2,14 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-08-15T20:39:39.850Z",
+  "checkedAt": "2025-08-15T22:41:53.844Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 4,
+    "nowCount": 3,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/hit-the-turf-in-ea-sports-madden-nfl-26/",
       "https://www.nintendo.com/us/whatsnew/mobilenews-special-versions-of-chosen-legends-arrive-in-fire-emblem-heroes/",
-      "https://www.nintendo.com/us/whatsnew/see-what-games-are-arriving-this-august-2025/",
       "https://www.nintendo.com/us/whatsnew/shoot-hoops-in-a-whole-new-way-only-on-nintendo-switch-2/"
     ],
     "removed": []
