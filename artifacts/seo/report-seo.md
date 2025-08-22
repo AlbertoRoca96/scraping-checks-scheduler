@@ -1,6 +1,6 @@
-# Scrape Report (2025-08-21T18:53:07.441Z)
+# Scrape Report (2025-08-22T04:43:06.392Z)
 
-Group: `seo`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/17136105479
+Group: `seo`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/17146266241
 
 | Check | Changed | Keys | Error |
 |---|:---:|:--|:--|
