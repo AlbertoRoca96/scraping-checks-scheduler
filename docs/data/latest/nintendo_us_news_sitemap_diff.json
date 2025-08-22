@@ -2,14 +2,13 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-08-22T14:39:46.134Z",
+  "checkedAt": "2025-08-22T20:39:08.918Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 2,
+    "nowCount": 1,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/chibi-robo-is-here-new-update-for-nintendo-switch-online-expansion-pack-members/",
-      "https://www.nintendo.com/us/whatsnew/these-classic-characters-havent-missed-a-beat/"
+      "https://www.nintendo.com/us/whatsnew/chibi-robo-is-here-new-update-for-nintendo-switch-online-expansion-pack-members/"
     ],
     "removed": []
   }
