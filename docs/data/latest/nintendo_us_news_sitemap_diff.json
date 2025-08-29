@@ -2,16 +2,17 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-08-29T16:20:15.602Z",
+  "checkedAt": "2025-08-29T18:22:28.855Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 6,
+    "nowCount": 7,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/blockbuster-sale-save-up-to-50-on-select-top-rated-digital-games/",
       "https://www.nintendo.com/us/whatsnew/em-bark-on-an-adventure-to-meet-these-good-pups/",
       "https://www.nintendo.com/us/whatsnew/heres-the-latest-nintendo-switch-online-news-from-august-2025/",
       "https://www.nintendo.com/us/whatsnew/icon-elements-inspired-by-the-kirby-and-the-forgotten-land-game-are-here-for-a-limited-time/",
+      "https://www.nintendo.com/us/whatsnew/learn-how-to-make-the-most-of-donkey-kongs-powerful-mitts/",
       "https://www.nintendo.com/us/whatsnew/uncover-the-mystery-of-the-meteor-in-a-brand-new-adventure/",
       "https://www.nintendo.com/us/whatsnew/want-to-hit-the-court-in-drag-x-drive/"
     ],
