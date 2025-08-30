@@ -2,17 +2,16 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-08-30T18:21:18.296Z",
+  "checkedAt": "2025-08-30T20:21:03.588Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 5,
+    "nowCount": 4,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/chibi-robo-is-here-new-update-for-nintendo-switch-online-expansion-pack-members/",
       "https://www.nintendo.com/us/whatsnew/em-bark-on-an-adventure-to-meet-these-good-pups/",
       "https://www.nintendo.com/us/whatsnew/icon-elements-inspired-by-the-kirby-and-the-forgotten-land-nintendo-switch-2-edition-plus-star-crossed-world-game-are-here-for-a-limited-time/",
-      "https://www.nintendo.com/us/whatsnew/learn-how-to-make-the-most-of-donkey-kongs-powerful-mitts/",
-      "https://www.nintendo.com/us/whatsnew/uncover-the-mystery-of-the-meteor-in-a-brand-new-adventure/"
+      "https://www.nintendo.com/us/whatsnew/learn-how-to-make-the-most-of-donkey-kongs-powerful-mitts/"
     ],
     "removed": []
   }
