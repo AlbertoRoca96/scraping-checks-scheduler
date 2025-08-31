@@ -2,14 +2,12 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-08-31T20:18:07.408Z",
+  "checkedAt": "2025-08-31T22:16:05.415Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 1,
+    "nowCount": 0,
     "prevCount": 0,
-    "added": [
-      "https://www.nintendo.com/us/whatsnew/icon-elements-inspired-by-the-kirby-and-the-forgotten-land-nintendo-switch-2-edition-plus-star-crossed-world-game-are-here-for-a-limited-time/"
-    ],
+    "added": [],
     "removed": []
   }
 }
