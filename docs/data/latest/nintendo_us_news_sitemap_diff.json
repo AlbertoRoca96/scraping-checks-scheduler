@@ -2,15 +2,13 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-09-04T14:16:46.745Z",
+  "checkedAt": "2025-09-04T16:20:44.585Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 4,
+    "nowCount": 2,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/new-update-for-nintendo-switch-online-expansion-pack-members-sep-2025/",
-      "https://www.nintendo.com/us/whatsnew/play-the-47th-maximus-cup-online-event-to-catch-up-on-in-game-collaborative-themes/",
-      "https://www.nintendo.com/us/whatsnew/play-the-48th-maximus-cup-online-event-and-you-could-earn-an-in-game-collaborative-theme/",
       "https://www.nintendo.com/us/whatsnew/splatoon-3-north-american-league-2025/"
     ],
     "removed": []
