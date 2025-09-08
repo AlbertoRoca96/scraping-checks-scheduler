@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-09-07T22:16:20.709Z",
+  "generatedAt": "2025-09-08T01:18:14.629Z",
   "group": "price",
   "summary": [
     {
@@ -14,7 +14,7 @@
       "type": "availability",
       "changed": false,
       "changedKeys": [],
-      "error": null
+      "error": "Error: page.goto failed after 3 attempts: Error: page.goto: net::ERR_CERT_DATE_INVALID at https://scrapeme.live/shop/Pikachu/\nCall log:\n  - navigating to \"https://scrapeme.live/shop/Pikachu/\", waiting until \"domcontentloaded\"\n"
     },
     {
       "name": "psa_charizard_price_gem10",
