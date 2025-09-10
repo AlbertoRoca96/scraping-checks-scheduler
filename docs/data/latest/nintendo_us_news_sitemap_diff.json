@@ -2,13 +2,12 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-09-10T16:21:45.912Z",
+  "checkedAt": "2025-09-10T18:23:52.154Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 2,
+    "nowCount": 1,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/get-a-look-at-the-next-expansion-for-disney-dreamlight-valley-wishblossom-ranch/",
       "https://www.nintendo.com/us/whatsnew/these-ninjas-put-the-scroll-in-side-scroller/"
     ],
     "removed": []
