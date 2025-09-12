@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-09-12T12:33:52.280Z",
+  "generatedAt": "2025-09-12T14:16:23.024Z",
   "group": "price",
   "summary": [
     {
@@ -21,7 +21,7 @@
       "type": "psa_price_row",
       "changed": false,
       "changedKeys": [],
-      "error": null
+      "error": "TimeoutError: page.waitForSelector: Timeout 45000ms exceeded.\nCall log:\n  - waiting for locator('table') to be visible\n"
     }
   ]
 }
