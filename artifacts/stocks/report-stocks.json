@@ -1,13 +1,19 @@
 {
-  "generatedAt": "2025-09-13T20:41:29.292Z",
+  "generatedAt": "2025-09-13T20:56:45.378Z",
   "group": "stocks",
   "summary": [
     {
       "name": "stock_ntdoy_global_quote",
       "type": "stock_quote",
-      "changed": false,
-      "changedKeys": [],
-      "error": "Error: alphaVantage.globalQuote failed after 3 attempts: TypeError: fetch failed"
+      "changed": true,
+      "changedKeys": [
+        "change",
+        "changePercent",
+        "price",
+        "source",
+        "symbol"
+      ],
+      "error": null
     }
   ]
 }
