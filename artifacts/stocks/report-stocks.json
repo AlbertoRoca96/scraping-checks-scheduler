@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-09-13T20:20:41.908Z",
+  "generatedAt": "2025-09-13T20:41:29.292Z",
   "group": "stocks",
   "summary": [
     {
@@ -7,7 +7,7 @@
       "type": "stock_quote",
       "changed": false,
       "changedKeys": [],
-      "error": null
+      "error": "Error: alphaVantage.globalQuote failed after 3 attempts: TypeError: fetch failed"
     }
   ]
 }
