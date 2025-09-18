@@ -2,12 +2,13 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-09-18T18:25:19.676Z",
+  "checkedAt": "2025-09-18T20:19:36.815Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 14,
+    "nowCount": 15,
     "prevCount": 0,
     "added": [
+      "https://www.nintendo.com/us/whatsnew/avast-these-games-may-have-ye-speakin-like-an-ole-seadog-sept-2025/",
       "https://www.nintendo.com/us/whatsnew/chibi-robo-is-here-new-update-for-nintendo-switch-online-expansion-pack-members/",
       "https://www.nintendo.com/us/whatsnew/em-bark-on-an-adventure-to-meet-these-good-pups/",
       "https://www.nintendo.com/us/whatsnew/games-from-the-virtual-boy-system-are-coming-soon-to-nintendo-switch-online-expansion-pack/",
