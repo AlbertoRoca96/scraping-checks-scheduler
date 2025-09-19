@@ -2,15 +2,14 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-09-18T22:14:38.924Z",
+  "checkedAt": "2025-09-19T01:17:04.283Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 4,
+    "nowCount": 3,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/avast-these-games-may-have-ye-speakin-like-an-ole-seadog-sept-2025/",
       "https://www.nintendo.com/us/whatsnew/join-us-in-new-york-and-san-francisco-for-these-super-mario-bros-40th-anniversary-events/",
-      "https://www.nintendo.com/us/whatsnew/new-nintendo-direct-kicks-off-the-super-mario-bros-40th-anniversary-and-brings-slate-of-new-announcements/",
       "https://www.nintendo.com/us/whatsnew/these-ninjas-put-the-scroll-in-side-scroller/"
     ],
     "removed": []
