@@ -2,15 +2,17 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-09-25T20:19:40.813Z",
+  "checkedAt": "2025-09-25T22:15:33.786Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 3,
+    "nowCount": 5,
     "prevCount": 0,
     "added": [
+      "https://www.nintendo.com/us/whatsnew/battle-beyond-the-underworld-in-hades-ii/",
       "https://www.nintendo.com/us/whatsnew/icon-elements-inspired-by-the-donkey-kong-bananza-game-are-here-for-a-limited-time-sept-2025/",
       "https://www.nintendo.com/us/whatsnew/icon-elements-inspired-by-the-super-mario-galaxy-plus-super-mario-galaxy-2-game-are-here-for-a-limited-time-sept-2025/",
-      "https://www.nintendo.com/us/whatsnew/identify-the-traitor-before-its-too-late-in-the-new-fire-emblem-shadows-game-for-smart-devices/"
+      "https://www.nintendo.com/us/whatsnew/identify-the-traitor-before-its-too-late-in-the-new-fire-emblem-shadows-game-for-smart-devices/",
+      "https://www.nintendo.com/us/whatsnew/play-your-way-in-ea-sports-fc-26/"
     ],
     "removed": []
   }
