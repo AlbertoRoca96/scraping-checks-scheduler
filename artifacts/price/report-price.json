@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-09-25T18:24:31.349Z",
+  "generatedAt": "2025-09-25T20:21:15.977Z",
   "group": "price",
   "summary": [
     {
@@ -12,19 +12,16 @@
     {
       "name": "scrapeme_pikachu_availability",
       "type": "availability",
-      "changed": true,
-      "changedKeys": [
-        "available",
-        "raw"
-      ],
-      "error": null
+      "changed": false,
+      "changedKeys": [],
+      "error": "Error: page.goto failed after 3 attempts: Error: page.goto: net::ERR_CERT_DATE_INVALID at https://scrapeme.live/shop/Pikachu/\nCall log:\n  - navigating to \"https://scrapeme.live/shop/Pikachu/\", waiting until \"domcontentloaded\"\n"
     },
     {
       "name": "psa_charizard_price_gem10",
       "type": "psa_price_row",
       "changed": false,
       "changedKeys": [],
-      "error": null
+      "error": "TimeoutError: page.waitForSelector: Timeout 45000ms exceeded.\nCall log:\n  - waiting for locator('table') to be visible\n"
     }
   ]
 }

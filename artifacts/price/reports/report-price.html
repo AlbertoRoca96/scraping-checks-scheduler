@@ -18,9 +18,12 @@
   
     <tr>
       <td><code>scrapeme_pikachu_availability</code></td>
-      <td style="text-align:center">✅</td>
-      <td>available, raw</td>
+      <td style="text-align:center">—</td>
       <td></td>
+      <td><code>Error: page.goto failed after 3 attempts: Error: page.goto: net::ERR_CERT_DATE_INVALID at https://scrapeme.live/shop/Pikachu/
+Call log:
+  - navigating to "https://scrapeme.live/shop/Pikachu/", waiting until "domcontentloaded"
+</code></td>
       <td><a href="../latest/scrapeme_pikachu_availability.json">latest</a></td>
     </tr>
   
@@ -28,7 +31,10 @@
       <td><code>psa_charizard_price_gem10</code></td>
       <td style="text-align:center">—</td>
       <td></td>
-      <td></td>
+      <td><code>TimeoutError: page.waitForSelector: Timeout 45000ms exceeded.
+Call log:
+  - waiting for locator('table') to be visible
+</code></td>
       <td><a href="../latest/psa_charizard_price_gem10.json">latest</a></td>
     </tr>
   </tbody></table>
