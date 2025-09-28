@@ -1,13 +1,16 @@
 {
-  "generatedAt": "2025-09-28T18:22:50.197Z",
+  "generatedAt": "2025-09-28T20:18:43.095Z",
   "group": "price",
   "summary": [
     {
       "name": "scrapeme_pikachu_price",
       "type": "price",
-      "changed": false,
-      "changedKeys": [],
-      "error": "Error: page.goto failed after 3 attempts: Error: page.goto: net::ERR_CERT_DATE_INVALID at https://scrapeme.live/shop/Pikachu/\nCall log:\n  - navigating to \"https://scrapeme.live/shop/Pikachu/\", waiting until \"domcontentloaded\"\n"
+      "changed": true,
+      "changedKeys": [
+        "price",
+        "raw"
+      ],
+      "error": null
     },
     {
       "name": "scrapeme_pikachu_availability",
