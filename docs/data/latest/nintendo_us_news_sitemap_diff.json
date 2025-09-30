@@ -2,15 +2,16 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-09-30T16:22:22.432Z",
+  "checkedAt": "2025-09-30T18:24:19.705Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 3,
+    "nowCount": 4,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/adding-curve-and-unlocking-star-clubs-in-mario-golf-super-rush/",
       "https://www.nintendo.com/us/whatsnew/new-update-for-nintendo-switch-online-expansion-pack-members-9-25-25/",
-      "https://www.nintendo.com/us/whatsnew/planning-your-shot-in-mario-golf-super-rush/"
+      "https://www.nintendo.com/us/whatsnew/planning-your-shot-in-mario-golf-super-rush/",
+      "https://www.nintendo.com/us/whatsnew/see-what-games-are-arriving-this-september-2025/"
     ],
     "removed": []
   }
