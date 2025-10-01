@@ -2,16 +2,17 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-09-30T22:16:49.014Z",
+  "checkedAt": "2025-10-01T01:23:43.628Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 4,
+    "nowCount": 5,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/adding-curve-and-unlocking-star-clubs-in-mario-golf-super-rush/",
       "https://www.nintendo.com/us/whatsnew/new-update-for-nintendo-switch-online-expansion-pack-members-9-25-25/",
       "https://www.nintendo.com/us/whatsnew/planning-your-shot-in-mario-golf-super-rush/",
-      "https://www.nintendo.com/us/whatsnew/see-what-games-are-arriving-this-september-2025/"
+      "https://www.nintendo.com/us/whatsnew/see-what-games-are-arriving-this-september-2025/",
+      "https://www.nintendo.com/us/whatsnew/the-copper-age-drop-is-now-available-for-minecraft-on-nintendo-switch/"
     ],
     "removed": []
   }
