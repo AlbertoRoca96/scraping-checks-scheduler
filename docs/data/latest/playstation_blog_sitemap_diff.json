@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-10-02T20:18:03.714Z",
+  "checkedAt": "2025-10-02T22:16:07.688Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/06/28/official-playstation-podcast-episode-488-wacky-tacos/",
       "https://blog.playstation.com/2024/07/01/capcom-next-dead-rising-deluxe-remaster-out-sept-19-kunitsu-gami-path-of-the-goddess-demo-out-today/",
       "https://blog.playstation.com/2024/07/01/players-choice-vote-for-june-2024s-best-new-game/",
       "https://blog.playstation.com/2024/07/03/gran-turismo-world-series-2024-series-round-1-takes-place-in-montreal-july-6/",
@@ -807,6 +806,7 @@
       "https://blog.playstation.com/2025/10/01/get-ready-for-new-ghost-of-yotei-official-merchandise-available-from-today/",
       "https://blog.playstation.com/2025/10/01/players-choice-vote-for-september-2025s-best-new-game/",
       "https://blog.playstation.com/2025/10/01/playstation-plus-monthly-games-for-october-alan-wake-2-goat-simulator-3-cocoon/",
+      "https://blog.playstation.com/2025/10/02/20251003-psplus/",
       "https://blog.playstation.com/2025/10/02/playstation-store-september-2025s-top-downloads/"
     ],
     "removed": []
