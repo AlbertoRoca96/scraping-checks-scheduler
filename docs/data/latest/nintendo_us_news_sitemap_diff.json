@@ -2,20 +2,18 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-10-01T22:16:20.369Z",
+  "checkedAt": "2025-10-02T01:12:54.013Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 8,
+    "nowCount": 6,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/adding-curve-and-unlocking-star-clubs-in-mario-golf-super-rush/",
       "https://www.nintendo.com/us/whatsnew/heres-the-latest-nintendo-switch-online-news-from-september-2025/",
-      "https://www.nintendo.com/us/whatsnew/new-update-for-nintendo-switch-online-expansion-pack-members-9-25-25/",
-      "https://www.nintendo.com/us/whatsnew/planning-your-shot-in-mario-golf-super-rush/",
       "https://www.nintendo.com/us/whatsnew/play-your-way-in-ea-sports-fc-26/",
       "https://www.nintendo.com/us/whatsnew/see-what-games-are-arriving-this-september-2025/",
       "https://www.nintendo.com/us/whatsnew/take-a-trip-down-memory-lane-and-celebrate-a-gaming-icon-with-the-lego-game-boy-model-building-set/",
-      "https://www.nintendo.com/us/whatsnew/the-copper-age-drop-is-now-available-for-minecraft-on-nintendo-switch/"
+      "https://www.nintendo.com/us/whatsnew/the-copper-age-drop-is-now-available-for-minecraft-on-nintendo-switch/",
+      "https://www.nintendo.com/us/whatsnew/youll-need-teamwork-to-make-the-dream-work-in-these-games/"
     ],
     "removed": []
   }
