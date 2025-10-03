@@ -2,14 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-10-03T10:17:21.541Z",
+  "checkedAt": "2025-10-03T12:35:16.383Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2024/07/01/capcom-next-dead-rising-deluxe-remaster-out-sept-19-kunitsu-gami-path-of-the-goddess-demo-out-today/",
-      "https://blog.playstation.com/2024/07/01/players-choice-vote-for-june-2024s-best-new-game/",
       "https://blog.playstation.com/2024/07/03/gran-turismo-world-series-2024-series-round-1-takes-place-in-montreal-july-6/",
       "https://blog.playstation.com/2024/07/03/introducing-new-playstation-studios-collectible-figures-from-spin-master-launches-starting-this-august/",
       "https://blog.playstation.com/2024/07/03/revealing-clock-tower-rewinds-enhanced-scare-packed-new-gameplay-mode/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2025/10/01/players-choice-vote-for-september-2025s-best-new-game/",
       "https://blog.playstation.com/2025/10/01/playstation-plus-monthly-games-for-october-alan-wake-2-goat-simulator-3-cocoon/",
       "https://blog.playstation.com/2025/10/02/20251003-psplus/",
-      "https://blog.playstation.com/2025/10/02/playstation-store-september-2025s-top-downloads/"
+      "https://blog.playstation.com/2025/10/02/playstation-store-september-2025s-top-downloads/",
+      "https://blog.playstation.com/2025/10/03/marvel-tokon-fighting-souls-interview/"
     ],
     "removed": []
   }
