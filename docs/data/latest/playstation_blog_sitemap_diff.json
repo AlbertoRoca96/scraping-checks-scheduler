@@ -2,14 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-10-07T12:35:23.788Z",
+  "checkedAt": "2025-10-07T14:18:52.682Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/07/03/introducing-new-playstation-studios-collectible-figures-from-spin-master-launches-starting-this-august/",
-      "https://blog.playstation.com/2024/07/05/share-of-the-week-fireworks/",
       "https://blog.playstation.com/2024/07/08/astros-playroom-second-update-is-now-available-hiding-a-new-special-bot-in-game/",
       "https://blog.playstation.com/2024/07/08/cygni-all-guns-blazing-redefining-the-shoot-em-up/",
       "https://blog.playstation.com/2024/07/09/meet-2xkos-newest-champion-braum-plus-first-details-on-ps5-playtest-starting-august-8/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2025/10/03/ghost-of-yotei-erika-ishii-interview/",
       "https://blog.playstation.com/2025/10/03/marvel-tokon-fighting-souls-interview/",
       "https://blog.playstation.com/2025/10/03/official-playstation-podcast-episode-525-ghost-season/",
-      "https://blog.playstation.com/2025/10/06/ghost-of-yotei-soundtrack-listening-party-streams-live-on-oct-15/"
+      "https://blog.playstation.com/2025/10/06/ghost-of-yotei-soundtrack-listening-party-streams-live-on-oct-15/",
+      "https://blog.playstation.com/2025/10/07/a-deep-dive-into-reachs-gameplay-features-out-on-ps-vr2-oct-16/",
+      "https://blog.playstation.com/2025/10/07/first-look-at-the-dualsense-wireless-controller-icon-blue-special-edition-launching-this-october/"
     ],
     "removed": []
   }
