@@ -2,14 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-10-08T14:17:22.054Z",
+  "checkedAt": "2025-10-08T16:21:06.327Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2024/07/09/meet-2xkos-newest-champion-braum-plus-first-details-on-ps5-playtest-starting-august-8/",
-      "https://blog.playstation.com/2024/07/09/playstation-store-june-2024s-top-downloads/",
       "https://blog.playstation.com/2024/07/10/frenzies-is-a-neon-soaked-wildly-chaotic-multiplayer-shooter-coming-to-ps-vr2/",
       "https://blog.playstation.com/2024/07/10/metro-awakening-adapting-the-post-apocalyptic-survival-horror-for-ps-vr2/",
       "https://blog.playstation.com/2024/07/10/playstation-plus-game-catalog-for-july-remnant-ii-crisis-core-final-fantasy-vii-reunion-and-more/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2025/10/07/a-deep-dive-into-reachs-gameplay-features-out-on-ps-vr2-oct-16/",
       "https://blog.playstation.com/2025/10/07/first-look-at-the-dualsense-wireless-controller-icon-blue-special-edition-launching-this-october/",
       "https://blog.playstation.com/2025/10/07/players-choice-promotion-comes-to-playstation-store-oct-8/",
-      "https://blog.playstation.com/2025/10/07/the-haunting-returns-to-call-of-duty-black-ops-6-and-warzone-launching-october-9/"
+      "https://blog.playstation.com/2025/10/07/the-haunting-returns-to-call-of-duty-black-ops-6-and-warzone-launching-october-9/",
+      "https://blog.playstation.com/2025/10/08/jurassic-world-evolution-3-introducing-the-island-generator/"
     ],
     "removed": []
   }
