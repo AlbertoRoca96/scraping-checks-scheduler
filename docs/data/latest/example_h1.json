@@ -2,9 +2,9 @@
   "name": "example_h1",
   "type": "page",
   "url": "https://example.com/",
-  "checkedAt": "2025-10-09T16:23:10.888Z",
+  "checkedAt": "2025-10-09T18:25:06.650Z",
   "data": {
     "heading": "Example Domain",
-    "moreInfoLink": "https://www.iana.org/domains/example"
+    "moreInfoLink": "https://iana.org/domains/example"
   }
 }
