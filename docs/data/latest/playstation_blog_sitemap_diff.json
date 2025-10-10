@@ -2,7 +2,7 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-10-10T12:36:07.648Z",
+  "checkedAt": "2025-10-10T14:18:50.051Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
@@ -11,7 +11,6 @@
       "https://blog.playstation.com/2024/07/10/frenzies-is-a-neon-soaked-wildly-chaotic-multiplayer-shooter-coming-to-ps-vr2/",
       "https://blog.playstation.com/2024/07/10/metro-awakening-adapting-the-post-apocalyptic-survival-horror-for-ps-vr2/",
       "https://blog.playstation.com/2024/07/10/playstation-plus-game-catalog-for-july-remnant-ii-crisis-core-final-fantasy-vii-reunion-and-more/",
-      "https://blog.playstation.com/2024/07/10/ps-vr2-frenzies-revealed-new-metro-awakening-gameplay-details-wanderer-the-fragments-of-fate-in-depth-look/",
       "https://blog.playstation.com/2024/07/11/concord-beta-early-access-preload-and-server-times-pc-specs-and-more-detailed/",
       "https://blog.playstation.com/2024/07/11/exhausted-man-crawls-onto-ps5-and-ps4-july-25-full-details-on-movement-mechanics/",
       "https://blog.playstation.com/2024/07/11/flintlock-the-siege-of-dawn-discover-the-gods-youll-battle-july-18/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2025/10/07/players-choice-promotion-comes-to-playstation-store-oct-8/",
       "https://blog.playstation.com/2025/10/07/the-haunting-returns-to-call-of-duty-black-ops-6-and-warzone-launching-october-9/",
       "https://blog.playstation.com/2025/10/08/jurassic-world-evolution-3-introducing-the-island-generator/",
-      "https://blog.playstation.com/2025/10/09/skate-story-launches-december-8-on-ps5/"
+      "https://blog.playstation.com/2025/10/09/skate-story-launches-december-8-on-ps5/",
+      "https://blog.playstation.com/2025/10/10/genshin-impact-version-luna-ii-new-ugc-system-miliastra-wonderland-launches-oct-22/"
     ],
     "removed": []
   }
