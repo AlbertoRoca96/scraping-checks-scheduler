@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-10-16T04:20:48.475Z",
+  "generatedAt": "2025-10-16T06:28:01.513Z",
   "group": "compliance",
   "summary": [
     {
@@ -7,14 +7,15 @@
       "type": "psa_pop_row",
       "changed": false,
       "changedKeys": [],
-      "error": null
+      "error": "TimeoutError: page.waitForSelector: Timeout 45000ms exceeded.\nCall log:\n  - waiting for locator('table') to be visible\n"
     },
     {
       "name": "sec_aapl_8k_list_hash",
       "type": "content_watch",
       "changed": true,
       "changedKeys": [
-        "hash"
+        "hash",
+        "length"
       ],
       "error": null
     }

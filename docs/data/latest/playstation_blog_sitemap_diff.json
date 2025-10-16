@@ -2,14 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-10-16T04:19:52.630Z",
+  "checkedAt": "2025-10-16T06:25:36.384Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2024/07/11/exhausted-man-crawls-onto-ps5-and-ps4-july-25-full-details-on-movement-mechanics/",
-      "https://blog.playstation.com/2024/07/11/flintlock-the-siege-of-dawn-discover-the-gods-youll-battle-july-18/",
       "https://blog.playstation.com/2024/07/12/evo-2024-get-to-know-the-fighting-games-headlining-the-tournaments/",
       "https://blog.playstation.com/2024/07/12/mlb-the-show-24s-drive-to-diamond-is-headed-to-all-star-week/",
       "https://blog.playstation.com/2024/07/12/official-playstation-podcast-episode-489-tame-the-rage/",
@@ -805,6 +804,7 @@
       "https://blog.playstation.com/2025/10/09/skate-story-launches-december-8-on-ps5/",
       "https://blog.playstation.com/2025/10/10/genshin-impact-version-luna-ii-new-ugc-system-miliastra-wonderland-launches-oct-22/",
       "https://blog.playstation.com/2025/10/10/share-of-the-week-ghost-of-yotei/",
+      "https://blog.playstation.com/2025/10/15/20251016-psplus/",
       "https://blog.playstation.com/2025/10/15/a-deeper-look-at-lumines-arises-packed-puzzle-offerings/",
       "https://blog.playstation.com/2025/10/15/ghost-of-yotei-builds-guide-creative-ways-to-slay-the-six/",
       "https://blog.playstation.com/2025/10/15/playstation-plus-game-catalog-for-october-silent-hill-2-until-dawn-v-rising-yakuza-like-a-dragon-and-more/"
