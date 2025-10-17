@@ -2,12 +2,13 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-10-17T20:20:11.945Z",
+  "checkedAt": "2025-10-17T22:16:47.018Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 7,
+    "nowCount": 8,
     "prevCount": 0,
     "added": [
+      "https://www.nintendo.com/us/whatsnew/an-interstellar-protector-with-cosmic-power/",
       "https://www.nintendo.com/us/whatsnew/battle-beyond-the-underworld-in-hades-ii/",
       "https://www.nintendo.com/us/whatsnew/icon-elements-inspired-by-the-donkey-kong-bananza-game-are-here-for-a-limited-time-sept-2025/",
       "https://www.nintendo.com/us/whatsnew/icon-elements-inspired-by-the-splatoon-games-are-here-for-a-limited-time-oct-2025/",
