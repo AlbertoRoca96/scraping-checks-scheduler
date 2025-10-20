@@ -1,7 +1,7 @@
-# Scrape Report (2025-10-20T15:02:51.086Z)
+# Scrape Report (2025-10-20T15:34:07.237Z)
 
-Group: `stocks`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/18656054260
+Group: `stocks`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/18656883228
 
 | Check | Changed | Keys | Error |
 |---|:---:|:--|:--|
-| `stock_ntdoy_global_quote` | — |  | `Error: alphaVantage.globalQuote failed after 3 attempts: Error: HTTP 522` |
+| `stock_ntdoy_global_quote` | — |  | `Error: alphaVantage.globalQuote failed after 3 attempts: Error: HTTP 525` |

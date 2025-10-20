@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-10-20T15:02:51.085Z",
+  "generatedAt": "2025-10-20T15:34:07.236Z",
   "group": "stocks",
   "summary": [
     {
@@ -7,7 +7,7 @@
       "type": "stock_quote",
       "changed": false,
       "changedKeys": [],
-      "error": "Error: alphaVantage.globalQuote failed after 3 attempts: Error: HTTP 522"
+      "error": "Error: alphaVantage.globalQuote failed after 3 attempts: Error: HTTP 525"
     }
   ]
 }
