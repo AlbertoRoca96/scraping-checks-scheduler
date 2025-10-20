@@ -2,6 +2,6 @@
   "name": "stock_ntdoy_global_quote",
   "type": "stock_quote",
   "url": "https://www.alphavantage.co/documentation/#latestprice",
-  "checkedAt": "2025-10-20T14:30:30.179Z",
-  "error": "Error: alphaVantage.globalQuote failed after 3 attempts: Error: HTTP 522"
+  "checkedAt": "2025-10-20T14:47:11.808Z",
+  "error": "Error: alphaVantage.globalQuote failed after 3 attempts: Error: HTTP 525"
 }
