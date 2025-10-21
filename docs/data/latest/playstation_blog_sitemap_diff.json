@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-10-20T22:15:27.970Z",
+  "checkedAt": "2025-10-21T01:17:41.341Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/07/12/mlb-the-show-24s-drive-to-diamond-is-headed-to-all-star-week/",
       "https://blog.playstation.com/2024/07/15/finding-your-flow-in-bo-path-of-the-teal-lotus-out-july-17/",
       "https://blog.playstation.com/2024/07/16/champions-and-challengers-what-to-expect-at-evo-2024/",
       "https://blog.playstation.com/2024/07/16/playstation-stores-summer-sale-starts-july-17/",
@@ -807,6 +806,7 @@
       "https://blog.playstation.com/2025/10/16/battlefield-6-9-ways-it-evolves-the-franchises-formula/",
       "https://blog.playstation.com/2025/10/17/official-playstation-podcast-episode-526-lost-in-the-game-sauce/",
       "https://blog.playstation.com/2025/10/17/share-of-the-week-ghost-of-yotei-atsu/",
+      "https://blog.playstation.com/2025/10/20/festival-of-accord-dreamspell-comes-to-monster-hunter-wilds-starting-october-22/",
       "https://blog.playstation.com/2025/10/20/vampire-the-masquerade-bloodlines-2-hands-on-report-out-oct-21/"
     ],
     "removed": []
