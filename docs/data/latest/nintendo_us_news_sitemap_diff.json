@@ -2,20 +2,17 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-10-21T22:17:09.871Z",
+  "checkedAt": "2025-10-22T01:20:38.524Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 8,
+    "nowCount": 5,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/an-interstellar-protector-with-cosmic-power/",
-      "https://www.nintendo.com/us/whatsnew/battle-beyond-the-underworld-in-hades-ii/",
-      "https://www.nintendo.com/us/whatsnew/icon-elements-inspired-by-the-donkey-kong-bananza-game-are-here-for-a-limited-time-sept-2025/",
-      "https://www.nintendo.com/us/whatsnew/icon-elements-inspired-by-the-splatoon-games-are-here-for-a-limited-time-oct-2025/",
-      "https://www.nintendo.com/us/whatsnew/meet-a-few-fur-iends-with-spirited-purr-sonalities/",
-      "https://www.nintendo.com/us/whatsnew/pack-your-bags-for-lumiose-city-a-new-action-packed-pokemon-adventure-is-finally-here/",
-      "https://www.nintendo.com/us/whatsnew/see-what-games-are-arriving-this-october-2025/",
-      "https://www.nintendo.com/us/whatsnew/youll-need-teamwork-to-make-the-dream-work-in-these-games/"
+      "https://www.nintendo.com/us/whatsnew/heres-the-latest-nintendo-switch-online-news-from-september-2025/",
+      "https://www.nintendo.com/us/whatsnew/metroid-prime-1-3-a-visual-retrospective-artbook-arrives-on-oct-28/",
+      "https://www.nintendo.com/us/whatsnew/monthly-in-game-events-are-coming-to-the-donkey-kong-bananza-dk-island-emerald-rush-dlc/",
+      "https://www.nintendo.com/us/whatsnew/play-together-near-or-far-with-these-games-using-gamechat-and-gameshare-oct-2025/",
+      "https://www.nintendo.com/us/whatsnew/screaming-deals-save-up-to-50-on-select-digital-games/"
     ],
     "removed": []
   }
