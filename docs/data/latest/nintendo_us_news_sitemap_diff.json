@@ -2,16 +2,17 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-10-22T14:21:05.692Z",
+  "checkedAt": "2025-10-22T16:24:20.252Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 6,
+    "nowCount": 7,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/heres-the-latest-nintendo-switch-online-news-from-september-2025/",
       "https://www.nintendo.com/us/whatsnew/luigis-mansion-takes-up-residence-on-nintendo-classics-oct-30/",
       "https://www.nintendo.com/us/whatsnew/metroid-prime-1-3-a-visual-retrospective-artbook-arrives-on-oct-28/",
       "https://www.nintendo.com/us/whatsnew/monthly-in-game-events-are-coming-to-the-donkey-kong-bananza-dk-island-emerald-rush-dlc/",
+      "https://www.nintendo.com/us/whatsnew/pikmin-4-sprouts-a-free-update-on-nintendo-switch-this-november-adding-decor-pikmin-and-more/",
       "https://www.nintendo.com/us/whatsnew/play-together-near-or-far-with-these-games-using-gamechat-and-gameshare-oct-2025/",
       "https://www.nintendo.com/us/whatsnew/screaming-deals-save-up-to-50-on-select-digital-games/"
     ],
