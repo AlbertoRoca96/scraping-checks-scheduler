@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-10-23T12:36:56.889Z",
+  "checkedAt": "2025-10-23T14:19:27.121Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/07/16/playstation-stores-summer-sale-starts-july-17/",
       "https://blog.playstation.com/2024/07/17/call-of-duty-modern-warfare-iii-and-warzone-season-5-invite-wwe-royalty-live-july-24/",
       "https://blog.playstation.com/2024/07/17/neverness-to-everness-gameplay-showcases-supernatural-urban-open-world-rpg-coming-to-ps5/",
       "https://blog.playstation.com/2024/07/18/concord-open-beta-gameplay-tips/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2025/10/20/vampire-the-masquerade-bloodlines-2-hands-on-report-out-oct-21/",
       "https://blog.playstation.com/2025/10/22/a-glimpse-into-hotel-infinitys-innovative-ps-vr2-roomscale-exploration-mechanics/",
       "https://blog.playstation.com/2025/10/22/battlefield-6-season-1-first-details-and-hands-on-report/",
-      "https://blog.playstation.com/2025/10/22/no-mans-skys-all-new-breach-update-live-today/"
+      "https://blog.playstation.com/2025/10/22/no-mans-skys-all-new-breach-update-live-today/",
+      "https://blog.playstation.com/2025/10/23/the-first-ever-gran-turismo-world-series-fan-fest-comes-to-los-angeles/"
     ],
     "removed": []
   }
