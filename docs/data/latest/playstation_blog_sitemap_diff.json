@@ -2,14 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-10-24T14:19:41.086Z",
+  "checkedAt": "2025-10-24T16:21:23.733Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2024/06/06/astro-bot-pre-order-begins-june-7-features-parappa-lovestruck-lyricist-outfit-and-more/",
-      "https://blog.playstation.com/2024/06/06/hogwarts-legacy-free-update-brings-photo-mode-available-today/",
       "https://blog.playstation.com/2024/06/07/embark-on-the-hunters-journey-with-a-new-look-at-monster-hunter-wilds/",
       "https://blog.playstation.com/2024/06/07/honkai-star-rail-update-v2-3-brings-new-friends-and-simulated-universe-on-june-19/",
       "https://blog.playstation.com/2024/06/07/lego-horizon-adventures-launches-holiday-2024/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2025/10/22/battlefield-6-season-1-first-details-and-hands-on-report/",
       "https://blog.playstation.com/2025/10/22/no-mans-skys-all-new-breach-update-live-today/",
       "https://blog.playstation.com/2025/10/23/ghost-of-yotei-tech-deep-dive/",
-      "https://blog.playstation.com/2025/10/23/the-first-ever-gran-turismo-world-series-fan-fest-comes-to-los-angeles/"
+      "https://blog.playstation.com/2025/10/23/the-first-ever-gran-turismo-world-series-fan-fest-comes-to-los-angeles/",
+      "https://blog.playstation.com/2025/10/24/share-of-the-week-ghost-of-yotei-landscapes/"
     ],
     "removed": []
   }
