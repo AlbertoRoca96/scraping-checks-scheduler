@@ -1,12 +1,9 @@
-# Scrape Report (2025-10-25T08:21:04.654Z)
+# Scrape Report (2025-10-25T10:17:50.499Z)
 
-Group: `price`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/18800557795
+Group: `price`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/18801731455
 
 | Check | Changed | Keys | Error |
 |---|:---:|:--|:--|
 | `scrapeme_pikachu_price` | — |  |  |
-| `scrapeme_pikachu_availability` | — |  | `Error: page.goto failed after 3 attempts: Error: page.goto: net::ERR_CERT_DATE_INVALID at https://scrapeme.live/shop/Pikachu/
-Call log:
-  - navigating to "https://scrapeme.live/shop/Pikachu/", waiting until "domcontentloaded"
-` |
+| `scrapeme_pikachu_availability` | ✅ | available, raw |  |
 | `psa_charizard_price_gem10` | — |  |  |
