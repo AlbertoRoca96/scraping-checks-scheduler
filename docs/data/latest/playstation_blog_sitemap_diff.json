@@ -2,14 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-10-28T01:16:52.950Z",
+  "checkedAt": "2025-10-28T03:07:32.070Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2024/06/07/embark-on-the-hunters-journey-with-a-new-look-at-monster-hunter-wilds/",
-      "https://blog.playstation.com/2024/06/07/honkai-star-rail-update-v2-3-brings-new-friends-and-simulated-universe-on-june-19/",
       "https://blog.playstation.com/2024/06/07/lego-horizon-adventures-launches-holiday-2024/",
       "https://blog.playstation.com/2024/06/07/mlb-the-show-24-heats-up-with-new-season-2-summer-content/",
       "https://blog.playstation.com/2024/06/07/new-alan-wake-2-night-springs-expansion-launches-june-8-first-details/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2025/10/23/ghost-of-yotei-tech-deep-dive/",
       "https://blog.playstation.com/2025/10/23/the-first-ever-gran-turismo-world-series-fan-fest-comes-to-los-angeles/",
       "https://blog.playstation.com/2025/10/24/halo-campaign-evolved-launches-on-ps5-in-2026/",
-      "https://blog.playstation.com/2025/10/24/share-of-the-week-ghost-of-yotei-landscapes/"
+      "https://blog.playstation.com/2025/10/24/share-of-the-week-ghost-of-yotei-landscapes/",
+      "https://blog.playstation.com/2025/10/27/loulan-the-cursed-sand-is-coming-to-ps5/"
     ],
     "removed": []
   }
