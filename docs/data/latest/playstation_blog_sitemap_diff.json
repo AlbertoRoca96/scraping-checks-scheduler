@@ -2,7 +2,7 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-10-28T14:19:24.529Z",
+  "checkedAt": "2025-10-28T16:24:44.538Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
@@ -13,7 +13,6 @@
       "https://blog.playstation.com/2024/06/07/mlb-the-show-24-heats-up-with-new-season-2-summer-content/",
       "https://blog.playstation.com/2024/06/07/new-alan-wake-2-night-springs-expansion-launches-june-8-first-details/",
       "https://blog.playstation.com/2024/06/07/official-playstation-podcast-episode-486-proof-in-the-play/",
-      "https://blog.playstation.com/2024/06/07/share-of-the-week-hidden/",
       "https://blog.playstation.com/2024/06/07/sonic-x-shadow-generations-launches-october-25/",
       "https://blog.playstation.com/2024/06/07/valorant-limited-beta-is-coming-to-ps5-on-june-14/",
       "https://blog.playstation.com/2024/06/09/call-of-duty-black-ops-6-hits-ps5-on-october-25/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2025/10/23/the-first-ever-gran-turismo-world-series-fan-fest-comes-to-los-angeles/",
       "https://blog.playstation.com/2025/10/24/halo-campaign-evolved-launches-on-ps5-in-2026/",
       "https://blog.playstation.com/2025/10/24/share-of-the-week-ghost-of-yotei-landscapes/",
-      "https://blog.playstation.com/2025/10/27/loulan-the-cursed-sand-is-coming-to-ps5/"
+      "https://blog.playstation.com/2025/10/27/loulan-the-cursed-sand-is-coming-to-ps5/",
+      "https://blog.playstation.com/2025/10/28/battlefield-redsec-the-new-free-to-play-battle-royale-launches-today/"
     ],
     "removed": []
   }
