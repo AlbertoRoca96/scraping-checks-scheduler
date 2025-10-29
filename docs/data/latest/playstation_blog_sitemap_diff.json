@@ -2,14 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-10-29T20:21:22.682Z",
+  "checkedAt": "2025-10-29T22:18:04.145Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2024/06/07/embark-on-the-hunters-journey-with-a-new-look-at-monster-hunter-wilds/",
-      "https://blog.playstation.com/2024/06/07/lego-horizon-adventures-launches-holiday-2024/",
       "https://blog.playstation.com/2024/06/07/new-alan-wake-2-night-springs-expansion-launches-june-8-first-details/",
       "https://blog.playstation.com/2024/06/07/sonic-x-shadow-generations-launches-october-25/",
       "https://blog.playstation.com/2024/06/07/valorant-limited-beta-is-coming-to-ps5-on-june-14/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2025/10/27/loulan-the-cursed-sand-is-coming-to-ps5/",
       "https://blog.playstation.com/2025/10/28/battlefield-redsec-the-new-free-to-play-battle-royale-launches-today/",
       "https://blog.playstation.com/2025/10/29/nba-the-run-brings-arcade-inspired-basketball-to-ps5-and-ps4/",
-      "https://blog.playstation.com/2025/10/29/playstation-plus-monthly-games-for-november-stray-ea-sports-wrc-24-totally-accurate-battle-simulator/"
+      "https://blog.playstation.com/2025/10/29/playstation-plus-monthly-games-for-november-stray-ea-sports-wrc-24-totally-accurate-battle-simulator/",
+      "https://blog.playstation.com/2025/10/29/prepare-for-resident-evil-requiem-with-a-story-recap-from-capcom/"
     ],
     "removed": []
   }
