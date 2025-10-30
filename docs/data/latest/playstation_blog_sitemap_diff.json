@@ -2,14 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-10-30T14:20:22.658Z",
+  "checkedAt": "2025-10-30T16:22:38.066Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2024/06/07/embark-on-the-hunters-journey-with-a-new-look-at-monster-hunter-wilds/",
-      "https://blog.playstation.com/2024/06/07/new-alan-wake-2-night-springs-expansion-launches-june-8-first-details/",
       "https://blog.playstation.com/2024/06/07/valorant-limited-beta-is-coming-to-ps5-on-june-14/",
       "https://blog.playstation.com/2024/06/09/call-of-duty-black-ops-6-hits-ps5-on-october-25/",
       "https://blog.playstation.com/2024/06/11/marvels-spider-man-2-update-includes-suit-collab-and-fan-favorites-available-june-18/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2025/10/29/nba-the-run-brings-arcade-inspired-basketball-to-ps5-and-ps4/",
       "https://blog.playstation.com/2025/10/29/playstation-plus-monthly-games-for-november-stray-ea-sports-wrc-24-totally-accurate-battle-simulator/",
       "https://blog.playstation.com/2025/10/29/prepare-for-resident-evil-requiem-with-a-story-recap-from-capcom/",
-      "https://blog.playstation.com/2025/10/30/16-must-play-games-on-playstation-plus-to-horrify-your-halloween/"
+      "https://blog.playstation.com/2025/10/30/16-must-play-games-on-playstation-plus-to-horrify-your-halloween/",
+      "https://blog.playstation.com/2025/10/30/thief-vr-legacy-of-shadow-launches-december-4-on-ps-vr2/"
     ],
     "removed": []
   }
