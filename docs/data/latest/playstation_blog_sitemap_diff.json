@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-11-03T14:19:37.500Z",
+  "checkedAt": "2025-11-03T16:20:52.496Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/06/11/marvels-spider-man-2-update-includes-suit-collab-and-fan-favorites-available-june-18/",
       "https://blog.playstation.com/2024/06/12/a-closer-look-at-11-ps5-titles-from-summer-game-fest-2024/",
       "https://blog.playstation.com/2024/06/12/astro-bot-hands-on-report/",
       "https://blog.playstation.com/2024/06/12/lego-horizon-adventures-hands-on-report/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2025/10/30/thief-vr-legacy-of-shadow-launches-december-4-on-ps-vr2/",
       "https://blog.playstation.com/2025/10/31/official-playstation-podcast-episode-527-pod-x-pit/",
       "https://blog.playstation.com/2025/10/31/share-of-the-week-spooky-3/",
-      "https://blog.playstation.com/2025/11/03/it-happens-on-ps5-campaign-captures-the-unexpected-and-unforgettable-moments-ps5-has-to-offer/"
+      "https://blog.playstation.com/2025/11/03/it-happens-on-ps5-campaign-captures-the-unexpected-and-unforgettable-moments-ps5-has-to-offer/",
+      "https://blog.playstation.com/2025/11/03/players-choice-vote-for-october-2025s-best-new-game/"
     ],
     "removed": []
   }
