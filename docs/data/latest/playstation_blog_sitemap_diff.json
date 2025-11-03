@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-11-03T12:37:00.561Z",
+  "checkedAt": "2025-11-03T14:19:37.500Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/06/09/call-of-duty-black-ops-6-hits-ps5-on-october-25/",
       "https://blog.playstation.com/2024/06/11/marvels-spider-man-2-update-includes-suit-collab-and-fan-favorites-available-june-18/",
       "https://blog.playstation.com/2024/06/12/a-closer-look-at-11-ps5-titles-from-summer-game-fest-2024/",
       "https://blog.playstation.com/2024/06/12/astro-bot-hands-on-report/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2025/10/30/16-must-play-games-on-playstation-plus-to-horrify-your-halloween/",
       "https://blog.playstation.com/2025/10/30/thief-vr-legacy-of-shadow-launches-december-4-on-ps-vr2/",
       "https://blog.playstation.com/2025/10/31/official-playstation-podcast-episode-527-pod-x-pit/",
-      "https://blog.playstation.com/2025/10/31/share-of-the-week-spooky-3/"
+      "https://blog.playstation.com/2025/10/31/share-of-the-week-spooky-3/",
+      "https://blog.playstation.com/2025/11/03/it-happens-on-ps5-campaign-captures-the-unexpected-and-unforgettable-moments-ps5-has-to-offer/"
     ],
     "removed": []
   }
