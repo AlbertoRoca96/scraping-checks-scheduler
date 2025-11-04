@@ -2,9 +2,6 @@
   "name": "scrapeme_pikachu_price",
   "type": "price",
   "url": "https://scrapeme.live/shop/Pikachu/",
-  "checkedAt": "2025-11-04T03:08:14.815Z",
-  "data": {
-    "price": 37,
-    "raw": "£37.00"
-  }
+  "checkedAt": "2025-11-04T04:20:05.172Z",
+  "error": "Error: page.goto failed after 3 attempts: Error: page.goto: net::ERR_CERT_DATE_INVALID at https://scrapeme.live/shop/Pikachu/\nCall log:\n  - navigating to \"https://scrapeme.live/shop/Pikachu/\", waiting until \"domcontentloaded\"\n"
 }
