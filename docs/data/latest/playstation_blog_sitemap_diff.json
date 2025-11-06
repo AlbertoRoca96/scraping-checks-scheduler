@@ -2,7 +2,7 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-11-06T16:24:52.058Z",
+  "checkedAt": "2025-11-06T18:27:00.582Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
@@ -10,7 +10,6 @@
     "added": [
       "https://blog.playstation.com/2024/06/13/monster-hunter-wilds-interview-how-capcom-is-evolving-its-apex-franchise/",
       "https://blog.playstation.com/2024/06/13/playstation-store-may-2024s-top-downloads/",
-      "https://blog.playstation.com/2024/06/13/ps5-players-will-soon-be-able-to-join-discord-voice-chat-directly-from-their-console/",
       "https://blog.playstation.com/2024/06/14/official-playstation-podcast-episode-487-riot-requirements/",
       "https://blog.playstation.com/2024/06/14/share-of-the-week-hogwarts-legacy-photo-mode/",
       "https://blog.playstation.com/2024/06/17/still-wakes-the-deep-how-a-devs-own-claustrophobia-inspired-the-first-person-horror-out-june-18/",
@@ -807,6 +806,7 @@
       "https://blog.playstation.com/2025/11/04/out-on-ps-vr2-this-month-vracer-hoverbike-audio-trip-roboquest-vr-shadowgate-vr-the-mines-of-mythrok/",
       "https://blog.playstation.com/2025/11/05/cloud-streaming-officially-arrives-on-playstation-portal-today-with-new-support-for-digital-ps5-games-in-your-library/",
       "https://blog.playstation.com/2025/11/05/playstation-store-october-2025s-top-downloads/",
+      "https://blog.playstation.com/2025/11/06/goal-setting-mlb-the-show-26/",
       "https://blog.playstation.com/2025/11/06/suri-the-seventh-note-ps5-gameplay-revealed/"
     ],
     "removed": []
