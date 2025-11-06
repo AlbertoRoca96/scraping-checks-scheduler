@@ -2,12 +2,13 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-11-06T01:19:34.020Z",
+  "checkedAt": "2025-11-06T03:12:33.814Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 36,
+    "nowCount": 38,
     "prevCount": 0,
     "added": [
+      "https://www.nintendo.com/us/whatsnew/a-second-kirby-air-riders-direct-presentation-shares-more-new-features-modes-and-customizable-fun/",
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-10-pikmin-4-part-1/",
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-10-pikmin-4-part-2/",
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-10-pikmin-4-part-3/",
@@ -43,7 +44,8 @@
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-9-the-legend-of-zelda-tears-of-the-kingdom-part-3/",
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-9-the-legend-of-zelda-tears-of-the-kingdom-part-4/",
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-9-the-legend-of-zelda-tears-of-the-kingdom-part-5/",
-      "https://www.nintendo.com/us/whatsnew/get-seasonal-icon-elements-for-playing-the-game/"
+      "https://www.nintendo.com/us/whatsnew/get-seasonal-icon-elements-for-playing-the-game/",
+      "https://www.nintendo.com/us/whatsnew/see-what-games-are-arriving-this-november-2025/"
     ],
     "removed": []
   }
