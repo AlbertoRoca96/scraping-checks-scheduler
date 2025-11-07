@@ -2,14 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-11-07T16:20:46.831Z",
+  "checkedAt": "2025-11-07T18:26:23.488Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2024/06/13/monster-hunter-wilds-interview-how-capcom-is-evolving-its-apex-franchise/",
-      "https://blog.playstation.com/2024/06/13/playstation-store-may-2024s-top-downloads/",
       "https://blog.playstation.com/2024/06/14/official-playstation-podcast-episode-487-riot-requirements/",
       "https://blog.playstation.com/2024/06/14/share-of-the-week-hogwarts-legacy-photo-mode/",
       "https://blog.playstation.com/2024/06/17/still-wakes-the-deep-how-a-devs-own-claustrophobia-inspired-the-first-person-horror-out-june-18/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2025/11/05/cloud-streaming-officially-arrives-on-playstation-portal-today-with-new-support-for-digital-ps5-games-in-your-library/",
       "https://blog.playstation.com/2025/11/05/playstation-store-october-2025s-top-downloads/",
       "https://blog.playstation.com/2025/11/06/goal-setting-mlb-the-show-26/",
-      "https://blog.playstation.com/2025/11/06/suri-the-seventh-note-ps5-gameplay-revealed/"
+      "https://blog.playstation.com/2025/11/06/suri-the-seventh-note-ps5-gameplay-revealed/",
+      "https://blog.playstation.com/2025/11/07/share-of-the-week-costumes-2/"
     ],
     "removed": []
   }
