@@ -2,14 +2,14 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-11-07T22:15:46.872Z",
+  "checkedAt": "2025-11-08T01:15:08.073Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
     "nowCount": 7,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/a-second-kirby-air-riders-direct-presentation-shares-more-new-features-modes-and-customizable-fun/",
-      "https://www.nintendo.com/us/whatsnew/get-seasonal-icon-elements-for-playing-the-game/",
+      "https://www.nintendo.com/us/whatsnew/confront-the-mysteries-of-hyperspace-in-the-upcoming-dlc-also-a-new-update-is-now-available-for-pokemon-legends-z-a/",
       "https://www.nintendo.com/us/whatsnew/hits-for-the-holidays-sale-save-up-to-50-on-select-games/",
       "https://www.nintendo.com/us/whatsnew/metroid-prime-1-3-a-visual-retrospective-artbook-arrives-on-oct-28/",
       "https://www.nintendo.com/us/whatsnew/mobile-news-ice-pikmin-and-more-join-the-party-for-pikmin-blooms-4th-anniversary/",
