@@ -2,12 +2,6 @@
   "name": "psa_charizard_pop_total",
   "type": "psa_pop_row",
   "url": "https://www.psacard.com/pop/tcg-cards/1999/pokemon-game/57801",
-  "checkedAt": "2025-11-09T14:14:32.064Z",
-  "data": {
-    "row": "",
-    "column": "TOTAL",
-    "population": 495720213,
-    "raw": "4,957\n202\n13",
-    "mode": "playwright"
-  }
+  "checkedAt": "2025-11-09T16:19:25.553Z",
+  "error": "Error: row not found: Charizard-Holo 1st Edition"
 }
