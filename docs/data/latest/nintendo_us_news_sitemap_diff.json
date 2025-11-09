@@ -2,14 +2,13 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-11-09T18:21:49.141Z",
+  "checkedAt": "2025-11-09T20:18:33.851Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 2,
+    "nowCount": 1,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/confront-the-mysteries-of-hyperspace-in-the-upcoming-dlc-also-a-new-update-is-now-available-for-pokemon-legends-z-a/",
-      "https://www.nintendo.com/us/whatsnew/mobile-news-ice-pikmin-and-more-join-the-party-for-pikmin-blooms-4th-anniversary/"
+      "https://www.nintendo.com/us/whatsnew/confront-the-mysteries-of-hyperspace-in-the-upcoming-dlc-also-a-new-update-is-now-available-for-pokemon-legends-z-a/"
     ],
     "removed": []
   }
