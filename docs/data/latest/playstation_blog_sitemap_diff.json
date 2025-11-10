@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-11-10T14:18:04.668Z",
+  "checkedAt": "2025-11-10T16:28:57.739Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/06/14/official-playstation-podcast-episode-487-riot-requirements/",
       "https://blog.playstation.com/2024/06/17/still-wakes-the-deep-how-a-devs-own-claustrophobia-inspired-the-first-person-horror-out-june-18/",
       "https://blog.playstation.com/2024/06/18/how-rusted-moss-devs-teamed-up-to-create-physics-based-grappling-hook-action/",
       "https://blog.playstation.com/2024/06/18/new-playstation-portal-remote-player-system-software-update-releases-tomorrow/",
@@ -807,6 +806,7 @@
       "https://blog.playstation.com/2025/11/06/suri-the-seventh-note-ps5-gameplay-revealed/",
       "https://blog.playstation.com/2025/11/07/share-of-the-week-costumes-2/",
       "https://blog.playstation.com/2025/11/07/where-winds-meet-dive-deeper-into-gameplay-and-story-details/",
+      "https://blog.playstation.com/2025/11/10/how-lumines-arise-evolves-the-puzzle-genre-out-nov-11/",
       "https://blog.playstation.com/2025/11/10/state-of-play-japan-airs-this-tuesday-november-11/"
     ],
     "removed": []
