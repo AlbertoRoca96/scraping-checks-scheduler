@@ -2,14 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-11-12T14:19:09.523Z",
+  "checkedAt": "2025-11-12T16:24:50.295Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2024/06/28/official-playstation-podcast-episode-488-wacky-tacos/",
-      "https://blog.playstation.com/2024/06/28/share-of-the-week-summer-3/",
       "https://blog.playstation.com/2024/07/01/capcom-next-dead-rising-deluxe-remaster-out-sept-19-kunitsu-gami-path-of-the-goddess-demo-out-today/",
       "https://blog.playstation.com/2024/07/01/players-choice-vote-for-june-2024s-best-new-game/",
       "https://blog.playstation.com/2024/07/03/gran-turismo-world-series-2024-series-round-1-takes-place-in-montreal-july-6/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2025/11/11/marvel-tokon-fighting-souls-closed-beta-2-arrives-dec-5/",
       "https://blog.playstation.com/2025/11/11/never-grave-the-witch-and-the-curse-launches-march-5-2026-on-ps5-and-ps4/",
       "https://blog.playstation.com/2025/11/11/octopath-traveler-0-demo-out-today-on-ps5-and-ps4/",
-      "https://blog.playstation.com/2025/11/11/state-of-play-japan-november-2025-all-announcements/"
+      "https://blog.playstation.com/2025/11/11/state-of-play-japan-november-2025-all-announcements/",
+      "https://blog.playstation.com/2025/11/12/where-winds-meet-hands-on-report/"
     ],
     "removed": []
   }
