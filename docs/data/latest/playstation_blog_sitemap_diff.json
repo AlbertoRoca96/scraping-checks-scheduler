@@ -2,22 +2,14 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-11-11T22:17:25.128Z",
+  "checkedAt": "2025-11-12T01:19:43.959Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/06/21/share-of-the-week-alan-wake-2-photo-mode/",
-      "https://blog.playstation.com/2024/06/24/everything-you-need-to-know-about-call-of-duty-modern-warfare-iii-and-warzone-season-4-reloaded-live-june-26/",
-      "https://blog.playstation.com/2024/06/26/playstation-plus-monthly-games-for-july-borderlands-3-nhl-24-among-us/",
-      "https://blog.playstation.com/2024/06/26/the-first-descendant-launches-on-ps5-and-ps4-july-2-new-character-gameplay-revealed/",
-      "https://blog.playstation.com/2024/06/27/concord-beta-dates-announced-beta-early-access-launching-july-12/",
-      "https://blog.playstation.com/2024/06/27/jango-fett-returns-in-enhanced-star-wars-bounty-hunter-coming-to-ps5-august-1/",
-      "https://blog.playstation.com/2024/06/28/dragon-ball-sparking-zero-battle-training-mode-gameplay-revealed/",
       "https://blog.playstation.com/2024/06/28/official-playstation-podcast-episode-488-wacky-tacos/",
       "https://blog.playstation.com/2024/06/28/share-of-the-week-summer-3/",
-      "https://blog.playstation.com/2024/06/28/zenless-zone-zero-debuts-on-ps5-july-4-details-on-combat-new-area-and-characters-unveiled/",
       "https://blog.playstation.com/2024/07/01/capcom-next-dead-rising-deluxe-remaster-out-sept-19-kunitsu-gami-path-of-the-goddess-demo-out-today/",
       "https://blog.playstation.com/2024/07/01/players-choice-vote-for-june-2024s-best-new-game/",
       "https://blog.playstation.com/2024/07/03/gran-turismo-world-series-2024-series-round-1-takes-place-in-montreal-july-6/",
@@ -805,9 +797,17 @@
       "https://blog.playstation.com/2025/11/10/black-ops-7-what-to-expect-with-the-replayable-co-op-campaign-endgame-experience/",
       "https://blog.playstation.com/2025/11/10/how-lumines-arise-evolves-the-puzzle-genre-out-nov-11/",
       "https://blog.playstation.com/2025/11/10/state-of-play-japan-airs-this-tuesday-november-11/",
+      "https://blog.playstation.com/2025/11/11/bandai-namco-unveils-digimon-story-time-stranger-season-pass-dlc-super-robot-wars-y-crossover-content-and-more/",
+      "https://blog.playstation.com/2025/11/11/blazblue-entropy-effect-x-launches-february-12-on-ps5/",
       "https://blog.playstation.com/2025/11/11/brokenlore-unfollow-out-jan-16-on-ps5-brokenlore-ascend-revealed/",
+      "https://blog.playstation.com/2025/11/11/elden-ring-nightreign-the-forsaken-hollows-dlc-launches-dec-4-on-ps5-ps4/",
       "https://blog.playstation.com/2025/11/11/fatal-frame-ii-crimson-butterfly-remake-launches-march-12/",
-      "https://blog.playstation.com/2025/11/11/gran-turismo-7-power-pack-dlc-coming-december-4/"
+      "https://blog.playstation.com/2025/11/11/first-look-at-playstations-27-gaming-monitor/",
+      "https://blog.playstation.com/2025/11/11/gran-turismo-7-power-pack-dlc-coming-december-4/",
+      "https://blog.playstation.com/2025/11/11/marvel-tokon-fighting-souls-closed-beta-2-arrives-dec-5/",
+      "https://blog.playstation.com/2025/11/11/never-grave-the-witch-and-the-curse-launches-march-5-2026-on-ps5-and-ps4/",
+      "https://blog.playstation.com/2025/11/11/octopath-traveler-0-demo-out-today-on-ps5-and-ps4/",
+      "https://blog.playstation.com/2025/11/11/state-of-play-japan-november-2025-all-announcements/"
     ],
     "removed": []
   }
