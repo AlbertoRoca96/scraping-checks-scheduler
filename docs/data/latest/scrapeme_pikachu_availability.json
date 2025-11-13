@@ -2,9 +2,6 @@
   "name": "scrapeme_pikachu_availability",
   "type": "availability",
   "url": "https://scrapeme.live/shop/Pikachu/",
-  "checkedAt": "2025-11-13T12:37:56.416Z",
-  "data": {
-    "available": true,
-    "raw": "254 in stock"
-  }
+  "checkedAt": "2025-11-13T14:18:32.929Z",
+  "error": "Error: page.goto failed after 3 attempts: Error: page.goto: net::ERR_CERT_DATE_INVALID at https://scrapeme.live/shop/Pikachu/\nCall log:\n  - navigating to \"https://scrapeme.live/shop/Pikachu/\", waiting until \"domcontentloaded\"\n"
 }
