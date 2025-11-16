@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-11-15T22:13:14.206Z",
+  "generatedAt": "2025-11-16T01:24:23.900Z",
   "group": "price",
   "summary": [
     {
@@ -12,11 +12,8 @@
     {
       "name": "scrapeme_pikachu_availability",
       "type": "availability",
-      "changed": true,
-      "changedKeys": [
-        "available",
-        "raw"
-      ],
+      "changed": false,
+      "changedKeys": [],
       "error": null
     },
     {

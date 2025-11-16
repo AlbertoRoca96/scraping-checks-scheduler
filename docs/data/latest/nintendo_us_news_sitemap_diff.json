@@ -2,14 +2,13 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-11-15T22:13:15.374Z",
+  "checkedAt": "2025-11-16T01:24:28.238Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 4,
+    "nowCount": 3,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/big-bad-bowser-from-jakks-pacific-stomps-into-costco-this-holiday/",
-      "https://www.nintendo.com/us/whatsnew/catch-a-cozy-new-video-about-pokemon-pokopia/",
       "https://www.nintendo.com/us/whatsnew/crocs-launches-first-ever-collaboration-with-animal-crossing/",
       "https://www.nintendo.com/us/whatsnew/play-together-near-or-far-with-these-games-using-gamechat-and-gameshare-oct-2025/"
     ],
