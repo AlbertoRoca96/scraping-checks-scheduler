@@ -2,14 +2,13 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-11-16T22:15:50.324Z",
+  "checkedAt": "2025-11-17T01:20:25.071Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 2,
+    "nowCount": 1,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/big-bad-bowser-from-jakks-pacific-stomps-into-costco-this-holiday/",
-      "https://www.nintendo.com/us/whatsnew/play-together-near-or-far-with-these-games-using-gamechat-and-gameshare-oct-2025/"
+      "https://www.nintendo.com/us/whatsnew/a-second-kirby-air-riders-direct-presentation-shares-more-new-features-modes-and-customizable-fun/"
     ],
     "removed": []
   }
