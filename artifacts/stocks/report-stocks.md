@@ -1,6 +1,6 @@
-# Scrape Report (2025-11-17T15:48:05.997Z)
+# Scrape Report (2025-11-17T15:59:26.865Z)
 
-Group: `stocks`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/19435547634
+Group: `stocks`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/19435903923
 
 | Check | Changed | Keys | Error |
 |---|:---:|:--|:--|
