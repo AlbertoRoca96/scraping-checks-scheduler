@@ -2,6 +2,6 @@
   "name": "stock_ntdoy_global_quote",
   "type": "stock_quote",
   "url": "https://www.alphavantage.co/documentation/#latestprice",
-  "checkedAt": "2025-11-18T13:24:05.488Z",
+  "checkedAt": "2025-11-18T13:49:29.235Z",
   "error": "Error: alphaVantage.globalQuote failed after 3 attempts: Error: HTTP 500"
 }
