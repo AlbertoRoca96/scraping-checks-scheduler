@@ -2,14 +2,14 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-11-18T20:21:10.553Z",
+  "checkedAt": "2025-11-18T22:18:44.002Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
     "nowCount": 7,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/a-free-update-for-pikmin-4-is-here/",
-      "https://www.nintendo.com/us/whatsnew/a-second-kirby-air-riders-direct-presentation-shares-more-new-features-modes-and-customizable-fun/",
+      "https://www.nintendo.com/us/whatsnew/congrats-to-the-game-awards-2025-nominees/",
       "https://www.nintendo.com/us/whatsnew/find-fun-ways-to-play-together-with-the-gamechat-and-gameshare-features/",
       "https://www.nintendo.com/us/whatsnew/icon-elements-inspired-by-the-animal-crossing-new-horizons-game-are-here-for-a-limited-time-nov-2025/",
       "https://www.nintendo.com/us/whatsnew/metroid-mondays-heres-a-quick-overview-of-the-game/",
