@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-11-18T14:17:37.221Z",
+  "checkedAt": "2025-11-18T16:23:55.565Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/07/08/astros-playroom-second-update-is-now-available-hiding-a-new-special-bot-in-game/",
       "https://blog.playstation.com/2024/07/08/cygni-all-guns-blazing-redefining-the-shoot-em-up/",
       "https://blog.playstation.com/2024/07/09/meet-2xkos-newest-champion-braum-plus-first-details-on-ps5-playtest-starting-august-8/",
       "https://blog.playstation.com/2024/07/09/playstation-store-june-2024s-top-downloads/",
@@ -807,6 +806,7 @@
       "https://blog.playstation.com/2025/11/14/share-of-the-week-it-happens-on-ps5/",
       "https://blog.playstation.com/2025/11/14/wuthering-waves-version-2-8-introduces-the-chronorift-metropolis/",
       "https://blog.playstation.com/2025/11/17/new-lost-soul-aside-update-out-tomorrow-includes-wave-based-surge-of-voidrax-mode/",
+      "https://blog.playstation.com/2025/11/18/get-a-taste-of-neon-inferno-boss-fights-ahead-of-this-weeks-ps5-ps4-launch/",
       "https://blog.playstation.com/2025/11/18/playstations-black-friday-deals-2025/"
     ],
     "removed": []

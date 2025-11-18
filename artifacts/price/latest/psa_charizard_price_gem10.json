@@ -2,6 +2,6 @@
   "name": "psa_charizard_price_gem10",
   "type": "psa_price_row",
   "url": "https://www.psacard.com/priceguide/non-sports-tcg-card-values/1999-poke-mon-game/2432",
-  "checkedAt": "2025-11-18T14:17:48.304Z",
+  "checkedAt": "2025-11-18T16:24:06.177Z",
   "error": "TimeoutError: page.waitForSelector: Timeout 45000ms exceeded.\nCall log:\n  - waiting for locator('table') to be visible\n"
 }
