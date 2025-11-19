@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-11-19T16:23:30.220Z",
+  "checkedAt": "2025-11-19T18:26:01.003Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/07/09/meet-2xkos-newest-champion-braum-plus-first-details-on-ps5-playtest-starting-august-8/",
       "https://blog.playstation.com/2024/07/10/frenzies-is-a-neon-soaked-wildly-chaotic-multiplayer-shooter-coming-to-ps-vr2/",
       "https://blog.playstation.com/2024/07/10/metro-awakening-adapting-the-post-apocalyptic-survival-horror-for-ps-vr2/",
       "https://blog.playstation.com/2024/07/10/playstation-plus-game-catalog-for-july-remnant-ii-crisis-core-final-fantasy-vii-reunion-and-more/",
@@ -807,6 +806,7 @@
       "https://blog.playstation.com/2025/11/18/be-all-madden-in-madden-nfl-26/",
       "https://blog.playstation.com/2025/11/18/get-a-taste-of-neon-inferno-boss-fights-ahead-of-this-weeks-ps5-ps4-launch/",
       "https://blog.playstation.com/2025/11/18/playstations-black-friday-deals-2025/",
+      "https://blog.playstation.com/2025/11/19/mafia-the-old-countrys-free-ride-update-launches-november-20/",
       "https://blog.playstation.com/2025/11/19/new-game-plus-comes-to-ghost-of-yotei-november-24/"
     ],
     "removed": []
