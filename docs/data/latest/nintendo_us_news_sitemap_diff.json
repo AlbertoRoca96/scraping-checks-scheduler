@@ -2,15 +2,14 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-11-20T08:24:29.353Z",
+  "checkedAt": "2025-11-20T10:19:18.663Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 4,
+    "nowCount": 3,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/adventure-awaits-in-disney-dreamlight-valley-wishblossom-ranch/",
       "https://www.nintendo.com/us/whatsnew/congrats-to-the-game-awards-2025-nominees/",
-      "https://www.nintendo.com/us/whatsnew/metroid-mondays-heres-a-quick-overview-of-the-game/",
       "https://www.nintendo.com/us/whatsnew/ouch-friend-or-foe-these-plants-are-a-prickly-bunch/"
     ],
     "removed": []
