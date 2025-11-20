@@ -2,15 +2,18 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-11-20T20:20:22.693Z",
+  "checkedAt": "2025-11-20T22:16:33.115Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 3,
+    "nowCount": 6,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/adventure-awaits-in-disney-dreamlight-valley-wishblossom-ranch/",
       "https://www.nintendo.com/us/whatsnew/congrats-to-the-game-awards-2025-nominees/",
-      "https://www.nintendo.com/us/whatsnew/ouch-friend-or-foe-these-plants-are-a-prickly-bunch/"
+      "https://www.nintendo.com/us/whatsnew/cyber-deals-save-up-to-50-on-select-games/",
+      "https://www.nintendo.com/us/whatsnew/kirbys-latest-vehicle-action-game-is-here-charge-boost-and-spin-to-attack-your-rivals/",
+      "https://www.nintendo.com/us/whatsnew/ouch-friend-or-foe-these-plants-are-a-prickly-bunch/",
+      "https://www.nintendo.com/us/whatsnew/try-out-kirby-air-riders-for-a-limited-time-with-a-free-demo/"
     ],
     "removed": []
   }
