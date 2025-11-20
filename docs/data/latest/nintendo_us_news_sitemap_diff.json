@@ -2,21 +2,16 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-11-19T22:16:50.909Z",
+  "checkedAt": "2025-11-20T01:18:09.868Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 9,
+    "nowCount": 4,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/a-free-update-for-pikmin-4-is-here/",
       "https://www.nintendo.com/us/whatsnew/adventure-awaits-in-disney-dreamlight-valley-wishblossom-ranch/",
       "https://www.nintendo.com/us/whatsnew/congrats-to-the-game-awards-2025-nominees/",
-      "https://www.nintendo.com/us/whatsnew/find-fun-ways-to-play-together-with-the-gamechat-and-gameshare-features/",
-      "https://www.nintendo.com/us/whatsnew/icon-elements-inspired-by-the-animal-crossing-new-horizons-game-are-here-for-a-limited-time-nov-2025/",
       "https://www.nintendo.com/us/whatsnew/metroid-mondays-heres-a-quick-overview-of-the-game/",
-      "https://www.nintendo.com/us/whatsnew/ouch-friend-or-foe-these-plants-are-a-prickly-bunch/",
-      "https://www.nintendo.com/us/whatsnew/the-battle-begins-in-hyrule-warriors-age-of-imprisonment/",
-      "https://www.nintendo.com/us/whatsnew/try-out-kirby-air-riders-for-a-limited-time-with-a-free-demo/"
+      "https://www.nintendo.com/us/whatsnew/ouch-friend-or-foe-these-plants-are-a-prickly-bunch/"
     ],
     "removed": []
   }
