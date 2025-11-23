@@ -1,8 +1,8 @@
-# Scrape Report (2025-11-23T12:31:53.423Z)
+# Scrape Report (2025-11-23T14:14:53.970Z)
 
-Group: `compliance`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/19611178998
+Group: `compliance`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/19612448403
 
 | Check | Changed | Keys | Error |
 |---|:---:|:--|:--|
-| `psa_charizard_pop_total` | — |  | `Error: row not found: Charizard-Holo 1st Edition` |
+| `psa_charizard_pop_total` | ✅ | column, population, row |  |
 | `sec_aapl_8k_list_hash` | ✅ | hash, length |  |
