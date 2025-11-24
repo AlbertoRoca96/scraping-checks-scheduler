@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-11-24T18:27:04.614Z",
+  "checkedAt": "2025-11-24T20:20:40.572Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/07/12/evo-2024-get-to-know-the-fighting-games-headlining-the-tournaments/",
       "https://blog.playstation.com/2024/07/12/mlb-the-show-24s-drive-to-diamond-is-headed-to-all-star-week/",
       "https://blog.playstation.com/2024/07/12/official-playstation-podcast-episode-489-tame-the-rage/",
       "https://blog.playstation.com/2024/07/12/share-of-the-week-tourist/",
@@ -806,6 +805,7 @@
       "https://blog.playstation.com/2025/11/21/nioh-3-hands-on-report/",
       "https://blog.playstation.com/2025/11/21/pools-brings-liminal-terror-to-ps5-and-ps-vr2-on-nov-25/",
       "https://blog.playstation.com/2025/11/21/share-of-the-week-side-quest/",
+      "https://blog.playstation.com/2025/11/24/call-of-duty-black-ops-7-and-warzone-season-1-goes-live-dec-4-full-details-revealed/",
       "https://blog.playstation.com/2025/11/24/rust-console-editions-winter-themed-update-launches-nov-27/",
       "https://blog.playstation.com/2025/11/24/skate-story-launches-into-the-playstation-plus-game-catalog-on-dec-8-hands-on-report/"
     ],
