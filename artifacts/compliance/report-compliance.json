@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-11-24T22:16:31.556Z",
+  "generatedAt": "2025-11-25T01:20:18.631Z",
   "group": "compliance",
   "summary": [
     {
@@ -7,14 +7,15 @@
       "type": "psa_pop_row",
       "changed": false,
       "changedKeys": [],
-      "error": null
+      "error": "Error: row not found: Charizard-Holo 1st Edition"
     },
     {
       "name": "sec_aapl_8k_list_hash",
       "type": "content_watch",
       "changed": true,
       "changedKeys": [
-        "hash"
+        "hash",
+        "length"
       ],
       "error": null
     }
