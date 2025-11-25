@@ -2,13 +2,14 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-11-25T18:27:28.976Z",
+  "checkedAt": "2025-11-25T20:20:21.596Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 1,
+    "nowCount": 2,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/see-how-kirby-and-the-forgotten-land-is-getting-even-meteor/"
+      "https://www.nintendo.com/us/whatsnew/see-how-kirby-and-the-forgotten-land-is-getting-even-meteor/",
+      "https://www.nintendo.com/us/whatsnew/time-for-the-next-emerald-rush-event-in-the-donkey-kong-bananza-game-so-strong-its-funny/"
     ],
     "removed": []
   }
