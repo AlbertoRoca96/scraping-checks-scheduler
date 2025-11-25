@@ -2,7 +2,7 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-11-25T12:37:25.499Z",
+  "checkedAt": "2025-11-25T14:18:04.090Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
@@ -10,7 +10,6 @@
     "added": [
       "https://blog.playstation.com/2024/07/12/mlb-the-show-24s-drive-to-diamond-is-headed-to-all-star-week/",
       "https://blog.playstation.com/2024/07/12/official-playstation-podcast-episode-489-tame-the-rage/",
-      "https://blog.playstation.com/2024/07/12/share-of-the-week-tourist/",
       "https://blog.playstation.com/2024/07/15/finding-your-flow-in-bo-path-of-the-teal-lotus-out-july-17/",
       "https://blog.playstation.com/2024/07/16/champions-and-challengers-what-to-expect-at-evo-2024/",
       "https://blog.playstation.com/2024/07/16/playstation-stores-summer-sale-starts-july-17/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2025/11/21/share-of-the-week-side-quest/",
       "https://blog.playstation.com/2025/11/24/call-of-duty-black-ops-7-and-warzone-season-1-goes-live-dec-4-full-details-revealed/",
       "https://blog.playstation.com/2025/11/24/rust-console-editions-winter-themed-update-launches-nov-27/",
-      "https://blog.playstation.com/2025/11/24/skate-story-launches-into-the-playstation-plus-game-catalog-on-dec-8-hands-on-report/"
+      "https://blog.playstation.com/2025/11/24/skate-story-launches-into-the-playstation-plus-game-catalog-on-dec-8-hands-on-report/",
+      "https://blog.playstation.com/2025/11/25/helldivers-2-python-commandos-premium-warbond-airdrops-dec-2/"
     ],
     "removed": []
   }
