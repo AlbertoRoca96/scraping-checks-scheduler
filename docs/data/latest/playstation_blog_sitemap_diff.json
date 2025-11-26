@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-11-26T16:22:32.649Z",
+  "checkedAt": "2025-11-26T18:21:42.155Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/07/12/mlb-the-show-24s-drive-to-diamond-is-headed-to-all-star-week/",
       "https://blog.playstation.com/2024/07/15/finding-your-flow-in-bo-path-of-the-teal-lotus-out-july-17/",
       "https://blog.playstation.com/2024/07/16/champions-and-challengers-what-to-expect-at-evo-2024/",
       "https://blog.playstation.com/2024/07/16/playstation-stores-summer-sale-starts-july-17/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2025/11/24/rust-console-editions-winter-themed-update-launches-nov-27/",
       "https://blog.playstation.com/2025/11/24/skate-story-launches-into-the-playstation-plus-game-catalog-on-dec-8-hands-on-report/",
       "https://blog.playstation.com/2025/11/25/helldivers-2-python-commandos-premium-warbond-airdrops-dec-2/",
-      "https://blog.playstation.com/2025/11/25/turn-up-the-heat-with-blasters-in-destiny-2-renegades-out-dec-2/"
+      "https://blog.playstation.com/2025/11/25/turn-up-the-heat-with-blasters-in-destiny-2-renegades-out-dec-2/",
+      "https://blog.playstation.com/2025/11/26/playstation-plus-monthly-games-for-december-lego-horizon-adventures-killing-floor-3-the-outlast-trials-more/"
     ],
     "removed": []
   }
