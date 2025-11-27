@@ -2,13 +2,15 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-11-26T22:17:13.427Z",
+  "checkedAt": "2025-11-27T01:18:26.070Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 5,
+    "nowCount": 7,
     "prevCount": 0,
     "added": [
+      "https://www.nintendo.com/us/whatsnew/lets-meet-more-riders/",
       "https://www.nintendo.com/us/whatsnew/metroid-mondays-meet-vi-o-la-samuss-new-set-of-wheels/",
+      "https://www.nintendo.com/us/whatsnew/my-nintendo-november-wrap-up-2025/",
       "https://www.nintendo.com/us/whatsnew/new-nintendo-classics-update/",
       "https://www.nintendo.com/us/whatsnew/see-how-kirby-and-the-forgotten-land-is-getting-even-meteor/",
       "https://www.nintendo.com/us/whatsnew/time-for-the-next-emerald-rush-event-in-the-donkey-kong-bananza-game-so-strong-its-funny/",
