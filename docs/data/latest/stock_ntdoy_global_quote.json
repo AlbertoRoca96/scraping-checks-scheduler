@@ -2,6 +2,24 @@
   "name": "stock_ntdoy_global_quote",
   "type": "stock_quote",
   "url": "https://www.alphavantage.co/documentation/#latestprice",
-  "checkedAt": "2025-11-27T23:20:42.237Z",
-  "error": "Error: quote missing price"
+  "checkedAt": "2025-11-27T23:42:15.388Z",
+  "data": {
+    "symbol": "NTDOY",
+    "source": "alphavantage",
+    "price": 21.22,
+    "change": 0.11,
+    "changePercent": 0.5211,
+    "raw": {
+      "01. symbol": "NTDOY",
+      "02. open": "20.8601",
+      "03. high": "21.3200",
+      "04. low": "20.8600",
+      "05. price": "21.2200",
+      "06. volume": "912446",
+      "07. latest trading day": "2025-11-26",
+      "08. previous close": "21.1100",
+      "09. change": "0.1100",
+      "10. change percent": "0.5211%"
+    }
+  }
 }
