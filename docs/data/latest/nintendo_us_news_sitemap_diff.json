@@ -2,13 +2,13 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-11-28T20:19:44.456Z",
+  "checkedAt": "2025-11-28T22:16:10.660Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
     "nowCount": 2,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/lets-meet-more-riders/",
+      "https://www.nintendo.com/us/whatsnew/from-the-mushroom-kingdom-to-new-york-city/",
       "https://www.nintendo.com/us/whatsnew/my-nintendo-november-wrap-up-2025/"
     ],
     "removed": []
