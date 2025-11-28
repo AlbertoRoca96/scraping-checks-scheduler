@@ -2,9 +2,9 @@
   "name": "sec_aapl_8k_list_hash",
   "type": "content_watch",
   "url": "https://www.sec.gov/edgar/browse/?CIK=0000320193&owner=exclude",
-  "checkedAt": "2025-11-28T03:09:33.339Z",
+  "checkedAt": "2025-11-28T04:21:41.085Z",
   "data": {
-    "hash": "5e5debf8a2df65b25a2f071ad5cbe3118f1c739226b664a7aec5775dc28674e8",
+    "hash": "a42145f5375dc8e3a770c412603b5098aa8b74402c85281570476d0c508ef2d3",
     "length": 335
   }
 }
