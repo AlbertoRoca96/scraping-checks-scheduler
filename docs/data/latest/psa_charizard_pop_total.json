@@ -2,12 +2,12 @@
   "name": "psa_charizard_pop_total",
   "type": "psa_pop_row",
   "url": "https://www.psacard.com/pop/tcg-cards/1999/pokemon-game/57801",
-  "checkedAt": "2025-12-02T06:28:57.672Z",
+  "checkedAt": "2025-12-02T08:26:17.492Z",
   "data": {
     "row": "",
     "column": "TOTAL",
-    "population": 497520513,
-    "raw": "4,975\n205\n13",
+    "population": 497920513,
+    "raw": "4,979\n205\n13",
     "mode": "playwright"
   }
 }
