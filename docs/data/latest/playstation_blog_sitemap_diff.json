@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-12-02T16:24:50.449Z",
+  "checkedAt": "2025-12-02T18:34:55.237Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/07/17/neverness-to-everness-gameplay-showcases-supernatural-urban-open-world-rpg-coming-to-ps5/",
       "https://blog.playstation.com/2024/07/18/concord-open-beta-gameplay-tips/",
       "https://blog.playstation.com/2024/07/18/mortal-kombat-1-takedas-disarming-brutality-revealed/",
       "https://blog.playstation.com/2024/07/18/schim-how-the-shadow-jumping-adventure-prioritizes-accessibility-out-july-18/",
@@ -807,6 +806,7 @@
       "https://blog.playstation.com/2025/11/28/share-of-the-week-harvest/",
       "https://blog.playstation.com/2025/12/01/ps-blog-game-of-the-year-awards-2025-polls-are-now-live/",
       "https://blog.playstation.com/2025/12/01/step-into-a-new-adventure-with-the-upcoming-dualsense-wireless-controller-genshin-impact-limited-edition/",
+      "https://blog.playstation.com/2025/12/02/judas-developers-ghost-story-games-discuss-the-origins-of-its-main-character/",
       "https://blog.playstation.com/2025/12/02/players-choice-vote-for-november-2025s-best-new-game/"
     ],
     "removed": []
