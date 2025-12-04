@@ -2,14 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-12-04T12:39:24.698Z",
+  "checkedAt": "2025-12-04T14:19:12.590Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/07/18/concord-open-beta-gameplay-tips/",
-      "https://blog.playstation.com/2024/07/18/mortal-kombat-1-takedas-disarming-brutality-revealed/",
       "https://blog.playstation.com/2024/07/19/official-playstation-podcast-episode-490-interview-w-firewalk-studios-on-concord/",
       "https://blog.playstation.com/2024/07/19/share-of-the-week-sailing/",
       "https://blog.playstation.com/2024/07/22/tower-of-fantasys-first-anniversary-brings-summer-events-and-a-new-companion/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2025/12/02/judas-developers-ghost-story-games-discuss-the-origins-of-its-main-character/",
       "https://blog.playstation.com/2025/12/02/players-choice-vote-for-november-2025s-best-new-game/",
       "https://blog.playstation.com/2025/12/03/gran-turismo-7-spec-iii-power-pack-dlc-available-december-4/",
-      "https://blog.playstation.com/2025/12/03/playstation-partner-awards-2025-japan-asia-winners-announced/"
+      "https://blog.playstation.com/2025/12/03/playstation-partner-awards-2025-japan-asia-winners-announced/",
+      "https://blog.playstation.com/2025/12/04/playstation-store-november-2025s-top-downloads/",
+      "https://blog.playstation.com/2025/12/04/romancing-saga-creator-discusses-the-fantasy-rpgs-legacy-music-art-and-more/"
     ],
     "removed": []
   }
