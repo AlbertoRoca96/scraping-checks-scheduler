@@ -2,10 +2,10 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-12-04T04:29:04.823Z",
+  "checkedAt": "2025-12-04T06:28:20.189Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 8,
+    "nowCount": 9,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/12-tips-and-tricks-for-pokemon-legends-z-a/",
@@ -13,6 +13,7 @@
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-20-drag-x-drive-part-2/",
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-20-drag-x-drive-part-3/",
       "https://www.nintendo.com/us/whatsnew/get-the-legendary-pokemon-mewtwo-as-well-as-mewtwonite-x-and-mewtwonite-y/",
+      "https://www.nintendo.com/us/whatsnew/metroid-prime-4-beyond-tracks-added-to-nintendo-music/",
       "https://www.nintendo.com/us/whatsnew/mobile-news-score-far-out-rewards-during-this-super-mario-run-special-event/",
       "https://www.nintendo.com/us/whatsnew/play-the-50th-maximus-cup-online-event-and-you-could-earn-an-in-game-collaborative-theme/",
       "https://www.nintendo.com/us/whatsnew/time-for-the-next-emerald-rush-event-in-the-donkey-kong-bananza-game-so-strong-its-funny/"
