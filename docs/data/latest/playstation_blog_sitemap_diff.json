@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-12-05T16:23:13.070Z",
+  "checkedAt": "2025-12-05T18:24:00.606Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/07/22/tower-of-fantasys-first-anniversary-brings-summer-events-and-a-new-companion/",
       "https://blog.playstation.com/2024/07/23/helldivers-2s-biggest-update-yet-escalation-of-freedom-drops-august-6/",
       "https://blog.playstation.com/2024/07/24/arranger-a-role-puzzling-adventure-launches-july-25-devs-detail-boss-design/",
       "https://blog.playstation.com/2024/07/24/empire-of-the-ants-marches-to-ps5-november-7-details-on-crafting-a-realistic-microscopic-world/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2025/12/04/cairn-the-climb-of-a-lifetime-starts-january-29-2026/",
       "https://blog.playstation.com/2025/12/04/playstation-store-november-2025s-top-downloads/",
       "https://blog.playstation.com/2025/12/04/romancing-saga-creator-discusses-the-fantasy-rpgs-legacy-music-art-and-more/",
-      "https://blog.playstation.com/2025/12/04/sol-shogunate-a-samurai-space-opera-announced-for-ps5/"
+      "https://blog.playstation.com/2025/12/04/sol-shogunate-a-samurai-space-opera-announced-for-ps5/",
+      "https://blog.playstation.com/2025/12/05/share-of-the-week-snowy/"
     ],
     "removed": []
   }
