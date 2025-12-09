@@ -2,7 +2,7 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-12-09T12:38:43.025Z",
+  "checkedAt": "2025-12-09T14:19:57.554Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
@@ -12,7 +12,6 @@
       "https://blog.playstation.com/2024/07/24/empire-of-the-ants-marches-to-ps5-november-7-details-on-crafting-a-realistic-microscopic-world/",
       "https://blog.playstation.com/2024/07/24/explore-the-top-choices-in-rise-of-the-ronin/",
       "https://blog.playstation.com/2024/07/24/gran-turismo-7-update-1-49-brings-six-new-cars-updated-physics-simulation-model-and-more-on-july-24/",
-      "https://blog.playstation.com/2024/07/24/new-ps5-beta-rolls-out-tomorrow-with-personalized-3d-audio-profiles-and-new-remote-play-settings/",
       "https://blog.playstation.com/2024/07/25/evo-2024-hands-on-report-with-new-fighting-game-content/",
       "https://blog.playstation.com/2024/07/25/meet-the-concord-crew-with-new-animated-shorts-and-gameplay-trailers/",
       "https://blog.playstation.com/2024/07/25/world-of-tanks-modern-armor-gets-loud-with-motorhead-and-rob-zombie-july-30/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2025/12/04/romancing-saga-creator-discusses-the-fantasy-rpgs-legacy-music-art-and-more/",
       "https://blog.playstation.com/2025/12/04/sol-shogunate-a-samurai-space-opera-announced-for-ps5/",
       "https://blog.playstation.com/2025/12/05/share-of-the-week-snowy/",
-      "https://blog.playstation.com/2025/12/06/official-playstation-podcast-episode-529-sumptuous-victuals/"
+      "https://blog.playstation.com/2025/12/06/official-playstation-podcast-episode-529-sumptuous-victuals/",
+      "https://blog.playstation.com/2025/12/09/microsoft-flight-simulator-2024-introduces-netflixs-stranger-things-expansion/"
     ],
     "removed": []
   }
