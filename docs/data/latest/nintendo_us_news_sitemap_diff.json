@@ -2,14 +2,15 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-12-09T01:21:36.067Z",
+  "checkedAt": "2025-12-09T03:16:50.277Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 2,
+    "nowCount": 3,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/catch-up-on-mario-and-his-pals-with-this-stache-of-games-dec-2025/",
-      "https://www.nintendo.com/us/whatsnew/ragnaroek-looms-as-book-x-begins-in-fire-emblem-heroes/"
+      "https://www.nintendo.com/us/whatsnew/ragnaroek-looms-as-book-x-begins-in-fire-emblem-heroes/",
+      "https://www.nintendo.com/us/whatsnew/see-what-games-are-arriving-this-december-2025/"
     ],
     "removed": []
   }
