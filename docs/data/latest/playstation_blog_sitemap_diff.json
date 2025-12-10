@@ -2,15 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-12-10T16:24:53.037Z",
+  "checkedAt": "2025-12-10T20:22:10.924Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2024/07/24/arranger-a-role-puzzling-adventure-launches-july-25-devs-detail-boss-design/",
-      "https://blog.playstation.com/2024/07/24/empire-of-the-ants-marches-to-ps5-november-7-details-on-crafting-a-realistic-microscopic-world/",
-      "https://blog.playstation.com/2024/07/24/explore-the-top-choices-in-rise-of-the-ronin/",
       "https://blog.playstation.com/2024/07/25/evo-2024-hands-on-report-with-new-fighting-game-content/",
       "https://blog.playstation.com/2024/07/25/meet-the-concord-crew-with-new-animated-shorts-and-gameplay-trailers/",
       "https://blog.playstation.com/2024/07/25/world-of-tanks-modern-armor-gets-loud-with-motorhead-and-rob-zombie-july-30/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2025/12/05/share-of-the-week-snowy/",
       "https://blog.playstation.com/2025/12/06/official-playstation-podcast-episode-529-sumptuous-victuals/",
       "https://blog.playstation.com/2025/12/09/microsoft-flight-simulator-2024-introduces-netflixs-stranger-things-expansion/",
-      "https://blog.playstation.com/2025/12/09/playstation-2025-wrap-up-launches-starting-today-explore-your-personalized-gaming-recap-for-2025/"
+      "https://blog.playstation.com/2025/12/09/playstation-2025-wrap-up-launches-starting-today-explore-your-personalized-gaming-recap-for-2025/",
+      "https://blog.playstation.com/2025/12/10/beastro-a-crunchy-cozy-deck-builder-comes-to-ps5-spring-2026/",
+      "https://blog.playstation.com/2025/12/10/playstation-plus-game-catalog-for-december-assassins-creed-mirage-wo-long-fallen-dynasty-skate-story-and-more/"
     ],
     "removed": []
   }
