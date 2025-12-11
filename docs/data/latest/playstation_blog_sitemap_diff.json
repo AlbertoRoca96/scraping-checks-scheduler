@@ -2,16 +2,14 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-12-11T12:40:12.659Z",
+  "checkedAt": "2025-12-11T14:20:43.577Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/07/24/arranger-a-role-puzzling-adventure-launches-july-25-devs-detail-boss-design/",
       "https://blog.playstation.com/2024/07/25/evo-2024-hands-on-report-with-new-fighting-game-content/",
       "https://blog.playstation.com/2024/07/25/meet-the-concord-crew-with-new-animated-shorts-and-gameplay-trailers/",
-      "https://blog.playstation.com/2024/07/25/world-of-tanks-modern-armor-gets-loud-with-motorhead-and-rob-zombie-july-30/",
       "https://blog.playstation.com/2024/07/26/share-of-the-week-flintlock-the-siege-of-dawn/",
       "https://blog.playstation.com/2024/07/29/clair-obscur-expedition-33-devs-discuss-classic-turn-based-rpg-inspiration-and-real-time-mechanics/",
       "https://blog.playstation.com/2024/07/29/devolver-divulges-deeper-cult-of-the-lamb-unholy-alliance-details-out-august-12/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2025/12/09/microsoft-flight-simulator-2024-introduces-netflixs-stranger-things-expansion/",
       "https://blog.playstation.com/2025/12/09/playstation-2025-wrap-up-launches-starting-today-explore-your-personalized-gaming-recap-for-2025/",
       "https://blog.playstation.com/2025/12/10/beastro-a-crunchy-cozy-deck-builder-comes-to-ps5-spring-2026/",
-      "https://blog.playstation.com/2025/12/10/playstation-plus-game-catalog-for-december-assassins-creed-mirage-wo-long-fallen-dynasty-skate-story-and-more/"
+      "https://blog.playstation.com/2025/12/10/playstation-plus-game-catalog-for-december-assassins-creed-mirage-wo-long-fallen-dynasty-skate-story-and-more/",
+      "https://blog.playstation.com/2025/12/11/new-monster-hunter-wilds-update-4-and-monster-hunter-stories-3-details/",
+      "https://blog.playstation.com/2025/12/11/the-helldivers-2-x-killzone-items-return-as-a-legendary-warbond-dec-18/"
     ],
     "removed": []
   }
