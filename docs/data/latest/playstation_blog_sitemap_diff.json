@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-12-12T16:22:19.586Z",
+  "checkedAt": "2025-12-12T18:28:52.843Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/07/30/star-wars-outlaws-hands-on-report/",
       "https://blog.playstation.com/2024/07/31/playstation-plus-monthly-games-for-august-lego-star-wars-the-skywalker-saga-fnaf-security-breach-ender-lilies-quietus-of-the-knights/",
       "https://blog.playstation.com/2024/08/02/share-of-the-week-games-within-games/",
       "https://blog.playstation.com/2024/08/02/thq-nordic-showcase-2024-recap/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2025/12/11/saros-out-april-30-new-trailer-reveals-gameplay-story-details/",
       "https://blog.playstation.com/2025/12/11/the-helldivers-2-x-killzone-items-return-as-a-legendary-warbond-dec-18/",
       "https://blog.playstation.com/2025/12/11/the-seven-deadly-sins-origin-unveils-cooperative-raid-battles/",
-      "https://blog.playstation.com/2025/12/11/tomb-raider-catalyst-and-tomb-raider-legacy-of-atlantis-coming-to-ps5/"
+      "https://blog.playstation.com/2025/12/11/tomb-raider-catalyst-and-tomb-raider-legacy-of-atlantis-coming-to-ps5/",
+      "https://blog.playstation.com/2025/12/12/share-of-the-week-zoomed-out/"
     ],
     "removed": []
   }
