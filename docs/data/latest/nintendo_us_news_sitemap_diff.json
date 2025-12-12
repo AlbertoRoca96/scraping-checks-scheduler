@@ -2,10 +2,10 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-12-12T18:28:55.519Z",
+  "checkedAt": "2025-12-12T20:20:18.439Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 9,
+    "nowCount": 8,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/get-festive-with-custom-designs-for-ugly-holiday-sweaters/",
@@ -15,7 +15,6 @@
       "https://www.nintendo.com/us/whatsnew/mobile-news-step-into-winter-magic-with-the-2025-ornament-decor-pikmin/",
       "https://www.nintendo.com/us/whatsnew/see-whats-new-in-the-super-mario-party-jamboree-nintendo-switch-2-edition-jamboree-tv-game/",
       "https://www.nintendo.com/us/whatsnew/the-party-is-getting-even-bigger-with-jamboree-tv/",
-      "https://www.nintendo.com/us/whatsnew/venture-into-hyperspace-lumiose-for-the-next-chapter-of-your-adventure/",
       "https://www.nintendo.com/us/whatsnew/whats-that-garlicky-smell-must-be-the-latest-addition-to-nintendo-classics/"
     ],
     "removed": []
