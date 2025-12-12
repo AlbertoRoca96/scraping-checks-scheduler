@@ -2,14 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-12-12T04:31:36.974Z",
+  "checkedAt": "2025-12-12T06:29:01.704Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2024/07/30/star-wars-outlaws-hands-on-report/",
-      "https://blog.playstation.com/2024/07/30/wildermyth-a-procedural-storytelling-rpg-comes-to-ps5-ps4-on-october-22/",
       "https://blog.playstation.com/2024/07/31/playstation-plus-monthly-games-for-august-lego-star-wars-the-skywalker-saga-fnaf-security-breach-ender-lilies-quietus-of-the-knights/",
       "https://blog.playstation.com/2024/08/02/share-of-the-week-games-within-games/",
       "https://blog.playstation.com/2024/08/02/thq-nordic-showcase-2024-recap/",
@@ -799,6 +798,7 @@
       "https://blog.playstation.com/2025/12/10/beastro-a-crunchy-cozy-deck-builder-comes-to-ps5-spring-2026/",
       "https://blog.playstation.com/2025/12/10/playstation-plus-game-catalog-for-december-assassins-creed-mirage-wo-long-fallen-dynasty-skate-story-and-more/",
       "https://blog.playstation.com/2025/12/11/announcing-4loop-a-new-four-player-co-op-shooter-from-sie-and-bad-robot-games/",
+      "https://blog.playstation.com/2025/12/11/capcom-the-game-awards-recap-resident-evil-requiem-pragmata-and-mega-man-dual-override/",
       "https://blog.playstation.com/2025/12/11/control-resonant-brings-a-new-paranatural-crisis-to-ps5-out-2026/",
       "https://blog.playstation.com/2025/12/11/lego-batman-legacy-of-the-dark-knight-out-may-29-2026-on-ps5/",
       "https://blog.playstation.com/2025/12/11/new-clair-obscur-expedition-33-content-available-today-including-versos-drafts-level/",
