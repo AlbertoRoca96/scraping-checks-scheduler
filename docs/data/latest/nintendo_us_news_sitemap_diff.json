@@ -2,17 +2,14 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-12-13T16:21:43.097Z",
+  "checkedAt": "2025-12-13T18:23:23.070Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 6,
+    "nowCount": 3,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/congrats-to-these-games-that-won-big-at-the-game-awards/",
       "https://www.nintendo.com/us/whatsnew/get-festive-with-custom-designs-for-ugly-holiday-sweaters/",
-      "https://www.nintendo.com/us/whatsnew/icon-elements-inspired-by-the-pokemon-legends-z-a-game-are-here-for-a-limited-time/",
-      "https://www.nintendo.com/us/whatsnew/mario-kart-world-direct-revs-up-new-details-on-the-biggest-mario-kart-ever-coming-to-nintendo-switch-2-at-launch/",
-      "https://www.nintendo.com/us/whatsnew/see-whats-new-in-the-super-mario-party-jamboree-nintendo-switch-2-edition-jamboree-tv-game/",
       "https://www.nintendo.com/us/whatsnew/whats-that-garlicky-smell-must-be-the-latest-addition-to-nintendo-classics/"
     ],
     "removed": []
