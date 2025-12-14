@@ -2,14 +2,15 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-12-13T22:16:31.237Z",
+  "checkedAt": "2025-12-14T01:29:13.071Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 2,
+    "nowCount": 3,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/congrats-to-these-games-that-won-big-at-the-game-awards/",
-      "https://www.nintendo.com/us/whatsnew/from-the-mushroom-kingdom-to-new-york-city/"
+      "https://www.nintendo.com/us/whatsnew/from-the-mushroom-kingdom-to-new-york-city/",
+      "https://www.nintendo.com/us/whatsnew/splatoon-3-north-american-league-2025-playoffs/"
     ],
     "removed": []
   }
