@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-12-15T16:27:26.047Z",
+  "checkedAt": "2025-12-15T18:28:36.161Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/08/02/thq-nordic-showcase-2024-recap/",
       "https://blog.playstation.com/2024/08/05/players-choice-vote-for-july-2024s-best-new-game/",
       "https://blog.playstation.com/2024/08/06/castlevanias-dracula-trevor-belmont-join-dead-by-daylight-aug-27/",
       "https://blog.playstation.com/2024/08/07/choose-your-career-path-in-monster-jam-showdown/",
@@ -806,6 +805,7 @@
       "https://blog.playstation.com/2025/12/11/the-seven-deadly-sins-origin-unveils-cooperative-raid-battles/",
       "https://blog.playstation.com/2025/12/11/tomb-raider-catalyst-and-tomb-raider-legacy-of-atlantis-coming-to-ps5/",
       "https://blog.playstation.com/2025/12/12/share-of-the-week-zoomed-out/",
+      "https://blog.playstation.com/2025/12/15/marathon-vidoc-highlights-the-extraction-shooters-dark-world-and-survival-challenge/",
       "https://blog.playstation.com/2025/12/15/s-t-a-l-k-e-r-2-drops-a-free-story-and-content-update-on-dec-16/",
       "https://blog.playstation.com/2025/12/15/seasons-greetings-2025-from-playstation-blog-and-friends/"
     ],
