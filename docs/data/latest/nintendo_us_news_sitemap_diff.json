@@ -2,12 +2,13 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-12-16T18:28:24.909Z",
+  "checkedAt": "2025-12-16T20:21:27.709Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 3,
+    "nowCount": 4,
     "prevCount": 0,
     "added": [
+      "https://www.nintendo.com/us/whatsnew/congrats-to-the-game-awards-2025-nominees/",
       "https://www.nintendo.com/us/whatsnew/keep-your-familys-experiences-fun-and-safe-with-the-nintendo-switch-parental-controls-app-dec-2025/",
       "https://www.nintendo.com/us/whatsnew/look-back-at-2025-with-nintendo-music/",
       "https://www.nintendo.com/us/whatsnew/time-for-the-next-emerald-rush-event-in-the-donkey-kong-bananza-game-dig-the-beat/"
