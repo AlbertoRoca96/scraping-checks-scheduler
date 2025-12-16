@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-12-16T12:39:17.149Z",
+  "checkedAt": "2025-12-16T14:21:29.377Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/08/05/players-choice-vote-for-july-2024s-best-new-game/",
       "https://blog.playstation.com/2024/08/06/castlevanias-dracula-trevor-belmont-join-dead-by-daylight-aug-27/",
       "https://blog.playstation.com/2024/08/07/choose-your-career-path-in-monster-jam-showdown/",
       "https://blog.playstation.com/2024/08/08/black-ops-6-zombies-and-the-terminus-launch-map-full-details-revealed/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2025/12/12/share-of-the-week-zoomed-out/",
       "https://blog.playstation.com/2025/12/15/marathon-vidoc-highlights-the-extraction-shooters-dark-world-and-survival-challenge/",
       "https://blog.playstation.com/2025/12/15/s-t-a-l-k-e-r-2-drops-a-free-story-and-content-update-on-dec-16/",
-      "https://blog.playstation.com/2025/12/15/seasons-greetings-2025-from-playstation-blog-and-friends/"
+      "https://blog.playstation.com/2025/12/15/seasons-greetings-2025-from-playstation-blog-and-friends/",
+      "https://blog.playstation.com/2025/12/16/aaero2-black-razor-edition-how-psp-and-guitar-hero-led-to-this-rhythm-action-game/"
     ],
     "removed": []
   }
