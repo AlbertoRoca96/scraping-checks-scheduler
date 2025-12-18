@@ -2,7 +2,7 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-12-18T10:20:32.039Z",
+  "checkedAt": "2025-12-18T12:38:02.353Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
@@ -11,7 +11,6 @@
       "https://blog.playstation.com/2024/08/08/black-ops-6-zombies-and-the-terminus-launch-map-full-details-revealed/",
       "https://blog.playstation.com/2024/08/08/god-of-war-ragnarok-pc-system-requirements-revealed/",
       "https://blog.playstation.com/2024/08/08/harry-potter-quidditch-champions-reveals-triwizard-school-pitches/",
-      "https://blog.playstation.com/2024/08/08/that-time-i-got-reincarnated-as-a-slime-isekai-chronicles-city-building-gameplay-details/",
       "https://blog.playstation.com/2024/08/09/official-playstation-podcast-episode-491-darkest-shadow/",
       "https://blog.playstation.com/2024/08/09/share-of-the-week-running/",
       "https://blog.playstation.com/2024/08/12/shadows-of-doubt-hits-ps5-on-september-26-new-private-detective-gameplay-revealed/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2025/12/15/seasons-greetings-2025-from-playstation-blog-and-friends/",
       "https://blog.playstation.com/2025/12/16/aaero2-black-razor-edition-how-psp-and-guitar-hero-led-to-this-rhythm-action-game/",
       "https://blog.playstation.com/2025/12/17/saros-how-housemarque-devs-are-bringing-the-sci-fi-characters-to-life/",
-      "https://blog.playstation.com/2025/12/17/the-secrets-behind-ghost-of-yoteis-the-spider-lily-general-myth/"
+      "https://blog.playstation.com/2025/12/17/the-secrets-behind-ghost-of-yoteis-the-spider-lily-general-myth/",
+      "https://blog.playstation.com/2025/12/18/the-relic-first-guardian-a-new-dark-action-rpg-comes-to-ps5-on-may-26/"
     ],
     "removed": []
   }
