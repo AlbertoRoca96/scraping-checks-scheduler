@@ -2,18 +2,18 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-12-18T18:28:21.478Z",
+  "checkedAt": "2025-12-18T20:18:50.463Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
     "nowCount": 6,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/color-in-creatures-from-the-pikmin-series-of-games-with-free-printable-pages-from-play-nintendo/",
+      "https://www.nintendo.com/us/whatsnew/free-updates-to-hyrule-warriors-age-of-imprisonment-add-new-challenges-and-rewards/",
       "https://www.nintendo.com/us/whatsnew/get-free-printable-coloring-pages-with-heroes-from-the-pikmin-series-of-games/",
       "https://www.nintendo.com/us/whatsnew/heres-the-latest-nintendo-switch-online-news-from-december-2025/",
       "https://www.nintendo.com/us/whatsnew/new-update-for-nintendo-switch-online-expansion-pack-members-dec-2025/",
-      "https://www.nintendo.com/us/whatsnew/nintendos-pikmin-franchise-lands-at-kura-revolving-sushi-bar/",
-      "https://www.nintendo.com/us/whatsnew/want-to-transfer-your-stuff-to-nintendo-switch-2-heres-how-dec-2025/"
+      "https://www.nintendo.com/us/whatsnew/nintendos-pikmin-franchise-lands-at-kura-revolving-sushi-bar/"
     ],
     "removed": []
   }
