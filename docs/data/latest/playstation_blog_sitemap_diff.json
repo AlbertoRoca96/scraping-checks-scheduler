@@ -2,16 +2,14 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-12-19T16:23:10.360Z",
+  "checkedAt": "2025-12-19T18:26:32.100Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/08/13/concord-launch-and-the-adventure-ahead/",
       "https://blog.playstation.com/2024/08/14/playstation-plus-game-catalog-for-august-the-witcher-3-wild-hunt-wild-hearts-cult-of-the-lamb-and-more/",
       "https://blog.playstation.com/2024/08/14/playstation-store-july-2024s-top-downloads/",
-      "https://blog.playstation.com/2024/08/14/until-dawn-rebuilt-and-enhanced-for-ps5-and-pc-launches-october-4/",
       "https://blog.playstation.com/2024/08/15/broken-sword-the-shadow-of-the-templars-reforged-launches-on-ps5-sept-19/",
       "https://blog.playstation.com/2024/08/15/concord-accessibility-settings-detailed/",
       "https://blog.playstation.com/2024/08/15/details-on-new-indie-games-coming-to-playstation/",
@@ -807,6 +805,8 @@
       "https://blog.playstation.com/2025/12/18/world-war-z-x-the-walking-dead-lurches-onto-ps5-ps4-in-january/",
       "https://blog.playstation.com/2025/12/19/ghost-of-yotei-spoilercast-interview-the-games-ending-open-world-design-takezo-the-unrivaled-and-much-more/",
       "https://blog.playstation.com/2025/12/19/like-a-dragon-20th-anniversary-interview/",
+      "https://blog.playstation.com/2025/12/19/official-playstation-podcast-episode-530-wrapped-with-a-bow/",
+      "https://blog.playstation.com/2025/12/19/share-of-the-week-microsoft-flight-simulator-2024/",
       "https://blog.playstation.com/2025/12/19/zenless-zone-zero-version-2-5-introduces-dual-form-void-hunter-on-december-30/"
     ],
     "removed": []
