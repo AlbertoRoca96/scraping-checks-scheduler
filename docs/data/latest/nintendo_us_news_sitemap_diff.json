@@ -2,22 +2,14 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-12-21T01:29:08.037Z",
+  "checkedAt": "2025-12-21T03:27:11.447Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 11,
+    "nowCount": 3,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/an-interstellar-protector-with-cosmic-power/",
-      "https://www.nintendo.com/us/whatsnew/blast-off-with-mario-in-two-gravity-defying-adventures/",
       "https://www.nintendo.com/us/whatsnew/discover-the-magic-of-pikmin-in-the-short-film-close-to-you/",
-      "https://www.nintendo.com/us/whatsnew/get-a-head-start-on-mario-kart-world-with-a-few-tips/",
-      "https://www.nintendo.com/us/whatsnew/get-seasonal-icon-elements-for-playing-the-game/",
       "https://www.nintendo.com/us/whatsnew/get-to-know-gamechat-and-gameshare-with-these-games-dec-2025/",
-      "https://www.nintendo.com/us/whatsnew/get-to-know-the-multiplayer-modes-in-mario-kart-world/",
-      "https://www.nintendo.com/us/whatsnew/mobilenews-holiday-decorations-arrive-with-ball-ornament-decor-pikmin/",
-      "https://www.nintendo.com/us/whatsnew/play-the-mario-kart-world-game-with-gametruck-at-your-local-walmart/",
-      "https://www.nintendo.com/us/whatsnew/the-battle-begins-in-hyrule-warriors-age-of-imprisonment/",
       "https://www.nintendo.com/us/whatsnew/time-for-the-next-emerald-rush-event-in-the-donkey-kong-bananza-game-dig-the-beat/"
     ],
     "removed": []
