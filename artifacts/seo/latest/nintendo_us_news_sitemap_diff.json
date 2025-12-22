@@ -2,7 +2,7 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-12-22T06:31:10.861Z",
+  "checkedAt": "2025-12-22T08:27:35.762Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
     "nowCount": 3,
