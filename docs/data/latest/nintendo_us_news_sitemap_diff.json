@@ -2,13 +2,12 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-12-23T20:20:10.931Z",
+  "checkedAt": "2025-12-23T22:17:49.097Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 4,
+    "nowCount": 3,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/free-updates-to-hyrule-warriors-age-of-imprisonment-add-new-challenges-and-rewards/",
       "https://www.nintendo.com/us/whatsnew/hits-for-the-holidays-sale-save-up-to-50-on-select-games/",
       "https://www.nintendo.com/us/whatsnew/stock-up-on-quality-games-for-free-dec-2025/",
       "https://www.nintendo.com/us/whatsnew/time-for-the-next-emerald-rush-event-in-the-donkey-kong-bananza-game-dig-the-beat/"
