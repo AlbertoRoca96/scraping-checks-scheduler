@@ -2,7 +2,7 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2025-12-31T16:22:54.174Z",
+  "checkedAt": "2025-12-31T18:26:53.924Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
@@ -12,7 +12,6 @@
       "https://blog.playstation.com/2024/08/15/details-on-new-indie-games-coming-to-playstation/",
       "https://blog.playstation.com/2024/08/15/full-details-on-marvel-x-fortnite-battle-royale-chapter-5-season-4-absolute-doom-live-today/",
       "https://blog.playstation.com/2024/08/15/hardcore-survival-shooter-into-the-radius-hits-ps-vr2-sept-19/",
-      "https://blog.playstation.com/2024/08/15/persona-3-reload-episode-aigis-the-answer-launches-sept-10-hands-on-report/",
       "https://blog.playstation.com/2024/08/15/plucky-squire-launches-on-ps5-september-17-as-part-of-playstation-plus-extra-and-premium/",
       "https://blog.playstation.com/2024/08/15/sulfur-launches-on-ps5-ps4-early-2025/",
       "https://blog.playstation.com/2024/08/16/genshin-impact-welcomes-the-sixth-major-nation-of-teyvat-with-version-5-0-going-live-august-28/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2025/12/19/zenless-zone-zero-version-2-5-introduces-dual-form-void-hunter-on-december-30/",
       "https://blog.playstation.com/2025/12/22/10-indie-games-from-2025-that-delighted-the-playstation-indies-teams/",
       "https://blog.playstation.com/2025/12/22/behind-the-scenes-of-lumines-arise-with-enhance/",
-      "https://blog.playstation.com/2025/12/29/2025-was-a-great-year-for-ninja-and-samurai-games-on-playstation/"
+      "https://blog.playstation.com/2025/12/29/2025-was-a-great-year-for-ninja-and-samurai-games-on-playstation/",
+      "https://blog.playstation.com/2025/12/31/playstation-plus-monthly-games-for-january-need-for-speed-unbound-disney-epic-mickey-rebrushed-core-keeper/"
     ],
     "removed": []
   }
