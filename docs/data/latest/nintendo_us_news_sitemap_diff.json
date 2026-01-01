@@ -2,12 +2,14 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2025-12-31T22:18:53.803Z",
+  "checkedAt": "2026-01-01T01:43:31.223Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 0,
+    "nowCount": 1,
     "prevCount": 0,
-    "added": [],
+    "added": [
+      "https://www.nintendo.com/us/whatsnew/catch-up-on-some-of-2025s-game-releases/"
+    ],
     "removed": []
   }
 }
