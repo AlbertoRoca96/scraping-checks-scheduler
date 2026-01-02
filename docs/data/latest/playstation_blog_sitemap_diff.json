@@ -2,10 +2,10 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-01-02T18:27:00.847Z",
+  "checkedAt": "2026-01-02T20:19:51.580Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
-    "nowCount": 42,
+    "nowCount": 43,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2025/12/04/cairn-the-climb-of-a-lifetime-starts-january-29-2026/",
@@ -49,7 +49,8 @@
       "https://blog.playstation.com/2025/12/22/behind-the-scenes-of-lumines-arise-with-enhance/",
       "https://blog.playstation.com/2025/12/29/2025-was-a-great-year-for-ninja-and-samurai-games-on-playstation/",
       "https://blog.playstation.com/2025/12/31/playstation-plus-monthly-games-for-january-need-for-speed-unbound-disney-epic-mickey-rebrushed-core-keeper/",
-      "https://blog.playstation.com/2026/01/01/players-choice-vote-for-december-2025s-best-new-game/"
+      "https://blog.playstation.com/2026/01/01/players-choice-vote-for-december-2025s-best-new-game/",
+      "https://blog.playstation.com/2026/01/02/18-most-wanted-games-of-early-2026/"
     ],
     "removed": []
   }
