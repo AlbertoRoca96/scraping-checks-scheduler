@@ -2,16 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-01-02T22:18:05.601Z",
+  "checkedAt": "2026-01-03T01:21:26.824Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
-    "nowCount": 43,
+    "nowCount": 39,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/12/04/cairn-the-climb-of-a-lifetime-starts-january-29-2026/",
-      "https://blog.playstation.com/2025/12/04/playstation-store-november-2025s-top-downloads/",
-      "https://blog.playstation.com/2025/12/04/romancing-saga-creator-discusses-the-fantasy-rpgs-legacy-music-art-and-more/",
-      "https://blog.playstation.com/2025/12/04/sol-shogunate-a-samurai-space-opera-announced-for-ps5/",
       "https://blog.playstation.com/2025/12/05/share-of-the-week-snowy/",
       "https://blog.playstation.com/2025/12/06/official-playstation-podcast-episode-529-sumptuous-victuals/",
       "https://blog.playstation.com/2025/12/09/microsoft-flight-simulator-2024-introduces-netflixs-stranger-things-expansion/",
