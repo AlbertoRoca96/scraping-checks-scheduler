@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-01-03T22:17:00.050Z",
+  "checkedAt": "2026-01-04T01:43:10.626Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
-    "nowCount": 39,
+    "nowCount": 38,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/12/05/share-of-the-week-snowy/",
       "https://blog.playstation.com/2025/12/06/official-playstation-podcast-episode-529-sumptuous-victuals/",
       "https://blog.playstation.com/2025/12/09/microsoft-flight-simulator-2024-introduces-netflixs-stranger-things-expansion/",
       "https://blog.playstation.com/2025/12/09/playstation-2025-wrap-up-launches-starting-today-explore-your-personalized-gaming-recap-for-2025/",
