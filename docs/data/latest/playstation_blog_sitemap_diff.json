@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-01-04T22:17:55.706Z",
+  "checkedAt": "2026-01-05T01:43:11.675Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
-    "nowCount": 38,
+    "nowCount": 37,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/12/06/official-playstation-podcast-episode-529-sumptuous-victuals/",
       "https://blog.playstation.com/2025/12/09/microsoft-flight-simulator-2024-introduces-netflixs-stranger-things-expansion/",
       "https://blog.playstation.com/2025/12/09/playstation-2025-wrap-up-launches-starting-today-explore-your-personalized-gaming-recap-for-2025/",
       "https://blog.playstation.com/2025/12/10/beastro-a-crunchy-cozy-deck-builder-comes-to-ps5-spring-2026/",
