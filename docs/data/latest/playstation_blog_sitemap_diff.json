@@ -2,10 +2,10 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-01-05T12:41:23.734Z",
+  "checkedAt": "2026-01-05T14:22:10.920Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
-    "nowCount": 37,
+    "nowCount": 38,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2025/12/09/microsoft-flight-simulator-2024-introduces-netflixs-stranger-things-expansion/",
@@ -44,7 +44,8 @@
       "https://blog.playstation.com/2025/12/29/2025-was-a-great-year-for-ninja-and-samurai-games-on-playstation/",
       "https://blog.playstation.com/2025/12/31/playstation-plus-monthly-games-for-january-need-for-speed-unbound-disney-epic-mickey-rebrushed-core-keeper/",
       "https://blog.playstation.com/2026/01/01/players-choice-vote-for-december-2025s-best-new-game/",
-      "https://blog.playstation.com/2026/01/02/18-most-wanted-games-of-early-2026/"
+      "https://blog.playstation.com/2026/01/02/18-most-wanted-games-of-early-2026/",
+      "https://blog.playstation.com/2026/01/05/code-vein-ii-hands-on-report/"
     ],
     "removed": []
   }
