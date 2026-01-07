@@ -2,10 +2,10 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-01-07T14:21:39.823Z",
+  "checkedAt": "2026-01-07T16:27:41.877Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
-    "nowCount": 39,
+    "nowCount": 41,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2025/12/09/microsoft-flight-simulator-2024-introduces-netflixs-stranger-things-expansion/",
@@ -46,7 +46,9 @@
       "https://blog.playstation.com/2026/01/01/players-choice-vote-for-december-2025s-best-new-game/",
       "https://blog.playstation.com/2026/01/02/18-most-wanted-games-of-early-2026/",
       "https://blog.playstation.com/2026/01/05/code-vein-ii-hands-on-report/",
-      "https://blog.playstation.com/2026/01/06/carmageddon-rogue-shift-new-gameplay-details-on-the-roguelike-racer/"
+      "https://blog.playstation.com/2026/01/06/carmageddon-rogue-shift-new-gameplay-details-on-the-roguelike-racer/",
+      "https://blog.playstation.com/2026/01/07/playstation-store-december-2025s-top-downloads/",
+      "https://blog.playstation.com/2026/01/07/revealing-the-hyperpop-collection-with-three-new-designs-for-ps5-accessories-launching-this-march/"
     ],
     "removed": []
   }
