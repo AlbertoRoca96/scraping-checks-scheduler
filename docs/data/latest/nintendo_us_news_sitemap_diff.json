@@ -2,13 +2,14 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-01-07T18:29:14.087Z",
+  "checkedAt": "2026-01-07T20:22:18.751Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 4,
+    "nowCount": 5,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/catch-up-on-mario-and-his-pals-with-this-stache-of-games-dec-2025/",
+      "https://www.nintendo.com/us/whatsnew/get-seasonal-icon-elements-for-playing-the-game/",
       "https://www.nintendo.com/us/whatsnew/mobile-news-get-a-delicious-start-to-the-new-year-with-pikmin-bloom/",
       "https://www.nintendo.com/us/whatsnew/play-the-50th-maximus-cup-online-event-and-you-could-earn-an-in-game-collaborative-theme/",
       "https://www.nintendo.com/us/whatsnew/play-the-51st-maximus-cup-online-event-and-you-could-earn-an-in-game-collaborative-theme/"
