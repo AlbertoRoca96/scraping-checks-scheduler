@@ -2,14 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-01-08T22:19:01.053Z",
+  "checkedAt": "2026-01-09T01:26:52.772Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
-    "nowCount": 40,
+    "nowCount": 38,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/12/10/beastro-a-crunchy-cozy-deck-builder-comes-to-ps5-spring-2026/",
-      "https://blog.playstation.com/2025/12/10/playstation-plus-game-catalog-for-december-assassins-creed-mirage-wo-long-fallen-dynasty-skate-story-and-more/",
       "https://blog.playstation.com/2025/12/11/announcing-4loop-a-new-four-player-co-op-shooter-from-sie-and-bad-robot-games/",
       "https://blog.playstation.com/2025/12/11/capcom-the-game-awards-recap-resident-evil-requiem-pragmata-and-mega-man-dual-override/",
       "https://blog.playstation.com/2025/12/11/control-resonant-brings-a-new-paranatural-crisis-to-ps5-out-2026/",

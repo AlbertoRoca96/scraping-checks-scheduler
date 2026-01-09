@@ -2,10 +2,10 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-01-08T22:19:03.101Z",
+  "checkedAt": "2026-01-09T01:26:54.245Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 7,
+    "nowCount": 6,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/animal-crossing-new-horizons-amiibo-compatibility-updates-included-in-free-update/",
@@ -13,8 +13,7 @@
       "https://www.nintendo.com/us/whatsnew/get-seasonal-icon-elements-for-playing-the-game/",
       "https://www.nintendo.com/us/whatsnew/join-kirby-on-some-of-his-most-daring-adventures-with-this-list-of-games/",
       "https://www.nintendo.com/us/whatsnew/mobile-news-kick-off-the-new-year-with-a-new-season-pass-and-special-events-in-fire-emblem-shadows/",
-      "https://www.nintendo.com/us/whatsnew/nintendo-launches-my-mario-product-line-in-the-united-states/",
-      "https://www.nintendo.com/us/whatsnew/play-the-50th-maximus-cup-online-event-and-you-could-earn-an-in-game-collaborative-theme/"
+      "https://www.nintendo.com/us/whatsnew/nintendo-launches-my-mario-product-line-in-the-united-states/"
     ],
     "removed": []
   }
