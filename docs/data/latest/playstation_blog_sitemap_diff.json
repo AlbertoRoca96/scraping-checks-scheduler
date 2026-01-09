@@ -2,10 +2,10 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-01-09T16:24:42.275Z",
+  "checkedAt": "2026-01-09T18:28:49.230Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
-    "nowCount": 38,
+    "nowCount": 40,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2025/12/11/announcing-4loop-a-new-four-player-co-op-shooter-from-sie-and-bad-robot-games/",
@@ -45,7 +45,9 @@
       "https://blog.playstation.com/2026/01/06/carmageddon-rogue-shift-new-gameplay-details-on-the-roguelike-racer/",
       "https://blog.playstation.com/2026/01/07/playstation-store-december-2025s-top-downloads/",
       "https://blog.playstation.com/2026/01/07/revealing-the-hyperpop-collection-with-three-new-designs-for-ps5-accessories-launching-this-march/",
-      "https://blog.playstation.com/2026/01/08/code-vein-ii-interview-world-building-player-choice-weaponry-and-more/"
+      "https://blog.playstation.com/2026/01/08/code-vein-ii-interview-world-building-player-choice-weaponry-and-more/",
+      "https://blog.playstation.com/2026/01/09/official-playstation-podcast-episode-531-dispatching-the-new-year/",
+      "https://blog.playstation.com/2026/01/09/share-of-the-year-2025/"
     ],
     "removed": []
   }
