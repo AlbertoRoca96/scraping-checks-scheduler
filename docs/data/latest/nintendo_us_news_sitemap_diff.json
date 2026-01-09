@@ -2,16 +2,17 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-01-09T20:21:23.473Z",
+  "checkedAt": "2026-01-09T22:18:59.511Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 5,
+    "nowCount": 6,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/animal-crossing-new-horizons-amiibo-compatibility-updates-included-in-free-update/",
       "https://www.nintendo.com/us/whatsnew/fire-emblem-path-of-radiance-comes-to-nintendo-classics/",
       "https://www.nintendo.com/us/whatsnew/get-ready-for-tennis-with-a-twist-in-the-new-mario-tennis-fever-overview-trailer/",
       "https://www.nintendo.com/us/whatsnew/get-seasonal-icon-elements-for-playing-the-game/",
+      "https://www.nintendo.com/us/whatsnew/jumpstart-your-year-with-these-games-under-usd30-jan-2026/",
       "https://www.nintendo.com/us/whatsnew/nintendo-launches-my-mario-product-line-in-the-united-states/"
     ],
     "removed": []
