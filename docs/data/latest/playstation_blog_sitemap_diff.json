@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-01-10T22:17:48.554Z",
+  "checkedAt": "2026-01-11T01:43:22.332Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
-    "nowCount": 29,
+    "nowCount": 28,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/12/12/share-of-the-week-zoomed-out/",
       "https://blog.playstation.com/2025/12/15/marathon-vidoc-highlights-the-extraction-shooters-dark-world-and-survival-challenge/",
       "https://blog.playstation.com/2025/12/15/s-t-a-l-k-e-r-2-drops-a-free-story-and-content-update-on-dec-16/",
       "https://blog.playstation.com/2025/12/15/seasons-greetings-2025-from-playstation-blog-and-friends/",
