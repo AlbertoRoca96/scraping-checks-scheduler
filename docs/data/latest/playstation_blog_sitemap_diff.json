@@ -2,10 +2,10 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-01-13T12:41:27.163Z",
+  "checkedAt": "2026-01-13T14:23:07.817Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
-    "nowCount": 29,
+    "nowCount": 30,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2025/12/15/marathon-vidoc-highlights-the-extraction-shooters-dark-world-and-survival-challenge/",
@@ -36,7 +36,8 @@
       "https://blog.playstation.com/2026/01/08/code-vein-ii-interview-world-building-player-choice-weaponry-and-more/",
       "https://blog.playstation.com/2026/01/09/official-playstation-podcast-episode-531-dispatching-the-new-year/",
       "https://blog.playstation.com/2026/01/09/share-of-the-year-2025/",
-      "https://blog.playstation.com/2026/01/12/my-hero-academia-alls-justice-team-up-mission-and-heros-diary-modes-detailed-out-feb-6/"
+      "https://blog.playstation.com/2026/01/12/my-hero-academia-alls-justice-team-up-mission-and-heros-diary-modes-detailed-out-feb-6/",
+      "https://blog.playstation.com/2026/01/13/helldivers-2-redacted-regiment-warbond-launches-jan-20/"
     ],
     "removed": []
   }
