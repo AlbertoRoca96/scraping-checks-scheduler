@@ -2,10 +2,10 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-01-14T18:30:09.068Z",
+  "checkedAt": "2026-01-14T20:18:48.742Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
-    "nowCount": 29,
+    "nowCount": 30,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2025/12/16/aaero2-black-razor-edition-how-psp-and-guitar-hero-led-to-this-rhythm-action-game/",
@@ -36,7 +36,8 @@
       "https://blog.playstation.com/2026/01/12/my-hero-academia-alls-justice-team-up-mission-and-heros-diary-modes-detailed-out-feb-6/",
       "https://blog.playstation.com/2026/01/13/helldivers-2-redacted-regiment-warbond-launches-jan-20/",
       "https://blog.playstation.com/2026/01/14/10-quick-hit-games-to-play-included-with-playstation-plus/",
-      "https://blog.playstation.com/2026/01/14/playstation-plus-game-catalog-for-january-resident-evil-village-like-a-dragon-infinite-wealth-expeditions-a-mudrunner-game-and-more/"
+      "https://blog.playstation.com/2026/01/14/playstation-plus-game-catalog-for-january-resident-evil-village-like-a-dragon-infinite-wealth-expeditions-a-mudrunner-game-and-more/",
+      "https://blog.playstation.com/2026/01/14/playstation-stores-top-downloads-of-2025/"
     ],
     "removed": []
   }
