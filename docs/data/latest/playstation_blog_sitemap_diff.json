@@ -2,10 +2,10 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-01-15T12:40:33.978Z",
+  "checkedAt": "2026-01-15T14:23:00.430Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
-    "nowCount": 29,
+    "nowCount": 30,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2025/12/17/saros-how-housemarque-devs-are-bringing-the-sci-fi-characters-to-life/",
@@ -36,7 +36,8 @@
       "https://blog.playstation.com/2026/01/13/helldivers-2-redacted-regiment-warbond-launches-jan-20/",
       "https://blog.playstation.com/2026/01/14/10-quick-hit-games-to-play-included-with-playstation-plus/",
       "https://blog.playstation.com/2026/01/14/playstation-plus-game-catalog-for-january-resident-evil-village-like-a-dragon-infinite-wealth-expeditions-a-mudrunner-game-and-more/",
-      "https://blog.playstation.com/2026/01/14/playstation-stores-top-downloads-of-2025/"
+      "https://blog.playstation.com/2026/01/14/playstation-stores-top-downloads-of-2025/",
+      "https://blog.playstation.com/2026/01/15/claim-your-place-among-motorcycle-legends-in-ride-6-career/"
     ],
     "removed": []
   }
