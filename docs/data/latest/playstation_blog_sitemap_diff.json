@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-01-14T22:19:56.398Z",
+  "checkedAt": "2026-01-15T01:25:08.028Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
-    "nowCount": 30,
+    "nowCount": 29,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/12/16/aaero2-black-razor-edition-how-psp-and-guitar-hero-led-to-this-rhythm-action-game/",
       "https://blog.playstation.com/2025/12/17/saros-how-housemarque-devs-are-bringing-the-sci-fi-characters-to-life/",
       "https://blog.playstation.com/2025/12/17/the-secrets-behind-ghost-of-yoteis-the-spider-lily-general-myth/",
       "https://blog.playstation.com/2025/12/18/helldivers-2-festival-of-reckoning-launches-dec-18/",

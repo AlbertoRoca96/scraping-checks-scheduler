@@ -2,16 +2,19 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-01-14T22:19:57.006Z",
+  "checkedAt": "2026-01-15T01:25:09.159Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 6,
+    "nowCount": 9,
     "prevCount": 0,
     "added": [
+      "https://www.nintendo.com/us/whatsnew/11-helpful-things-your-nintendo-switch-can-do/",
       "https://www.nintendo.com/us/whatsnew/an-update-to-our-shared-commitment-to-safer-gaming/",
+      "https://www.nintendo.com/us/whatsnew/catch-up-on-some-of-2024s-releases-before-we-ring-in-the-new-year/",
       "https://www.nintendo.com/us/whatsnew/creators-voice-the-duskbloods-part-1/",
+      "https://www.nintendo.com/us/whatsnew/creators-voice-the-duskbloods-part-2/",
+      "https://www.nintendo.com/us/whatsnew/creators-voice-the-duskbloods-part-3/",
       "https://www.nintendo.com/us/whatsnew/heres-the-latest-nintendo-switch-online-news-from-august-2025/",
-      "https://www.nintendo.com/us/whatsnew/jump-into-another-round-of-nintendo-switch-online/",
       "https://www.nintendo.com/us/whatsnew/rediscover-your-playful-past-with-the-nintendo-switch-2025-year-in-review/",
       "https://www.nintendo.com/us/whatsnew/try-the-latest-game-trial-ea-sports-madden-nfl-26/"
     ],
