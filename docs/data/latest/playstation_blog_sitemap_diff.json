@@ -2,14 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-01-15T22:19:37.812Z",
+  "checkedAt": "2026-01-16T01:27:10.938Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
-    "nowCount": 30,
+    "nowCount": 28,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/12/17/saros-how-housemarque-devs-are-bringing-the-sci-fi-characters-to-life/",
-      "https://blog.playstation.com/2025/12/17/the-secrets-behind-ghost-of-yoteis-the-spider-lily-general-myth/",
       "https://blog.playstation.com/2025/12/18/helldivers-2-festival-of-reckoning-launches-dec-18/",
       "https://blog.playstation.com/2025/12/18/ps-blog-game-of-the-year-2025-the-winners/",
       "https://blog.playstation.com/2025/12/18/the-relic-first-guardian-a-new-dark-action-rpg-comes-to-ps5-on-may-26/",
