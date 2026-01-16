@@ -2,14 +2,13 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-01-16T18:29:26.579Z",
+  "checkedAt": "2026-01-16T20:19:43.689Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 19,
+    "nowCount": 18,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/11-helpful-things-your-nintendo-switch-can-do/",
-      "https://www.nintendo.com/us/whatsnew/an-update-to-our-shared-commitment-to-safer-gaming/",
       "https://www.nintendo.com/us/whatsnew/animal-crossing-new-horizons-expands-into-new-waters-with-a-free-update-and-paid-expansion-on-nov-5/",
       "https://www.nintendo.com/us/whatsnew/catch-up-on-some-of-2024s-releases-before-we-ring-in-the-new-year/",
       "https://www.nintendo.com/us/whatsnew/celebrate-valentines-day-on-play-nintendo/",
@@ -23,8 +22,8 @@
       "https://www.nintendo.com/us/whatsnew/heres-the-latest-nintendo-switch-online-news-from-january-2025/",
       "https://www.nintendo.com/us/whatsnew/jump-into-another-round-of-nintendo-switch-online/",
       "https://www.nintendo.com/us/whatsnew/out-now-welcome-back-to-the-island-with-updates-for-both-nintendo-switch-and-nintendo-switch-2/",
+      "https://www.nintendo.com/us/whatsnew/play-the-51st-maximus-cup-online-event-and-you-could-earn-an-in-game-collaborative-theme/",
       "https://www.nintendo.com/us/whatsnew/star-wars-republic-commando-nintendo-switch-game-trial/",
-      "https://www.nintendo.com/us/whatsnew/try-the-latest-game-trial-ea-sports-madden-nfl-26/",
       "https://www.nintendo.com/us/whatsnew/you-can-kick-off-your-new-year-with-the-latest-activities-from-play-nintendo/",
       "https://www.nintendo.com/us/whatsnew/you-can-pre-order-mlb-the-show-24-now-on-nintendo-eshop/"
     ],
