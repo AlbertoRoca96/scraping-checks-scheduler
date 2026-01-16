@@ -2,10 +2,10 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-01-16T12:39:31.257Z",
+  "checkedAt": "2026-01-16T14:21:08.196Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
-    "nowCount": 29,
+    "nowCount": 30,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2025/12/18/helldivers-2-festival-of-reckoning-launches-dec-18/",
@@ -36,7 +36,8 @@
       "https://blog.playstation.com/2026/01/14/playstation-plus-game-catalog-for-january-resident-evil-village-like-a-dragon-infinite-wealth-expeditions-a-mudrunner-game-and-more/",
       "https://blog.playstation.com/2026/01/14/playstation-stores-top-downloads-of-2025/",
       "https://blog.playstation.com/2026/01/15/claim-your-place-among-motorcycle-legends-in-ride-6-career/",
-      "https://blog.playstation.com/2026/01/15/yakuza-kiwami-3-dark-ties-hands-on-report/"
+      "https://blog.playstation.com/2026/01/15/yakuza-kiwami-3-dark-ties-hands-on-report/",
+      "https://blog.playstation.com/2026/01/16/arknights-endfield-hits-ps5-on-january-22-new-action-rpg-gameplay-details-revealed/"
     ],
     "removed": []
   }
