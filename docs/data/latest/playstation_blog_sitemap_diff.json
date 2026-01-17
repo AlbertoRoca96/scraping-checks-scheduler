@@ -2,16 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-01-16T22:19:04.314Z",
+  "checkedAt": "2026-01-17T01:23:14.816Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
-    "nowCount": 31,
+    "nowCount": 27,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/12/18/helldivers-2-festival-of-reckoning-launches-dec-18/",
-      "https://blog.playstation.com/2025/12/18/ps-blog-game-of-the-year-2025-the-winners/",
-      "https://blog.playstation.com/2025/12/18/the-relic-first-guardian-a-new-dark-action-rpg-comes-to-ps5-on-may-26/",
-      "https://blog.playstation.com/2025/12/18/world-war-z-x-the-walking-dead-lurches-onto-ps5-ps4-in-january/",
       "https://blog.playstation.com/2025/12/19/ghost-of-yotei-spoilercast-interview-the-games-ending-open-world-design-takezo-the-unrivaled-and-much-more/",
       "https://blog.playstation.com/2025/12/19/like-a-dragon-20th-anniversary-interview/",
       "https://blog.playstation.com/2025/12/19/official-playstation-podcast-episode-530-wrapped-with-a-bow/",
