@@ -2,10 +2,10 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-01-19T16:25:56.274Z",
+  "checkedAt": "2026-01-19T18:28:41.222Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
-    "nowCount": 22,
+    "nowCount": 23,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2025/12/22/10-indie-games-from-2025-that-delighted-the-playstation-indies-teams/",
@@ -29,7 +29,8 @@
       "https://blog.playstation.com/2026/01/15/claim-your-place-among-motorcycle-legends-in-ride-6-career/",
       "https://blog.playstation.com/2026/01/15/yakuza-kiwami-3-dark-ties-hands-on-report/",
       "https://blog.playstation.com/2026/01/16/arknights-endfield-hits-ps5-on-january-22-new-action-rpg-gameplay-details-revealed/",
-      "https://blog.playstation.com/2026/01/16/share-of-the-week-clair-obscur-expedition-33/"
+      "https://blog.playstation.com/2026/01/16/share-of-the-week-clair-obscur-expedition-33/",
+      "https://blog.playstation.com/2026/01/19/marathon-releases-march-5-new-limited-edition-dualsense-controller-revealed/"
     ],
     "removed": []
   }
