@@ -2,10 +2,10 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-01-21T14:28:29.496Z",
+  "checkedAt": "2026-01-21T16:41:23.515Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
-    "nowCount": 21,
+    "nowCount": 23,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2025/12/29/2025-was-a-great-year-for-ninja-and-samurai-games-on-playstation/",
@@ -28,7 +28,9 @@
       "https://blog.playstation.com/2026/01/15/yakuza-kiwami-3-dark-ties-hands-on-report/",
       "https://blog.playstation.com/2026/01/16/arknights-endfield-hits-ps5-on-january-22-new-action-rpg-gameplay-details-revealed/",
       "https://blog.playstation.com/2026/01/16/share-of-the-week-clair-obscur-expedition-33/",
-      "https://blog.playstation.com/2026/01/19/marathon-releases-march-5-new-limited-edition-dualsense-controller-revealed/"
+      "https://blog.playstation.com/2026/01/19/marathon-releases-march-5-new-limited-edition-dualsense-controller-revealed/",
+      "https://blog.playstation.com/2026/01/21/fatal-frame-ii-crimson-butterfly-remake-devs-talk-classic-terror-and-new-mechanics/",
+      "https://blog.playstation.com/2026/01/21/mechborn-a-fresh-roguelike-deckbuilder-from-the-heart-of-brazil/"
     ],
     "removed": []
   }
