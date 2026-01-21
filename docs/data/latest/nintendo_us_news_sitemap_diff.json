@@ -2,12 +2,13 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-01-21T01:29:09.093Z",
+  "checkedAt": "2026-01-21T03:41:24.677Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 4,
+    "nowCount": 5,
     "prevCount": 0,
     "added": [
+      "https://www.nintendo.com/us/whatsnew/animal-crossing-new-horizons-amiibo-compatibility-updates-included-in-free-update/",
       "https://www.nintendo.com/us/whatsnew/discover-the-magic-of-pikmin-in-the-short-film-close-to-you/",
       "https://www.nintendo.com/us/whatsnew/icon-elements-inspired-by-the-mario-kart-world-game-are-here-for-a-limited-time/",
       "https://www.nintendo.com/us/whatsnew/lego-r-the-legend-of-zelda-tm-ocarina-of-time-tm-the-final-battle-is-now-available-for-pre-order/",
