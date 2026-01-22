@@ -2,21 +2,35 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-01-22T20:23:55.743Z",
+  "checkedAt": "2026-01-22T22:20:39.568Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 9,
+    "nowCount": 23,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/a-free-update-is-out-now-waitaminute-is-that-dixie-kong/",
       "https://www.nintendo.com/us/whatsnew/animal-crossing-aquarium-tour-continues-across-the-us-this-year/",
       "https://www.nintendo.com/us/whatsnew/animal-crossing-new-horizons-amiibo-compatibility-updates-included-in-free-update/",
+      "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-11-super-mario-bros-wonder-part-4/",
+      "https://www.nintendo.com/us/whatsnew/available-now-experience-midgar-like-never-before-in-final-fantasy-vii-remake-intergrade/",
+      "https://www.nintendo.com/us/whatsnew/catch-up-on-some-of-this-years-celebrated-nintendo-switch-games/",
+      "https://www.nintendo.com/us/whatsnew/check-out-your-personalized-nintendo-switch-year-in-review-2022/",
       "https://www.nintendo.com/us/whatsnew/discover-more-of-whats-new-in-super-mario-bros-wonder-nintendo-switch-2-edition-meetup-in-bellabel-park/",
       "https://www.nintendo.com/us/whatsnew/discover-the-magic-of-pikmin-in-the-short-film-close-to-you/",
       "https://www.nintendo.com/us/whatsnew/free-update-for-mario-kart-world-lets-you-race-as-a-team-in-knockout-tour/",
+      "https://www.nintendo.com/us/whatsnew/heres-the-latest-nintendo-switch-online-news-from-april-2025/",
       "https://www.nintendo.com/us/whatsnew/heres-the-latest-nintendo-switch-online-news-from-december-2025/",
+      "https://www.nintendo.com/us/whatsnew/heres-the-latest-nintendo-switch-online-news-from-june-2025/",
+      "https://www.nintendo.com/us/whatsnew/heres-the-latest-nintendo-switch-online-news-from-october-2025/",
+      "https://www.nintendo.com/us/whatsnew/heres-the-latest-nintendo-switch-online-news-from-september-2025/",
       "https://www.nintendo.com/us/whatsnew/icon-elements-inspired-by-the-mario-kart-world-game-are-here-for-a-limited-time/",
-      "https://www.nintendo.com/us/whatsnew/lego-r-the-legend-of-zelda-tm-ocarina-of-time-tm-the-final-battle-is-now-available-for-pre-order/"
+      "https://www.nintendo.com/us/whatsnew/my-nintendo-june-wrap-up-2025/",
+      "https://www.nintendo.com/us/whatsnew/my-nintendo-october-wrap-up-2025/",
+      "https://www.nintendo.com/us/whatsnew/nintendo-announces-fun-ways-to-enjoy-mar10-day-wherever-you-are/",
+      "https://www.nintendo.com/us/whatsnew/nintendo-powers-up-mar10-day/",
+      "https://www.nintendo.com/us/whatsnew/nintendo-san-francisco-celebrates-grand-opening-may-15/",
+      "https://www.nintendo.com/us/whatsnew/nintendo-switch-oled-model-inspired-by-splatoon-3-coming-to-stores-on-aug-26/",
+      "https://www.nintendo.com/us/whatsnew/play-together-and-have-fun-online-this-mar10-day-with-a-14-day-free-trial-membership-of-nintendo-switch-online/"
     ],
     "removed": []
   }
