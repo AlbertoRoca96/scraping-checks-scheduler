@@ -2,13 +2,12 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-01-23T18:30:13.304Z",
+  "checkedAt": "2026-01-23T20:22:45.072Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 21,
+    "nowCount": 20,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/animal-crossing-aquarium-tour-continues-across-the-us-this-year/",
       "https://www.nintendo.com/us/whatsnew/animal-crossing-new-horizons-expands-into-new-waters-with-a-free-update-and-paid-expansion-on-nov-5/",
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-11-super-mario-bros-wonder-part-4/",
       "https://www.nintendo.com/us/whatsnew/available-now-experience-midgar-like-never-before-in-final-fantasy-vii-remake-intergrade/",

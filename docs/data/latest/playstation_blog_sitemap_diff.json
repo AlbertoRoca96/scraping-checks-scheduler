@@ -2,10 +2,10 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-01-23T18:30:12.621Z",
+  "checkedAt": "2026-01-23T20:22:44.153Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
-    "nowCount": 26,
+    "nowCount": 27,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2025/12/29/2025-was-a-great-year-for-ninja-and-samurai-games-on-playstation/",
@@ -33,6 +33,7 @@
       "https://blog.playstation.com/2026/01/21/mechborn-a-fresh-roguelike-deckbuilder-from-the-heart-of-brazil/",
       "https://blog.playstation.com/2026/01/22/fable-launches-on-ps5-autumn-2026/",
       "https://blog.playstation.com/2026/01/22/kiln-an-online-multiplayer-pottery-party-brawler-comes-to-ps5-in-2026/",
+      "https://blog.playstation.com/2026/01/23/official-playstation-podcast-episode-532-refreshed-rejuvenated/",
       "https://blog.playstation.com/2026/01/23/share-of-the-week-clair-obscur-expedition-33-portraits/"
     ],
     "removed": []
