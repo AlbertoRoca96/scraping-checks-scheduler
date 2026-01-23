@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-01-22T22:20:39.807Z",
+  "generatedAt": "2026-01-23T01:26:46.498Z",
   "group": "seo",
   "summary": [
     {
@@ -14,8 +14,7 @@
       "type": "sitemap_diff",
       "changed": true,
       "changedKeys": [
-        "added",
-        "nowCount"
+        "added"
       ],
       "error": null
     }
