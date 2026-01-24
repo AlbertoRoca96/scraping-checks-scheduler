@@ -2,10 +2,10 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-01-24T01:24:31.219Z",
+  "checkedAt": "2026-01-24T03:24:43.163Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 20,
+    "nowCount": 19,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/animal-crossing-new-horizons-expands-into-new-waters-with-a-free-update-and-paid-expansion-on-nov-5/",
@@ -16,7 +16,6 @@
       "https://www.nintendo.com/us/whatsnew/discover-more-of-whats-new-in-super-mario-bros-wonder-nintendo-switch-2-edition-meetup-in-bellabel-park/",
       "https://www.nintendo.com/us/whatsnew/enter-the-my-nintendo-xenoblade-chronicles-3-sweepstakes/",
       "https://www.nintendo.com/us/whatsnew/explore-holiday-activities-from-play-nintendo-and-my-nintendo/",
-      "https://www.nintendo.com/us/whatsnew/free-update-for-mario-kart-world-lets-you-race-as-a-team-in-knockout-tour/",
       "https://www.nintendo.com/us/whatsnew/heres-the-latest-nintendo-switch-online-news-from-april-2025/",
       "https://www.nintendo.com/us/whatsnew/heres-the-latest-nintendo-switch-online-news-from-june-2025/",
       "https://www.nintendo.com/us/whatsnew/heres-the-latest-nintendo-switch-online-news-from-october-2025/",
