@@ -1,12 +1,14 @@
 {
-  "generatedAt": "2026-01-24T06:28:40.452Z",
+  "generatedAt": "2026-01-24T08:23:42.372Z",
   "group": "compliance",
   "summary": [
     {
       "name": "psa_charizard_pop_total",
       "type": "psa_pop_row",
-      "changed": false,
-      "changedKeys": [],
+      "changed": true,
+      "changedKeys": [
+        "population"
+      ],
       "error": null
     },
     {
