@@ -2,23 +2,13 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-01-24T20:19:14.373Z",
+  "checkedAt": "2026-01-24T22:17:43.910Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 11,
+    "nowCount": 1,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/animal-crossing-new-horizons-expands-into-new-waters-with-a-free-update-and-paid-expansion-on-nov-5/",
-      "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-11-super-mario-bros-wonder-part-4/",
-      "https://www.nintendo.com/us/whatsnew/available-now-experience-midgar-like-never-before-in-final-fantasy-vii-remake-intergrade/",
-      "https://www.nintendo.com/us/whatsnew/check-out-your-personalized-nintendo-switch-year-in-review-2022/",
-      "https://www.nintendo.com/us/whatsnew/enter-the-my-nintendo-xenoblade-chronicles-3-sweepstakes/",
-      "https://www.nintendo.com/us/whatsnew/explore-holiday-activities-from-play-nintendo-and-my-nintendo/",
-      "https://www.nintendo.com/us/whatsnew/heres-the-latest-nintendo-switch-online-news-from-april-2025/",
-      "https://www.nintendo.com/us/whatsnew/heres-the-latest-nintendo-switch-online-news-from-september-2025/",
-      "https://www.nintendo.com/us/whatsnew/my-nintendo-june-wrap-up-2025/",
-      "https://www.nintendo.com/us/whatsnew/nintendo-powers-up-mar10-day/",
-      "https://www.nintendo.com/us/whatsnew/play-together-and-have-fun-online-this-mar10-day-with-a-14-day-free-trial-membership-of-nintendo-switch-online/"
+      "https://www.nintendo.com/us/whatsnew/available-now-experience-midgar-like-never-before-in-final-fantasy-vii-remake-intergrade/"
     ],
     "removed": []
   }
