@@ -2,10 +2,10 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-01-27T16:28:05.126Z",
+  "checkedAt": "2026-01-27T18:35:39.668Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
-    "nowCount": 30,
+    "nowCount": 31,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2025/12/29/2025-was-a-great-year-for-ninja-and-samurai-games-on-playstation/",
@@ -37,6 +37,7 @@
       "https://blog.playstation.com/2026/01/23/share-of-the-week-clair-obscur-expedition-33-portraits/",
       "https://blog.playstation.com/2026/01/26/ball-x-pit-the-regal-update-launches-today/",
       "https://blog.playstation.com/2026/01/26/resident-evil-requiem-everything-you-need-to-know-about-leon-s-kennedy/",
+      "https://blog.playstation.com/2026/01/27/aaron-judge-is-your-mlb-the-show-26-cover-athlete/",
       "https://blog.playstation.com/2026/01/27/helldivers-2-siege-breakers-premium-warbond-drops-february-3/"
     ],
     "removed": []
