@@ -2,10 +2,10 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-01-28T14:27:24.597Z",
+  "checkedAt": "2026-01-28T16:33:23.339Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
-    "nowCount": 31,
+    "nowCount": 32,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2025/12/31/playstation-plus-monthly-games-for-january-need-for-speed-unbound-disney-epic-mickey-rebrushed-core-keeper/",
@@ -38,7 +38,8 @@
       "https://blog.playstation.com/2026/01/26/resident-evil-requiem-everything-you-need-to-know-about-leon-s-kennedy/",
       "https://blog.playstation.com/2026/01/27/aaron-judge-is-your-mlb-the-show-26-cover-athlete/",
       "https://blog.playstation.com/2026/01/27/helldivers-2-siege-breakers-premium-warbond-drops-february-3/",
-      "https://blog.playstation.com/2026/01/28/gran-turismo-7-update-1-67-out-today-online-qualifiers-jan-31/"
+      "https://blog.playstation.com/2026/01/28/gran-turismo-7-update-1-67-out-today-online-qualifiers-jan-31/",
+      "https://blog.playstation.com/2026/01/28/playstation-plus-monthly-games-for-february-undisputed-subnautica-below-zero-ultros-ace-combat-7-skies-unknown/"
     ],
     "removed": []
   }
