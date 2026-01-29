@@ -2,10 +2,10 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-01-29T14:36:32.838Z",
+  "checkedAt": "2026-01-29T16:41:21.884Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
-    "nowCount": 34,
+    "nowCount": 35,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2025/12/31/playstation-plus-monthly-games-for-january-need-for-speed-unbound-disney-epic-mickey-rebrushed-core-keeper/",
@@ -41,7 +41,8 @@
       "https://blog.playstation.com/2026/01/28/gran-turismo-7-update-1-67-out-today-online-qualifiers-jan-31/",
       "https://blog.playstation.com/2026/01/28/playstation-plus-monthly-games-for-february-undisputed-subnautica-below-zero-ultros-ace-combat-7-skies-unknown/",
       "https://blog.playstation.com/2026/01/29/cairn-8-advanced-climbing-tips-to-make-it-to-the-summit/",
-      "https://blog.playstation.com/2026/01/29/dragon-quest-vii-reimagined-interview-hand-crafted-dolls-overhauled-ui-nostalgia-and-more/"
+      "https://blog.playstation.com/2026/01/29/dragon-quest-vii-reimagined-interview-hand-crafted-dolls-overhauled-ui-nostalgia-and-more/",
+      "https://blog.playstation.com/2026/01/29/resident-evil-requiem-interview-chainsaws-reinvented-zombies-fear-balancing-and-more/"
     ],
     "removed": []
   }
