@@ -2,13 +2,14 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-01-29T16:41:22.586Z",
+  "checkedAt": "2026-01-29T18:40:30.820Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 2,
+    "nowCount": 3,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/manage-a-group-of-ex-supervillains-who-are-given-one-last-shot-at-redemption-in-dispatch-available-now/",
+      "https://www.nintendo.com/us/whatsnew/tomodachi-life-living-the-dream-direct-spotlights-quirky-fun-with-player-made-mii-characters-game-launches-on-nintendo-switch-april-16/",
       "https://www.nintendo.com/us/whatsnew/virtual-boy-accessories-for-nintendo-switch-2-and-nintendo-switch-now-available-for-pre-purchase/"
     ],
     "removed": []
