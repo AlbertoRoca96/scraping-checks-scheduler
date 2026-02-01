@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-01T18:31:19.877Z",
+  "generatedAt": "2026-02-01T20:23:36.482Z",
   "group": "price",
   "summary": [
     {
@@ -19,12 +19,8 @@
     {
       "name": "psa_charizard_price_gem10",
       "type": "psa_price_row",
-      "changed": true,
-      "changedKeys": [
-        "grade",
-        "price",
-        "row"
-      ],
+      "changed": false,
+      "changedKeys": [],
       "error": null
     }
   ]
