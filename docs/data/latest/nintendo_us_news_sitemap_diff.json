@@ -2,15 +2,14 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-02-01T16:26:00.871Z",
+  "checkedAt": "2026-02-01T18:31:16.947Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 4,
+    "nowCount": 3,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/available-now-experience-midgar-like-never-before-in-final-fantasy-vii-remake-intergrade/",
       "https://www.nintendo.com/us/whatsnew/my-nintendo-january-wrap-up-2026/",
-      "https://www.nintendo.com/us/whatsnew/play-together-near-or-far-with-these-games-using-gamechat-and-gameshare/",
       "https://www.nintendo.com/us/whatsnew/tomodachi-life-living-the-dream-direct-spotlights-quirky-fun-with-player-made-mii-characters-game-launches-on-nintendo-switch-april-16/"
     ],
     "removed": []
