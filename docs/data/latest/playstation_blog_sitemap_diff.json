@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-02-01T22:21:07.808Z",
+  "checkedAt": "2026-02-02T01:57:39.702Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/09/03/a-brand-new-vocation-is-coming-to-dragon-quest-iii-hd-2d-remake/",
       "https://blog.playstation.com/2024/09/04/fantasian-neo-dimension-on-ps5-hands-on-report/",
       "https://blog.playstation.com/2024/09/04/players-choice-vote-for-august-2024s-best-new-game/",
       "https://blog.playstation.com/2024/09/05/celebrating-30-years-of-playstation-my-first-gt-digital-soundtracks-shapes-of-play-collection-and-theres-more-to-come/",
@@ -775,6 +774,7 @@
       "https://blog.playstation.com/2025/12/29/2025-was-a-great-year-for-ninja-and-samurai-games-on-playstation/",
       "https://blog.playstation.com/2025/12/31/playstation-plus-monthly-games-for-january-need-for-speed-unbound-disney-epic-mickey-rebrushed-core-keeper/",
       "https://blog.playstation.com/2026/01/01/players-choice-vote-for-december-2025s-best-new-game/",
+      "https://blog.playstation.com/2026/01/02/18-most-wanted-games-of-early-2026/",
       "https://blog.playstation.com/2026/01/05/code-vein-ii-hands-on-report/",
       "https://blog.playstation.com/2026/01/06/carmageddon-rogue-shift-new-gameplay-details-on-the-roguelike-racer/",
       "https://blog.playstation.com/2026/01/07/playstation-store-december-2025s-top-downloads/",
