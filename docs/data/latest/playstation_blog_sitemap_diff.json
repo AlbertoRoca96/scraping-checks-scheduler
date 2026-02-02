@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-02-02T14:38:54.621Z",
+  "checkedAt": "2026-02-02T16:36:35.217Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/09/04/fantasian-neo-dimension-on-ps5-hands-on-report/",
       "https://blog.playstation.com/2024/09/04/players-choice-vote-for-august-2024s-best-new-game/",
       "https://blog.playstation.com/2024/09/05/celebrating-30-years-of-playstation-my-first-gt-digital-soundtracks-shapes-of-play-collection-and-theres-more-to-come/",
       "https://blog.playstation.com/2024/09/05/ea-sports-fc-25-hands-on-report/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/01/29/cairn-8-advanced-climbing-tips-to-make-it-to-the-summit/",
       "https://blog.playstation.com/2026/01/29/dragon-quest-vii-reimagined-interview-hand-crafted-dolls-overhauled-ui-nostalgia-and-more/",
       "https://blog.playstation.com/2026/01/29/resident-evil-requiem-interview-chainsaws-reinvented-zombies-fear-balancing-and-more/",
-      "https://blog.playstation.com/2026/01/30/share-of-the-week-speed/"
+      "https://blog.playstation.com/2026/01/30/share-of-the-week-speed/",
+      "https://blog.playstation.com/2026/02/02/players-choice-vote-for-january-2026s-best-new-game/"
     ],
     "removed": []
   }
