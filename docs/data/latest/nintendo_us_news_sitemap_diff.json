@@ -2,16 +2,17 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-02-04T04:09:43.228Z",
+  "checkedAt": "2026-02-04T06:47:20.395Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 4,
+    "nowCount": 5,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-10-pikmin-4-part-3/",
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-16-nintendo-switch-2-part-4/",
+      "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-7-splatoon-3-part-1/",
       "https://www.nintendo.com/us/whatsnew/make-your-mark-pre-order-mlb-the-show-26-now-for-nintendo-switch/",
-      "https://www.nintendo.com/us/whatsnew/mobile-news-meet-2026-chocolate-decor-pikmin-this-month-in-pikmin-bloom/"
+      "https://www.nintendo.com/us/whatsnew/mobile-news-meet-2026-chocolate-decor-pikmin-this-month-in-pikmin-bloom/",
+      "https://www.nintendo.com/us/whatsnew/more-games-flutter-and-float-to-nintendo-classics/"
     ],
     "removed": []
   }
