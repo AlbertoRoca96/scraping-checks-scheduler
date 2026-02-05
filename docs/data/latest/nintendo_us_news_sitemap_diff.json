@@ -2,13 +2,12 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-02-04T22:24:56.392Z",
+  "checkedAt": "2026-02-05T01:52:59.049Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 17,
+    "nowCount": 16,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-16-nintendo-switch-2-part-4/",
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-6-xenoblade-chronicles-3-part-1/",
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-6-xenoblade-chronicles-3-part-2/",
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-6-xenoblade-chronicles-3-part-3/",
