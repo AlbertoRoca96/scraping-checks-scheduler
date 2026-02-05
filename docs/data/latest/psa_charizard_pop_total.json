@@ -2,6 +2,12 @@
   "name": "psa_charizard_pop_total",
   "type": "psa_pop_row",
   "url": "https://www.psacard.com/pop/tcg-cards/1999/pokemon-game/57801",
-  "checkedAt": "2026-02-05T01:53:01.485Z",
-  "error": "TimeoutError: page.waitForSelector: Timeout 45000ms exceeded.\nCall log:\n  - waiting for locator('table') to be visible\n"
+  "checkedAt": "2026-02-05T04:12:42.893Z",
+  "data": {
+    "row": "",
+    "column": "TOTAL",
+    "population": 505021114,
+    "raw": "5,050\n211\n14",
+    "mode": "playwright"
+  }
 }
