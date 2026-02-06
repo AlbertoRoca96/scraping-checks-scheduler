@@ -2,14 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-02-06T16:40:42.284Z",
+  "checkedAt": "2026-02-06T18:45:00.557Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/09/06/official-playstation-podcast-episode-493-the-joy-of-astro-bot/",
-      "https://blog.playstation.com/2024/09/06/share-of-the-week-work/",
       "https://blog.playstation.com/2024/09/09/astro-bot-how-team-asobi-created-a-unified-vision-for-fun/",
       "https://blog.playstation.com/2024/09/09/destiny-10th-anniversary-playstation-studios-devs-reflect-on-their-time-as-guardians/",
       "https://blog.playstation.com/2024/09/09/tune-in-tomorrow-for-a-playstation-5-technical-presentation-hosted-by-mark-cerny/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2026/02/04/how-john-carpenters-toxic-commando-came-to-life-out-march-12/",
       "https://blog.playstation.com/2026/02/04/playstation-store-january-2026s-top-downloads/",
       "https://blog.playstation.com/2026/02/05/announcing-horizon-hunters-gathering-guerrillas-new-co-op-action-game/",
-      "https://blog.playstation.com/2026/02/06/honkai-star-rail-version-4-0-no-aha-at-full-moon-will-go-live-on-february-13/"
+      "https://blog.playstation.com/2026/02/06/honkai-star-rail-version-4-0-no-aha-at-full-moon-will-go-live-on-february-13/",
+      "https://blog.playstation.com/2026/02/06/official-playstation-podcast-episode-533-john-carpentry-101/",
+      "https://blog.playstation.com/2026/02/06/share-of-the-week-rustic/"
     ],
     "removed": []
   }
