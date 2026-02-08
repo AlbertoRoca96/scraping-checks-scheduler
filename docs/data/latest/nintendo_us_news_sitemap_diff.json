@@ -2,14 +2,12 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-02-08T20:23:54.819Z",
+  "checkedAt": "2026-02-08T22:24:28.321Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 1,
+    "nowCount": 0,
     "prevCount": 0,
-    "added": [
-      "https://www.nintendo.com/us/whatsnew/animal-crossing-new-horizons-amiibo-compatibility-updates-included-in-free-update/"
-    ],
+    "added": [],
     "removed": []
   }
 }
