@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-02-09T10:53:55.620Z",
+  "checkedAt": "2026-02-09T13:03:20.336Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/09/09/destiny-10th-anniversary-playstation-studios-devs-reflect-on-their-time-as-guardians/",
       "https://blog.playstation.com/2024/09/10/fatal-fury-city-of-the-wolves-interview-snk-director-discusses-the-series-new-direction/",
       "https://blog.playstation.com/2024/09/10/mortal-kombat-1-khaos-reigns-unleashing-sektors-vicious-new-brutality/",
       "https://blog.playstation.com/2024/09/10/playstation-store-august-2024s-top-downloads/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/02/05/announcing-horizon-hunters-gathering-guerrillas-new-co-op-action-game/",
       "https://blog.playstation.com/2026/02/06/honkai-star-rail-version-4-0-no-aha-at-full-moon-will-go-live-on-february-13/",
       "https://blog.playstation.com/2026/02/06/official-playstation-podcast-episode-533-john-carpentry-101/",
-      "https://blog.playstation.com/2026/02/06/share-of-the-week-rustic/"
+      "https://blog.playstation.com/2026/02/06/share-of-the-week-rustic/",
+      "https://blog.playstation.com/2026/02/09/state-of-play-returns-this-thursday-february-12/"
     ],
     "removed": []
   }
