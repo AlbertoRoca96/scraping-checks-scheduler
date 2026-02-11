@@ -2,13 +2,14 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-02-10T22:37:15.136Z",
+  "checkedAt": "2026-02-11T02:05:50.244Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2024/09/10/playstation-store-august-2024s-top-downloads/",
+      "https://blog.playstation.com/2024/09/10/welcome-playstation-5-pro-the-most-visually-impressive-way-to-play-games-on-playstation/",
       "https://blog.playstation.com/2024/09/11/playstation-plus-game-catalog-for-september-the-plucky-squire-night-in-the-woods-under-the-waves-and-more/",
       "https://blog.playstation.com/2024/09/12/exploring-the-picturesque-city-of-artia-in-the-plucky-squire/",
       "https://blog.playstation.com/2024/09/12/helldivers-2-the-chemical-agents-warbond-launches-sept-19/",
@@ -770,7 +771,6 @@
       "https://blog.playstation.com/2026/01/08/code-vein-ii-interview-world-building-player-choice-weaponry-and-more/",
       "https://blog.playstation.com/2026/01/09/official-playstation-podcast-episode-531-dispatching-the-new-year/",
       "https://blog.playstation.com/2026/01/09/share-of-the-year-2025/",
-      "https://blog.playstation.com/2026/01/12/my-hero-academia-alls-justice-team-up-mission-and-heros-diary-modes-detailed-out-feb-6/",
       "https://blog.playstation.com/2026/01/13/helldivers-2-redacted-regiment-warbond-launches-jan-20/",
       "https://blog.playstation.com/2026/01/14/10-quick-hit-games-to-play-included-with-playstation-plus/",
       "https://blog.playstation.com/2026/01/14/playstation-plus-game-catalog-for-january-resident-evil-village-like-a-dragon-infinite-wealth-expeditions-a-mudrunner-game-and-more/",
