@@ -1,23 +1,20 @@
 {
-  "generatedAt": "2026-02-11T08:44:37.559Z",
+  "generatedAt": "2026-02-11T10:48:41.398Z",
   "group": "compliance",
   "summary": [
     {
       "name": "psa_charizard_pop_total",
       "type": "psa_pop_row",
-      "changed": true,
-      "changedKeys": [
-        "population"
-      ],
-      "error": null
+      "changed": false,
+      "changedKeys": [],
+      "error": "TimeoutError: page.waitForSelector: Timeout 45000ms exceeded.\nCall log:\n  - waiting for locator('table') to be visible\n"
     },
     {
       "name": "sec_aapl_8k_list_hash",
       "type": "content_watch",
       "changed": true,
       "changedKeys": [
-        "hash",
-        "length"
+        "hash"
       ],
       "error": null
     }
