@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-02-11T14:50:39.218Z",
+  "checkedAt": "2026-02-11T17:02:05.276Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/09/10/playstation-store-august-2024s-top-downloads/",
       "https://blog.playstation.com/2024/09/11/playstation-plus-game-catalog-for-september-the-plucky-squire-night-in-the-woods-under-the-waves-and-more/",
       "https://blog.playstation.com/2024/09/12/exploring-the-picturesque-city-of-artia-in-the-plucky-squire/",
       "https://blog.playstation.com/2024/09/12/helldivers-2-the-chemical-agents-warbond-launches-sept-19/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/02/09/romeo-is-a-dead-man-suda-51-and-director-ren-yamazaki-discuss-controlled-chaos-of-development/",
       "https://blog.playstation.com/2026/02/09/state-of-play-returns-this-thursday-february-12/",
       "https://blog.playstation.com/2026/02/10/new-helldivers-2-update-out-today/",
-      "https://blog.playstation.com/2026/02/11/no-mans-sky-remnant-update-introduces-gravity-gun-live-today/"
+      "https://blog.playstation.com/2026/02/11/no-mans-sky-remnant-update-introduces-gravity-gun-live-today/",
+      "https://blog.playstation.com/2026/02/11/reanimal-hands-on-a-haunting-co-op-platformer-built-on-trust-timing-and-fear/"
     ],
     "removed": []
   }
