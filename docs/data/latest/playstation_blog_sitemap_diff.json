@@ -2,23 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-02-12T20:32:19.893Z",
+  "checkedAt": "2026-02-12T22:29:32.235Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/09/12/exploring-the-picturesque-city-of-artia-in-the-plucky-squire/",
-      "https://blog.playstation.com/2024/09/12/helldivers-2-the-chemical-agents-warbond-launches-sept-19/",
-      "https://blog.playstation.com/2024/09/12/ps5-system-update-adds-welcome-hub-party-share-personalized-3d-audio-profiles-adaptive-controller-charging-and-more/",
-      "https://blog.playstation.com/2024/09/12/until-dawn-pc-features-and-specs-revealed-out-october-4/",
-      "https://blog.playstation.com/2024/09/13/official-playstation-podcast-episode-494-bot-thoughts/",
-      "https://blog.playstation.com/2024/09/13/share-of-the-week-astro-bot/",
-      "https://blog.playstation.com/2024/09/17/dead-rising-deluxe-remaster-12-ways-capcom-renovates-willamette-mall/",
-      "https://blog.playstation.com/2024/09/18/god-of-war-ragnarok-brings-a-host-of-new-features-to-pc-available-tomorrow/",
-      "https://blog.playstation.com/2024/09/19/celebrating-30-years-of-playstation-with-a-nostalgic-look/",
       "https://blog.playstation.com/2024/09/19/dragon-age-the-veilguard-hands-on-report/",
-      "https://blog.playstation.com/2024/09/19/dragon-ball-sparking-zero-hands-on-report/",
       "https://blog.playstation.com/2024/09/20/share-of-the-week-astro-bot-abilities/",
       "https://blog.playstation.com/2024/09/23/state-of-play-returns-tomorrow/",
       "https://blog.playstation.com/2024/09/24/archeage-chronicles-new-gameplay-details-on-the-online-ps5-action-rpg-coming-2025/",
@@ -807,7 +797,17 @@
       "https://blog.playstation.com/2026/02/10/new-helldivers-2-update-out-today/",
       "https://blog.playstation.com/2026/02/11/no-mans-sky-remnant-update-introduces-gravity-gun-live-today/",
       "https://blog.playstation.com/2026/02/11/reanimal-hands-on-a-haunting-co-op-platformer-built-on-trust-timing-and-fear/",
-      "https://blog.playstation.com/2026/02/12/battlefield-6-and-redsec-season-2-begins-feb-17/"
+      "https://blog.playstation.com/2026/02/12/battlefield-6-and-redsec-season-2-begins-feb-17/",
+      "https://blog.playstation.com/2026/02/12/beast-of-reincarnation-launches-on-ps5-august-4-2026/",
+      "https://blog.playstation.com/2026/02/12/dead-or-alive-6-last-round-launches-on-ps5-june-25-new-game-also-in-development/",
+      "https://blog.playstation.com/2026/02/12/death-stranding-2-on-the-beach-launches-on-pc-march-19/",
+      "https://blog.playstation.com/2026/02/12/fantasy-war-strategy-rpg-brigandine-abyss-launches-on-ps5-this-year/",
+      "https://blog.playstation.com/2026/02/12/ghost-of-yotei-legends-comes-to-ps5-on-march-10/",
+      "https://blog.playstation.com/2026/02/12/inside-the-gameplay-systems-of-4loop/",
+      "https://blog.playstation.com/2026/02/12/introducing-crimson-moon-a-gothic-action-adventure-rpg-coming-2026-to-ps5/",
+      "https://blog.playstation.com/2026/02/12/kena-scars-of-kosmora-announced-for-ps5-and-pc-out-2026/",
+      "https://blog.playstation.com/2026/02/12/legacy-of-kain-defiance-remastered-launches-on-ps5-ps4-march-3/",
+      "https://blog.playstation.com/2026/02/12/new-gameplay-details-on-control-resonants-supernatural-action/"
     ],
     "removed": []
   }
