@@ -2,7 +2,7 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-02-12T18:59:41.377Z",
+  "checkedAt": "2026-02-12T20:32:21.551Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
     "nowCount": 15,
@@ -19,7 +19,7 @@
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-8-fire-emblem-engage-part-2/",
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-8-fire-emblem-engage-part-3/",
       "https://www.nintendo.com/us/whatsnew/games-from-the-virtual-boy-system-are-coming-soon-to-nintendo-switch-online-expansion-pack/",
-      "https://www.nintendo.com/us/whatsnew/go-retro-with-nintendo-x-animal-crossing-new-horizons-crossover-in-game-items/",
+      "https://www.nintendo.com/us/whatsnew/its-time-to-hit-the-court-in-mario-tennis-fever/",
       "https://www.nintendo.com/us/whatsnew/outwit-a-prehistoric-threat-to-survive-in-tokyo-scramble-only-on-nintendo-switch-2/",
       "https://www.nintendo.com/us/whatsnew/play-pga-tour-2k25-today-on-nintendo-switch-2/",
       "https://www.nintendo.com/us/whatsnew/see-what-games-are-arriving-this-february-2026/"
