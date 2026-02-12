@@ -2,7 +2,7 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-02-11T22:27:06.112Z",
+  "checkedAt": "2026-02-12T01:58:56.292Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
     "nowCount": 13,
@@ -13,11 +13,11 @@
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-12-emio-the-smiling-man-famicom-detective-club-part-2/",
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-12-emio-the-smiling-man-famicom-detective-club-part-3/",
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-5-nintendo-switch-sports-part-1/",
+      "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-5-nintendo-switch-sports-part-2/",
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-8-fire-emblem-engage-part-1/",
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-8-fire-emblem-engage-part-2/",
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-8-fire-emblem-engage-part-3/",
       "https://www.nintendo.com/us/whatsnew/go-retro-with-nintendo-x-animal-crossing-new-horizons-crossover-in-game-items/",
-      "https://www.nintendo.com/us/whatsnew/my-nintendo-january-wrap-up-2026/",
       "https://www.nintendo.com/us/whatsnew/outwit-a-prehistoric-threat-to-survive-in-tokyo-scramble-only-on-nintendo-switch-2/",
       "https://www.nintendo.com/us/whatsnew/play-pga-tour-2k25-today-on-nintendo-switch-2/",
       "https://www.nintendo.com/us/whatsnew/see-what-games-are-arriving-this-february-2026/"
