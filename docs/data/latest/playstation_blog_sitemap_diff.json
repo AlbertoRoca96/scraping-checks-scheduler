@@ -2,7 +2,7 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-02-13T20:35:31.542Z",
+  "checkedAt": "2026-02-13T22:29:58.033Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
@@ -13,7 +13,6 @@
       "https://blog.playstation.com/2024/09/24/everything-revealed-in-state-of-play-september-2024/",
       "https://blog.playstation.com/2024/09/24/fantasian-neo-dimension-out-december-5-hironobu-sakaguchi-talks-bringing-his-rpg-to-ps5/",
       "https://blog.playstation.com/2024/09/24/fear-the-spotlight-launches-oct-22-on-ps5-ps4/",
-      "https://blog.playstation.com/2024/09/24/ghost-of-yotei-is-coming-in-2025/",
       "https://blog.playstation.com/2024/09/24/horizon-zero-dawn-remastered-is-coming-to-ps5-pc-october-31-2024/",
       "https://blog.playstation.com/2024/09/24/introducing-dualsense-wireless-controller-fortnite-limited-edition/",
       "https://blog.playstation.com/2024/09/24/legacy-of-kain-soul-reaver-1-2-remastered-launches-on-ps5-ps4-dec-10/",
@@ -806,6 +805,7 @@
       "https://blog.playstation.com/2026/02/12/silent-hill-townfall-reveals-first-person-gameplay-in-a-new-trailer/",
       "https://blog.playstation.com/2026/02/12/state-of-play-february-2026-all-announcements-trailers/",
       "https://blog.playstation.com/2026/02/12/yakoh-shinobi-ops-brings-four-player-co-op-shinobi-stealth-action-to-ps5-in-2027/",
+      "https://blog.playstation.com/2026/02/13/god-of-war-sons-of-sparta-what-you-need-to-know/",
       "https://blog.playstation.com/2026/02/13/official-playstation-podcast-episode-534-state-of-sparta/",
       "https://blog.playstation.com/2026/02/13/share-of-the-week-romantic-2/"
     ],
