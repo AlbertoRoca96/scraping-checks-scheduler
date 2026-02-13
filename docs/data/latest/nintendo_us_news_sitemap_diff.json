@@ -2,10 +2,10 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-02-12T22:29:36.829Z",
+  "checkedAt": "2026-02-13T02:01:48.280Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 15,
+    "nowCount": 17,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-12-emio-the-smiling-man-famicom-detective-club-part-1/",
@@ -19,6 +19,8 @@
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-8-fire-emblem-engage-part-2/",
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-8-fire-emblem-engage-part-3/",
       "https://www.nintendo.com/us/whatsnew/games-from-the-virtual-boy-system-are-coming-soon-to-nintendo-switch-online-expansion-pack/",
+      "https://www.nintendo.com/us/whatsnew/icon-elements-inspired-by-the-mario-kart-world-game-are-here-for-a-limited-time/",
+      "https://www.nintendo.com/us/whatsnew/icon-elements-inspired-by-the-mario-tennis-fever-game-are-here-for-a-limited-time/",
       "https://www.nintendo.com/us/whatsnew/its-time-to-hit-the-court-in-mario-tennis-fever/",
       "https://www.nintendo.com/us/whatsnew/outwit-a-prehistoric-threat-to-survive-in-tokyo-scramble-only-on-nintendo-switch-2/",
       "https://www.nintendo.com/us/whatsnew/play-pga-tour-2k25-today-on-nintendo-switch-2/",
