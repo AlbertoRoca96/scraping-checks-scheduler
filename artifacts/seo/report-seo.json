@@ -1,24 +1,19 @@
 {
-  "generatedAt": "2026-02-14T01:51:09.036Z",
+  "generatedAt": "2026-02-14T04:08:50.125Z",
   "group": "seo",
   "summary": [
     {
       "name": "playstation_blog_sitemap_diff",
       "type": "sitemap_diff",
-      "changed": true,
-      "changedKeys": [
-        "added"
-      ],
+      "changed": false,
+      "changedKeys": [],
       "error": null
     },
     {
       "name": "nintendo_us_news_sitemap_diff",
       "type": "sitemap_diff",
-      "changed": true,
-      "changedKeys": [
-        "added",
-        "nowCount"
-      ],
+      "changed": false,
+      "changedKeys": [],
       "error": null
     }
   ]

@@ -1,8 +1,8 @@
-# Scrape Report (2026-02-14T01:51:11.049Z)
+# Scrape Report (2026-02-14T04:08:31.080Z)
 
-Group: `compliance`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/22008942466
+Group: `compliance`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/22010877581
 
 | Check | Changed | Keys | Error |
 |---|:---:|:--|:--|
-| `psa_charizard_pop_total` | ✅ | column, population, row |  |
-| `sec_aapl_8k_list_hash` | ✅ | hash |  |
+| `psa_charizard_pop_total` | — |  |  |
+| `sec_aapl_8k_list_hash` | ✅ | hash, length |  |
