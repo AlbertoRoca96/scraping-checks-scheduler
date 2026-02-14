@@ -2,9 +2,6 @@
   "name": "example_h1",
   "type": "page",
   "url": "https://example.com/",
-  "checkedAt": "2026-02-14T06:41:01.923Z",
-  "data": {
-    "heading": "Example Domain",
-    "moreInfoLink": "https://iana.org/domains/example"
-  }
+  "checkedAt": "2026-02-14T08:28:28.851Z",
+  "error": "TimeoutError: page.waitForSelector: Timeout 45000ms exceeded.\nCall log:\n  - waiting for locator('a[href*=\\'iana.org\\']') to be visible\n"
 }
