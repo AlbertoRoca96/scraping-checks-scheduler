@@ -1,13 +1,16 @@
 {
-  "generatedAt": "2026-02-14T08:29:15.043Z",
+  "generatedAt": "2026-02-14T10:23:33.837Z",
   "group": "default",
   "summary": [
     {
       "name": "example_h1",
       "type": "page",
-      "changed": false,
-      "changedKeys": [],
-      "error": "TimeoutError: page.waitForSelector: Timeout 45000ms exceeded.\nCall log:\n  - waiting for locator('a[href*=\\'iana.org\\']') to be visible\n"
+      "changed": true,
+      "changedKeys": [
+        "heading",
+        "moreInfoLink"
+      ],
+      "error": null
     }
   ]
 }
