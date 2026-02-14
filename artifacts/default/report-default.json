@@ -1,15 +1,12 @@
 {
-  "generatedAt": "2026-02-14T10:23:33.837Z",
+  "generatedAt": "2026-02-14T12:41:33.217Z",
   "group": "default",
   "summary": [
     {
       "name": "example_h1",
       "type": "page",
-      "changed": true,
-      "changedKeys": [
-        "heading",
-        "moreInfoLink"
-      ],
+      "changed": false,
+      "changedKeys": [],
       "error": null
     }
   ]
