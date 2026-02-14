@@ -2,12 +2,6 @@
   "name": "psa_charizard_price_gem10",
   "type": "psa_price_row",
   "url": "https://www.psacard.com/priceguide/non-sports-tcg-card-values/1999-poke-mon-game/2432",
-  "checkedAt": "2026-02-14T04:08:35.733Z",
-  "data": {
-    "row": "",
-    "grade": "GEM-MT 10",
-    "price": 181900,
-    "raw": "181,900-",
-    "mode": "playwright"
-  }
+  "checkedAt": "2026-02-14T06:40:55.702Z",
+  "error": "TimeoutError: page.waitForSelector: Timeout 45000ms exceeded.\nCall log:\n  - waiting for locator('table') to be visible\n"
 }
