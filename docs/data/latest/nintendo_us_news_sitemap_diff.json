@@ -2,19 +2,17 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-02-13T22:30:00.033Z",
+  "checkedAt": "2026-02-14T01:51:08.928Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 7,
+    "nowCount": 5,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-5-nintendo-switch-sports-part-2/",
-      "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-5-nintendo-switch-sports-part-3/",
-      "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-5-nintendo-switch-sports-part-4/",
       "https://www.nintendo.com/us/whatsnew/games-from-the-virtual-boy-system-are-coming-soon-to-nintendo-switch-online-expansion-pack/",
       "https://www.nintendo.com/us/whatsnew/icon-elements-inspired-by-the-mario-kart-world-game-are-here-for-a-limited-time/",
       "https://www.nintendo.com/us/whatsnew/icon-elements-inspired-by-the-mario-tennis-fever-game-are-here-for-a-limited-time/",
-      "https://www.nintendo.com/us/whatsnew/its-time-to-hit-the-court-in-mario-tennis-fever/"
+      "https://www.nintendo.com/us/whatsnew/its-time-to-hit-the-court-in-mario-tennis-fever/",
+      "https://www.nintendo.com/us/whatsnew/the-reign-of-talon-has-officially-begun-in-overwatch-for-nintendo-switch/"
     ],
     "removed": []
   }
