@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-02-16T12:57:34.461Z",
+  "checkedAt": "2026-02-16T14:39:22.294Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/09/24/dragon-age-the-veilguard-new-trailer-reveals-an-epic-dragon-battle/",
       "https://blog.playstation.com/2024/09/24/dynasty-warriors-origins-launches-january-17-2025-on-ps5/",
       "https://blog.playstation.com/2024/09/24/everything-revealed-in-state-of-play-september-2024/",
       "https://blog.playstation.com/2024/09/24/fear-the-spotlight-launches-oct-22-on-ps5-ps4/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/02/12/yakoh-shinobi-ops-brings-four-player-co-op-shinobi-stealth-action-to-ps5-in-2027/",
       "https://blog.playstation.com/2026/02/13/god-of-war-sons-of-sparta-what-you-need-to-know/",
       "https://blog.playstation.com/2026/02/13/official-playstation-podcast-episode-534-state-of-sparta/",
-      "https://blog.playstation.com/2026/02/13/share-of-the-week-romantic-2/"
+      "https://blog.playstation.com/2026/02/13/share-of-the-week-romantic-2/",
+      "https://blog.playstation.com/2026/02/16/god-of-war-sons-of-sparta-mega-cat-studios-discuss-origins-of-kratos-and-companys-name/"
     ],
     "removed": []
   }
