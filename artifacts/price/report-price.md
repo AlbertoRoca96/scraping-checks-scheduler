@@ -1,9 +1,12 @@
-# Scrape Report (2026-02-17T04:18:38.819Z)
+# Scrape Report (2026-02-17T06:56:35.753Z)
 
-Group: `price`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/22085769704
+Group: `price`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/22088897104
 
 | Check | Changed | Keys | Error |
 |---|:---:|:--|:--|
 | `scrapeme_pikachu_price` | — |  |  |
 | `scrapeme_pikachu_availability` | — |  |  |
-| `psa_charizard_price_gem10` | — |  |  |
+| `psa_charizard_price_gem10` | — |  | `TimeoutError: page.waitForSelector: Timeout 45000ms exceeded.
+Call log:
+  - waiting for locator('table') to be visible
+` |
