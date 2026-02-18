@@ -2,16 +2,12 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-02-18T17:00:27.261Z",
+  "checkedAt": "2026-02-18T18:51:24.522Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 7,
+    "nowCount": 3,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-4-kirby-and-the-forgotten-land-part-1/",
-      "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-4-kirby-and-the-forgotten-land-part-2/",
-      "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-4-kirby-and-the-forgotten-land-part-3/",
-      "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-4-kirby-and-the-forgotten-land-part-4/",
       "https://www.nintendo.com/us/whatsnew/icon-elements-inspired-by-the-mario-tennis-fever-game-are-here-for-a-limited-time/",
       "https://www.nintendo.com/us/whatsnew/nintendo-switch-online-expansion-pack-members-can-now-dive-into-these-stereoscopic-3d-games/",
       "https://www.nintendo.com/us/whatsnew/saddle-up-pilgrim-were-about-to-stirrup-some-fun/"
