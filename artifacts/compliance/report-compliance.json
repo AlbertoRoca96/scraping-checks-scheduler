@@ -1,21 +1,24 @@
 {
-  "generatedAt": "2026-02-19T01:58:16.013Z",
+  "generatedAt": "2026-02-19T04:22:36.807Z",
   "group": "compliance",
   "summary": [
     {
       "name": "psa_charizard_pop_total",
       "type": "psa_pop_row",
-      "changed": false,
-      "changedKeys": [],
-      "error": "Error: row not found: Charizard-Holo 1st Edition"
+      "changed": true,
+      "changedKeys": [
+        "column",
+        "population",
+        "row"
+      ],
+      "error": null
     },
     {
       "name": "sec_aapl_8k_list_hash",
       "type": "content_watch",
       "changed": true,
       "changedKeys": [
-        "hash",
-        "length"
+        "hash"
       ],
       "error": null
     }
