@@ -2,10 +2,10 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-02-19T08:40:18.204Z",
+  "checkedAt": "2026-02-19T10:40:14.260Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 13,
+    "nowCount": 14,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-1-game-builder-garage-part-1/",
@@ -19,6 +19,7 @@
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-3-big-brain-academy-brain-vs-brain-part-1/",
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-3-big-brain-academy-brain-vs-brain-part-2/",
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-3-big-brain-academy-brain-vs-brain-part-3/",
+      "https://www.nintendo.com/us/whatsnew/nintendo-launches-my-mario-product-line-in-the-united-states/",
       "https://www.nintendo.com/us/whatsnew/nintendo-switch-online-expansion-pack-members-can-now-dive-into-these-stereoscopic-3d-games/",
       "https://www.nintendo.com/us/whatsnew/saddle-up-pilgrim-were-about-to-stirrup-some-fun/"
     ],
