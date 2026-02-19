@@ -2,7 +2,7 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-02-19T12:59:47.616Z",
+  "checkedAt": "2026-02-19T14:44:05.855Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
@@ -10,7 +10,6 @@
     "added": [
       "https://blog.playstation.com/2024/09/24/dynasty-warriors-origins-launches-january-17-2025-on-ps5/",
       "https://blog.playstation.com/2024/09/24/everything-revealed-in-state-of-play-september-2024/",
-      "https://blog.playstation.com/2024/09/24/introducing-dualsense-wireless-controller-fortnite-limited-edition/",
       "https://blog.playstation.com/2024/09/24/legacy-of-kain-soul-reaver-1-2-remastered-launches-on-ps5-ps4-dec-10/",
       "https://blog.playstation.com/2024/09/25/dynasty-warriors-origins-hands-on-report/",
       "https://blog.playstation.com/2024/09/25/first-look-report-ps5-pro-games/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/02/13/share-of-the-week-romantic-2/",
       "https://blog.playstation.com/2026/02/16/god-of-war-sons-of-sparta-mega-cat-studios-discuss-origins-of-kratos-and-companys-name/",
       "https://blog.playstation.com/2026/02/16/how-open-world-soulslike-deckbuilder-death-howl-was-built/",
-      "https://blog.playstation.com/2026/02/18/11-indie-gems-to-look-forward-to-in-2026/"
+      "https://blog.playstation.com/2026/02/18/11-indie-gems-to-look-forward-to-in-2026/",
+      "https://blog.playstation.com/2026/02/19/rager-brings-the-beat-to-playstation-vr2-on-march-5/"
     ],
     "removed": []
   }
