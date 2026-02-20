@@ -2,7 +2,7 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-02-19T22:28:49.393Z",
+  "checkedAt": "2026-02-20T01:53:17.428Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
@@ -10,7 +10,9 @@
     "added": [
       "https://blog.playstation.com/2024/09/24/dynasty-warriors-origins-launches-january-17-2025-on-ps5/",
       "https://blog.playstation.com/2024/09/24/everything-revealed-in-state-of-play-september-2024/",
+      "https://blog.playstation.com/2024/09/24/introducing-dualsense-wireless-controller-fortnite-limited-edition/",
       "https://blog.playstation.com/2024/09/24/legacy-of-kain-soul-reaver-1-2-remastered-launches-on-ps5-ps4-dec-10/",
+      "https://blog.playstation.com/2024/09/24/towers-of-aghasba-launches-on-ps5-november-2024-in-early-access/",
       "https://blog.playstation.com/2024/09/25/dynasty-warriors-origins-hands-on-report/",
       "https://blog.playstation.com/2024/09/25/first-look-report-ps5-pro-games/",
       "https://blog.playstation.com/2024/09/25/gran-turismo-world-series-2024-round-3-live-in-tokyo-september-28/",
@@ -745,8 +747,6 @@
       "https://blog.playstation.com/2026/01/16/arknights-endfield-hits-ps5-on-january-22-new-action-rpg-gameplay-details-revealed/",
       "https://blog.playstation.com/2026/01/16/share-of-the-week-clair-obscur-expedition-33/",
       "https://blog.playstation.com/2026/01/19/marathon-releases-march-5-new-limited-edition-dualsense-controller-revealed/",
-      "https://blog.playstation.com/2026/01/21/fatal-frame-ii-crimson-butterfly-remake-devs-talk-classic-terror-and-new-mechanics/",
-      "https://blog.playstation.com/2026/01/21/mechborn-a-fresh-roguelike-deckbuilder-from-the-heart-of-brazil/",
       "https://blog.playstation.com/2026/01/22/fable-launches-on-ps5-autumn-2026/",
       "https://blog.playstation.com/2026/01/22/kiln-an-online-multiplayer-pottery-party-brawler-comes-to-ps5-in-2026/",
       "https://blog.playstation.com/2026/01/23/official-playstation-podcast-episode-532-refreshed-rejuvenated/",
