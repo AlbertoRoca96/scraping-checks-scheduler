@@ -2,17 +2,16 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-02-21T14:24:07.914Z",
+  "checkedAt": "2026-02-21T16:25:16.752Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 5,
+    "nowCount": 4,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/free-update-for-mario-kart-world-lets-you-race-as-a-team-in-knockout-tour/",
       "https://www.nintendo.com/us/whatsnew/nintendo-launches-my-mario-product-line-in-the-united-states/",
       "https://www.nintendo.com/us/whatsnew/pokemon-firered-version-and-pokemon-leafgreen-version-are-coming-to-nintendo-switch-in-multiple-languages/",
-      "https://www.nintendo.com/us/whatsnew/tracks-from-pokemon-firered-version-and-pokemon-leafgreen-version-added-to-nintendo-music/",
-      "https://www.nintendo.com/us/whatsnew/xenoblade-chronicles-x-definitive-edition-nintendo-switch-2-edition-brings-enhanced-visuals-to-its-massive-world-available-today/"
+      "https://www.nintendo.com/us/whatsnew/tracks-from-pokemon-firered-version-and-pokemon-leafgreen-version-added-to-nintendo-music/"
     ],
     "removed": []
   }
