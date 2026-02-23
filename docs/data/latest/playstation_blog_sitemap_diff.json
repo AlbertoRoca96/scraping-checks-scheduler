@@ -2,14 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-02-23T16:54:15.865Z",
+  "checkedAt": "2026-02-23T18:58:55.933Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2024/09/24/everything-revealed-in-state-of-play-september-2024/",
-      "https://blog.playstation.com/2024/09/24/legacy-of-kain-soul-reaver-1-2-remastered-launches-on-ps5-ps4-dec-10/",
       "https://blog.playstation.com/2024/09/25/dynasty-warriors-origins-hands-on-report/",
       "https://blog.playstation.com/2024/09/25/first-look-report-ps5-pro-games/",
       "https://blog.playstation.com/2024/09/25/gran-turismo-world-series-2024-round-3-live-in-tokyo-september-28/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/02/16/how-open-world-soulslike-deckbuilder-death-howl-was-built/",
       "https://blog.playstation.com/2026/02/18/11-indie-gems-to-look-forward-to-in-2026/",
       "https://blog.playstation.com/2026/02/19/rager-brings-the-beat-to-playstation-vr2-on-march-5/",
-      "https://blog.playstation.com/2026/02/20/share-of-the-week-nioh-3/"
+      "https://blog.playstation.com/2026/02/20/share-of-the-week-nioh-3/",
+      "https://blog.playstation.com/2026/02/23/revival-recolonization-hits-ps4-ps5-on-february-26/"
     ],
     "removed": []
   }
