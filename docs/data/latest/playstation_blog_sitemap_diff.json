@@ -2,15 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-02-24T14:46:09.428Z",
+  "checkedAt": "2026-02-24T17:03:17.708Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2024/09/25/dynasty-warriors-origins-hands-on-report/",
-      "https://blog.playstation.com/2024/09/25/first-look-report-ps5-pro-games/",
-      "https://blog.playstation.com/2024/09/25/gran-turismo-world-series-2024-round-3-live-in-tokyo-september-28/",
       "https://blog.playstation.com/2024/09/25/like-a-dragon-pirate-yakuza-in-hawaii-hands-on-report/",
       "https://blog.playstation.com/2024/09/25/monster-hunter-wilds-hands-on-with-the-opening-missions/",
       "https://blog.playstation.com/2024/09/26/the-last-of-us-joins-playstations-30th-anniversary-celebrations/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2026/02/19/rager-brings-the-beat-to-playstation-vr2-on-march-5/",
       "https://blog.playstation.com/2026/02/20/share-of-the-week-nioh-3/",
       "https://blog.playstation.com/2026/02/23/revival-recolonization-hits-ps4-ps5-on-february-26/",
-      "https://blog.playstation.com/2026/02/24/death-stranding-2-pc-specs-detailed-out-march-19/"
+      "https://blog.playstation.com/2026/02/24/death-stranding-2-pc-specs-detailed-out-march-19/",
+      "https://blog.playstation.com/2026/02/24/life-is-strange-reunion-hands-on-report-highlights-six-reasons-to-get-excited-for-march-26/",
+      "https://blog.playstation.com/2026/02/24/scott-pilgrim-ex-enter-casa-vania-meet-goth-neil-and-lady-envy/"
     ],
     "removed": []
   }
