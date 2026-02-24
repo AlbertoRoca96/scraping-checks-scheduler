@@ -1,6 +1,6 @@
-# Scrape Report (2026-02-24T17:09:14.233Z)
+# Scrape Report (2026-02-24T18:59:27.110Z)
 
-Group: `price`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/22361372551
+Group: `price`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/22365583301
 
 | Check | Changed | Keys | Error |
 |---|:---:|:--|:--|
