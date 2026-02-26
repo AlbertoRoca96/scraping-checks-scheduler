@@ -2,14 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-02-26T13:00:04.294Z",
+  "checkedAt": "2026-02-26T14:43:27.063Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2024/09/25/dynasty-warriors-origins-hands-on-report/",
-      "https://blog.playstation.com/2024/09/25/first-look-report-ps5-pro-games/",
       "https://blog.playstation.com/2024/09/25/like-a-dragon-pirate-yakuza-in-hawaii-hands-on-report/",
       "https://blog.playstation.com/2024/09/25/monster-hunter-wilds-hands-on-with-the-opening-missions/",
       "https://blog.playstation.com/2024/09/26/the-last-of-us-joins-playstations-30th-anniversary-celebrations/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/02/24/death-stranding-2-pc-specs-detailed-out-march-19/",
       "https://blog.playstation.com/2026/02/24/life-is-strange-reunion-hands-on-report-highlights-six-reasons-to-get-excited-for-march-26/",
       "https://blog.playstation.com/2026/02/24/scott-pilgrim-ex-enter-casa-vania-meet-goth-neil-and-lady-envy/",
-      "https://blog.playstation.com/2026/02/25/playstation-plus-monthly-games-for-march-pga-tour-2k25-monster-hunter-rise-slime-rancher-2-the-elder-scrolls-online-collection-gold-road/"
+      "https://blog.playstation.com/2026/02/25/playstation-plus-monthly-games-for-march-pga-tour-2k25-monster-hunter-rise-slime-rancher-2-the-elder-scrolls-online-collection-gold-road/",
+      "https://blog.playstation.com/2026/02/26/unlock-god-of-war-sons-of-spartas-toughest-challenge-in-the-pit/"
     ],
     "removed": []
   }
