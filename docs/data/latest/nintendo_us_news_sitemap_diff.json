@@ -2,10 +2,10 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-02-26T18:50:49.835Z",
+  "checkedAt": "2026-02-26T20:34:24.822Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 18,
+    "nowCount": 14,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-1-game-builder-garage-part-1/",
@@ -21,11 +21,7 @@
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-3-big-brain-academy-brain-vs-brain-part-3/",
       "https://www.nintendo.com/us/whatsnew/catch-new-gameplay-footage-of-two-upcoming-nintendo-switch-2-games/",
       "https://www.nintendo.com/us/whatsnew/celebrate-pokemon-day-at-nintendo-new-york-and-nintendo-san-francisco/",
-      "https://www.nintendo.com/us/whatsnew/enjoy-your-return-to-the-surface-in-fallout-4-anniversary-edition/",
-      "https://www.nintendo.com/us/whatsnew/free-update-for-mario-kart-world-lets-you-race-as-a-team-in-knockout-tour/",
-      "https://www.nintendo.com/us/whatsnew/heres-the-latest-nintendo-switch-online-news-from-february-2026/",
-      "https://www.nintendo.com/us/whatsnew/saddle-up-pilgrim-were-about-to-stirrup-some-fun/",
-      "https://www.nintendo.com/us/whatsnew/tracks-from-pokemon-firered-version-and-pokemon-leafgreen-version-added-to-nintendo-music/"
+      "https://www.nintendo.com/us/whatsnew/heres-the-latest-nintendo-switch-online-news-from-february-2026/"
     ],
     "removed": []
   }
