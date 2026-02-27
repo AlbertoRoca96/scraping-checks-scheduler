@@ -2,12 +2,13 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-02-27T20:25:14.293Z",
+  "checkedAt": "2026-02-27T22:20:33.034Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 16,
+    "nowCount": 18,
     "prevCount": 0,
     "added": [
+      "https://www.nintendo.com/us/whatsnew/a-new-era-of-survival-horror-arrives-with-resident-evil-requiem/",
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-1-game-builder-garage-part-1/",
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-1-game-builder-garage-part-2/",
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-1-game-builder-garage-part-3/",
@@ -22,6 +23,7 @@
       "https://www.nintendo.com/us/whatsnew/celebrate-pokemon-day-at-nintendo-new-york-and-nintendo-san-francisco/",
       "https://www.nintendo.com/us/whatsnew/happy-pokemon-day-everyone-lets-celebrate-30-years-of-pokemon/",
       "https://www.nintendo.com/us/whatsnew/heres-the-latest-nintendo-switch-online-news-from-february-2026/",
+      "https://www.nintendo.com/us/whatsnew/my-nintendo-february-wrap-up-2026/",
       "https://www.nintendo.com/us/whatsnew/pokemon-firered-version-and-pokemon-leafgreen-version-are-coming-to-nintendo-switch-in-multiple-languages/",
       "https://www.nintendo.com/us/whatsnew/pokemon-firered-version-and-pokemon-leafgreen-version-are-now-available/"
     ],
