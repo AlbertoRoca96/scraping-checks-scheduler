@@ -2,14 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-02-27T12:53:49.129Z",
+  "checkedAt": "2026-02-27T14:37:23.735Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/09/25/dynasty-warriors-origins-hands-on-report/",
-      "https://blog.playstation.com/2024/09/25/monster-hunter-wilds-hands-on-with-the-opening-missions/",
       "https://blog.playstation.com/2024/09/26/the-last-of-us-joins-playstations-30th-anniversary-celebrations/",
       "https://blog.playstation.com/2024/09/26/tokyo-game-show-2024-playstation-booth-recap-hands-on-report/",
       "https://blog.playstation.com/2024/09/27/official-playstation-podcast-episode-495-play-date/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2026/02/24/scott-pilgrim-ex-enter-casa-vania-meet-goth-neil-and-lady-envy/",
       "https://blog.playstation.com/2026/02/25/playstation-plus-monthly-games-for-march-pga-tour-2k25-monster-hunter-rise-slime-rancher-2-the-elder-scrolls-online-collection-gold-road/",
       "https://blog.playstation.com/2026/02/26/the-legacy-of-kain-defiance-remastered-restores-lost-content-and-demo-out-march-3/",
-      "https://blog.playstation.com/2026/02/26/unlock-god-of-war-sons-of-spartas-toughest-challenge-in-the-pit/"
+      "https://blog.playstation.com/2026/02/26/unlock-god-of-war-sons-of-spartas-toughest-challenge-in-the-pit/",
+      "https://blog.playstation.com/2026/02/27/upgraded-pssr-upscaler-is-coming-to-ps5-pro/",
+      "https://blog.playstation.com/2026/02/27/where-winds-meet-launches-new-hexi-expansion-on-march-5/"
     ],
     "removed": []
   }
