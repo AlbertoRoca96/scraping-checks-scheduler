@@ -2,15 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-03-02T14:40:27.807Z",
+  "checkedAt": "2026-03-02T16:41:41.907Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/09/30/starship-troopers-continuums-upgrade-and-perk-system-leans-into-the-original-sci-fi-films-mythology/",
       "https://blog.playstation.com/2024/10/01/baldurs-gate-3-patch-7-storms-onto-ps5-today/",
-      "https://blog.playstation.com/2024/10/01/players-choice-vote-for-september-2024s-best-new-game/",
       "https://blog.playstation.com/2024/10/01/silent-hill-2-new-gameplay-reveals-intense-flesh-lip-boss-fight-and-introduces-laura/",
       "https://blog.playstation.com/2024/10/02/undisputed-launches-oct-11-how-body-scans-deliver-boxing-authenticity/",
       "https://blog.playstation.com/2024/10/03/metro-awakening-adapts-classic-gameplay-mechanics-for-ps-vr2/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2026/02/27/official-playstation-podcast-episode-535-returning-residents/",
       "https://blog.playstation.com/2026/02/27/share-of-the-week-framing/",
       "https://blog.playstation.com/2026/02/27/upgraded-pssr-upscaler-is-coming-to-ps5-pro/",
-      "https://blog.playstation.com/2026/02/27/where-winds-meet-launches-new-hexi-expansion-on-march-5/"
+      "https://blog.playstation.com/2026/02/27/where-winds-meet-launches-new-hexi-expansion-on-march-5/",
+      "https://blog.playstation.com/2026/03/02/bringing-ill-to-life-how-the-dev-translates-horror-filmmaking-chops-into-the-game/",
+      "https://blog.playstation.com/2026/03/02/players-choice-vote-for-february-2026s-best-new-game/"
     ],
     "removed": []
   }
