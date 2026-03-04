@@ -2,12 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-03-03T22:25:52.928Z",
+  "checkedAt": "2026-03-04T01:50:57.861Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
+      "https://blog.playstation.com/2024/10/02/undisputed-launches-oct-11-how-body-scans-deliver-boxing-authenticity/",
       "https://blog.playstation.com/2024/10/03/metro-awakening-adapts-classic-gameplay-mechanics-for-ps-vr2/",
       "https://blog.playstation.com/2024/10/04/share-of-the-week-astro-bot-levels/",
       "https://blog.playstation.com/2024/10/07/metaphor-refantazio-hands-on-report/",
@@ -744,7 +745,6 @@
       "https://blog.playstation.com/2026/01/29/dragon-quest-vii-reimagined-interview-hand-crafted-dolls-overhauled-ui-nostalgia-and-more/",
       "https://blog.playstation.com/2026/01/29/resident-evil-requiem-interview-chainsaws-reinvented-zombies-fear-balancing-and-more/",
       "https://blog.playstation.com/2026/01/30/share-of-the-week-speed/",
-      "https://blog.playstation.com/2026/02/02/players-choice-vote-for-january-2026s-best-new-game/",
       "https://blog.playstation.com/2026/02/03/mlb-the-show-26-gameplay-revealed/",
       "https://blog.playstation.com/2026/02/04/how-john-carpenters-toxic-commando-came-to-life-out-march-12/",
       "https://blog.playstation.com/2026/02/04/playstation-store-january-2026s-top-downloads/",
