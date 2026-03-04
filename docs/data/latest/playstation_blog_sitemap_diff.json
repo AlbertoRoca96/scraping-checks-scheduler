@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-03-04T14:36:18.929Z",
+  "checkedAt": "2026-03-04T16:40:27.268Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/10/04/share-of-the-week-astro-bot-levels/",
       "https://blog.playstation.com/2024/10/07/metaphor-refantazio-hands-on-report/",
       "https://blog.playstation.com/2024/10/07/onslaught-salvation-awaits-in-destiny-2-revenant-live-october-8/",
       "https://blog.playstation.com/2024/10/08/beat-saber-britney-spears-music-pack-launches-today-features-11-songs/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/03/03/play-as-the-bugs-in-starship-troopers-ultimate-bug-war-out-march-16/",
       "https://blog.playstation.com/2026/03/03/tides-of-tomorrow-how-players-will-impact-one-anothers-solo-adventures-out-april-22/",
       "https://blog.playstation.com/2026/03/04/control-resonant-a-deep-dive-into-combat-buildcrafting-and-player-choice/",
-      "https://blog.playstation.com/2026/03/04/crimson-desert-hands-on-report-four-hours-in-the-rpgs-massive-open-world/"
+      "https://blog.playstation.com/2026/03/04/crimson-desert-hands-on-report-four-hours-in-the-rpgs-massive-open-world/",
+      "https://blog.playstation.com/2026/03/04/the-warhammer-racer-speed-freeks-is-coming-to-ps5/"
     ],
     "removed": []
   }
