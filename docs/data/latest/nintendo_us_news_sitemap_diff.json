@@ -2,10 +2,10 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-03-05T20:34:37.320Z",
+  "checkedAt": "2026-03-05T22:28:43.720Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 9,
+    "nowCount": 10,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/by-director-mr-sakurai-kirby-air-riders-development-insights-part-1/",
@@ -16,6 +16,7 @@
       "https://www.nintendo.com/us/whatsnew/mar10-day-sale-save-on-select-games-featuring-mario-and-friends/",
       "https://www.nintendo.com/us/whatsnew/mobile-news-wonder-flowers-arrive-for-a-super-mario-run-special-event/",
       "https://www.nintendo.com/us/whatsnew/new-indie-world-showcase-spotlights-upcoming-games-on-nintendo-switch-2-and-nintendo-switch/",
+      "https://www.nintendo.com/us/whatsnew/shape-the-world-and-build-a-cozy-new-life-in-pokemon-pokopia-available-now/",
       "https://www.nintendo.com/us/whatsnew/the-making-of-the-music-of-kirby-air-riders-part-1/"
     ],
     "removed": []
