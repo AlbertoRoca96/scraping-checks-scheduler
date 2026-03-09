@@ -2,12 +2,14 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-03-09T20:31:23.817Z",
+  "checkedAt": "2026-03-09T22:25:48.953Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 1,
+    "nowCount": 3,
     "prevCount": 0,
     "added": [
+      "https://www.nintendo.com/us/whatsnew/a-second-kirby-air-riders-direct-presentation-shares-more-new-features-modes-and-customizable-fun/",
+      "https://www.nintendo.com/us/whatsnew/march-in-store-events-coming-to-nintendo-new-york-and-nintendo-san-francisco/",
       "https://www.nintendo.com/us/whatsnew/see-what-games-are-arriving-this-march-2026/"
     ],
     "removed": []
