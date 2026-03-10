@@ -2,14 +2,16 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-03-10T18:42:56.589Z",
+  "checkedAt": "2026-03-10T20:30:48.707Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 7,
+    "nowCount": 9,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/a-second-kirby-air-riders-direct-presentation-shares-more-new-features-modes-and-customizable-fun/",
+      "https://www.nintendo.com/us/whatsnew/a-trunk-load-of-fun-awaits-in-bellabel-park-exclusively-for-nintendo-switch-2/",
       "https://www.nintendo.com/us/whatsnew/lego-mario-kart-levels-up-super-mario-line-up-with-luigi-and-the-first-ever-large-scale-mach-8-kart-set/",
+      "https://www.nintendo.com/us/whatsnew/mar10-day-returns-with-festivities-for-fans-of-all-ages-in-honor-of-the-super-mario-bros-40th-anniversary-and-the-super-mario-galaxy-movie/",
       "https://www.nintendo.com/us/whatsnew/march-in-store-events-coming-to-nintendo-new-york-and-nintendo-san-francisco/",
       "https://www.nintendo.com/us/whatsnew/new-update-for-nintendo-switch-online-expansion-pack-members-mar-2026/",
       "https://www.nintendo.com/us/whatsnew/nintendo-kicks-off-mar10-day-with-a-new-look-at-the-super-mario-galaxy-movie/",
