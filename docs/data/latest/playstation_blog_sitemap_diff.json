@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-03-10T14:44:36.123Z",
+  "checkedAt": "2026-03-10T16:54:25.454Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/10/11/official-playstation-podcast-episode-496-welcome-to-silent-hill-2/",
       "https://blog.playstation.com/2024/10/14/new-dragon-quest-iii-hd-2d-remake-gameplay-focuses-on-one-of-the-games-optional-quests/",
       "https://blog.playstation.com/2024/10/14/squirrel-with-a-gun-launches-tomorrow-first-look-at-upcoming-free-updates/",
       "https://blog.playstation.com/2024/10/15/announcing-playstation-the-concert-world-tour-2025-2026/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/03/09/big-walk-hands-on-report-cooperative-chaos-exploring-a-puzzle-filled-open-world/",
       "https://blog.playstation.com/2026/03/09/ghost-of-yotei-legends-everything-you-need-to-know-about-the-online-co-op-multiplayer-mode/",
       "https://blog.playstation.com/2026/03/09/lous-lagoon-soars-onto-ps5-later-this-year/",
-      "https://blog.playstation.com/2026/03/10/helldivers-2-entrenched-division-premium-warbond-out-march-17/"
+      "https://blog.playstation.com/2026/03/10/helldivers-2-entrenched-division-premium-warbond-out-march-17/",
+      "https://blog.playstation.com/2026/03/10/invincible-vs-open-beta-runs-april-9-to-12-training-mode-details-revealed/"
     ],
     "removed": []
   }
