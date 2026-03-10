@@ -2,7 +2,7 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-03-10T16:54:25.454Z",
+  "checkedAt": "2026-03-10T18:42:53.000Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
@@ -807,7 +807,7 @@
       "https://blog.playstation.com/2026/03/09/ghost-of-yotei-legends-everything-you-need-to-know-about-the-online-co-op-multiplayer-mode/",
       "https://blog.playstation.com/2026/03/09/lous-lagoon-soars-onto-ps5-later-this-year/",
       "https://blog.playstation.com/2026/03/10/helldivers-2-entrenched-division-premium-warbond-out-march-17/",
-      "https://blog.playstation.com/2026/03/10/invincible-vs-open-beta-runs-april-9-to-12-training-mode-details-revealed/"
+      "https://blog.playstation.com/2026/03/10/invincible-vs-open-beta-runs-april-9-to-11-training-mode-details-revealed/"
     ],
     "removed": []
   }
