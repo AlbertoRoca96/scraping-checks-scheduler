@@ -2,7 +2,7 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-03-11T12:54:38.843Z",
+  "checkedAt": "2026-03-11T14:43:03.202Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
@@ -10,7 +10,6 @@
     "added": [
       "https://blog.playstation.com/2024/10/11/official-playstation-podcast-episode-496-welcome-to-silent-hill-2/",
       "https://blog.playstation.com/2024/10/11/share-of-the-week-spooky-settings/",
-      "https://blog.playstation.com/2024/10/11/tomb-raider-iv-vi-remastered-launches-feb-14-2025/",
       "https://blog.playstation.com/2024/10/14/new-dragon-quest-iii-hd-2d-remake-gameplay-focuses-on-one-of-the-games-optional-quests/",
       "https://blog.playstation.com/2024/10/14/squirrel-with-a-gun-launches-tomorrow-first-look-at-upcoming-free-updates/",
       "https://blog.playstation.com/2024/10/15/announcing-playstation-the-concert-world-tour-2025-2026/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/03/09/ghost-of-yotei-legends-everything-you-need-to-know-about-the-online-co-op-multiplayer-mode/",
       "https://blog.playstation.com/2026/03/09/lous-lagoon-soars-onto-ps5-later-this-year/",
       "https://blog.playstation.com/2026/03/10/helldivers-2-entrenched-division-premium-warbond-out-march-17/",
-      "https://blog.playstation.com/2026/03/10/invincible-vs-open-beta-runs-april-9-to-11-training-mode-details-revealed/"
+      "https://blog.playstation.com/2026/03/10/invincible-vs-open-beta-runs-april-9-to-11-training-mode-details-revealed/",
+      "https://blog.playstation.com/2026/03/11/gran-turismo-7-free-update-1-68-available-today/"
     ],
     "removed": []
   }
