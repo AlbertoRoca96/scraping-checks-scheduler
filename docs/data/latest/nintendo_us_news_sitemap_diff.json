@@ -2,16 +2,15 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-03-12T18:51:09.694Z",
+  "checkedAt": "2026-03-12T20:31:30.683Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 5,
+    "nowCount": 4,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/a-trunk-load-of-fun-awaits-in-bellabel-park-exclusively-for-nintendo-switch-2/",
-      "https://www.nintendo.com/us/whatsnew/crack-open-the-latest-trailer-for-yoshis-next-adventure/",
       "https://www.nintendo.com/us/whatsnew/lego-mario-kart-levels-up-super-mario-line-up-with-luigi-and-the-first-ever-large-scale-mach-8-kart-set/",
       "https://www.nintendo.com/us/whatsnew/metroid-prime-1-3-a-visual-retrospective-artbook-arrives-on-oct-28/",
+      "https://www.nintendo.com/us/whatsnew/nintendo-inspired-custom-designs-are-here-for-animal-crossing-new-horizons/",
       "https://www.nintendo.com/us/whatsnew/nintendo-kicks-off-mar10-day-with-a-new-look-at-the-super-mario-galaxy-movie/"
     ],
     "removed": []
