@@ -2,14 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-03-13T14:40:09.748Z",
+  "checkedAt": "2026-03-13T16:37:19.487Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/10/16/introducing-the-cast-of-clair-obscur-expedition-33/",
-      "https://blog.playstation.com/2024/10/17/behind-the-new-soundtrack-for-until-dawn/",
       "https://blog.playstation.com/2024/10/17/horizon-zero-dawn-remastered-a-deep-dive-into-its-enhancements/",
       "https://blog.playstation.com/2024/10/18/marvels-spider-man-2-arrives-on-pc-january-2025/",
       "https://blog.playstation.com/2024/10/18/official-playstation-podcast-episode-497-aim-down-sights-on-october-frights/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2026/03/11/playstation-plus-game-catalog-for-march-warhammer-40000-space-marine-2-ea-sports-madden-nfl-26-persona-5-royal-blasphemous-2-and-more/",
       "https://blog.playstation.com/2026/03/12/little-nightmares-vr-altered-echoes-launches-on-ps-vr2-april-24/",
       "https://blog.playstation.com/2026/03/12/prepare-for-monster-hunter-stories-3-on-march-13-with-a-recap-of-the-rpg-series-so-far/",
-      "https://blog.playstation.com/2026/03/12/tomb-raider-i-iii-remastered-new-outfits-and-challenge-mode-added-in-free-update-today/"
+      "https://blog.playstation.com/2026/03/12/tomb-raider-i-iii-remastered-new-outfits-and-challenge-mode-added-in-free-update-today/",
+      "https://blog.playstation.com/2026/03/13/mlb-the-show-26-welcomes-new-legends-and-brings-the-world-baseball-classic-to-the-game/",
+      "https://blog.playstation.com/2026/03/13/the-seven-deadly-sins-origin-ps5-features-detailed-launches-march-16/"
     ],
     "removed": []
   }
