@@ -2,16 +2,14 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-03-13T16:37:19.487Z",
+  "checkedAt": "2026-03-13T18:37:50.297Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/10/17/horizon-zero-dawn-remastered-a-deep-dive-into-its-enhancements/",
       "https://blog.playstation.com/2024/10/18/marvels-spider-man-2-arrives-on-pc-january-2025/",
       "https://blog.playstation.com/2024/10/18/official-playstation-podcast-episode-497-aim-down-sights-on-october-frights/",
-      "https://blog.playstation.com/2024/10/18/share-of-the-week-scared/",
       "https://blog.playstation.com/2024/10/21/awaken-astral-blade-an-inside-look-at-sci-fi-inspiration-out-tomorrow/",
       "https://blog.playstation.com/2024/10/21/call-of-duty-black-ops-6-everything-you-need-to-know-ahead-of-oct-25-launch/",
       "https://blog.playstation.com/2024/10/22/legacy-of-kain-soul-reaver-1-2-remastered-first-look-at-bosses-new-map-details/",
@@ -807,6 +805,8 @@
       "https://blog.playstation.com/2026/03/12/prepare-for-monster-hunter-stories-3-on-march-13-with-a-recap-of-the-rpg-series-so-far/",
       "https://blog.playstation.com/2026/03/12/tomb-raider-i-iii-remastered-new-outfits-and-challenge-mode-added-in-free-update-today/",
       "https://blog.playstation.com/2026/03/13/mlb-the-show-26-welcomes-new-legends-and-brings-the-world-baseball-classic-to-the-game/",
+      "https://blog.playstation.com/2026/03/13/official-playstation-podcast-episode-536-legendary-cooperation/",
+      "https://blog.playstation.com/2026/03/13/share-of-the-week-prize/",
       "https://blog.playstation.com/2026/03/13/the-seven-deadly-sins-origin-ps5-features-detailed-launches-march-16/"
     ],
     "removed": []
