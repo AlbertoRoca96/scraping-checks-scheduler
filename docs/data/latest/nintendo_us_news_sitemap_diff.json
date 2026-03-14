@@ -2,15 +2,14 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-03-14T16:27:56.402Z",
+  "checkedAt": "2026-03-14T18:34:44.122Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 3,
+    "nowCount": 2,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/by-director-mr-sakurai-kirby-air-riders-development-insights-part-1/",
-      "https://www.nintendo.com/us/whatsnew/by-director-mr-sakurai-kirby-air-riders-development-insights-part-2/",
-      "https://www.nintendo.com/us/whatsnew/nintendo-inspired-custom-designs-are-here-for-animal-crossing-new-horizons/"
+      "https://www.nintendo.com/us/whatsnew/by-director-mr-sakurai-kirby-air-riders-development-insights-part-2/"
     ],
     "removed": []
   }
