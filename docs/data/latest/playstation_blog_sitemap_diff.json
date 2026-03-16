@@ -2,14 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-03-16T14:56:50.069Z",
+  "checkedAt": "2026-03-16T16:59:21.244Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/10/21/awaken-astral-blade-an-inside-look-at-sci-fi-inspiration-out-tomorrow/",
-      "https://blog.playstation.com/2024/10/21/call-of-duty-black-ops-6-everything-you-need-to-know-ahead-of-oct-25-launch/",
       "https://blog.playstation.com/2024/10/22/legacy-of-kain-soul-reaver-1-2-remastered-first-look-at-bosses-new-map-details/",
       "https://blog.playstation.com/2024/10/22/vendetta-forever-ps-vr2-features-detailed/",
       "https://blog.playstation.com/2024/10/23/monster-hunter-wilds-open-beta-test-launches-on-ps5-next-week/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2026/03/13/mlb-the-show-26-welcomes-new-legends-and-brings-the-world-baseball-classic-to-the-game/",
       "https://blog.playstation.com/2026/03/13/official-playstation-podcast-episode-536-legendary-cooperation/",
       "https://blog.playstation.com/2026/03/13/share-of-the-week-prize/",
-      "https://blog.playstation.com/2026/03/13/the-seven-deadly-sins-origin-ps5-features-detailed-launches-march-16/"
+      "https://blog.playstation.com/2026/03/13/the-seven-deadly-sins-origin-ps5-features-detailed-launches-march-16/",
+      "https://blog.playstation.com/2026/03/16/borderlands-4-new-vault-hunter-c4sh-the-rogue-rolls-in-march-26/",
+      "https://blog.playstation.com/2026/03/16/upgraded-pssr-rolling-out-to-silent-hill-f-monster-hunter-wilds-final-fantasy-vii-rebirth-crimson-desert-and-more/"
     ],
     "removed": []
   }
