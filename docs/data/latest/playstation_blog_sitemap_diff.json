@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-03-17T13:06:00.382Z",
+  "checkedAt": "2026-03-17T14:53:16.632Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/10/22/legacy-of-kain-soul-reaver-1-2-remastered-first-look-at-bosses-new-map-details/",
       "https://blog.playstation.com/2024/10/23/monster-hunter-wilds-open-beta-test-launches-on-ps5-next-week/",
       "https://blog.playstation.com/2024/10/23/no-mans-skys-halloween-expedition-the-cursed-is-out-today/",
       "https://blog.playstation.com/2024/10/23/towers-of-aghasba-launches-into-early-access-november-19-first-look-at-new-gameplay-with-dev-insights/",
@@ -807,6 +806,7 @@
       "https://blog.playstation.com/2026/03/13/the-seven-deadly-sins-origin-ps5-features-detailed-launches-march-16/",
       "https://blog.playstation.com/2026/03/16/borderlands-4-new-vault-hunter-c4sh-the-rogue-rolls-in-march-26/",
       "https://blog.playstation.com/2026/03/16/upgraded-pssr-rolling-out-to-silent-hill-f-monster-hunter-wilds-final-fantasy-vii-rebirth-crimson-desert-and-more/",
+      "https://blog.playstation.com/2026/03/17/death-stranding-2-new-pc-ps5-features-detailed-live-march-19/",
       "https://blog.playstation.com/2026/03/17/new-playstation-portal-software-update-adds-1080p-high-quality-mode-and-ux-refinements/"
     ],
     "removed": []
