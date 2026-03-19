@@ -2,12 +2,16 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-03-19T02:00:26.015Z",
+  "checkedAt": "2026-03-19T04:28:53.908Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 6,
+    "nowCount": 10,
     "prevCount": 0,
     "added": [
+      "https://www.nintendo.com/us/whatsnew/by-director-mr-sakurai-kirby-air-riders-development-insights-part-1/",
+      "https://www.nintendo.com/us/whatsnew/by-director-mr-sakurai-kirby-air-riders-development-insights-part-2/",
+      "https://www.nintendo.com/us/whatsnew/by-director-mr-sakurai-kirby-air-riders-development-insights-part-3/",
+      "https://www.nintendo.com/us/whatsnew/by-director-mr-sakurai-kirby-air-riders-development-insights-part-4/",
       "https://www.nintendo.com/us/whatsnew/july-update-two-game-boy-games-are-now-available-for-nintendo-switch-online-members/",
       "https://www.nintendo.com/us/whatsnew/mlb-the-show-26-is-now-available-for-nintendo-switch-ready-to-leave-your-mark/",
       "https://www.nintendo.com/us/whatsnew/mobilenews-pikmin-bloom-celebrates-2-5-years-of-fun-with-anniversary-events/",
