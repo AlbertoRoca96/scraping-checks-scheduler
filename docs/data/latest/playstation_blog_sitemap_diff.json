@@ -2,12 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-03-19T22:25:34.197Z",
+  "checkedAt": "2026-03-20T01:54:25.645Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
+      "https://blog.playstation.com/2024/10/23/monster-hunter-wilds-open-beta-test-launches-on-ps5-next-week/",
       "https://blog.playstation.com/2024/10/24/10-great-horror-games-available-with-playstation-plus/",
       "https://blog.playstation.com/2024/10/24/helldivers-2-truth-enforcers-warbond-launches-oct-31/",
       "https://blog.playstation.com/2024/10/25/official-playstation-podcast-episode-498-voice-of-the-veilguard/",
@@ -758,7 +759,6 @@
       "https://blog.playstation.com/2026/02/13/share-of-the-week-romantic-2/",
       "https://blog.playstation.com/2026/02/16/god-of-war-sons-of-sparta-mega-cat-studios-discuss-origins-of-kratos-and-companys-name/",
       "https://blog.playstation.com/2026/02/16/how-open-world-soulslike-deckbuilder-death-howl-was-built/",
-      "https://blog.playstation.com/2026/02/18/11-indie-gems-to-look-forward-to-in-2026/",
       "https://blog.playstation.com/2026/02/19/rager-brings-the-beat-to-playstation-vr2-on-march-5/",
       "https://blog.playstation.com/2026/02/20/share-of-the-week-nioh-3/",
       "https://blog.playstation.com/2026/02/23/revival-recolonization-hits-ps4-ps5-on-february-26/",
