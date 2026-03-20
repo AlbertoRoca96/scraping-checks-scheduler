@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-03-20T14:40:48.124Z",
+  "checkedAt": "2026-03-20T16:39:59.542Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/10/23/monster-hunter-wilds-open-beta-test-launches-on-ps5-next-week/",
       "https://blog.playstation.com/2024/10/24/10-great-horror-games-available-with-playstation-plus/",
       "https://blog.playstation.com/2024/10/24/helldivers-2-truth-enforcers-warbond-launches-oct-31/",
       "https://blog.playstation.com/2024/10/25/official-playstation-podcast-episode-498-voice-of-the-veilguard/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/03/17/new-playstation-portal-software-update-adds-1080p-high-quality-mode-and-ux-refinements/",
       "https://blog.playstation.com/2026/03/17/pragmata-hands-on-report-hack-and-blast-through-a-futuristic-city/",
       "https://blog.playstation.com/2026/03/17/starfield-is-coming-to-playstation-5-on-april-7/",
-      "https://blog.playstation.com/2026/03/19/pragmata-interview-combat-hacking-resource-management-and-more/"
+      "https://blog.playstation.com/2026/03/19/pragmata-interview-combat-hacking-resource-management-and-more/",
+      "https://blog.playstation.com/2026/03/20/share-of-the-week-ghost-of-yotei-legends/"
     ],
     "removed": []
   }
