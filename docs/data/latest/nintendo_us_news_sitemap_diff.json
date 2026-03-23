@@ -2,14 +2,13 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-03-23T16:55:16.793Z",
+  "checkedAt": "2026-03-23T18:51:38.800Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 2,
+    "nowCount": 1,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/enrich-your-island-life-with-nooklink/",
-      "https://www.nintendo.com/us/whatsnew/relive-iconic-eras-rewrite-history-and-dominate-in-all-new-match-types-in-wwe-2k26-available-now/"
+      "https://www.nintendo.com/us/whatsnew/enrich-your-island-life-with-nooklink/"
     ],
     "removed": []
   }
