@@ -1,8 +1,13 @@
-# Scrape Report (2026-03-24T04:17:20.297Z)
+# Scrape Report (2026-03-24T07:01:38.522Z)
 
-Group: `compliance`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/23472838899
+Group: `compliance`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/23477170881
 
 | Check | Changed | Keys | Error |
 |---|:---:|:--|:--|
-| `psa_charizard_pop_total` | ✅ | column, population, row |  |
-| `sec_aapl_8k_list_hash` | ✅ | hash, length |  |
+| `psa_charizard_pop_total` | — |  | `TimeoutError: page.waitForSelector: Timeout 45000ms exceeded.
+Call log:
+  - waiting for locator('table') to be visible
+    - waiting for" https://www.psacard.com/pop/tcg-cards/1999/pokemon-game/57801" navigation to finish...
+    - navigated to "https://www.psacard.com/pop/tcg-cards/1999/pokemon-game/57801"
+` |
+| `sec_aapl_8k_list_hash` | ✅ | hash |  |
