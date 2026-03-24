@@ -2,6 +2,6 @@
   "name": "psa_charizard_pop_total",
   "type": "psa_pop_row",
   "url": "https://www.psacard.com/pop/tcg-cards/1999/pokemon-game/57801",
-  "checkedAt": "2026-03-24T07:00:51.364Z",
-  "error": "TimeoutError: page.waitForSelector: Timeout 45000ms exceeded.\nCall log:\n  - waiting for locator('table') to be visible\n    - waiting for\" https://www.psacard.com/pop/tcg-cards/1999/pokemon-game/57801\" navigation to finish...\n    - navigated to \"https://www.psacard.com/pop/tcg-cards/1999/pokemon-game/57801\"\n"
+  "checkedAt": "2026-03-24T08:50:39.299Z",
+  "error": "Error: row not found: Charizard-Holo 1st Edition"
 }

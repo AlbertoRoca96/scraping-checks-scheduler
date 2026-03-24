@@ -1,13 +1,8 @@
-# Scrape Report (2026-03-24T07:01:38.522Z)
+# Scrape Report (2026-03-24T08:51:26.935Z)
 
-Group: `compliance`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/23477170881
+Group: `compliance`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/23480847562
 
 | Check | Changed | Keys | Error |
 |---|:---:|:--|:--|
-| `psa_charizard_pop_total` | — |  | `TimeoutError: page.waitForSelector: Timeout 45000ms exceeded.
-Call log:
-  - waiting for locator('table') to be visible
-    - waiting for" https://www.psacard.com/pop/tcg-cards/1999/pokemon-game/57801" navigation to finish...
-    - navigated to "https://www.psacard.com/pop/tcg-cards/1999/pokemon-game/57801"
-` |
+| `psa_charizard_pop_total` | — |  | `Error: row not found: Charizard-Holo 1st Edition` |
 | `sec_aapl_8k_list_hash` | ✅ | hash |  |
