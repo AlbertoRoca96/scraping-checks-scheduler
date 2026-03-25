@@ -2,10 +2,10 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-03-24T22:27:53.854Z",
+  "checkedAt": "2026-03-25T01:58:42.218Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 6,
+    "nowCount": 8,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/battle-on-trainers-youll-be-able-to-play-pokemon-champions-soon/",
@@ -13,7 +13,9 @@
       "https://www.nintendo.com/us/whatsnew/by-director-mr-sakurai-kirby-air-riders-development-insights-part-2/",
       "https://www.nintendo.com/us/whatsnew/by-director-mr-sakurai-kirby-air-riders-development-insights-part-3/",
       "https://www.nintendo.com/us/whatsnew/by-director-mr-sakurai-kirby-air-riders-development-insights-part-4/",
-      "https://www.nintendo.com/us/whatsnew/by-director-mr-sakurai-kirby-air-riders-development-insights-part-5/"
+      "https://www.nintendo.com/us/whatsnew/by-director-mr-sakurai-kirby-air-riders-development-insights-part-5/",
+      "https://www.nintendo.com/us/whatsnew/missions-and-rewards-available-with-nintendo-switch-online/",
+      "https://www.nintendo.com/us/whatsnew/the-kirby-air-riders-direct-presentation-showcased-the-games-wild-vehicular-action-and-more-on-nintendo-switch-2/"
     ],
     "removed": []
   }
