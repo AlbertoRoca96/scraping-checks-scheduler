@@ -2,14 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-03-25T14:56:09.798Z",
+  "checkedAt": "2026-03-25T16:59:24.921Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2024/10/28/alien-rogue-incursion-ps-vr2-hands-on-report/",
-      "https://blog.playstation.com/2024/10/28/redacted-launches-october-31-meet-some-of-black-iron-prisons-deadliest-foes/",
       "https://blog.playstation.com/2024/10/29/mighty-morphin-power-rangers-ritas-rewind-remixes-90s-arcade-games-out-december-10/",
       "https://blog.playstation.com/2024/10/30/death-note-killer-within-launches-nov-5-as-part-of-the-playstation-plus-monthly-games-lineup/",
       "https://blog.playstation.com/2024/10/30/horizon-zero-dawn-remastered-launches-tomorrow-nixxes-details-the-collaboration-that-upgraded-aloys-first-adventure/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/03/22/peni-parker-revealed-for-marvel-tokon-fighting-souls/",
       "https://blog.playstation.com/2026/03/23/damon-and-baby-hands-on-with-the-ridiculous-twin-stick-shooter-out-march-26/",
       "https://blog.playstation.com/2026/03/24/the-spring-sale-comes-to-playstation-store-march-25/",
-      "https://blog.playstation.com/2026/03/24/virtual-hunter-brings-the-pursuit-to-ps-vr2-on-may-27/"
+      "https://blog.playstation.com/2026/03/24/virtual-hunter-brings-the-pursuit-to-ps-vr2-on-may-27/",
+      "https://blog.playstation.com/2026/03/25/elevate-your-mission-in-directive-8020-with-playstation-5-pro-enhancements-out-may-12/"
     ],
     "removed": []
   }
