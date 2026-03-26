@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-03-26T13:09:06.682Z",
+  "checkedAt": "2026-03-26T15:01:11.799Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/10/25/official-playstation-podcast-episode-498-voice-of-the-veilguard/",
       "https://blog.playstation.com/2024/10/28/alien-rogue-incursion-ps-vr2-hands-on-report/",
       "https://blog.playstation.com/2024/10/28/redacted-launches-october-31-meet-some-of-black-iron-prisons-deadliest-foes/",
       "https://blog.playstation.com/2024/10/29/mighty-morphin-power-rangers-ritas-rewind-remixes-90s-arcade-games-out-december-10/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/03/23/damon-and-baby-hands-on-with-the-ridiculous-twin-stick-shooter-out-march-26/",
       "https://blog.playstation.com/2026/03/24/the-spring-sale-comes-to-playstation-store-march-25/",
       "https://blog.playstation.com/2026/03/24/virtual-hunter-brings-the-pursuit-to-ps-vr2-on-may-27/",
-      "https://blog.playstation.com/2026/03/25/elevate-your-mission-in-directive-8020-with-playstation-5-pro-enhancements-out-may-12/"
+      "https://blog.playstation.com/2026/03/25/elevate-your-mission-in-directive-8020-with-playstation-5-pro-enhancements-out-may-12/",
+      "https://blog.playstation.com/2026/03/26/saros-hands-on-report-intense-sci-fi-action-in-a-beautiful-deadly-alien-world/"
     ],
     "removed": []
   }
