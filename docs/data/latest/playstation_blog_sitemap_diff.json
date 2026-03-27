@@ -2,14 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-03-27T14:45:58.328Z",
+  "checkedAt": "2026-03-27T16:52:19.529Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2024/10/30/death-note-killer-within-launches-nov-5-as-part-of-the-playstation-plus-monthly-games-lineup/",
-      "https://blog.playstation.com/2024/10/30/playstation-plus-monthly-games-for-november-hot-wheels-unleashed-2-turbocharged-ghostwire-tokyo-death-note-killer-within/",
       "https://blog.playstation.com/2024/11/01/official-playstation-podcast-episode-499-facehuggin-fun/",
       "https://blog.playstation.com/2024/11/01/share-of-the-week-ghosts-and-ghouls/",
       "https://blog.playstation.com/2024/11/04/as-seen-in-astro-bot-10-playstation-vip-bot-cameos-and-the-games-that-inspired-them/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/03/25/elevate-your-mission-in-directive-8020-with-playstation-5-pro-enhancements-out-may-12/",
       "https://blog.playstation.com/2026/03/26/how-super-meat-boy-3d-captures-the-series-identity-out-may-31/",
       "https://blog.playstation.com/2026/03/26/saros-hands-on-report-intense-sci-fi-action-in-a-beautiful-deadly-alien-world/",
-      "https://blog.playstation.com/2026/03/27/new-price-changes-for-ps5-ps5-pro-and-playstation-portal-remote-player/"
+      "https://blog.playstation.com/2026/03/27/new-price-changes-for-ps5-ps5-pro-and-playstation-portal-remote-player/",
+      "https://blog.playstation.com/2026/03/27/share-of-the-week-resident-evil-30th-anniversary/"
     ],
     "removed": []
   }
