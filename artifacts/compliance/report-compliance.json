@@ -1,13 +1,17 @@
 {
-  "generatedAt": "2026-03-28T04:23:39.857Z",
+  "generatedAt": "2026-03-28T06:56:11.325Z",
   "group": "compliance",
   "summary": [
     {
       "name": "psa_charizard_pop_total",
       "type": "psa_pop_row",
-      "changed": false,
-      "changedKeys": [],
-      "error": "TimeoutError: page.waitForSelector: Timeout 45000ms exceeded.\nCall log:\n  - waiting for locator('table') to be visible\n    - waiting for\" https://www.psacard.com/pop/tcg-cards/1999/pokemon-game/57801\" navigation to finish...\n    - navigated to \"https://www.psacard.com/pop/tcg-cards/1999/pokemon-game/57801\"\n"
+      "changed": true,
+      "changedKeys": [
+        "column",
+        "population",
+        "row"
+      ],
+      "error": null
     },
     {
       "name": "sec_aapl_8k_list_hash",
