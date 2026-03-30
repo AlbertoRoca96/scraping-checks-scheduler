@@ -2,12 +2,14 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-03-30T20:42:04.662Z",
+  "checkedAt": "2026-03-30T22:32:52.095Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 0,
+    "nowCount": 1,
     "prevCount": 0,
-    "added": [],
+    "added": [
+      "https://www.nintendo.com/us/whatsnew/my-nintendo-march-wrap-up-march-2026/"
+    ],
     "removed": []
   }
 }
