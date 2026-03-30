@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-03-30T10:59:43.906Z",
+  "checkedAt": "2026-03-30T13:13:52.795Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/11/01/official-playstation-podcast-episode-499-facehuggin-fun/",
       "https://blog.playstation.com/2024/11/04/as-seen-in-astro-bot-10-playstation-vip-bot-cameos-and-the-games-that-inspired-them/",
       "https://blog.playstation.com/2024/11/04/players-choice-vote-for-october-2024s-best-new-game/",
       "https://blog.playstation.com/2024/11/04/ps5-pro-50-enhanced-games-available-at-launch-november-7/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/03/26/saros-hands-on-report-intense-sci-fi-action-in-a-beautiful-deadly-alien-world/",
       "https://blog.playstation.com/2026/03/27/new-price-changes-for-ps5-ps5-pro-and-playstation-portal-remote-player/",
       "https://blog.playstation.com/2026/03/27/official-playstation-podcast-episode-537-speaking-saros/",
-      "https://blog.playstation.com/2026/03/27/share-of-the-week-resident-evil-30th-anniversary/"
+      "https://blog.playstation.com/2026/03/27/share-of-the-week-resident-evil-30th-anniversary/",
+      "https://blog.playstation.com/2026/03/30/avatar-legends-the-fighting-game-elemental-bending-breakdown/"
     ],
     "removed": []
   }
