@@ -2,7 +2,7 @@
   "name": "stock_ntdoy_global_quote",
   "type": "stock_quote",
   "url": "https://www.alphavantage.co/documentation/#latestprice",
-  "checkedAt": "2026-04-01T20:30:32.553Z",
+  "checkedAt": "2026-04-01T20:40:43.606Z",
   "data": {
     "symbol": "NTDOY",
     "source": "alphavantage",
