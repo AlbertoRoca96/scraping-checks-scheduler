@@ -2,10 +2,10 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-04-01T16:55:17.231Z",
+  "checkedAt": "2026-04-01T18:58:09.240Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 6,
+    "nowCount": 7,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/free-update-adds-bob-omb-blast-to-battle-mode-in-mario-kart-world/",
@@ -13,7 +13,8 @@
       "https://www.nintendo.com/us/whatsnew/mobile-news-something-tulip-y-this-way-comes-in-pikmin-bloom/",
       "https://www.nintendo.com/us/whatsnew/my-nintendo-march-wrap-up-march-2026/",
       "https://www.nintendo.com/us/whatsnew/play-the-52nd-maximus-cup-online-event-and-you-could-earn-an-in-game-collaborative-theme/",
-      "https://www.nintendo.com/us/whatsnew/step-into-a-world-of-southern-folklore-living-magic-and-haunting-beauty-with-south-of-midnight/"
+      "https://www.nintendo.com/us/whatsnew/step-into-a-world-of-southern-folklore-living-magic-and-haunting-beauty-with-south-of-midnight/",
+      "https://www.nintendo.com/us/whatsnew/take-on-the-copycat-challenge-in-pokemon-pokopia/"
     ],
     "removed": []
   }
