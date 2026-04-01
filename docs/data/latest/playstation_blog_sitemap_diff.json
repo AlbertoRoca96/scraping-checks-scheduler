@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-04-01T13:16:03.190Z",
+  "checkedAt": "2026-04-01T15:01:47.007Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/11/01/official-playstation-podcast-episode-499-facehuggin-fun/",
       "https://blog.playstation.com/2024/11/04/as-seen-in-astro-bot-10-playstation-vip-bot-cameos-and-the-games-that-inspired-them/",
       "https://blog.playstation.com/2024/11/04/players-choice-vote-for-october-2024s-best-new-game/",
       "https://blog.playstation.com/2024/11/04/ps5-pro-50-enhanced-games-available-at-launch-november-7/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/03/27/official-playstation-podcast-episode-537-speaking-saros/",
       "https://blog.playstation.com/2026/03/27/share-of-the-week-resident-evil-30th-anniversary/",
       "https://blog.playstation.com/2026/03/30/avatar-legends-the-fighting-game-elemental-bending-breakdown/",
-      "https://blog.playstation.com/2026/03/31/ps5-pro-new-pssr-upscaler-is-now-accessible-on-assassins-creed-shadows/"
+      "https://blog.playstation.com/2026/03/31/ps5-pro-new-pssr-upscaler-is-now-accessible-on-assassins-creed-shadows/",
+      "https://blog.playstation.com/2026/04/01/players-choice-vote-for-march-2026s-best-new-game/"
     ],
     "removed": []
   }
