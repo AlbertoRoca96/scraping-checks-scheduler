@@ -2,15 +2,14 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-04-03T16:36:59.674Z",
+  "checkedAt": "2026-04-03T18:42:29.876Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 3,
+    "nowCount": 2,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/mobile-news-something-tulip-y-this-way-comes-in-pikmin-bloom/",
-      "https://www.nintendo.com/us/whatsnew/unlock-rewards-for-starting-gamechat-only-with-nintendo-switch-online/",
-      "https://www.nintendo.com/us/whatsnew/wahoo-see-the-platforming-history-of-super-mario-and-even-get-a-few-fun-facts/"
+      "https://www.nintendo.com/us/whatsnew/unlock-rewards-for-starting-gamechat-only-with-nintendo-switch-online/"
     ],
     "removed": []
   }
