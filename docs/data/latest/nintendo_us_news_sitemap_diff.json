@@ -2,13 +2,15 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-04-07T22:35:48.981Z",
+  "checkedAt": "2026-04-08T02:08:22.798Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 1,
+    "nowCount": 3,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/new-limited-time-offer-brings-together-nintendo-switch-2-and-super-mario-galaxy-super-mario-galaxy-2/"
+      "https://www.nintendo.com/us/whatsnew/freshen-up-your-profile-pic-with-the-icon-maker/",
+      "https://www.nintendo.com/us/whatsnew/new-limited-time-offer-brings-together-nintendo-switch-2-and-super-mario-galaxy-super-mario-galaxy-2/",
+      "https://www.nintendo.com/us/whatsnew/play-the-52nd-maximus-cup-online-event-and-you-could-earn-an-in-game-collaborative-theme/"
     ],
     "removed": []
   }
