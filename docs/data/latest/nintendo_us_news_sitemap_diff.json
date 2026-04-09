@@ -2,16 +2,16 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-04-09T20:46:39.748Z",
+  "checkedAt": "2026-04-09T22:38:28.120Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
     "nowCount": 4,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/freshen-up-your-profile-pic-with-the-icon-maker/",
       "https://www.nintendo.com/us/whatsnew/get-battling-with-the-new-free-to-start-game-pokemon-champions/",
       "https://www.nintendo.com/us/whatsnew/new-my-mario-products-and-experiences-available-now/",
-      "https://www.nintendo.com/us/whatsnew/play-the-52nd-maximus-cup-online-event-and-you-could-earn-an-in-game-collaborative-theme/"
+      "https://www.nintendo.com/us/whatsnew/new-update-for-nintendo-switch-online-members-april-2026/",
+      "https://www.nintendo.com/us/whatsnew/see-what-games-are-arriving-this-april-2026/"
     ],
     "removed": []
   }
