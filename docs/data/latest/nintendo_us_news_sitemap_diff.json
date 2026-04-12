@@ -2,13 +2,12 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-04-11T22:29:23.409Z",
+  "checkedAt": "2026-04-12T02:23:04.857Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 2,
+    "nowCount": 1,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/get-ready-to-use-your-ears-in-rhythm-heaven-groove/",
       "https://www.nintendo.com/us/whatsnew/mobile-news-earn-in-game-super-mario-run-rewards-inspired-by-the-super-mario-galaxy-movie/"
     ],
     "removed": []
