@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-04-15T15:03:52.026Z",
+  "checkedAt": "2026-04-15T17:00:32.059Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/11/13/playstation-plus-game-catalog-for-november-grand-theft-auto-v-dying-light-2-stay-human-like-a-dragon-ishin-and-more/",
       "https://blog.playstation.com/2024/11/14/infinity-nikki-hands-on-report/",
       "https://blog.playstation.com/2024/11/14/lego-horizon-adventures-launches-today-with-new-trailer/",
       "https://blog.playstation.com/2024/11/14/the-light-brigade-phantom-of-time-free-update-adds-a-new-class-and-world-live-today/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/04/10/official-playstation-podcast-episode-538-marshes-and-mollusks/",
       "https://blog.playstation.com/2026/04/10/share-of-the-week-resident-evil-9/",
       "https://blog.playstation.com/2026/04/13/pragmata-all-the-ways-the-shelter-expands-gameplay-and-story/",
-      "https://blog.playstation.com/2026/04/14/an-upgraded-version-of-roblox-launches-on-ps5-today/"
+      "https://blog.playstation.com/2026/04/14/an-upgraded-version-of-roblox-launches-on-ps5-today/",
+      "https://blog.playstation.com/2026/04/15/playstation-plus-game-catalog-for-april-the-crew-motorfest-horizon-zero-dawn-remastered-football-manager-26-console-warriors-abyss-and-more/"
     ],
     "removed": []
   }
