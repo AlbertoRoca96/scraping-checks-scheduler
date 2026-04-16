@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-04-16T13:24:09.605Z",
+  "checkedAt": "2026-04-16T15:23:22.281Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/11/13/playstation-plus-game-catalog-for-november-grand-theft-auto-v-dying-light-2-stay-human-like-a-dragon-ishin-and-more/",
       "https://blog.playstation.com/2024/11/14/infinity-nikki-hands-on-report/",
       "https://blog.playstation.com/2024/11/14/lego-horizon-adventures-launches-today-with-new-trailer/",
       "https://blog.playstation.com/2024/11/14/the-light-brigade-phantom-of-time-free-update-adds-a-new-class-and-world-live-today/",
@@ -807,6 +806,7 @@
       "https://blog.playstation.com/2026/04/13/pragmata-all-the-ways-the-shelter-expands-gameplay-and-story/",
       "https://blog.playstation.com/2026/04/14/an-upgraded-version-of-roblox-launches-on-ps5-today/",
       "https://blog.playstation.com/2026/04/15/playstation-plus-game-catalog-for-april-the-crew-motorfest-horizon-zero-dawn-remastered-football-manager-26-console-warriors-abyss-and-more/",
+      "https://blog.playstation.com/2026/04/16/lego-batman-legacy-of-the-dark-knight-batcave-revealed/",
       "https://blog.playstation.com/2026/04/16/saros-ps5-and-ps5-pro-features-detailed/"
     ],
     "removed": []
