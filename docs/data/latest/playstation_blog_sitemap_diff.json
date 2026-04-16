@@ -2,14 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-04-16T17:11:24.507Z",
+  "checkedAt": "2026-04-16T19:08:24.347Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2024/11/14/infinity-nikki-hands-on-report/",
-      "https://blog.playstation.com/2024/11/14/lego-horizon-adventures-launches-today-with-new-trailer/",
       "https://blog.playstation.com/2024/11/14/the-light-brigade-phantom-of-time-free-update-adds-a-new-class-and-world-live-today/",
       "https://blog.playstation.com/2024/11/14/towers-of-aghasba-early-access-launches-november-19-content-roadmap-detailed/",
       "https://blog.playstation.com/2024/11/15/official-playstation-podcast-episode-500-celebrating-30-years-of-playstation-part-1/",
@@ -807,6 +806,7 @@
       "https://blog.playstation.com/2026/04/14/an-upgraded-version-of-roblox-launches-on-ps5-today/",
       "https://blog.playstation.com/2026/04/15/playstation-plus-game-catalog-for-april-the-crew-motorfest-horizon-zero-dawn-remastered-football-manager-26-console-warriors-abyss-and-more/",
       "https://blog.playstation.com/2026/04/16/lego-batman-legacy-of-the-dark-knight-batcave-revealed/",
+      "https://blog.playstation.com/2026/04/16/metro-2039-revealed-as-the-post-apocalyptic-shooter-series-returns/",
       "https://blog.playstation.com/2026/04/16/saros-ps5-and-ps5-pro-features-detailed/"
     ],
     "removed": []
