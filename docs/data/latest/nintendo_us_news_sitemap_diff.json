@@ -2,13 +2,14 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-04-16T19:08:26.371Z",
+  "checkedAt": "2026-04-16T20:44:14.205Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 1,
+    "nowCount": 2,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/icon-elements-inspired-by-the-tomodachi-life-living-the-dream-game-are-here-for-a-limited-time/"
+      "https://www.nintendo.com/us/whatsnew/icon-elements-inspired-by-the-tomodachi-life-living-the-dream-game-are-here-for-a-limited-time/",
+      "https://www.nintendo.com/us/whatsnew/partner-spotlight-sale-save-on-select-digital-games/"
     ],
     "removed": []
   }
