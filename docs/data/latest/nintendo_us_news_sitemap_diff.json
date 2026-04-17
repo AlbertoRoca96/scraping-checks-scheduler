@@ -2,14 +2,15 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-04-16T22:37:34.895Z",
+  "checkedAt": "2026-04-17T02:23:21.246Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 3,
+    "nowCount": 4,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/icon-elements-inspired-by-the-tomodachi-life-living-the-dream-game-are-here-for-a-limited-time/",
       "https://www.nintendo.com/us/whatsnew/partner-spotlight-sale-save-on-select-digital-games/",
+      "https://www.nintendo.com/us/whatsnew/reach-heroic-heights-in-overwatch-reign-of-talon-season-2-summit/",
       "https://www.nintendo.com/us/whatsnew/tomodachi-life-living-the-dream-is-here/"
     ],
     "removed": []
