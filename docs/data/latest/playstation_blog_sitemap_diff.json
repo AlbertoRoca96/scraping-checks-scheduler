@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-04-17T16:53:16.112Z",
+  "checkedAt": "2026-04-17T18:56:40.438Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/11/18/alien-rogue-incursion-new-story-trailer-gameplay-details/",
       "https://blog.playstation.com/2024/11/18/dynasty-warriors-origins-demo-launches-nov-22/",
       "https://blog.playstation.com/2024/11/18/hitman-world-of-assassination-launches-on-ps-vr2-march-27-2025/",
       "https://blog.playstation.com/2024/11/18/how-netherrealm-makes-ghostface-work-in-the-world-of-mortal-kombat-1/",
@@ -807,6 +806,7 @@
       "https://blog.playstation.com/2026/04/16/lego-batman-legacy-of-the-dark-knight-batcave-revealed/",
       "https://blog.playstation.com/2026/04/16/metro-2039-revealed-as-the-post-apocalyptic-shooter-series-returns/",
       "https://blog.playstation.com/2026/04/16/saros-ps5-and-ps5-pro-features-detailed/",
+      "https://blog.playstation.com/2026/04/17/share-of-the-week-resident-evil-requiem-leon/",
       "https://blog.playstation.com/2026/04/17/wuthering-waves-version-3-3-reverbs-from-the-end-of-galaxies-update-arrives-april-30/"
     ],
     "removed": []
