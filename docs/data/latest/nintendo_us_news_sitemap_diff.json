@@ -2,15 +2,14 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-04-18T20:34:05.604Z",
+  "checkedAt": "2026-04-18T22:31:44.899Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 3,
+    "nowCount": 2,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/heres-how-multiplayer-works-in-pokemon-pokopia/",
-      "https://www.nintendo.com/us/whatsnew/pragmata-is-out-now-experience-capcoms-latest-sci-fi-action-adventure-game-on-nintendo-switch-2/",
-      "https://www.nintendo.com/us/whatsnew/reach-heroic-heights-in-overwatch-reign-of-talon-season-2-summit/"
+      "https://www.nintendo.com/us/whatsnew/pragmata-is-out-now-experience-capcoms-latest-sci-fi-action-adventure-game-on-nintendo-switch-2/"
     ],
     "removed": []
   }
