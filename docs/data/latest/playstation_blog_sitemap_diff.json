@@ -2,12 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-04-17T22:36:00.203Z",
+  "checkedAt": "2026-04-18T02:06:09.595Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
+      "https://blog.playstation.com/2024/11/18/alien-rogue-incursion-new-story-trailer-gameplay-details/",
       "https://blog.playstation.com/2024/11/18/dynasty-warriors-origins-demo-launches-nov-22/",
       "https://blog.playstation.com/2024/11/18/hitman-world-of-assassination-launches-on-ps-vr2-march-27-2025/",
       "https://blog.playstation.com/2024/11/18/how-netherrealm-makes-ghostface-work-in-the-world-of-mortal-kombat-1/",
@@ -769,7 +770,6 @@
       "https://blog.playstation.com/2026/03/17/new-playstation-portal-software-update-adds-1080p-high-quality-mode-and-ux-refinements/",
       "https://blog.playstation.com/2026/03/17/pragmata-hands-on-report-hack-and-blast-through-a-futuristic-city/",
       "https://blog.playstation.com/2026/03/17/starfield-is-coming-to-playstation-5-on-april-7/",
-      "https://blog.playstation.com/2026/03/19/pragmata-interview-combat-hacking-resource-management-and-more/",
       "https://blog.playstation.com/2026/03/20/microsoft-flight-simulator-2024-a-deep-dive-into-ps-vr2-mode/",
       "https://blog.playstation.com/2026/03/20/share-of-the-week-ghost-of-yotei-legends/",
       "https://blog.playstation.com/2026/03/22/peni-parker-revealed-for-marvel-tokon-fighting-souls/",
