@@ -2,19 +2,17 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-04-20T11:17:54.422Z",
+  "checkedAt": "2026-04-20T13:24:06.422Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2024/11/18/dynasty-warriors-origins-demo-launches-nov-22/",
-      "https://blog.playstation.com/2024/11/18/hitman-world-of-assassination-launches-on-ps-vr2-march-27-2025/",
       "https://blog.playstation.com/2024/11/18/how-netherrealm-makes-ghostface-work-in-the-world-of-mortal-kombat-1/",
       "https://blog.playstation.com/2024/11/18/mare-launches-on-ps-vr2-today/",
       "https://blog.playstation.com/2024/11/18/masters-of-light-unleashes-its-spell-casting-power-on-ps-vr2-next-month/",
       "https://blog.playstation.com/2024/11/18/ps-vr2-new-alien-rogue-incursion-details-mare-out-today-release-dates-for-hitman-world-of-assassination-and-more/",
-      "https://blog.playstation.com/2024/11/18/trombone-champ-unflattened-arrives-on-ps-vr2-on-november-26/",
       "https://blog.playstation.com/2024/11/19/the-legacy-of-kain-series-retrospective-with-original-developers/",
       "https://blog.playstation.com/2024/11/19/the-playstation-portal-remote-player-experience-to-evolve-with-new-system-update/",
       "https://blog.playstation.com/2024/11/20/gran-turismo-7-update-1-54-brings-five-new-cars-a-cafe-menu-world-circuit-events-and-a-gt-sophy-ai-update/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2026/04/16/metro-2039-revealed-as-the-post-apocalyptic-shooter-series-returns/",
       "https://blog.playstation.com/2026/04/16/saros-ps5-and-ps5-pro-features-detailed/",
       "https://blog.playstation.com/2026/04/17/share-of-the-week-resident-evil-requiem-leon/",
-      "https://blog.playstation.com/2026/04/17/wuthering-waves-version-3-3-reverbs-from-the-end-of-galaxies-update-arrives-april-30/"
+      "https://blog.playstation.com/2026/04/17/wuthering-waves-version-3-3-reverbs-from-the-end-of-galaxies-update-arrives-april-30/",
+      "https://blog.playstation.com/2026/04/20/dragon-ball-xenoverse-3-announced-coming-to-ps5-next-year/",
+      "https://blog.playstation.com/2026/04/20/nte-neverness-to-everness-out-april-29-new-gameplay-details-revealed/"
     ],
     "removed": []
   }
