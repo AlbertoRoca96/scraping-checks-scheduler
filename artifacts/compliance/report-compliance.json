@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-19T22:32:37.504Z",
+  "generatedAt": "2026-04-20T02:29:21.541Z",
   "group": "compliance",
   "summary": [
     {
@@ -7,7 +7,7 @@
       "type": "psa_pop_row",
       "changed": false,
       "changedKeys": [],
-      "error": null
+      "error": "Error: row not found: Charizard-Holo 1st Edition"
     },
     {
       "name": "sec_aapl_8k_list_hash",
