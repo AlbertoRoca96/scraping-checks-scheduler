@@ -2,7 +2,7 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-04-21T11:04:07.995Z",
+  "checkedAt": "2026-04-21T13:20:16.386Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
@@ -10,7 +10,6 @@
     "added": [
       "https://blog.playstation.com/2024/11/18/dynasty-warriors-origins-demo-launches-nov-22/",
       "https://blog.playstation.com/2024/11/18/how-netherrealm-makes-ghostface-work-in-the-world-of-mortal-kombat-1/",
-      "https://blog.playstation.com/2024/11/18/mare-launches-on-ps-vr2-today/",
       "https://blog.playstation.com/2024/11/18/ps-vr2-new-alien-rogue-incursion-details-mare-out-today-release-dates-for-hitman-world-of-assassination-and-more/",
       "https://blog.playstation.com/2024/11/19/the-legacy-of-kain-series-retrospective-with-original-developers/",
       "https://blog.playstation.com/2024/11/19/the-playstation-portal-remote-player-experience-to-evolve-with-new-system-update/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/04/20/ball-x-pit-shadow-update-arrives-april-27/",
       "https://blog.playstation.com/2026/04/20/dragon-ball-xenoverse-3-announced-coming-to-ps5-next-year/",
       "https://blog.playstation.com/2026/04/20/infinity-nikki-version-2-5-launches-april-23/",
-      "https://blog.playstation.com/2026/04/20/nte-neverness-to-everness-out-april-29-new-gameplay-details-revealed/"
+      "https://blog.playstation.com/2026/04/20/nte-neverness-to-everness-out-april-29-new-gameplay-details-revealed/",
+      "https://blog.playstation.com/2026/04/21/helldivers-2-the-exo-experts-warbond-drops-april-28/"
     ],
     "removed": []
   }
