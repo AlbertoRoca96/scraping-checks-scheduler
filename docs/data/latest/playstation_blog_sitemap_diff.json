@@ -2,7 +2,7 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-04-20T22:40:29.739Z",
+  "checkedAt": "2026-04-21T02:24:17.527Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
@@ -10,6 +10,7 @@
     "added": [
       "https://blog.playstation.com/2024/11/18/dynasty-warriors-origins-demo-launches-nov-22/",
       "https://blog.playstation.com/2024/11/18/how-netherrealm-makes-ghostface-work-in-the-world-of-mortal-kombat-1/",
+      "https://blog.playstation.com/2024/11/18/mare-launches-on-ps-vr2-today/",
       "https://blog.playstation.com/2024/11/18/ps-vr2-new-alien-rogue-incursion-details-mare-out-today-release-dates-for-hitman-world-of-assassination-and-more/",
       "https://blog.playstation.com/2024/11/19/the-legacy-of-kain-series-retrospective-with-original-developers/",
       "https://blog.playstation.com/2024/11/19/the-playstation-portal-remote-player-experience-to-evolve-with-new-system-update/",
@@ -768,7 +769,6 @@
       "https://blog.playstation.com/2026/03/19/pragmata-interview-combat-hacking-resource-management-and-more/",
       "https://blog.playstation.com/2026/03/20/microsoft-flight-simulator-2024-a-deep-dive-into-ps-vr2-mode/",
       "https://blog.playstation.com/2026/03/20/share-of-the-week-ghost-of-yotei-legends/",
-      "https://blog.playstation.com/2026/03/22/peni-parker-revealed-for-marvel-tokon-fighting-souls/",
       "https://blog.playstation.com/2026/03/23/damon-and-baby-hands-on-with-the-ridiculous-twin-stick-shooter-out-march-26/",
       "https://blog.playstation.com/2026/03/24/the-spring-sale-comes-to-playstation-store-march-25/",
       "https://blog.playstation.com/2026/03/24/virtual-hunter-brings-the-pursuit-to-ps-vr2-on-may-27/",
