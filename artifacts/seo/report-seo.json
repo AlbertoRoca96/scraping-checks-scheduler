@@ -1,14 +1,12 @@
 {
-  "generatedAt": "2026-04-22T13:28:57.767Z",
+  "generatedAt": "2026-04-22T15:10:36.870Z",
   "group": "seo",
   "summary": [
     {
       "name": "playstation_blog_sitemap_diff",
       "type": "sitemap_diff",
-      "changed": true,
-      "changedKeys": [
-        "added"
-      ],
+      "changed": false,
+      "changedKeys": [],
       "error": null
     },
     {
