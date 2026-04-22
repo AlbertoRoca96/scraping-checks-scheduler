@@ -2,16 +2,17 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-04-22T19:09:37.682Z",
+  "checkedAt": "2026-04-22T20:52:41.233Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 4,
+    "nowCount": 5,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/join-bulbasaurs-jump-rope-contest-in-pokemon-pokopia/",
       "https://www.nintendo.com/us/whatsnew/new-limited-time-offer-brings-together-nintendo-switch-2-and-super-mario-galaxy-super-mario-galaxy-2/",
       "https://www.nintendo.com/us/whatsnew/splatoon-raiders-makes-a-splash-with-a-new-treasure-hunting-trailer/",
-      "https://www.nintendo.com/us/whatsnew/take-a-crack-at-these-games-with-eggs-april-2026/"
+      "https://www.nintendo.com/us/whatsnew/take-a-crack-at-these-games-with-eggs-april-2026/",
+      "https://www.nintendo.com/us/whatsnew/try-the-latest-game-trial-mlb-the-show-26/"
     ],
     "removed": []
   }
