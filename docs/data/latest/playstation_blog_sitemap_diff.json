@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-04-22T11:02:19.825Z",
+  "checkedAt": "2026-04-22T13:28:53.001Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/11/18/dynasty-warriors-origins-demo-launches-nov-22/",
       "https://blog.playstation.com/2024/11/18/how-netherrealm-makes-ghostface-work-in-the-world-of-mortal-kombat-1/",
       "https://blog.playstation.com/2024/11/19/the-legacy-of-kain-series-retrospective-with-original-developers/",
       "https://blog.playstation.com/2024/11/19/the-playstation-portal-remote-player-experience-to-evolve-with-new-system-update/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/04/20/infinity-nikki-version-2-5-launches-april-23/",
       "https://blog.playstation.com/2026/04/20/nte-neverness-to-everness-out-april-29-new-gameplay-details-revealed/",
       "https://blog.playstation.com/2026/04/21/helldivers-2-the-exo-experts-warbond-drops-april-28/",
-      "https://blog.playstation.com/2026/04/21/palias-royal-highlands-expansion-launches-may-12-on-ps5/"
+      "https://blog.playstation.com/2026/04/21/palias-royal-highlands-expansion-launches-may-12-on-ps5/",
+      "https://blog.playstation.com/2026/04/22/gran-turismo-7-update-1-69-available-today-first-2026-gran-turismo-world-series-details/"
     ],
     "removed": []
   }
