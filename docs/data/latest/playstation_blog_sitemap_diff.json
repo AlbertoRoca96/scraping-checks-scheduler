@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-04-23T13:22:21.317Z",
+  "checkedAt": "2026-04-23T15:50:14.931Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/11/18/how-netherrealm-makes-ghostface-work-in-the-world-of-mortal-kombat-1/",
       "https://blog.playstation.com/2024/11/19/the-legacy-of-kain-series-retrospective-with-original-developers/",
       "https://blog.playstation.com/2024/11/19/the-playstation-portal-remote-player-experience-to-evolve-with-new-system-update/",
       "https://blog.playstation.com/2024/11/20/gran-turismo-7-update-1-54-brings-five-new-cars-a-cafe-menu-world-circuit-events-and-a-gt-sophy-ai-update/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/04/21/helldivers-2-the-exo-experts-warbond-drops-april-28/",
       "https://blog.playstation.com/2026/04/21/palias-royal-highlands-expansion-launches-may-12-on-ps5/",
       "https://blog.playstation.com/2026/04/22/gran-turismo-7-update-1-69-available-today-first-2026-gran-turismo-world-series-details/",
-      "https://blog.playstation.com/2026/04/23/saros-gameplay-modifiers-accessibility-options-and-more-detailed/"
+      "https://blog.playstation.com/2026/04/23/saros-gameplay-modifiers-accessibility-options-and-more-detailed/",
+      "https://blog.playstation.com/2026/04/23/zero-parades-for-dead-spies-meet-the-whole-sick-cast-of-characters/"
     ],
     "removed": []
   }
