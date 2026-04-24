@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-04-24T16:53:02.827Z",
+  "checkedAt": "2026-04-24T18:45:51.481Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/11/20/gran-turismo-7-update-1-54-brings-five-new-cars-a-cafe-menu-world-circuit-events-and-a-gt-sophy-ai-update/",
       "https://blog.playstation.com/2024/11/21/first-details-on-mlb-the-show-25-plus-looking-towards-the-future-of-mlb-the-show/",
       "https://blog.playstation.com/2024/11/22/honkai-star-rail-version-2-7-bids-farewell-to-penacony-on-december-4/",
       "https://blog.playstation.com/2024/11/22/official-playstation-podcast-episode-501-celebrating-30-years-of-playstation-part-2/",
@@ -807,6 +806,7 @@
       "https://blog.playstation.com/2026/04/23/assassins-creed-black-flag-resynced-first-details-launches-on-ps5-july-9/",
       "https://blog.playstation.com/2026/04/23/saros-gameplay-modifiers-accessibility-options-and-more-detailed/",
       "https://blog.playstation.com/2026/04/23/zero-parades-for-dead-spies-meet-the-whole-sick-cast-of-characters/",
+      "https://blog.playstation.com/2026/04/24/official-playstation-podcast-episode-539-mice-and-men/",
       "https://blog.playstation.com/2026/04/24/share-of-the-week-resident-evil-requiem-grace/"
     ],
     "removed": []
