@@ -2,14 +2,13 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-04-25T12:59:08.757Z",
+  "checkedAt": "2026-04-25T14:39:20.968Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 2,
+    "nowCount": 1,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/take-a-crack-at-these-games-with-eggs-april-2026/",
-      "https://www.nintendo.com/us/whatsnew/watch-whats-taking-root-in-yoshi-and-the-mysterious-book/"
+      "https://www.nintendo.com/us/whatsnew/take-a-crack-at-these-games-with-eggs-april-2026/"
     ],
     "removed": []
   }
