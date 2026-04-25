@@ -2,14 +2,12 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-04-25T18:47:40.552Z",
+  "checkedAt": "2026-04-25T20:35:32.483Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 1,
+    "nowCount": 0,
     "prevCount": 0,
-    "added": [
-      "https://www.nintendo.com/us/whatsnew/take-a-crack-at-these-games-with-eggs-april-2026/"
-    ],
+    "added": [],
     "removed": []
   }
 }
