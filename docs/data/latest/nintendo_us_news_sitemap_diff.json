@@ -2,13 +2,14 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-04-28T21:04:48.975Z",
+  "checkedAt": "2026-04-28T22:55:26.811Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 1,
+    "nowCount": 2,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/play-the-53rd-maximus-cup-online-event-and-you-could-earn-an-in-game-collaborative-theme/"
+      "https://www.nintendo.com/us/whatsnew/play-the-53rd-maximus-cup-online-event-and-you-could-earn-an-in-game-collaborative-theme/",
+      "https://www.nintendo.com/us/whatsnew/splatoon-raiders-makes-a-splash-with-a-new-treasure-hunting-trailer/"
     ],
     "removed": []
   }
