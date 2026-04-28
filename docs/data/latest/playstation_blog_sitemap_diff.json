@@ -2,14 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-04-28T10:10:54.464Z",
+  "checkedAt": "2026-04-28T16:10:24.399Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/11/22/official-playstation-podcast-episode-501-celebrating-30-years-of-playstation-part-2/",
-      "https://blog.playstation.com/2024/11/22/share-of-the-week-dragon-age-the-veilguard-companions/",
       "https://blog.playstation.com/2024/11/26/all-good-things-a-look-back-at-shuhei-yoshidas-31-years-with-playstation/",
       "https://blog.playstation.com/2024/11/26/official-playstation-podcast-episode-502-all-good-things/",
       "https://blog.playstation.com/2024/11/27/playstation-plus-monthly-games-for-december-it-takes-two-aliens-dark-descent-temtem/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2026/04/23/zero-parades-for-dead-spies-meet-the-whole-sick-cast-of-characters/",
       "https://blog.playstation.com/2026/04/24/official-playstation-podcast-episode-539-mice-and-men/",
       "https://blog.playstation.com/2026/04/24/share-of-the-week-resident-evil-requiem-grace/",
-      "https://blog.playstation.com/2026/04/27/arc-raiders-upgraded-ps5-pro-pssr-upscaling-available-april-28/"
+      "https://blog.playstation.com/2026/04/27/arc-raiders-upgraded-ps5-pro-pssr-upscaling-available-april-28/",
+      "https://blog.playstation.com/2026/04/28/4loop-designing-the-ominous-cube-shaped-scanner-boss/",
+      "https://blog.playstation.com/2026/04/28/marathon-bungie-shares-official-dualsense-edge-controller-setting-recommendations/"
     ],
     "removed": []
   }
