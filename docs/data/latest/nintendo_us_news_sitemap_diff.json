@@ -2,12 +2,14 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-04-28T02:40:44.819Z",
+  "checkedAt": "2026-04-28T06:27:07.162Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 0,
+    "nowCount": 1,
     "prevCount": 0,
-    "added": [],
+    "added": [
+      "https://www.nintendo.com/us/whatsnew/play-the-53rd-maximus-cup-online-event-and-you-could-earn-an-in-game-collaborative-theme/"
+    ],
     "removed": []
   }
 }
