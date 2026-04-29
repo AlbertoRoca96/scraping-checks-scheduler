@@ -2,14 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-04-29T13:49:21.424Z",
+  "checkedAt": "2026-04-29T15:54:20.792Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/11/26/all-good-things-a-look-back-at-shuhei-yoshidas-31-years-with-playstation/",
-      "https://blog.playstation.com/2024/11/26/official-playstation-podcast-episode-502-all-good-things/",
       "https://blog.playstation.com/2024/11/27/playstation-plus-monthly-games-for-december-it-takes-two-aliens-dark-descent-temtem/",
       "https://blog.playstation.com/2024/11/27/warhammer-40000-darktide-brings-grimdark-co-op-to-playstation-with-ps5-pro-enhancements-on-dec-3/",
       "https://blog.playstation.com/2024/11/29/share-of-the-week-gathering-2/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2026/04/27/arc-raiders-upgraded-ps5-pro-pssr-upscaling-available-april-28/",
       "https://blog.playstation.com/2026/04/28/4loop-designing-the-ominous-cube-shaped-scanner-boss/",
       "https://blog.playstation.com/2026/04/28/choices-and-consequences-in-the-blood-of-dawnwalker-out-september-3/",
-      "https://blog.playstation.com/2026/04/28/marathon-bungie-shares-official-dualsense-edge-controller-setting-recommendations/"
+      "https://blog.playstation.com/2026/04/28/marathon-bungie-shares-official-dualsense-edge-controller-setting-recommendations/",
+      "https://blog.playstation.com/2026/04/29/meet-the-new-enemies-of-warhammer-40000-boltgun-2/",
+      "https://blog.playstation.com/2026/04/29/playstation-plus-monthly-games-for-may-ea-sports-fc-26-wuchang-fallen-feathers-nine-sols/"
     ],
     "removed": []
   }
