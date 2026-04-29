@@ -2,12 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-04-28T22:55:11.617Z",
+  "checkedAt": "2026-04-29T02:40:10.544Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
+      "https://blog.playstation.com/2024/11/26/all-good-things-a-look-back-at-shuhei-yoshidas-31-years-with-playstation/",
       "https://blog.playstation.com/2024/11/26/official-playstation-podcast-episode-502-all-good-things/",
       "https://blog.playstation.com/2024/11/27/playstation-plus-monthly-games-for-december-it-takes-two-aliens-dark-descent-temtem/",
       "https://blog.playstation.com/2024/11/27/warhammer-40000-darktide-brings-grimdark-co-op-to-playstation-with-ps5-pro-enhancements-on-dec-3/",
@@ -766,7 +767,6 @@
       "https://blog.playstation.com/2026/03/27/new-price-changes-for-ps5-ps5-pro-and-playstation-portal-remote-player/",
       "https://blog.playstation.com/2026/03/27/official-playstation-podcast-episode-537-speaking-saros/",
       "https://blog.playstation.com/2026/03/27/share-of-the-week-resident-evil-30th-anniversary/",
-      "https://blog.playstation.com/2026/03/30/avatar-legends-the-fighting-game-elemental-bending-breakdown/",
       "https://blog.playstation.com/2026/03/31/ps5-pro-new-pssr-upscaler-is-now-accessible-on-assassins-creed-shadows/",
       "https://blog.playstation.com/2026/04/01/players-choice-vote-for-march-2026s-best-new-game/",
       "https://blog.playstation.com/2026/04/01/playstation-plus-monthly-games-for-april-lords-of-the-fallen-tomb-raider-i-iii-remastered-sword-art-online-fractured-daydream/",
