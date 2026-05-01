@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-05-01T14:52:50.028Z",
+  "checkedAt": "2026-05-01T16:55:29.807Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/12/01/players-choice-vote-for-november-2024s-best-new-game/",
       "https://blog.playstation.com/2024/12/01/save-with-30th-anniversary-playstation-store-deals-live-dec-2/",
       "https://blog.playstation.com/2024/12/02/marvel-rivals-out-on-ps5-dec-6-ps5-pro-enhancements-detailed/",
       "https://blog.playstation.com/2024/12/02/ps-blog-game-of-the-year-awards-2024-polls-are-now-live/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/04/29/playstation-plus-monthly-games-for-may-ea-sports-fc-26-wuchang-fallen-feathers-nine-sols/",
       "https://blog.playstation.com/2026/04/30/007-first-light-hands-on-report-using-stealth-action-and-charm-to-become-a-legendary-spy/",
       "https://blog.playstation.com/2026/04/30/control-resonant-remedy-shares-first-details-on-new-game-plus/",
-      "https://blog.playstation.com/2026/04/30/resident-evil-qa-director-zach-cregger-shares-inspirations-and-a-new-film-teaser/"
+      "https://blog.playstation.com/2026/04/30/resident-evil-qa-director-zach-cregger-shares-inspirations-and-a-new-film-teaser/",
+      "https://blog.playstation.com/2026/05/01/share-of-the-week-cozy/"
     ],
     "removed": []
   }
