@@ -2,15 +2,14 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-04-30T22:51:46.826Z",
+  "checkedAt": "2026-05-01T02:48:10.048Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 4,
+    "nowCount": 3,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/get-the-most-out-of-pokemon-pokopia-with-these-helpful-tips/",
       "https://www.nintendo.com/us/whatsnew/join-sableyes-gem-hunt-in-pokemon-pokopia/",
-      "https://www.nintendo.com/us/whatsnew/my-nintendo-april-wrap-up-2026/",
       "https://www.nintendo.com/us/whatsnew/new-storybook-chapter-added-to-super-mario-galaxy-2/"
     ],
     "removed": []
