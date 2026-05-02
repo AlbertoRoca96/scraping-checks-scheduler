@@ -2,14 +2,13 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-05-02T16:42:42.571Z",
+  "checkedAt": "2026-05-02T18:55:25.281Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 2,
+    "nowCount": 1,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/get-the-most-out-of-pokemon-pokopia-with-these-helpful-tips/",
-      "https://www.nintendo.com/us/whatsnew/new-storybook-chapter-added-to-super-mario-galaxy-2/"
+      "https://www.nintendo.com/us/whatsnew/get-the-most-out-of-pokemon-pokopia-with-these-helpful-tips/"
     ],
     "removed": []
   }
