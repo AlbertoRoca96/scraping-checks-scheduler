@@ -2,12 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-05-02T22:37:40.836Z",
+  "checkedAt": "2026-05-03T02:39:15.113Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
+      "https://blog.playstation.com/2024/12/02/marvel-rivals-out-on-ps5-dec-6-ps5-pro-enhancements-detailed/",
       "https://blog.playstation.com/2024/12/03/30th-anniversary-playstation-partner-awards-2024-japan-asia-winners-announced/",
       "https://blog.playstation.com/2024/12/03/monster-hunter-wilds-hands-on-report-2/",
       "https://blog.playstation.com/2024/12/04/bleach-rebirth-of-souls-launches-march-21-2025/",
@@ -762,8 +763,6 @@
       "https://blog.playstation.com/2026/03/31/ps5-pro-new-pssr-upscaler-is-now-accessible-on-assassins-creed-shadows/",
       "https://blog.playstation.com/2026/04/01/players-choice-vote-for-march-2026s-best-new-game/",
       "https://blog.playstation.com/2026/04/01/playstation-plus-monthly-games-for-april-lords-of-the-fallen-tomb-raider-i-iii-remastered-sword-art-online-fractured-daydream/",
-      "https://blog.playstation.com/2026/04/03/playstation-store-march-2026s-top-downloads/",
-      "https://blog.playstation.com/2026/04/03/share-of-the-week-sidekick/",
       "https://blog.playstation.com/2026/04/06/wrath-aeon-of-ruin-vr-brutal-edition-launches-on-ps-vr2-april-9/",
       "https://blog.playstation.com/2026/04/07/cyberpunk-2077-playstation-5-pro-enhancements-detailed/",
       "https://blog.playstation.com/2026/04/07/drop-duchy-complete-edition-drops-april-21-on-playstation-5/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/04/30/control-resonant-remedy-shares-first-details-on-new-game-plus/",
       "https://blog.playstation.com/2026/04/30/resident-evil-qa-director-zach-cregger-shares-inspirations-and-a-new-film-teaser/",
       "https://blog.playstation.com/2026/05/01/official-playstation-podcast-episode-540-surviving-saros/",
-      "https://blog.playstation.com/2026/05/01/share-of-the-week-cozy/"
+      "https://blog.playstation.com/2026/05/01/share-of-the-week-cozy/",
+      "https://blog.playstation.com/2026/05/02/hulk-and-black-panther-join-the-fight-for-marvel-tokon-fighting-souls/"
     ],
     "removed": []
   }
