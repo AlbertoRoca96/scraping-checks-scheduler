@@ -2,16 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-05-05T11:21:54.134Z",
+  "checkedAt": "2026-05-05T17:21:02.037Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/12/04/bleach-rebirth-of-souls-launches-march-21-2025/",
-      "https://blog.playstation.com/2024/12/04/civilization-vii-first-look-at-ps5-gameplay-ahead-of-february-11-launch/",
       "https://blog.playstation.com/2024/12/04/legacy-of-kain-soul-reaver-1-2-remastered-lost-levels-and-other-bonus-materials-detailed/",
-      "https://blog.playstation.com/2024/12/04/my-first-gran-turismo-launches-on-ps5-and-ps4-december-6/",
       "https://blog.playstation.com/2024/12/04/nobuo-uematsu-fantasian-neo-dimensions-composer-discusses-his-scores-for-the-soundtrack/",
       "https://blog.playstation.com/2024/12/05/announcing-playstation-tournaments-xp-a-new-live-studio-event-and-competition-open-to-the-global-ps5-community/",
       "https://blog.playstation.com/2024/12/05/star-wars-episode-i-jedi-power-battles-reveals-new-lightsaber-color-toggle-feature/",
@@ -807,7 +804,10 @@
       "https://blog.playstation.com/2026/05/01/official-playstation-podcast-episode-540-surviving-saros/",
       "https://blog.playstation.com/2026/05/01/share-of-the-week-cozy/",
       "https://blog.playstation.com/2026/05/02/hulk-and-black-panther-join-the-fight-for-marvel-tokon-fighting-souls/",
-      "https://blog.playstation.com/2026/05/04/players-choice-vote-for-april-2026s-best-new-game/"
+      "https://blog.playstation.com/2026/05/04/players-choice-vote-for-april-2026s-best-new-game/",
+      "https://blog.playstation.com/2026/05/05/horizon-hunters-gathering-second-playtest-new-hunters-episode-region-revealed/",
+      "https://blog.playstation.com/2026/05/05/lego-batman-legacy-of-the-dark-knight-hands-on-report/",
+      "https://blog.playstation.com/2026/05/05/myst-and-riven-remakes-launch-on-ps5-and-ps-vr2-may-19/"
     ],
     "removed": []
   }
