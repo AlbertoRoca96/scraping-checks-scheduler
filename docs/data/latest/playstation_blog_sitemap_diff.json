@@ -2,12 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-05-05T22:52:57.920Z",
+  "checkedAt": "2026-05-06T02:35:46.747Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
+      "https://blog.playstation.com/2024/12/04/bleach-rebirth-of-souls-launches-march-21-2025/",
       "https://blog.playstation.com/2024/12/04/legacy-of-kain-soul-reaver-1-2-remastered-lost-levels-and-other-bonus-materials-detailed/",
       "https://blog.playstation.com/2024/12/04/nobuo-uematsu-fantasian-neo-dimensions-composer-discusses-his-scores-for-the-soundtrack/",
       "https://blog.playstation.com/2024/12/05/announcing-playstation-tournaments-xp-a-new-live-studio-event-and-competition-open-to-the-global-ps5-community/",
@@ -759,7 +760,6 @@
       "https://blog.playstation.com/2026/04/01/playstation-plus-monthly-games-for-april-lords-of-the-fallen-tomb-raider-i-iii-remastered-sword-art-online-fractured-daydream/",
       "https://blog.playstation.com/2026/04/03/playstation-store-march-2026s-top-downloads/",
       "https://blog.playstation.com/2026/04/03/share-of-the-week-sidekick/",
-      "https://blog.playstation.com/2026/04/06/wrath-aeon-of-ruin-vr-brutal-edition-launches-on-ps-vr2-april-9/",
       "https://blog.playstation.com/2026/04/07/cyberpunk-2077-playstation-5-pro-enhancements-detailed/",
       "https://blog.playstation.com/2026/04/07/drop-duchy-complete-edition-drops-april-21-on-playstation-5/",
       "https://blog.playstation.com/2026/04/07/introducing-the-playerbase-bringing-playstations-biggest-fans-into-blockbuster-playstation-studios-games/",
