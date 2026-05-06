@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-06T18:03:41.617Z",
+  "generatedAt": "2026-05-06T19:57:03.458Z",
   "group": "stocks",
   "summary": [
     {
@@ -7,7 +7,7 @@
       "type": "stock_quote",
       "changed": false,
       "changedKeys": [],
-      "error": null
+      "error": "Error: alphaVantage.globalQuote failed after 3 attempts: Error: HTTP 503"
     }
   ]
 }
