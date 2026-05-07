@@ -2,14 +2,15 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-05-06T22:51:18.917Z",
+  "checkedAt": "2026-05-07T02:38:29.295Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 2,
+    "nowCount": 3,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/mobile-news-game-pak-decor-pikmin-arrive-in-pikmin-bloom/",
-      "https://www.nintendo.com/us/whatsnew/play-the-53rd-maximus-cup-online-event-and-you-could-earn-an-in-game-collaborative-theme/"
+      "https://www.nintendo.com/us/whatsnew/play-the-53rd-maximus-cup-online-event-and-you-could-earn-an-in-game-collaborative-theme/",
+      "https://www.nintendo.com/us/whatsnew/star-fox-direct-sees-fox-mccloud-and-crew-prepare-for-liftoff-on-nintendo-switch-2-june-25/"
     ],
     "removed": []
   }
