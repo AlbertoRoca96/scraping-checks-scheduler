@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-05-08T15:19:42.577Z",
+  "checkedAt": "2026-05-08T17:14:08.299Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/12/04/legacy-of-kain-soul-reaver-1-2-remastered-lost-levels-and-other-bonus-materials-detailed/",
       "https://blog.playstation.com/2024/12/04/nobuo-uematsu-fantasian-neo-dimensions-composer-discusses-his-scores-for-the-soundtrack/",
       "https://blog.playstation.com/2024/12/05/announcing-playstation-tournaments-xp-a-new-live-studio-event-and-competition-open-to-the-global-ps5-community/",
       "https://blog.playstation.com/2024/12/05/star-wars-episode-i-jedi-power-battles-reveals-new-lightsaber-color-toggle-feature/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/05/05/horizon-hunters-gathering-second-playtest-new-hunters-episode-region-revealed/",
       "https://blog.playstation.com/2026/05/05/lego-batman-legacy-of-the-dark-knight-hands-on-report/",
       "https://blog.playstation.com/2026/05/05/myst-and-riven-remakes-launch-on-ps5-and-ps-vr2-may-19/",
-      "https://blog.playstation.com/2026/05/06/playstation-store-april-2026s-top-downloads/"
+      "https://blog.playstation.com/2026/05/06/playstation-store-april-2026s-top-downloads/",
+      "https://blog.playstation.com/2026/05/08/share-of-the-week-celebrate/"
     ],
     "removed": []
   }
