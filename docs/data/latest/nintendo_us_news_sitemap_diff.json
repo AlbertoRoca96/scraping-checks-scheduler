@@ -2,15 +2,14 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-05-08T22:53:58.475Z",
+  "checkedAt": "2026-05-09T02:37:20.615Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 3,
+    "nowCount": 2,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/join-kirby-on-some-of-his-most-daring-adventures-with-this-list-of-games/",
-      "https://www.nintendo.com/us/whatsnew/price-revision-for-nintendo-switch-2-system/",
-      "https://www.nintendo.com/us/whatsnew/star-fox-direct-sees-fox-mccloud-and-crew-prepare-for-liftoff-on-nintendo-switch-2-june-25/"
+      "https://www.nintendo.com/us/whatsnew/price-revision-for-nintendo-switch-2-system/"
     ],
     "removed": []
   }
