@@ -2,14 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-05-12T10:28:44.285Z",
+  "checkedAt": "2026-05-12T14:16:31.852Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2024/12/05/announcing-playstation-tournaments-xp-a-new-live-studio-event-and-competition-open-to-the-global-ps5-community/",
-      "https://blog.playstation.com/2024/12/05/synth-riders-experience-barbie-dance-n-dream-dlc-out-on-ps-vr2-today/",
       "https://blog.playstation.com/2024/12/05/wanderstop-a-cozy-game-about-change-and-tea-coming-to-ps5-march-11-2025/",
       "https://blog.playstation.com/2024/12/06/gran-turismo-world-series-2024-finals-live-in-amsterdam-starting-dec-8/",
       "https://blog.playstation.com/2024/12/06/official-playstation-podcast-episode-503-celebrating-30-years-of-playstation-part-3/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/05/05/myst-and-riven-remakes-launch-on-ps5-and-ps-vr2-may-19/",
       "https://blog.playstation.com/2026/05/06/playstation-store-april-2026s-top-downloads/",
       "https://blog.playstation.com/2026/05/08/share-of-the-week-celebrate/",
-      "https://blog.playstation.com/2026/05/11/20260511-gi/"
+      "https://blog.playstation.com/2026/05/11/20260511-gi/",
+      "https://blog.playstation.com/2026/05/12/revealing-scuf-omega-a-performance-controller-officially-licensed-for-playstation-5-consoles/"
     ],
     "removed": []
   }
