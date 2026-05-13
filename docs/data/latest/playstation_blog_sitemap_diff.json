@@ -2,13 +2,14 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-05-12T22:58:04.050Z",
+  "checkedAt": "2026-05-13T02:49:45.594Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2024/12/05/announcing-playstation-tournaments-xp-a-new-live-studio-event-and-competition-open-to-the-global-ps5-community/",
+      "https://blog.playstation.com/2024/12/05/synth-riders-experience-barbie-dance-n-dream-dlc-out-on-ps-vr2-today/",
       "https://blog.playstation.com/2024/12/05/wanderstop-a-cozy-game-about-change-and-tea-coming-to-ps5-march-11-2025/",
       "https://blog.playstation.com/2024/12/06/gran-turismo-world-series-2024-finals-live-in-amsterdam-starting-dec-8/",
       "https://blog.playstation.com/2024/12/06/official-playstation-podcast-episode-503-celebrating-30-years-of-playstation-part-3/",
@@ -765,7 +766,6 @@
       "https://blog.playstation.com/2026/04/09/warhammer-survivors-is-coming-to-ps5-this-year-with-new-content/",
       "https://blog.playstation.com/2026/04/10/official-playstation-podcast-episode-538-marshes-and-mollusks/",
       "https://blog.playstation.com/2026/04/10/share-of-the-week-resident-evil-9/",
-      "https://blog.playstation.com/2026/04/13/pragmata-all-the-ways-the-shelter-expands-gameplay-and-story/",
       "https://blog.playstation.com/2026/04/14/an-upgraded-version-of-roblox-launches-on-ps5-today/",
       "https://blog.playstation.com/2026/04/15/playstation-plus-game-catalog-for-april-the-crew-motorfest-horizon-zero-dawn-remastered-football-manager-26-console-warriors-abyss-and-more/",
       "https://blog.playstation.com/2026/04/16/construction-simulator-evolution-introduces-new-demolition-and-manual-labor-gameplay/",
