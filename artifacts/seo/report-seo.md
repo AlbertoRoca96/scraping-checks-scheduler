@@ -1,8 +1,8 @@
-# Scrape Report (2026-05-14T10:12:26.765Z)
+# Scrape Report (2026-05-14T14:04:38.318Z)
 
-Group: `seo`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/25854427282
+Group: `seo`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/25864453895
 
 | Check | Changed | Keys | Error |
 |---|:---:|:--|:--|
-| `playstation_blog_sitemap_diff` | — |  |  |
+| `playstation_blog_sitemap_diff` | — |  | `Error: Sitemap fetch failed: HTTP 404 Not Found` |
 | `nintendo_us_news_sitemap_diff` | — |  |  |

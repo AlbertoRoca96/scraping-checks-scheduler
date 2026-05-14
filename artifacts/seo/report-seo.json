@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-14T10:12:26.764Z",
+  "generatedAt": "2026-05-14T14:04:38.317Z",
   "group": "seo",
   "summary": [
     {
@@ -7,7 +7,7 @@
       "type": "sitemap_diff",
       "changed": false,
       "changedKeys": [],
-      "error": null
+      "error": "Error: Sitemap fetch failed: HTTP 404 Not Found"
     },
     {
       "name": "nintendo_us_news_sitemap_diff",
