@@ -2,16 +2,17 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-05-13T23:03:25.519Z",
+  "checkedAt": "2026-05-14T02:51:32.453Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 4,
+    "nowCount": 5,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/become-the-legendary-archaeologist-in-indiana-jones-and-the-great-circle/",
       "https://www.nintendo.com/us/whatsnew/make-memories-uncover-mysteries-and-see-the-world-a-little-differently-with-these-games/",
       "https://www.nintendo.com/us/whatsnew/my-nintendo-april-wrap-up-2026/",
-      "https://www.nintendo.com/us/whatsnew/nintendo-switch-2-choose-your-game-bundle-launches-this-summer/"
+      "https://www.nintendo.com/us/whatsnew/nintendo-switch-2-choose-your-game-bundle-launches-this-summer/",
+      "https://www.nintendo.com/us/whatsnew/see-what-games-are-arriving-this-may-2026/"
     ],
     "removed": []
   }
