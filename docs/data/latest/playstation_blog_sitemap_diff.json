@@ -2,7 +2,7 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-05-15T14:00:12.098Z",
+  "checkedAt": "2026-05-15T16:10:21.869Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
@@ -12,7 +12,6 @@
       "https://blog.playstation.com/2024/12/06/official-playstation-podcast-episode-503-celebrating-30-years-of-playstation-part-3/",
       "https://blog.playstation.com/2024/12/06/path-of-exile-2-early-access-available-today-on-ps5/",
       "https://blog.playstation.com/2024/12/06/share-of-the-week-stellar-blade-x-nier-automata/",
-      "https://blog.playstation.com/2024/12/06/zenless-zone-zero-launches-version-1-4-december-18/",
       "https://blog.playstation.com/2024/12/07/fortnite-new-5v5-tactical-fps-mode-ballistic-coming-december-11/",
       "https://blog.playstation.com/2024/12/09/playstation-store-november-2024s-top-downloads/",
       "https://blog.playstation.com/2024/12/10/beat-sabers-metallica-music-pack-out-today/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/05/12/revealing-scuf-omega-a-performance-controller-officially-licensed-for-playstation-5-consoles/",
       "https://blog.playstation.com/2026/05/13/playstation-plus-game-catalog-for-may-star-wars-outlaws-red-dead-redemption-2-bramble-the-mountain-king-the-thaumaturge-and-more/",
       "https://blog.playstation.com/2026/05/14/creating-saros-how-performance-tech-and-a-bad-commute-brought-arjun-devraj-to-life/",
-      "https://blog.playstation.com/2026/05/15/ghost-of-yotei-legends-raid-building-the-multiplayer-modes-endgame/"
+      "https://blog.playstation.com/2026/05/15/ghost-of-yotei-legends-raid-building-the-multiplayer-modes-endgame/",
+      "https://blog.playstation.com/2026/05/15/share-of-the-week-ea-sports-fc-26/"
     ],
     "removed": []
   }
