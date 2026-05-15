@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-05-15T10:20:09.104Z",
+  "checkedAt": "2026-05-15T14:00:12.098Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/12/05/wanderstop-a-cozy-game-about-change-and-tea-coming-to-ps5-march-11-2025/",
       "https://blog.playstation.com/2024/12/06/gran-turismo-world-series-2024-finals-live-in-amsterdam-starting-dec-8/",
       "https://blog.playstation.com/2024/12/06/official-playstation-podcast-episode-503-celebrating-30-years-of-playstation-part-3/",
       "https://blog.playstation.com/2024/12/06/path-of-exile-2-early-access-available-today-on-ps5/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/05/11/20260511-gi/",
       "https://blog.playstation.com/2026/05/12/revealing-scuf-omega-a-performance-controller-officially-licensed-for-playstation-5-consoles/",
       "https://blog.playstation.com/2026/05/13/playstation-plus-game-catalog-for-may-star-wars-outlaws-red-dead-redemption-2-bramble-the-mountain-king-the-thaumaturge-and-more/",
-      "https://blog.playstation.com/2026/05/14/creating-saros-how-performance-tech-and-a-bad-commute-brought-arjun-devraj-to-life/"
+      "https://blog.playstation.com/2026/05/14/creating-saros-how-performance-tech-and-a-bad-commute-brought-arjun-devraj-to-life/",
+      "https://blog.playstation.com/2026/05/15/ghost-of-yotei-legends-raid-building-the-multiplayer-modes-endgame/"
     ],
     "removed": []
   }
