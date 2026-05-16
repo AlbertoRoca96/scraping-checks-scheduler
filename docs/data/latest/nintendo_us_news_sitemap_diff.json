@@ -2,14 +2,13 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-05-16T13:16:18.203Z",
+  "checkedAt": "2026-05-16T14:53:47.590Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 3,
+    "nowCount": 2,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/flutter-jump-into-the-world-of-yoshi-and-the-mysterious-book-at-nintendo-new-york-and-nintendo-san-francisco/",
-      "https://www.nintendo.com/us/whatsnew/join-sableyes-gem-hunt-in-pokemon-pokopia/",
       "https://www.nintendo.com/us/whatsnew/make-memories-uncover-mysteries-and-see-the-world-a-little-differently-with-these-games/"
     ],
     "removed": []
