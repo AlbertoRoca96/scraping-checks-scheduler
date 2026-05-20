@@ -2,13 +2,19 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-05-20T21:49:57.798Z",
+  "checkedAt": "2026-05-20T23:09:53.964Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 1,
+    "nowCount": 7,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/mobile-news-get-silly-with-your-photos-in-pictonico-coming-soon/"
+      "https://www.nintendo.com/us/whatsnew/get-ready-to-use-your-ears-in-rhythm-heaven-groove/",
+      "https://www.nintendo.com/us/whatsnew/mobile-news-get-silly-with-your-photos-in-pictonico-coming-soon/",
+      "https://www.nintendo.com/us/whatsnew/nintendo-switch-2-choose-your-game-bundle-launches-this-summer/",
+      "https://www.nintendo.com/us/whatsnew/pragmata-is-out-now-experience-capcoms-latest-sci-fi-action-adventure-game-on-nintendo-switch-2/",
+      "https://www.nintendo.com/us/whatsnew/see-what-games-are-arriving-this-april-2026/",
+      "https://www.nintendo.com/us/whatsnew/see-what-games-are-arriving-this-may-2026/",
+      "https://www.nintendo.com/us/whatsnew/star-fox-direct-sees-fox-mccloud-and-crew-prepare-for-liftoff-on-nintendo-switch-2-june-25/"
     ],
     "removed": []
   }
