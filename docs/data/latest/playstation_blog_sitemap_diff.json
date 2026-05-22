@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-05-22T10:47:00.500Z",
+  "checkedAt": "2026-05-22T14:33:08.773Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/12/09/playstation-store-november-2024s-top-downloads/",
       "https://blog.playstation.com/2024/12/10/beat-sabers-metallica-music-pack-out-today/",
       "https://blog.playstation.com/2024/12/10/celebrate-30-years-of-playstation-with-playstation-2024-wrap-up-launching-today/",
       "https://blog.playstation.com/2024/12/11/astro-bot-winter-wonder-update-out-tomorrow/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/05/18/time-travel-trials-and-treasure-awaits-in-the-adventures-of-elliot-the-millennium-tales/",
       "https://blog.playstation.com/2026/05/19/007-first-light-on-ps5-pro-upgraded-pssr-upscaling-details/",
       "https://blog.playstation.com/2026/05/20/state-of-play-returns-tuesday-june-2/",
-      "https://blog.playstation.com/2026/05/21/watch-the-worlds-top-gran-turismo-7-gamers-race-live-in-milan/"
+      "https://blog.playstation.com/2026/05/21/watch-the-worlds-top-gran-turismo-7-gamers-race-live-in-milan/",
+      "https://blog.playstation.com/2026/05/22/the-sound-of-the-eclipse-sam-slater-on-scoring-saros/"
     ],
     "removed": []
   }
