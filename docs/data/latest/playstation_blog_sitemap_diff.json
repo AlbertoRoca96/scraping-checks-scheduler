@@ -2,15 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-05-22T14:33:08.773Z",
+  "checkedAt": "2026-05-22T17:48:49.705Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/12/10/beat-sabers-metallica-music-pack-out-today/",
-      "https://blog.playstation.com/2024/12/10/celebrate-30-years-of-playstation-with-playstation-2024-wrap-up-launching-today/",
-      "https://blog.playstation.com/2024/12/11/astro-bot-winter-wonder-update-out-tomorrow/",
       "https://blog.playstation.com/2024/12/11/day-of-the-devs-2024-indie-highlights-coming-to-playstation/",
       "https://blog.playstation.com/2024/12/11/playstation-plus-game-catalog-for-december-sonic-frontiers-forspoken-rabbids-party-of-legends-wrc-generations-and-more/",
       "https://blog.playstation.com/2024/12/11/synduality-echo-of-ada-solo-pve-mode-revealed-open-network-test-launches-dec-12/",
@@ -807,6 +804,9 @@
       "https://blog.playstation.com/2026/05/19/007-first-light-on-ps5-pro-upgraded-pssr-upscaling-details/",
       "https://blog.playstation.com/2026/05/20/state-of-play-returns-tuesday-june-2/",
       "https://blog.playstation.com/2026/05/21/watch-the-worlds-top-gran-turismo-7-gamers-race-live-in-milan/",
+      "https://blog.playstation.com/2026/05/22/13-must-play-open-world-games-available-with-playstation-plus-game-catalog/",
+      "https://blog.playstation.com/2026/05/22/official-playstation-podcast-episode-542-horror-on-a-dark-knight/",
+      "https://blog.playstation.com/2026/05/22/share-of-the-week-hands/",
       "https://blog.playstation.com/2026/05/22/the-sound-of-the-eclipse-sam-slater-on-scoring-saros/"
     ],
     "removed": []
