@@ -2,21 +2,15 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-05-22T19:41:10.081Z",
+  "checkedAt": "2026-05-22T21:07:24.596Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 9,
+    "nowCount": 3,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/crack-open-yoshis-next-adventure/",
-      "https://www.nintendo.com/us/whatsnew/get-ready-to-use-your-ears-in-rhythm-heaven-groove/",
       "https://www.nintendo.com/us/whatsnew/heres-the-latest-nintendo-switch-online-news-from-march-2026/",
-      "https://www.nintendo.com/us/whatsnew/icon-elements-inspired-by-the-yoshi-and-the-mysterious-book-game-are-here-for-a-limited-time/",
-      "https://www.nintendo.com/us/whatsnew/nintendo-switch-2-choose-your-game-bundle-launches-this-summer/",
-      "https://www.nintendo.com/us/whatsnew/pragmata-is-out-now-experience-capcoms-latest-sci-fi-action-adventure-game-on-nintendo-switch-2/",
-      "https://www.nintendo.com/us/whatsnew/see-what-games-are-arriving-this-april-2026/",
-      "https://www.nintendo.com/us/whatsnew/see-what-games-are-arriving-this-may-2026/",
-      "https://www.nintendo.com/us/whatsnew/star-fox-direct-sees-fox-mccloud-and-crew-prepare-for-liftoff-on-nintendo-switch-2-june-25/"
+      "https://www.nintendo.com/us/whatsnew/icon-elements-inspired-by-the-yoshi-and-the-mysterious-book-game-are-here-for-a-limited-time/"
     ],
     "removed": []
   }
