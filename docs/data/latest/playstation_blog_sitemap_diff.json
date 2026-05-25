@@ -2,14 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-05-25T16:20:35.450Z",
+  "checkedAt": "2026-05-25T19:25:38.155Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2024/12/11/day-of-the-devs-2024-indie-highlights-coming-to-playstation/",
-      "https://blog.playstation.com/2024/12/11/playstation-plus-game-catalog-for-december-sonic-frontiers-forspoken-rabbids-party-of-legends-wrc-generations-and-more/",
       "https://blog.playstation.com/2024/12/12/announcing-intergalactic-the-heretic-prophet-a-new-franchise-from-naughty-dog/",
       "https://blog.playstation.com/2024/12/12/borderlands-4-introduces-new-rippers-horde-and-deadly-planet-kairos/",
       "https://blog.playstation.com/2024/12/12/capcoms-onimusha-series-reawakens-with-onimusha-way-of-the-sword-in-2026/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/05/22/13-must-play-open-world-games-available-with-playstation-plus-game-catalog/",
       "https://blog.playstation.com/2026/05/22/official-playstation-podcast-episode-542-horror-on-a-dark-knight/",
       "https://blog.playstation.com/2026/05/22/share-of-the-week-hands/",
-      "https://blog.playstation.com/2026/05/22/the-sound-of-the-eclipse-sam-slater-on-scoring-saros/"
+      "https://blog.playstation.com/2026/05/22/the-sound-of-the-eclipse-sam-slater-on-scoring-saros/",
+      "https://blog.playstation.com/2026/05/25/where-winds-meet-secrets-of-the-imperial-palace-unfold-may-28-with-ps5-pro-enhancements/"
     ],
     "removed": []
   }
