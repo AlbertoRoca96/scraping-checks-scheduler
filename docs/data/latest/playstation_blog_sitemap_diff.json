@@ -2,19 +2,17 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-05-26T07:42:09.153Z",
+  "checkedAt": "2026-05-26T15:18:30.180Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/12/11/day-of-the-devs-2024-indie-highlights-coming-to-playstation/",
       "https://blog.playstation.com/2024/12/12/announcing-intergalactic-the-heretic-prophet-a-new-franchise-from-naughty-dog/",
       "https://blog.playstation.com/2024/12/12/borderlands-4-introduces-new-rippers-horde-and-deadly-planet-kairos/",
       "https://blog.playstation.com/2024/12/12/capcoms-onimusha-series-reawakens-with-onimusha-way-of-the-sword-in-2026/",
       "https://blog.playstation.com/2024/12/12/midnight-murder-club-coming-to-ps5-crossplay-demo-available-today/",
       "https://blog.playstation.com/2024/12/12/new-helldivers-2-update-omens-of-tyranny-live-now-features-the-return-of-the-illuminate-faction/",
-      "https://blog.playstation.com/2024/12/12/ninja-gaiden-ragebound-is-coming-summer-2025/",
       "https://blog.playstation.com/2024/12/12/the-last-of-us-part-ii-remastered-comes-to-pc-april-3-2025/",
       "https://blog.playstation.com/2024/12/12/thick-as-thieves-launches-on-ps5-in-2026/",
       "https://blog.playstation.com/2024/12/13/helldivers-2-urban-legends-warbond-drops-today/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2026/05/22/official-playstation-podcast-episode-542-horror-on-a-dark-knight/",
       "https://blog.playstation.com/2026/05/22/share-of-the-week-hands/",
       "https://blog.playstation.com/2026/05/22/the-sound-of-the-eclipse-sam-slater-on-scoring-saros/",
-      "https://blog.playstation.com/2026/05/25/where-winds-meet-secrets-of-the-imperial-palace-unfold-may-28-with-ps5-pro-enhancements/"
+      "https://blog.playstation.com/2026/05/25/where-winds-meet-secrets-of-the-imperial-palace-unfold-may-28-with-ps5-pro-enhancements/",
+      "https://blog.playstation.com/2026/05/26/days-of-play-2026-begins-may-27/",
+      "https://blog.playstation.com/2026/05/26/playstation-plus-monthly-games-for-june-grounded-fully-yoked-edition-nickelodeon-all-star-brawl-2-warhammer-40000-darktide/"
     ],
     "removed": []
   }
