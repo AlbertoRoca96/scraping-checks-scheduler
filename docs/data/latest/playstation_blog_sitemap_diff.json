@@ -2,16 +2,14 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-05-28T11:35:47.486Z",
+  "checkedAt": "2026-05-28T15:44:03.976Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2024/12/12/announcing-intergalactic-the-heretic-prophet-a-new-franchise-from-naughty-dog/",
-      "https://blog.playstation.com/2024/12/12/borderlands-4-introduces-new-rippers-horde-and-deadly-planet-kairos/",
       "https://blog.playstation.com/2024/12/12/capcoms-onimusha-series-reawakens-with-onimusha-way-of-the-sword-in-2026/",
-      "https://blog.playstation.com/2024/12/12/midnight-murder-club-coming-to-ps5-crossplay-demo-available-today/",
       "https://blog.playstation.com/2024/12/12/new-helldivers-2-update-omens-of-tyranny-live-now-features-the-return-of-the-illuminate-faction/",
       "https://blog.playstation.com/2024/12/12/the-last-of-us-part-ii-remastered-comes-to-pc-april-3-2025/",
       "https://blog.playstation.com/2024/12/13/helldivers-2-urban-legends-warbond-drops-today/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2026/05/26/playstation-plus-monthly-games-for-june-grounded-fully-yoked-edition-nickelodeon-all-star-brawl-2-warhammer-40000-darktide/",
       "https://blog.playstation.com/2026/05/27/marathon-season-2-arrives-june-2/",
       "https://blog.playstation.com/2026/05/27/no-mans-sky-the-swarm-update-launches-today/",
-      "https://blog.playstation.com/2026/05/27/playstation-x-dragon-quest-celebrating-the-rpg-franchises-40th-anniversary/"
+      "https://blog.playstation.com/2026/05/27/playstation-x-dragon-quest-celebrating-the-rpg-franchises-40th-anniversary/",
+      "https://blog.playstation.com/2026/05/28/beamng-drive-speeds-onto-ps5-this-year/",
+      "https://blog.playstation.com/2026/05/28/call-of-duty-modern-warfare-4-campaign-multiplayer-and-dmz-launches-october-23/"
     ],
     "removed": []
   }
