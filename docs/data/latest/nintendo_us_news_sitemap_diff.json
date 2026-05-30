@@ -2,18 +2,15 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-05-30T19:08:24.646Z",
+  "checkedAt": "2026-05-30T20:52:55.684Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 6,
+    "nowCount": 3,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/heres-the-latest-nintendo-switch-online-news-from-january-2026/",
-      "https://www.nintendo.com/us/whatsnew/indie-sale-save-on-select-digital-games/",
-      "https://www.nintendo.com/us/whatsnew/join-bluey-in-a-heartfelt-story-driven-adventure/",
       "https://www.nintendo.com/us/whatsnew/latest-nintendo-direct-partner-showcase-features-new-and-classic-titles-coming-to-nintendo-switch-2-and-nintendo-switch/",
-      "https://www.nintendo.com/us/whatsnew/make-your-mark-pre-order-mlb-the-show-26-now-for-nintendo-switch/",
-      "https://www.nintendo.com/us/whatsnew/mobile-news-play-with-your-photos-in-the-new-free-to-start-game-pictonico/"
+      "https://www.nintendo.com/us/whatsnew/make-your-mark-pre-order-mlb-the-show-26-now-for-nintendo-switch/"
     ],
     "removed": []
   }
