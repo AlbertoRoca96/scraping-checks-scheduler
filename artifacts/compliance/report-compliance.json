@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-31T07:43:30.665Z",
+  "generatedAt": "2026-05-31T10:13:41.313Z",
   "group": "compliance",
   "summary": [
     {
@@ -7,7 +7,7 @@
       "type": "psa_pop_row",
       "changed": false,
       "changedKeys": [],
-      "error": "Error: row not found: Charizard-Holo 1st Edition"
+      "error": "TimeoutError: page.waitForSelector: Timeout 45000ms exceeded.\nCall log:\n  - waiting for locator('table') to be visible\n"
     },
     {
       "name": "sec_aapl_8k_list_hash",
