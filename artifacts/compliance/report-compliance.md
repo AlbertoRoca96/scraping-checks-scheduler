@@ -1,11 +1,8 @@
-# Scrape Report (2026-05-31T03:32:46.895Z)
+# Scrape Report (2026-05-31T07:43:30.666Z)
 
-Group: `compliance`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/26702200134
+Group: `compliance`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/26706794801
 
 | Check | Changed | Keys | Error |
 |---|:---:|:--|:--|
-| `psa_charizard_pop_total` | — |  | `TimeoutError: page.waitForSelector: Timeout 45000ms exceeded.
-Call log:
-  - waiting for locator('table') to be visible
-` |
+| `psa_charizard_pop_total` | — |  | `Error: row not found: Charizard-Holo 1st Edition` |
 | `sec_aapl_8k_list_hash` | ✅ | hash |  |
