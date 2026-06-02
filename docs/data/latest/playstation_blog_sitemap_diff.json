@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-06-02T13:58:52.673Z",
+  "checkedAt": "2026-06-02T18:06:42.717Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2024/12/13/official-playstation-podcast-episode-504-celebrating-30-years-of-playstation-part-4/",
       "https://blog.playstation.com/2024/12/16/stellar-blades-holiday-themed-event-brings-new-costumes-mini-game-and-more-dec-17/",
       "https://blog.playstation.com/2024/12/17/ps-blog-game-of-the-year-2024-the-winners/",
       "https://blog.playstation.com/2024/12/18/ps5-pro-technical-seminar-reveals-new-in-depth-details-on-console/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/06/01/ea-sports-f1-25-enhanced-pssr-available-alongside-2026-season-pack/",
       "https://blog.playstation.com/2026/06/01/flexstrike-wireless-fight-stick-27-gaming-monitor-launching-in-august-followed-by-pulse-elevate-wireless-speakers-later-this-year/",
       "https://blog.playstation.com/2026/06/01/hands-on-report-flexstrike-wireless-fight-stick-pulse-elevate-wireless-speakers-playstations-27-gaming-monitor/",
-      "https://blog.playstation.com/2026/06/01/players-choice-vote-for-may-2026s-best-new-game/"
+      "https://blog.playstation.com/2026/06/01/players-choice-vote-for-may-2026s-best-new-game/",
+      "https://blog.playstation.com/2026/06/02/call-of-duty-black-ops-7-and-call-of-duty-warzone-season-04-launches-on-june-4/"
     ],
     "removed": []
   }
