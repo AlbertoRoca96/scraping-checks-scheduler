@@ -2,12 +2,13 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-06-02T03:39:55.515Z",
+  "checkedAt": "2026-06-02T08:26:16.011Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 1,
+    "nowCount": 2,
     "prevCount": 0,
     "added": [
+      "https://www.nintendo.com/us/whatsnew/enjoy-music-from-nintendo-games-on-your-phone-tablet-computer-or-car/",
       "https://www.nintendo.com/us/whatsnew/lego-r-the-legend-of-zelda-tm-ocarina-of-time-tm-the-final-battle-is-now-available-for-pre-order/"
     ],
     "removed": []
