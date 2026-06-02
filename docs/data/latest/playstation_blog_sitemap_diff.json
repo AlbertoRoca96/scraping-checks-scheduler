@@ -2,14 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-06-01T23:25:05.237Z",
+  "checkedAt": "2026-06-02T03:39:53.677Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2024/12/13/official-playstation-podcast-episode-504-celebrating-30-years-of-playstation-part-4/",
-      "https://blog.playstation.com/2024/12/13/share-of-the-week-30th-anniversary/",
       "https://blog.playstation.com/2024/12/16/stellar-blades-holiday-themed-event-brings-new-costumes-mini-game-and-more-dec-17/",
       "https://blog.playstation.com/2024/12/17/ps-blog-game-of-the-year-2024-the-winners/",
       "https://blog.playstation.com/2024/12/18/ps5-pro-technical-seminar-reveals-new-in-depth-details-on-console/",
@@ -772,6 +771,7 @@
       "https://blog.playstation.com/2026/04/30/resident-evil-qa-director-zach-cregger-shares-inspirations-and-a-new-film-teaser/",
       "https://blog.playstation.com/2026/05/01/official-playstation-podcast-episode-540-surviving-saros/",
       "https://blog.playstation.com/2026/05/01/share-of-the-week-cozy/",
+      "https://blog.playstation.com/2026/05/02/hulk-and-black-panther-join-the-fight-for-marvel-tokon-fighting-souls/",
       "https://blog.playstation.com/2026/05/04/players-choice-vote-for-april-2026s-best-new-game/",
       "https://blog.playstation.com/2026/05/05/horizon-hunters-gathering-second-playtest-new-hunters-episode-region-revealed/",
       "https://blog.playstation.com/2026/05/05/lego-batman-legacy-of-the-dark-knight-hands-on-report/",
