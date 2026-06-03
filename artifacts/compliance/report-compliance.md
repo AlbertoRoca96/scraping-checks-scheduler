@@ -1,11 +1,8 @@
-# Scrape Report (2026-06-03T08:53:28.508Z)
+# Scrape Report (2026-06-03T14:25:32.285Z)
 
-Group: `compliance`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/26874173648
+Group: `compliance`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/26891236804
 
 | Check | Changed | Keys | Error |
 |---|:---:|:--|:--|
-| `psa_charizard_pop_total` | — |  | `TimeoutError: page.waitForSelector: Timeout 45000ms exceeded.
-Call log:
-  - waiting for locator('table') to be visible
-` |
-| `sec_aapl_8k_list_hash` | ✅ | hash, length |  |
+| `psa_charizard_pop_total` | ✅ | column, population, row |  |
+| `sec_aapl_8k_list_hash` | ✅ | hash |  |
