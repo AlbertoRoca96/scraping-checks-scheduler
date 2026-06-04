@@ -2,10 +2,10 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-06-04T03:42:32.445Z",
+  "checkedAt": "2026-06-04T08:18:09.681Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 8,
+    "nowCount": 7,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/crocs-x-super-mario-collection-coming-7-15/",
@@ -13,7 +13,6 @@
       "https://www.nintendo.com/us/whatsnew/enjoy-music-from-nintendo-games-on-your-phone-tablet-computer-or-car/",
       "https://www.nintendo.com/us/whatsnew/join-bulbasaurs-jump-rope-contest-in-pokemon-pokopia/",
       "https://www.nintendo.com/us/whatsnew/learn-all-about-how-you-can-share-compatible-games-with-your-friends/",
-      "https://www.nintendo.com/us/whatsnew/play-the-54th-maximus-cup-online-event-and-you-could-earn-an-in-game-collaborative-theme/",
       "https://www.nintendo.com/us/whatsnew/race-with-players-around-the-globe-in-the-mario-kart-world-global-online-challenge/",
       "https://www.nintendo.com/us/whatsnew/the-king-of-swing-is-back-in-town-for-nintendo-switch-online-expansion-pack-members/"
     ],
