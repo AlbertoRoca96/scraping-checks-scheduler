@@ -1,13 +1,19 @@
 {
-  "generatedAt": "2026-06-03T22:27:06.929Z",
+  "generatedAt": "2026-06-04T03:42:32.599Z",
   "group": "seo",
   "summary": [
     {
       "name": "playstation_blog_sitemap_diff",
       "type": "sitemap_diff",
-      "changed": false,
-      "changedKeys": [],
-      "error": "Error: Sitemap fetch failed: HTTP 403 Forbidden"
+      "changed": true,
+      "changedKeys": [
+        "added",
+        "nowCount",
+        "prevCount",
+        "removed",
+        "source"
+      ],
+      "error": null
     },
     {
       "name": "nintendo_us_news_sitemap_diff",
