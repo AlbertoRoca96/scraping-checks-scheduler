@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-06-04T12:42:36.460Z",
+  "checkedAt": "2026-06-04T16:52:16.988Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/01/07/new-midnight-black-collection-of-ps5-accessories-launches-next-month/",
       "https://blog.playstation.com/2025/01/09/revenge-of-the-savage-planet-revealing-a-new-90s-inspired-planet/",
       "https://blog.playstation.com/2025/01/09/tomb-raider-series-retrospective/",
       "https://blog.playstation.com/2025/01/10/players-choice-vote-for-december-2024s-best-new-game/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/06/02/the-lost-wild-comes-to-ps5-in-2027/",
       "https://blog.playstation.com/2026/06/02/tomb-raider-legacy-of-atlantis-launches-feb-12-2027-on-ps5/",
       "https://blog.playstation.com/2026/06/02/until-dawn-2-is-coming-to-ps5-in-2027/",
-      "https://blog.playstation.com/2026/06/03/playstation-store-may-2026s-top-downloads/"
+      "https://blog.playstation.com/2026/06/03/playstation-store-may-2026s-top-downloads/",
+      "https://blog.playstation.com/2026/06/04/hands-on-report-ace-combat-8-wings-of-theve/"
     ],
     "removed": []
   }
