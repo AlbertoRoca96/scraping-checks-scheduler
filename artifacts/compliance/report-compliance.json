@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T03:30:10.416Z",
+  "generatedAt": "2026-06-05T08:03:53.602Z",
   "group": "compliance",
   "summary": [
     {
@@ -7,9 +7,7 @@
       "type": "psa_pop_row",
       "changed": true,
       "changedKeys": [
-        "column",
-        "population",
-        "row"
+        "population"
       ],
       "error": null
     },
