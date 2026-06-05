@@ -2,14 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-06-05T12:34:27.047Z",
+  "checkedAt": "2026-06-05T16:28:26.911Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2025/01/10/players-choice-vote-for-december-2024s-best-new-game/",
-      "https://blog.playstation.com/2025/01/10/playstation-store-december-2024s-top-downloads/",
       "https://blog.playstation.com/2025/01/10/share-of-the-year-2024/",
       "https://blog.playstation.com/2025/01/13/dynasty-warriors-origins-hands-on-report-2/",
       "https://blog.playstation.com/2025/01/14/new-year-deals-come-to-playstation-store/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/06/02/tomb-raider-legacy-of-atlantis-launches-feb-12-2027-on-ps5/",
       "https://blog.playstation.com/2026/06/02/until-dawn-2-is-coming-to-ps5-in-2027/",
       "https://blog.playstation.com/2026/06/03/playstation-store-may-2026s-top-downloads/",
-      "https://blog.playstation.com/2026/06/04/hands-on-report-ace-combat-8-wings-of-theve/"
+      "https://blog.playstation.com/2026/06/04/hands-on-report-ace-combat-8-wings-of-theve/",
+      "https://blog.playstation.com/2026/06/05/share-of-the-week-star-wars-outlaws/"
     ],
     "removed": []
   }
