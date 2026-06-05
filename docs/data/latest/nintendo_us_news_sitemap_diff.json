@@ -2,15 +2,12 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-06-05T16:28:30.758Z",
+  "checkedAt": "2026-06-05T19:50:34.665Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 6,
+    "nowCount": 3,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/discover-the-world-behind-midgar-in-final-fantasy-vii-rebirth/",
-      "https://www.nintendo.com/us/whatsnew/join-bulbasaurs-jump-rope-contest-in-pokemon-pokopia/",
-      "https://www.nintendo.com/us/whatsnew/learn-all-about-how-you-can-share-compatible-games-with-your-friends/",
       "https://www.nintendo.com/us/whatsnew/race-with-players-around-the-globe-in-the-mario-kart-world-global-online-challenge/",
       "https://www.nintendo.com/us/whatsnew/star-fox-trailer-reveals-new-gameplay-footage-of-the-spacefaring-adventure-launching-on-nintendo-switch-2-this-month/",
       "https://www.nintendo.com/us/whatsnew/the-king-of-swing-is-back-in-town-for-nintendo-switch-online-expansion-pack-members/"
