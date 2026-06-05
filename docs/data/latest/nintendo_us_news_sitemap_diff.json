@@ -2,13 +2,12 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-06-04T23:06:41.855Z",
+  "checkedAt": "2026-06-05T03:30:16.898Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 7,
+    "nowCount": 6,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/crocs-x-super-mario-collection-coming-7-15/",
       "https://www.nintendo.com/us/whatsnew/discover-the-world-behind-midgar-in-final-fantasy-vii-rebirth/",
       "https://www.nintendo.com/us/whatsnew/join-bulbasaurs-jump-rope-contest-in-pokemon-pokopia/",
       "https://www.nintendo.com/us/whatsnew/learn-all-about-how-you-can-share-compatible-games-with-your-friends/",
