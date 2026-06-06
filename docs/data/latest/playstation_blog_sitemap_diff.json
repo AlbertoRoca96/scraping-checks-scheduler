@@ -2,14 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-06-05T23:05:36.285Z",
+  "checkedAt": "2026-06-06T02:51:26.769Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/01/10/share-of-the-year-2024/",
-      "https://blog.playstation.com/2025/01/13/dynasty-warriors-origins-hands-on-report-2/",
       "https://blog.playstation.com/2025/01/14/new-year-deals-come-to-playstation-store/",
       "https://blog.playstation.com/2025/01/15/arken-age-a-new-sci-fi-fantasy-adventure-hits-ps-vr2/",
       "https://blog.playstation.com/2025/01/15/playstation-plus-game-catalog-for-january-god-of-war-ragnarok-like-a-dragon-gaiden-the-man-who-erased-his-name-atlas-fallen-reign-of-sand-and-more/",
@@ -757,6 +755,7 @@
       "https://blog.playstation.com/2026/05/05/horizon-hunters-gathering-second-playtest-new-hunters-episode-region-revealed/",
       "https://blog.playstation.com/2026/05/05/lego-batman-legacy-of-the-dark-knight-hands-on-report/",
       "https://blog.playstation.com/2026/05/05/myst-and-riven-remakes-launch-on-ps5-and-ps-vr2-may-19/",
+      "https://blog.playstation.com/2026/05/06/playstation-store-april-2026s-top-downloads/",
       "https://blog.playstation.com/2026/05/08/share-of-the-week-celebrate/",
       "https://blog.playstation.com/2026/05/11/20260511-gi/",
       "https://blog.playstation.com/2026/05/12/revealing-scuf-omega-a-performance-controller-officially-licensed-for-playstation-5-consoles/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/06/03/playstation-store-may-2026s-top-downloads/",
       "https://blog.playstation.com/2026/06/04/hands-on-report-ace-combat-8-wings-of-theve/",
       "https://blog.playstation.com/2026/06/05/official-playstation-podcast-episode-543-state-of-faye/",
-      "https://blog.playstation.com/2026/06/05/share-of-the-week-star-wars-outlaws/"
+      "https://blog.playstation.com/2026/06/05/share-of-the-week-star-wars-outlaws/",
+      "https://blog.playstation.com/2026/06/05/summer-game-fest-2026-highlights-16-games-coming-to-ps5/"
     ],
     "removed": []
   }
