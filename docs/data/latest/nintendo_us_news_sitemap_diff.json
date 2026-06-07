@@ -2,15 +2,12 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-06-07T21:09:51.830Z",
+  "checkedAt": "2026-06-07T23:02:37.485Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 2,
+    "nowCount": 0,
     "prevCount": 0,
-    "added": [
-      "https://www.nintendo.com/us/whatsnew/mobile-news-celebrate-summer-with-flower-crown-decor-pikmin-and-new-features/",
-      "https://www.nintendo.com/us/whatsnew/star-fox-trailer-reveals-new-gameplay-footage-of-the-spacefaring-adventure-launching-on-nintendo-switch-2-this-month/"
-    ],
+    "added": [],
     "removed": []
   }
 }
