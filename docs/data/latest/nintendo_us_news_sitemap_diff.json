@@ -2,12 +2,15 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-06-08T03:41:33.768Z",
+  "checkedAt": "2026-06-08T08:51:57.492Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 0,
+    "nowCount": 2,
     "prevCount": 0,
-    "added": [],
+    "added": [
+      "https://www.nintendo.com/us/whatsnew/discover-the-world-behind-midgar-in-final-fantasy-vii-rebirth/",
+      "https://www.nintendo.com/us/whatsnew/mobile-news-celebrate-summer-with-flower-crown-decor-pikmin-and-new-features/"
+    ],
     "removed": []
   }
 }
