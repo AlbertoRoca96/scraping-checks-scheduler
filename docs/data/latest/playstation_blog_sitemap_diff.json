@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-06-08T14:03:53.346Z",
+  "checkedAt": "2026-06-08T18:23:28.311Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/01/14/new-year-deals-come-to-playstation-store/",
       "https://blog.playstation.com/2025/01/15/arken-age-a-new-sci-fi-fantasy-adventure-hits-ps-vr2/",
       "https://blog.playstation.com/2025/01/15/playstation-plus-game-catalog-for-january-god-of-war-ragnarok-like-a-dragon-gaiden-the-man-who-erased-his-name-atlas-fallen-reign-of-sand-and-more/",
       "https://blog.playstation.com/2025/01/16/10-must-play-platformers-available-with-playstation-plus/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/06/04/hands-on-report-ace-combat-8-wings-of-theve/",
       "https://blog.playstation.com/2026/06/05/official-playstation-podcast-episode-543-state-of-faye/",
       "https://blog.playstation.com/2026/06/05/share-of-the-week-star-wars-outlaws/",
-      "https://blog.playstation.com/2026/06/05/summer-game-fest-2026-highlights-16-games-coming-to-ps5/"
+      "https://blog.playstation.com/2026/06/05/summer-game-fest-2026-highlights-16-games-coming-to-ps5/",
+      "https://blog.playstation.com/2026/06/08/summer-game-fest-2026-hands-on-and-more-details-on-6-upcoming-ps5-games/"
     ],
     "removed": []
   }
