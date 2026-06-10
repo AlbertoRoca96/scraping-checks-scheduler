@@ -2,14 +2,13 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-06-10T16:56:36.217Z",
+  "checkedAt": "2026-06-10T20:26:21.808Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 3,
+    "nowCount": 2,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/nintendo-direct-unveils-new-games-and-updates-for-nintendo-switch-2-and-nintendo-switch-including-the-legend-of-zelda-ocarina-of-time-kingdom-hearts-iv-xenoblade-genesis-and-more/",
-      "https://www.nintendo.com/us/whatsnew/star-fox-trailer-reveals-new-gameplay-footage-of-the-spacefaring-adventure-launching-on-nintendo-switch-2-this-month/",
       "https://www.nintendo.com/us/whatsnew/the-king-of-swing-is-back-in-town-for-nintendo-switch-online-expansion-pack-members/"
     ],
     "removed": []
