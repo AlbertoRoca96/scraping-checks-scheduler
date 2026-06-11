@@ -2,7 +2,7 @@
   "name": "stock_ntdoy_global_quote",
   "type": "stock_quote",
   "url": "https://www.alphavantage.co/documentation/#latestprice",
-  "checkedAt": "2026-06-10T23:51:54.252Z",
+  "checkedAt": "2026-06-11T03:39:22.965Z",
   "data": {
     "symbol": "NTDOY",
     "source": "alphavantage",
@@ -15,7 +15,7 @@
       "03. high": "11.1900",
       "04. low": "11.0500",
       "05. price": "11.1000",
-      "06. volume": "2476290",
+      "06. volume": "2477191",
       "07. latest trading day": "2026-06-10",
       "08. previous close": "11.1300",
       "09. change": "-0.0300",
