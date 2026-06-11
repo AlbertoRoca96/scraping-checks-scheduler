@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-06-11T08:43:32.277Z",
+  "checkedAt": "2026-06-11T13:56:33.907Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/01/15/playstation-plus-game-catalog-for-january-god-of-war-ragnarok-like-a-dragon-gaiden-the-man-who-erased-his-name-atlas-fallen-reign-of-sand-and-more/",
       "https://blog.playstation.com/2025/01/16/10-must-play-platformers-available-with-playstation-plus/",
       "https://blog.playstation.com/2025/01/16/world-premiere-of-the-until-dawn-movie-trailer/",
       "https://blog.playstation.com/2025/01/17/official-playstation-podcast-episode-506-marvelous-start/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/06/05/summer-game-fest-2026-highlights-16-games-coming-to-ps5/",
       "https://blog.playstation.com/2026/06/08/summer-game-fest-2026-hands-on-and-more-details-on-11-upcoming-ps5-games/",
       "https://blog.playstation.com/2026/06/10/gran-turismo-7-free-update-1-70-choose-your-le-mans-hypercar/",
-      "https://blog.playstation.com/2026/06/10/playstation-plus-game-catalog-for-june-final-fantasy-xvi-sonic-x-shadow-generations-kingdom-come-deliverance-and-more/"
+      "https://blog.playstation.com/2026/06/10/playstation-plus-game-catalog-for-june-final-fantasy-xvi-sonic-x-shadow-generations-kingdom-come-deliverance-and-more/",
+      "https://blog.playstation.com/2026/06/11/tomb-raider-legacy-of-atlantis-hands-on-report/"
     ],
     "removed": []
   }
