@@ -2,6 +2,6 @@
   "name": "psa_charizard_pop_total",
   "type": "psa_pop_row",
   "url": "https://www.psacard.com/pop/tcg-cards/1999/pokemon-game/57801",
-  "checkedAt": "2026-06-13T10:26:04.439Z",
-  "error": "TimeoutError: page.waitForSelector: Timeout 45000ms exceeded.\nCall log:\n  - waiting for locator('table') to be visible\n    - waiting for\" https://app.collectors.com/signin?b=psa&r=https%253A%252F%252Fwww.psacard.com%252Fpop%252Ftcg-cards%252F1999%252Fpokemon-game%252F57801\" navigation to finish...\n    - navigated to \"https://app.collectors.com/signin?b=psa&r=https%253A%252F%252Fwww.psacard.com%252Fpop%252Ftcg-cards%252F1999%252Fpokemon-game%252F57801\"\n"
+  "checkedAt": "2026-06-13T13:52:55.774Z",
+  "error": "TimeoutError: page.waitForSelector: Timeout 45000ms exceeded.\nCall log:\n  - waiting for locator('table') to be visible\n"
 }

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-13T10:26:51.576Z",
+  "generatedAt": "2026-06-13T13:53:41.475Z",
   "group": "compliance",
   "summary": [
     {
@@ -7,7 +7,7 @@
       "type": "psa_pop_row",
       "changed": false,
       "changedKeys": [],
-      "error": "TimeoutError: page.waitForSelector: Timeout 45000ms exceeded.\nCall log:\n  - waiting for locator('table') to be visible\n    - waiting for\" https://app.collectors.com/signin?b=psa&r=https%253A%252F%252Fwww.psacard.com%252Fpop%252Ftcg-cards%252F1999%252Fpokemon-game%252F57801\" navigation to finish...\n    - navigated to \"https://app.collectors.com/signin?b=psa&r=https%253A%252F%252Fwww.psacard.com%252Fpop%252Ftcg-cards%252F1999%252Fpokemon-game%252F57801\"\n"
+      "error": "TimeoutError: page.waitForSelector: Timeout 45000ms exceeded.\nCall log:\n  - waiting for locator('table') to be visible\n"
     },
     {
       "name": "sec_aapl_8k_list_hash",
