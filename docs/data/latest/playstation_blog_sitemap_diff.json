@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-06-18T08:42:45.472Z",
+  "checkedAt": "2026-06-18T12:50:00.508Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/01/21/world-of-warships-legends-introduces-new-quick-guide-the-codex/",
       "https://blog.playstation.com/2025/01/22/call-of-duty-black-ops-6-and-warzone-season-2-first-details-revealed-live-jan-28/",
       "https://blog.playstation.com/2025/01/22/dc-universe-online-introduces-new-chapter-based-story-arcs-next-week/",
       "https://blog.playstation.com/2025/01/22/star-wars-episode-i-jedi-power-battles-launches-tomorrow-cheat-codes-and-modernized-controls-revealed/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/06/12/share-of-the-week-duality-2/",
       "https://blog.playstation.com/2026/06/15/assassins-creed-shadows-final-update-features-animus-bending-endgame-content-domains/",
       "https://blog.playstation.com/2026/06/16/the-planet-crafter-launches-on-ps5-july-21/",
-      "https://blog.playstation.com/2026/06/17/the-vfx-tech-behind-saros-from-ngp-to-graphite/"
+      "https://blog.playstation.com/2026/06/17/the-vfx-tech-behind-saros-from-ngp-to-graphite/",
+      "https://blog.playstation.com/2026/06/18/granblue-fantasy-relink-endless-ragnarok-hands-on-report-demo-available-today/"
     ],
     "removed": []
   }
