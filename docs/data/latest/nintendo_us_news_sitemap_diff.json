@@ -2,15 +2,16 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-06-23T14:41:58.728Z",
+  "checkedAt": "2026-06-23T17:50:58.474Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 4,
+    "nowCount": 5,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/freshen-up-your-profile-pic-with-the-icon-maker/",
       "https://www.nintendo.com/us/whatsnew/icon-elements-inspired-by-the-yoshi-and-the-mysterious-book-game-are-here-for-a-limited-time/",
       "https://www.nintendo.com/us/whatsnew/play-the-54th-maximus-cup-online-event-and-you-could-earn-an-in-game-collaborative-theme/",
+      "https://www.nintendo.com/us/whatsnew/the-wish-upon-a-jirachi-event-is-underway-in-pokemon-pokopia/",
       "https://www.nintendo.com/us/whatsnew/unlock-rewards-for-starting-gamechat-only-with-nintendo-switch-online/"
     ],
     "removed": []
