@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-06-23T11:13:22.277Z",
+  "checkedAt": "2026-06-23T14:41:55.495Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/01/22/call-of-duty-black-ops-6-and-warzone-season-2-first-details-revealed-live-jan-28/",
       "https://blog.playstation.com/2025/01/23/doom-the-dark-ages-launches-on-ps5-may-15-id-software-reveals-new-gameplay-details/",
       "https://blog.playstation.com/2025/01/23/playstation-stores-top-downloads-of-2024/",
       "https://blog.playstation.com/2025/01/23/prepare-for-monster-hunter-wilds-with-a-look-back-at-the-series-evolution-on-playstation/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/06/17/the-vfx-tech-behind-saros-from-ngp-to-graphite/",
       "https://blog.playstation.com/2026/06/18/granblue-fantasy-relink-endless-ragnarok-hands-on-report-demo-available-today/",
       "https://blog.playstation.com/2026/06/19/official-playstation-podcast-episode-544-vesper-underground/",
-      "https://blog.playstation.com/2026/06/19/share-of-the-week-saros/"
+      "https://blog.playstation.com/2026/06/19/share-of-the-week-saros/",
+      "https://blog.playstation.com/2026/06/23/meet-yoshie-revealing-denshattacks-first-boss-battle/"
     ],
     "removed": []
   }
