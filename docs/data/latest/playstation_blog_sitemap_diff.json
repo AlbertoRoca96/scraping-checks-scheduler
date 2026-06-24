@@ -2,12 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-06-23T23:06:43.693Z",
+  "checkedAt": "2026-06-24T02:55:57.205Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
+      "https://blog.playstation.com/2025/01/22/call-of-duty-black-ops-6-and-warzone-season-2-first-details-revealed-live-jan-28/",
       "https://blog.playstation.com/2025/01/23/doom-the-dark-ages-launches-on-ps5-may-15-id-software-reveals-new-gameplay-details/",
       "https://blog.playstation.com/2025/01/23/playstation-stores-top-downloads-of-2024/",
       "https://blog.playstation.com/2025/01/23/prepare-for-monster-hunter-wilds-with-a-look-back-at-the-series-evolution-on-playstation/",
@@ -760,7 +761,6 @@
       "https://blog.playstation.com/2026/05/22/official-playstation-podcast-episode-542-horror-on-a-dark-knight/",
       "https://blog.playstation.com/2026/05/22/share-of-the-week-hands/",
       "https://blog.playstation.com/2026/05/22/the-sound-of-the-eclipse-sam-slater-on-scoring-saros/",
-      "https://blog.playstation.com/2026/05/25/where-winds-meet-secrets-of-the-imperial-palace-unfold-may-28-with-ps5-pro-enhancements/",
       "https://blog.playstation.com/2026/05/26/days-of-play-2026-begins-may-27/",
       "https://blog.playstation.com/2026/05/26/mlb-the-show-mobile-launches-globally-today/",
       "https://blog.playstation.com/2026/05/26/playstation-plus-monthly-games-for-june-grounded-fully-yoked-edition-nickelodeon-all-star-brawl-2-warhammer-40000-darktide/",
