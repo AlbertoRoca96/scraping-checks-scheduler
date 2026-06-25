@@ -2,14 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-06-25T18:07:25.611Z",
+  "checkedAt": "2026-06-25T21:40:07.794Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2025/01/23/doom-the-dark-ages-launches-on-ps5-may-15-id-software-reveals-new-gameplay-details/",
-      "https://blog.playstation.com/2025/01/23/prepare-for-monster-hunter-wilds-with-a-look-back-at-the-series-evolution-on-playstation/",
       "https://blog.playstation.com/2025/01/24/share-of-the-week-wuthering-waves/",
       "https://blog.playstation.com/2025/01/28/inside-destiny-2-heresy-launching-february-4/",
       "https://blog.playstation.com/2025/01/28/mlb-the-show-25-cover-athletes-revealed-paul-skenes-elly-de-la-cruz-and-gunnar-henderson/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/06/24/grand-theft-auto-vi-plays-best-on-ps5-november-19/",
       "https://blog.playstation.com/2026/06/24/how-roguelite-shooter-void-breakers-destruction-combat-uses-ps5-features/",
       "https://blog.playstation.com/2026/06/24/upgraded-pssr-comes-to-doom-the-dark-ages-on-ps5-pro/",
-      "https://blog.playstation.com/2026/06/25/introducing-the-five-new-games-of-jackbox-party-pack-12/"
+      "https://blog.playstation.com/2026/06/25/introducing-the-five-new-games-of-jackbox-party-pack-12/",
+      "https://blog.playstation.com/2026/06/25/star-wars-galactic-racer-hands-on-report/"
     ],
     "removed": []
   }
