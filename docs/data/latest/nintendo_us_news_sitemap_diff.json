@@ -2,10 +2,10 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-06-25T14:25:43.601Z",
+  "checkedAt": "2026-06-25T18:07:31.039Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 23,
+    "nowCount": 22,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/a-trunk-load-of-fun-awaits-in-bellabel-park-exclusively-for-nintendo-switch-2/",
@@ -27,7 +27,6 @@
       "https://www.nintendo.com/us/whatsnew/ready-orre-not-here-comes-the-next-update-for-nintendo-switch-online-expansion-pack-members/",
       "https://www.nintendo.com/us/whatsnew/ride-in-with-claws-out-for-reign-of-talon-season-3-into-the-tigers-den/",
       "https://www.nintendo.com/us/whatsnew/star-fox-direct-sees-fox-mccloud-and-crew-prepare-for-liftoff-on-nintendo-switch-2-june-25/",
-      "https://www.nintendo.com/us/whatsnew/the-wish-upon-a-jirachi-event-is-underway-in-pokemon-pokopia/",
       "https://www.nintendo.com/us/whatsnew/things-are-a-boat-to-get-a-little-fishy-june-2026/",
       "https://www.nintendo.com/us/whatsnew/try-the-latest-game-trial-ball-x-pit/",
       "https://www.nintendo.com/us/whatsnew/try-the-latest-game-trial-ea-sports-fc-26/"
