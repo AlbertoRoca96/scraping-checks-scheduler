@@ -2,10 +2,10 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-06-26T14:18:40.311Z",
+  "checkedAt": "2026-06-26T17:44:38.248Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 23,
+    "nowCount": 22,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/a-trunk-load-of-fun-awaits-in-bellabel-park-exclusively-for-nintendo-switch-2/",
@@ -23,7 +23,6 @@
       "https://www.nintendo.com/us/whatsnew/new-update-for-nintendo-switch-online-expansion-pack-members-may-2026/",
       "https://www.nintendo.com/us/whatsnew/new-update-for-nintendo-switch-online-members-april-2026/",
       "https://www.nintendo.com/us/whatsnew/outwit-a-prehistoric-threat-to-survive-in-tokyo-scramble-only-on-nintendo-switch-2/",
-      "https://www.nintendo.com/us/whatsnew/play-it-loud-with-nintendo-classics/",
       "https://www.nintendo.com/us/whatsnew/play-the-54th-maximus-cup-online-event-and-you-could-earn-an-in-game-collaborative-theme/",
       "https://www.nintendo.com/us/whatsnew/ready-orre-not-here-comes-the-next-update-for-nintendo-switch-online-expansion-pack-members/",
       "https://www.nintendo.com/us/whatsnew/ride-in-with-claws-out-for-reign-of-talon-season-3-into-the-tigers-den/",

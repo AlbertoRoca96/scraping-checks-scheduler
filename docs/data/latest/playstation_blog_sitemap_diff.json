@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-06-26T14:18:23.492Z",
+  "checkedAt": "2026-06-26T17:44:33.458Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/01/24/share-of-the-week-wuthering-waves/",
       "https://blog.playstation.com/2025/01/28/inside-destiny-2-heresy-launching-february-4/",
       "https://blog.playstation.com/2025/01/28/mlb-the-show-25-cover-athletes-revealed-paul-skenes-elly-de-la-cruz-and-gunnar-henderson/",
       "https://blog.playstation.com/2025/01/28/tomb-raider-iv-vi-remastered-launches-february-14-reveals-new-flyby-camera-maker/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/06/24/upgraded-pssr-comes-to-doom-the-dark-ages-on-ps5-pro/",
       "https://blog.playstation.com/2026/06/25/highlights-from-capcom-spotlight-2026-dragons-dogma-onimusha-monster-hunter-and-more/",
       "https://blog.playstation.com/2026/06/25/introducing-the-five-new-games-of-jackbox-party-pack-12/",
-      "https://blog.playstation.com/2026/06/25/star-wars-galactic-racer-hands-on-report/"
+      "https://blog.playstation.com/2026/06/25/star-wars-galactic-racer-hands-on-report/",
+      "https://blog.playstation.com/2026/06/26/share-of-the-week-saros-arjun-devraj/"
     ],
     "removed": []
   }
