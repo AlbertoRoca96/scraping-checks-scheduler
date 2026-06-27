@@ -2,14 +2,15 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-06-27T02:50:26.680Z",
+  "checkedAt": "2026-06-27T06:50:32.032Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 4,
+    "nowCount": 5,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/join-fox-mccloud-and-his-crew-in-star-fox-a-high-octane-adventure/",
       "https://www.nintendo.com/us/whatsnew/learn-the-bass-ics-of-rhythm-heaven-groove-then-try-it-for-yourself/",
+      "https://www.nintendo.com/us/whatsnew/mario-kart-world-global-online-challenge-results/",
       "https://www.nintendo.com/us/whatsnew/mobile-news-join-the-summer-fair-in-fire-emblem-shadows/",
       "https://www.nintendo.com/us/whatsnew/summer-sale-save-on-a-cool-selection-of-games/"
     ],
