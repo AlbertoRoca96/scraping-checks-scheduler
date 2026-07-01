@@ -2,7 +2,7 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-07-01T12:31:41.361Z",
+  "checkedAt": "2026-07-01T16:24:12.091Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
@@ -10,7 +10,6 @@
     "added": [
       "https://blog.playstation.com/2025/01/29/introducing-mlb-the-show-x-homage-apparel-partnership/",
       "https://blog.playstation.com/2025/01/29/marvels-spider-man-2-pc-features-and-ray-tracing-options-detailed-out-tomorrow/",
-      "https://blog.playstation.com/2025/01/29/new-in-game-content-incentives-coming-to-playstation-games-on-pc/",
       "https://blog.playstation.com/2025/01/29/playstation-plus-monthly-games-for-february-payday-3-high-on-life-pac-man-world-re-pac/",
       "https://blog.playstation.com/2025/01/30/gran-turismo-7-update-1-55-details-revealed-live-today/",
       "https://blog.playstation.com/2025/01/31/fortnite-og-chapter-1-season-2-goes-full-tilt-into-the-past-live-now/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/06/29/assassins-creed-black-flag-resynced-ps5-pro-enhancements-detailed/",
       "https://blog.playstation.com/2026/06/29/avatar-legends-the-fighting-game-spirit-wilds-stage-revealed/",
       "https://blog.playstation.com/2026/07/01/an-update-on-playstation-store-for-ps3-and-ps-vita/",
-      "https://blog.playstation.com/2026/07/01/physical-disc-production-ending-in-january-2028-for-new-games-releasing-on-playstation-consoles/"
+      "https://blog.playstation.com/2026/07/01/physical-disc-production-ending-in-january-2028-for-new-games-releasing-on-playstation-consoles/",
+      "https://blog.playstation.com/2026/07/01/playstation-plus-monthly-games-for-july-call-of-duty-modern-warfare-iii-for-the-king-ii-crosscode/"
     ],
     "removed": []
   }
