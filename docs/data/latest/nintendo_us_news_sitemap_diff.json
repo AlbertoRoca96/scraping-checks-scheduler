@@ -2,14 +2,16 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-07-01T23:12:09.682Z",
+  "checkedAt": "2026-07-02T02:56:54.755Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 3,
+    "nowCount": 5,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/learn-the-bass-ics-of-rhythm-heaven-groove-then-try-it-for-yourself/",
       "https://www.nintendo.com/us/whatsnew/mario-kart-world-update-adds-two-new-routes-to-knockout-tour-and-more/",
+      "https://www.nintendo.com/us/whatsnew/my-nintendo-june-wrap-up-june-2026/",
+      "https://www.nintendo.com/us/whatsnew/pre-order-available-for-the-elder-scrolls-iv-oblivion-remastered-launching-august-11-on-nintendo-switch-2/",
       "https://www.nintendo.com/us/whatsnew/splatoon-raiders-direct-spills-the-ink-on-the-treasure-filled-adventure-coming-to-nintendo-switch-2/"
     ],
     "removed": []
