@@ -2,12 +2,13 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-07-02T02:56:54.755Z",
+  "checkedAt": "2026-07-02T07:28:07.293Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 5,
+    "nowCount": 6,
     "prevCount": 0,
     "added": [
+      "https://www.nintendo.com/us/whatsnew/icon-elements-inspired-by-the-rhythm-heaven-groove-game-are-here-for-a-limited-time/",
       "https://www.nintendo.com/us/whatsnew/learn-the-bass-ics-of-rhythm-heaven-groove-then-try-it-for-yourself/",
       "https://www.nintendo.com/us/whatsnew/mario-kart-world-update-adds-two-new-routes-to-knockout-tour-and-more/",
       "https://www.nintendo.com/us/whatsnew/my-nintendo-june-wrap-up-june-2026/",
