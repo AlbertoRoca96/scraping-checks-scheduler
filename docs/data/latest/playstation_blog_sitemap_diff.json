@@ -2,14 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-07-07T14:25:32.362Z",
+  "checkedAt": "2026-07-07T17:56:23.355Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2025/02/04/capcom-shares-updates-on-onimusha-series-capcom-fighting-collection-2-and-monster-hunter-wilds/",
-      "https://blog.playstation.com/2025/02/04/helldivers-2-servants-of-freedom-warbond-launches-february-6/",
       "https://blog.playstation.com/2025/02/04/new-mlb-the-show-25-gameplay-and-modes-revealed/",
       "https://blog.playstation.com/2025/02/04/new-monster-hunter-wilds-trailer-reveals-iceshard-cliffs-and-the-monsters-within/",
       "https://blog.playstation.com/2025/02/06/apex-legends-takeover-launches-february-11-with-creator-made-challenges-and-items/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/07/02/players-choice-vote-for-june-2026s-best-new-game/",
       "https://blog.playstation.com/2026/07/02/what-dune-awakening-brings-to-playstation-5-sept-22/",
       "https://blog.playstation.com/2026/07/03/playstation-store-june-2026s-top-downloads/",
-      "https://blog.playstation.com/2026/07/03/share-of-the-week-sparks/"
+      "https://blog.playstation.com/2026/07/03/share-of-the-week-sparks/",
+      "https://blog.playstation.com/2026/07/07/the-blood-of-dawnwalker-unique-time-driven-quest-system-and-player-choice-detailed/"
     ],
     "removed": []
   }
