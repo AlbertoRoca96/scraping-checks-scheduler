@@ -1,7 +1,7 @@
-# Scrape Report (2026-07-10T20:44:01.179Z)
+# Scrape Report (2026-07-10T21:03:17.238Z)
 
-Group: `stocks`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/29122375035
+Group: `stocks`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/29123449299
 
 | Check | Changed | Keys | Error |
 |---|:---:|:--|:--|
-| `stock_ntdoy_global_quote` | — |  |  |
+| `stock_ntdoy_global_quote` | — |  | `Error: quote missing price` |
