@@ -2,16 +2,15 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-07-10T10:50:19.008Z",
+  "checkedAt": "2026-07-10T14:16:45.910Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 6,
+    "nowCount": 5,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/new-updates-for-the-nintendo-classics-library-of-games/",
       "https://www.nintendo.com/us/whatsnew/nintendo-gives-early-access-to-new-games-and-delivers-interactive-adventures-at-san-diego-comic-con-2026/",
       "https://www.nintendo.com/us/whatsnew/ole-ole-ole-get-into-the-spirit-of-sports-with-these-games/",
-      "https://www.nintendo.com/us/whatsnew/the-wish-upon-a-jirachi-event-is-underway-in-pokemon-pokopia/",
       "https://www.nintendo.com/us/whatsnew/try-a-free-demo-and-see-what-you-can-egg-spect-in-yoshis-latest-adventure/",
       "https://www.nintendo.com/us/whatsnew/turn-up-the-heat-this-summer-in-the-mario-kart-world-open-july-2026-event/"
     ],
