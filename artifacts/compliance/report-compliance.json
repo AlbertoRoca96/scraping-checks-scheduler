@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T17:46:03.920Z",
+  "generatedAt": "2026-07-10T19:23:25.918Z",
   "group": "compliance",
   "summary": [
     {
@@ -14,7 +14,8 @@
       "type": "content_watch",
       "changed": true,
       "changedKeys": [
-        "hash"
+        "hash",
+        "length"
       ],
       "error": null
     }
