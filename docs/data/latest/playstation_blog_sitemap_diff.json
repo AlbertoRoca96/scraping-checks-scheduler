@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-07-12T22:43:29.718Z",
+  "checkedAt": "2026-07-13T02:29:34.478Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/02/04/capcom-shares-updates-on-onimusha-series-capcom-fighting-collection-2-and-monster-hunter-wilds/",
       "https://blog.playstation.com/2025/02/04/new-monster-hunter-wilds-trailer-reveals-iceshard-cliffs-and-the-monsters-within/",
       "https://blog.playstation.com/2025/02/06/apex-legends-takeover-launches-february-11-with-creator-made-challenges-and-items/",
       "https://blog.playstation.com/2025/02/06/helldivers-2-one-year-later/",
@@ -781,6 +780,7 @@
       "https://blog.playstation.com/2026/06/10/gran-turismo-7-free-update-1-70-choose-your-le-mans-hypercar/",
       "https://blog.playstation.com/2026/06/10/playstation-plus-game-catalog-for-june-final-fantasy-xvi-sonic-x-shadow-generations-kingdom-come-deliverance-and-more/",
       "https://blog.playstation.com/2026/06/11/tomb-raider-legacy-of-atlantis-hands-on-report/",
+      "https://blog.playstation.com/2026/06/12/share-of-the-week-duality-2/",
       "https://blog.playstation.com/2026/06/15/assassins-creed-shadows-final-update-features-animus-bending-endgame-content-domains/",
       "https://blog.playstation.com/2026/06/16/the-planet-crafter-launches-on-ps5-july-21/",
       "https://blog.playstation.com/2026/06/17/the-vfx-tech-behind-saros-from-ngp-to-graphite/",
