@@ -1,8 +1,8 @@
-# Scrape Report (2026-07-13T02:29:38.694Z)
+# Scrape Report (2026-07-13T06:50:43.839Z)
 
-Group: `seo`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/29219601991
+Group: `seo`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/29230126320
 
 | Check | Changed | Keys | Error |
 |---|:---:|:--|:--|
-| `playstation_blog_sitemap_diff` | ✅ | added |  |
+| `playstation_blog_sitemap_diff` | — |  |  |
 | `nintendo_us_news_sitemap_diff` | — |  |  |
