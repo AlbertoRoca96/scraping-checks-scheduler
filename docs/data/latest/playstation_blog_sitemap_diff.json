@@ -2,14 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-07-14T13:27:17.606Z",
+  "checkedAt": "2026-07-14T15:21:38.422Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/02/06/apex-legends-takeover-launches-february-11-with-creator-made-challenges-and-items/",
-      "https://blog.playstation.com/2025/02/07/share-of-the-week-climb/",
       "https://blog.playstation.com/2025/02/11/playstation-store-january-2025s-top-downloads/",
       "https://blog.playstation.com/2025/02/11/state-of-play-returns-tomorrow-february-12/",
       "https://blog.playstation.com/2025/02/12/announcing-saros-the-next-game-from-housemarque-coming-2026/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2026/07/09/get-ready-for-playstation-at-comic-con-2026-in-san-diego/",
       "https://blog.playstation.com/2026/07/10/share-of-the-week-portraits-2/",
       "https://blog.playstation.com/2026/07/13/call-of-duty-black-ops-7-and-warzone-season-5-launches-july-23-full-details/",
-      "https://blog.playstation.com/2026/07/13/coloratura-designing-a-world-where-sound-is-the-only-guide/"
+      "https://blog.playstation.com/2026/07/13/coloratura-designing-a-world-where-sound-is-the-only-guide/",
+      "https://blog.playstation.com/2026/07/14/19-unmissable-ps5-games-still-releasing-in-2026/",
+      "https://blog.playstation.com/2026/07/14/playstation-stores-summer-sale-arrives-on-july-15/"
     ],
     "removed": []
   }
