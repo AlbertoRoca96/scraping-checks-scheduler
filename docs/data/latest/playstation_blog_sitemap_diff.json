@@ -2,12 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-07-14T22:55:04.719Z",
+  "checkedAt": "2026-07-15T02:07:19.003Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
+      "https://blog.playstation.com/2025/02/07/share-of-the-week-climb/",
       "https://blog.playstation.com/2025/02/11/playstation-store-january-2025s-top-downloads/",
       "https://blog.playstation.com/2025/02/11/state-of-play-returns-tomorrow-february-12/",
       "https://blog.playstation.com/2025/02/12/announcing-saros-the-next-game-from-housemarque-coming-2026/",
@@ -777,7 +778,6 @@
       "https://blog.playstation.com/2026/06/10/playstation-plus-game-catalog-for-june-final-fantasy-xvi-sonic-x-shadow-generations-kingdom-come-deliverance-and-more/",
       "https://blog.playstation.com/2026/06/11/tomb-raider-legacy-of-atlantis-hands-on-report/",
       "https://blog.playstation.com/2026/06/12/share-of-the-week-duality-2/",
-      "https://blog.playstation.com/2026/06/15/assassins-creed-shadows-final-update-features-animus-bending-endgame-content-domains/",
       "https://blog.playstation.com/2026/06/16/the-planet-crafter-launches-on-ps5-july-21/",
       "https://blog.playstation.com/2026/06/17/the-vfx-tech-behind-saros-from-ngp-to-graphite/",
       "https://blog.playstation.com/2026/06/18/granblue-fantasy-relink-endless-ragnarok-hands-on-report-demo-available-today/",
