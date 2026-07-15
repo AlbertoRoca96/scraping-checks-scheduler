@@ -2,14 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-07-15T13:37:24.633Z",
+  "checkedAt": "2026-07-15T15:24:15.151Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/02/07/share-of-the-week-climb/",
-      "https://blog.playstation.com/2025/02/11/playstation-store-january-2025s-top-downloads/",
       "https://blog.playstation.com/2025/02/11/state-of-play-returns-tomorrow-february-12/",
       "https://blog.playstation.com/2025/02/12/announcing-saros-the-next-game-from-housemarque-coming-2026/",
       "https://blog.playstation.com/2025/02/12/borderlands-4-arrives-september-23-special-state-of-play-coming-this-spring/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2026/07/13/call-of-duty-black-ops-7-and-warzone-season-5-launches-july-23-full-details/",
       "https://blog.playstation.com/2026/07/13/coloratura-designing-a-world-where-sound-is-the-only-guide/",
       "https://blog.playstation.com/2026/07/14/19-unmissable-ps5-games-still-releasing-in-2026/",
-      "https://blog.playstation.com/2026/07/14/playstation-stores-summer-sale-arrives-on-july-15/"
+      "https://blog.playstation.com/2026/07/14/playstation-stores-summer-sale-arrives-on-july-15/",
+      "https://blog.playstation.com/2026/07/15/moss-the-forgotten-relic-launches-on-ps5-tomorrow/",
+      "https://blog.playstation.com/2026/07/15/ratchet-clank-ranger-rumble-gameplay-details-on-the-upcoming-mobile-hero-shooter/"
     ],
     "removed": []
   }
