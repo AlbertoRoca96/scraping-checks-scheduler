@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-07-15T15:24:15.151Z",
+  "checkedAt": "2026-07-15T17:14:10.500Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/02/11/state-of-play-returns-tomorrow-february-12/",
       "https://blog.playstation.com/2025/02/12/announcing-saros-the-next-game-from-housemarque-coming-2026/",
       "https://blog.playstation.com/2025/02/12/borderlands-4-arrives-september-23-special-state-of-play-coming-this-spring/",
       "https://blog.playstation.com/2025/02/12/darwins-paradox-makes-a-splash-onto-ps5/",
@@ -16,7 +15,6 @@
       "https://blog.playstation.com/2025/02/12/days-gone-remastered-announced-for-ps5-launches-april-25/",
       "https://blog.playstation.com/2025/02/12/digimon-story-time-stranger-launches-2025-on-ps5/",
       "https://blog.playstation.com/2025/02/12/directive-8020-launches-october-2-on-ps5/",
-      "https://blog.playstation.com/2025/02/12/elden-ring-nightreign-launches-may-30-new-hands-on-report/",
       "https://blog.playstation.com/2025/02/12/first-look-at-shinobi-art-of-vengeance-out-aug-29-on-ps5-and-ps4/",
       "https://blog.playstation.com/2025/02/12/koei-tecmo-roguelite-warriors-abyss-launches-today-on-ps5-ps4/",
       "https://blog.playstation.com/2025/02/12/lies-of-p-overture-launches-summer-2025-on-ps5-ps4/",
@@ -24,7 +22,6 @@
       "https://blog.playstation.com/2025/02/12/metal-eden-is-a-sci-fi-adrenaline-rush-fps-coming-to-ps5-may-6/",
       "https://blog.playstation.com/2025/02/12/metal-gear-solid-delta-snake-eater-releases-august-28-2025-on-ps5/",
       "https://blog.playstation.com/2025/02/12/mindseye-launches-summer-2025-on-ps5-debuts-new-gameplay-and-cinematic-trailers/",
-      "https://blog.playstation.com/2025/02/12/monster-hunter-wilds-launch-trailer-reveals-new-monsters-and-first-post-launch-title-update/",
       "https://blog.playstation.com/2025/02/12/new-onimusha-way-of-the-sword-gameplay-trailer-reveals-its-protagonist/",
       "https://blog.playstation.com/2025/02/12/new-pixeljunk-adventure-dreams-of-another-revealed-for-ps5-and-ps-vr2-out-2025/",
       "https://blog.playstation.com/2025/02/12/playstation-plus-game-catalog-for-february-star-wars-jedi-survivor-topspin-2k25-lost-records-bloom-rage-tape-1-and-more/",
@@ -806,7 +803,10 @@
       "https://blog.playstation.com/2026/07/13/coloratura-designing-a-world-where-sound-is-the-only-guide/",
       "https://blog.playstation.com/2026/07/14/19-unmissable-ps5-games-still-releasing-in-2026/",
       "https://blog.playstation.com/2026/07/14/playstation-stores-summer-sale-arrives-on-july-15/",
+      "https://blog.playstation.com/2026/07/15/arknights-endfield-on-ps5-pro-upgraded-pssr-launches-with-version-1-4/",
+      "https://blog.playstation.com/2026/07/15/everything-to-know-about-modern-warfare-4s-ever-changing-kill-block-multiplayer-mode/",
       "https://blog.playstation.com/2026/07/15/moss-the-forgotten-relic-launches-on-ps5-tomorrow/",
+      "https://blog.playstation.com/2026/07/15/playstation-plus-game-catalog-for-july-avatar-frontiers-of-pandora-rise-of-the-ronin-firefighting-simulator-ignite-and-more/",
       "https://blog.playstation.com/2026/07/15/ratchet-clank-ranger-rumble-gameplay-details-on-the-upcoming-mobile-hero-shooter/"
     ],
     "removed": []
