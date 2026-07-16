@@ -2,7 +2,7 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-07-16T10:05:04.482Z",
+  "checkedAt": "2026-07-16T13:43:11.164Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
@@ -13,9 +13,7 @@
       "https://blog.playstation.com/2025/02/12/darwins-paradox-makes-a-splash-onto-ps5/",
       "https://blog.playstation.com/2025/02/12/dave-the-diver-x-like-a-dragon-crossover-announced/",
       "https://blog.playstation.com/2025/02/12/days-gone-remastered-announced-for-ps5-launches-april-25/",
-      "https://blog.playstation.com/2025/02/12/digimon-story-time-stranger-launches-2025-on-ps5/",
       "https://blog.playstation.com/2025/02/12/directive-8020-launches-october-2-on-ps5/",
-      "https://blog.playstation.com/2025/02/12/first-look-at-shinobi-art-of-vengeance-out-aug-29-on-ps5-and-ps4/",
       "https://blog.playstation.com/2025/02/12/koei-tecmo-roguelite-warriors-abyss-launches-today-on-ps5-ps4/",
       "https://blog.playstation.com/2025/02/12/lies-of-p-overture-launches-summer-2025-on-ps5-ps4/",
       "https://blog.playstation.com/2025/02/12/lost-soul-aside-launches-on-ps5-and-pc-may-30/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2026/07/15/everything-to-know-about-modern-warfare-4s-ever-changing-kill-block-multiplayer-mode/",
       "https://blog.playstation.com/2026/07/15/moss-the-forgotten-relic-launches-on-ps5-tomorrow/",
       "https://blog.playstation.com/2026/07/15/playstation-plus-game-catalog-for-july-avatar-frontiers-of-pandora-rise-of-the-ronin-firefighting-simulator-ignite-and-more/",
-      "https://blog.playstation.com/2026/07/15/ratchet-clank-ranger-rumble-gameplay-details-on-the-upcoming-mobile-hero-shooter/"
+      "https://blog.playstation.com/2026/07/15/ratchet-clank-ranger-rumble-gameplay-details-on-the-upcoming-mobile-hero-shooter/",
+      "https://blog.playstation.com/2026/07/16/explore-horrors-furthest-sensations-in-clive-barkers-hellraiser-revival/",
+      "https://blog.playstation.com/2026/07/16/pro-jank-footy-brings-classic-arcade-chaos-august-12/"
     ],
     "removed": []
   }
