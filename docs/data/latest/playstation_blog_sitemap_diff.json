@@ -2,7 +2,7 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-07-16T15:37:07.939Z",
+  "checkedAt": "2026-07-16T17:12:29.587Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
@@ -23,7 +23,6 @@
       "https://blog.playstation.com/2025/02/12/new-onimusha-way-of-the-sword-gameplay-trailer-reveals-its-protagonist/",
       "https://blog.playstation.com/2025/02/12/new-pixeljunk-adventure-dreams-of-another-revealed-for-ps5-and-ps-vr2-out-2025/",
       "https://blog.playstation.com/2025/02/12/playstation-plus-game-catalog-for-february-star-wars-jedi-survivor-topspin-2k25-lost-records-bloom-rage-tape-1-and-more/",
-      "https://blog.playstation.com/2025/02/12/sonic-racing-crossworlds-gameplay-revealed-new-mechanics-detailed/",
       "https://blog.playstation.com/2025/02/12/splitgate-2-alpha-out-on-ps5-feb-27-features-8v8v8-multi-team-portal-warfare/",
       "https://blog.playstation.com/2025/02/12/state-of-play-february-2025-all-announcements-trailers/",
       "https://blog.playstation.com/2025/02/12/unveiling-tides-of-annihilation-a-new-ps5-action-adventure-inspired-by-arthurian-legends/",
@@ -806,6 +805,7 @@
       "https://blog.playstation.com/2026/07/15/moss-the-forgotten-relic-launches-on-ps5-tomorrow/",
       "https://blog.playstation.com/2026/07/15/playstation-plus-game-catalog-for-july-avatar-frontiers-of-pandora-rise-of-the-ronin-firefighting-simulator-ignite-and-more/",
       "https://blog.playstation.com/2026/07/15/ratchet-clank-ranger-rumble-gameplay-details-on-the-upcoming-mobile-hero-shooter/",
+      "https://blog.playstation.com/2026/07/16/everything-you-need-to-know-about-marvel-tokon-fighting-souls-open-beta/",
       "https://blog.playstation.com/2026/07/16/explore-horrors-furthest-sensations-in-clive-barkers-hellraiser-revival/",
       "https://blog.playstation.com/2026/07/16/pro-jank-footy-brings-classic-arcade-chaos-august-12/"
     ],
