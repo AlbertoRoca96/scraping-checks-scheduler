@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-17T22:01:03.747Z",
+  "generatedAt": "2026-07-17T22:45:34.619Z",
   "group": "stocks",
   "summary": [
     {
@@ -9,9 +9,7 @@
       "changedKeys": [
         "change",
         "changePercent",
-        "price",
-        "source",
-        "symbol"
+        "price"
       ],
       "error": null
     }
