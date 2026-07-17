@@ -2,7 +2,7 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-07-17T06:12:27.320Z",
+  "checkedAt": "2026-07-17T09:53:44.061Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
@@ -16,7 +16,6 @@
       "https://blog.playstation.com/2025/02/12/directive-8020-launches-october-2-on-ps5/",
       "https://blog.playstation.com/2025/02/12/koei-tecmo-roguelite-warriors-abyss-launches-today-on-ps5-ps4/",
       "https://blog.playstation.com/2025/02/12/lies-of-p-overture-launches-summer-2025-on-ps5-ps4/",
-      "https://blog.playstation.com/2025/02/12/lost-soul-aside-launches-on-ps5-and-pc-may-30/",
       "https://blog.playstation.com/2025/02/12/metal-eden-is-a-sci-fi-adrenaline-rush-fps-coming-to-ps5-may-6/",
       "https://blog.playstation.com/2025/02/12/metal-gear-solid-delta-snake-eater-releases-august-28-2025-on-ps5/",
       "https://blog.playstation.com/2025/02/12/mindseye-launches-summer-2025-on-ps5-debuts-new-gameplay-and-cinematic-trailers/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/07/15/ratchet-clank-ranger-rumble-gameplay-details-on-the-upcoming-mobile-hero-shooter/",
       "https://blog.playstation.com/2026/07/16/everything-you-need-to-know-about-marvel-tokon-fighting-souls-open-beta/",
       "https://blog.playstation.com/2026/07/16/explore-horrors-furthest-sensations-in-clive-barkers-hellraiser-revival/",
-      "https://blog.playstation.com/2026/07/16/pro-jank-footy-brings-classic-arcade-chaos-august-12/"
+      "https://blog.playstation.com/2026/07/16/pro-jank-footy-brings-classic-arcade-chaos-august-12/",
+      "https://blog.playstation.com/2026/07/17/castlevania-belmonts-curse-hands-on-report/"
     ],
     "removed": []
   }
