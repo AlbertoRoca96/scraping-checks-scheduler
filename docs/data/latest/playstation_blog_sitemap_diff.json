@@ -2,14 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-07-20T15:54:32.453Z",
+  "checkedAt": "2026-07-20T17:58:18.897Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2025/02/12/announcing-saros-the-next-game-from-housemarque-coming-2026/",
-      "https://blog.playstation.com/2025/02/12/borderlands-4-arrives-september-23-special-state-of-play-coming-this-spring/",
       "https://blog.playstation.com/2025/02/12/darwins-paradox-makes-a-splash-onto-ps5/",
       "https://blog.playstation.com/2025/02/12/days-gone-remastered-announced-for-ps5-launches-april-25/",
       "https://blog.playstation.com/2025/02/12/directive-8020-launches-october-2-on-ps5/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/07/16/explore-horrors-furthest-sensations-in-clive-barkers-hellraiser-revival/",
       "https://blog.playstation.com/2026/07/16/pro-jank-footy-brings-classic-arcade-chaos-august-12/",
       "https://blog.playstation.com/2026/07/17/castlevania-belmonts-curse-hands-on-report/",
-      "https://blog.playstation.com/2026/07/17/share-of-the-week-sun/"
+      "https://blog.playstation.com/2026/07/17/share-of-the-week-sun/",
+      "https://blog.playstation.com/2026/07/20/beginners-guide-to-marvel-tokon-fighting-souls/"
     ],
     "removed": []
   }
