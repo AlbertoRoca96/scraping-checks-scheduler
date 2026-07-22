@@ -2,14 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-07-22T13:44:26.137Z",
+  "checkedAt": "2026-07-22T15:38:06.507Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2025/02/12/announcing-saros-the-next-game-from-housemarque-coming-2026/",
-      "https://blog.playstation.com/2025/02/12/darwins-paradox-makes-a-splash-onto-ps5/",
       "https://blog.playstation.com/2025/02/12/days-gone-remastered-announced-for-ps5-launches-april-25/",
       "https://blog.playstation.com/2025/02/12/koei-tecmo-roguelite-warriors-abyss-launches-today-on-ps5-ps4/",
       "https://blog.playstation.com/2025/02/12/lies-of-p-overture-launches-summer-2025-on-ps5-ps4/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/07/17/castlevania-belmonts-curse-hands-on-report/",
       "https://blog.playstation.com/2026/07/17/share-of-the-week-sun/",
       "https://blog.playstation.com/2026/07/20/beginners-guide-to-marvel-tokon-fighting-souls/",
-      "https://blog.playstation.com/2026/07/21/order-of-the-sinking-star-is-coming-to-ps5-hands-on-report/"
+      "https://blog.playstation.com/2026/07/21/order-of-the-sinking-star-is-coming-to-ps5-hands-on-report/",
+      "https://blog.playstation.com/2026/07/22/fresh-look-at-lous-lagoon-coming-to-ps5-on-august-27/"
     ],
     "removed": []
   }
