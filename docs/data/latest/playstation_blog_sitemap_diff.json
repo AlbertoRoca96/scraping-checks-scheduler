@@ -2,7 +2,7 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-07-23T19:10:26.373Z",
+  "checkedAt": "2026-07-23T20:59:49.833Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
@@ -12,9 +12,7 @@
       "https://blog.playstation.com/2025/02/12/days-gone-remastered-announced-for-ps5-launches-april-25/",
       "https://blog.playstation.com/2025/02/12/lies-of-p-overture-launches-summer-2025-on-ps5-ps4/",
       "https://blog.playstation.com/2025/02/12/metal-eden-is-a-sci-fi-adrenaline-rush-fps-coming-to-ps5-may-6/",
-      "https://blog.playstation.com/2025/02/12/metal-gear-solid-delta-snake-eater-releases-august-28-2025-on-ps5/",
       "https://blog.playstation.com/2025/02/12/mindseye-launches-summer-2025-on-ps5-debuts-new-gameplay-and-cinematic-trailers/",
-      "https://blog.playstation.com/2025/02/12/new-onimusha-way-of-the-sword-gameplay-trailer-reveals-its-protagonist/",
       "https://blog.playstation.com/2025/02/12/new-pixeljunk-adventure-dreams-of-another-revealed-for-ps5-and-ps-vr2-out-2025/",
       "https://blog.playstation.com/2025/02/12/playstation-plus-game-catalog-for-february-star-wars-jedi-survivor-topspin-2k25-lost-records-bloom-rage-tape-1-and-more/",
       "https://blog.playstation.com/2025/02/12/state-of-play-february-2025-all-announcements-trailers/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2026/07/21/order-of-the-sinking-star-is-coming-to-ps5-hands-on-report/",
       "https://blog.playstation.com/2026/07/22/fresh-look-at-lous-lagoon-coming-to-ps5-on-august-27/",
       "https://blog.playstation.com/2026/07/23/13-ways-halo-campaign-evolved-modernizes-the-iconic-fps/",
-      "https://blog.playstation.com/2026/07/23/dragon-ball-sparking-zeros-super-limit-breaking-neo-dlc-out-july-30/"
+      "https://blog.playstation.com/2026/07/23/dragon-ball-sparking-zeros-super-limit-breaking-neo-dlc-out-july-30/",
+      "https://blog.playstation.com/2026/07/23/marvels-wolverine-story-trailer-new-art-composer-details-and-more/",
+      "https://blog.playstation.com/2026/07/23/phoenix-cyclops-revealed-as-marvel-tokon-fighting-souls-first-year-1-dlc-character/"
     ],
     "removed": []
   }
