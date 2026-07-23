@@ -2,15 +2,13 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-07-23T15:52:51.763Z",
+  "checkedAt": "2026-07-23T17:18:25.697Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 5,
+    "nowCount": 3,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-22-splatoon-raiders-part-2/",
       "https://www.nintendo.com/us/whatsnew/icon-elements-inspired-by-the-splatoon-raiders-game-are-here-for-a-limited-time/",
-      "https://www.nintendo.com/us/whatsnew/learn-how-to-apply-for-the-duskbloods-network-test/",
       "https://www.nintendo.com/us/whatsnew/select-your-character-and-go-toe-to-toe-in-these-games/",
       "https://www.nintendo.com/us/whatsnew/two-new-splatoon-raiders-themed-custom-designs-are-now-available-in-animal-crossing-new-horizons/"
     ],
