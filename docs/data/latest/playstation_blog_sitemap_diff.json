@@ -2,13 +2,14 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-07-22T22:58:50.229Z",
+  "checkedAt": "2026-07-23T02:27:50.457Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2025/02/12/announcing-saros-the-next-game-from-housemarque-coming-2026/",
+      "https://blog.playstation.com/2025/02/12/darwins-paradox-makes-a-splash-onto-ps5/",
       "https://blog.playstation.com/2025/02/12/days-gone-remastered-announced-for-ps5-launches-april-25/",
       "https://blog.playstation.com/2025/02/12/koei-tecmo-roguelite-warriors-abyss-launches-today-on-ps5-ps4/",
       "https://blog.playstation.com/2025/02/12/lies-of-p-overture-launches-summer-2025-on-ps5-ps4/",
@@ -770,7 +771,6 @@
       "https://blog.playstation.com/2026/06/18/granblue-fantasy-relink-endless-ragnarok-hands-on-report-demo-available-today/",
       "https://blog.playstation.com/2026/06/19/official-playstation-podcast-episode-544-vesper-underground/",
       "https://blog.playstation.com/2026/06/19/share-of-the-week-saros/",
-      "https://blog.playstation.com/2026/06/23/meet-yoshie-revealing-denshattacks-first-boss-battle/",
       "https://blog.playstation.com/2026/06/24/grand-theft-auto-vi-plays-best-on-ps5-november-19/",
       "https://blog.playstation.com/2026/06/24/how-roguelite-shooter-void-breakers-destruction-combat-uses-ps5-features/",
       "https://blog.playstation.com/2026/06/24/upgraded-pssr-comes-to-doom-the-dark-ages-on-ps5-pro/",
