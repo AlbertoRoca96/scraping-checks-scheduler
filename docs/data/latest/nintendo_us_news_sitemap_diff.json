@@ -2,15 +2,15 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-07-24T22:58:40.487Z",
+  "checkedAt": "2026-07-25T02:23:36.288Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
     "nowCount": 8,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/ea-sports-tm-madden-nfl-27-is-now-available-for-pre-order/",
-      "https://www.nintendo.com/us/whatsnew/icon-elements-inspired-by-the-splatoon-raiders-game-are-here-for-a-limited-time/",
       "https://www.nintendo.com/us/whatsnew/limited-time-event-play-tetris-99-for-an-opportunity-to-collect-in-game-themes/",
+      "https://www.nintendo.com/us/whatsnew/nintendo-and-laced-records-announce-the-legend-of-zelda-breath-of-the-wild-vinyl-soundtrack-collection/",
       "https://www.nintendo.com/us/whatsnew/play-the-53rd-maximus-cup-online-event-and-you-could-earn-an-in-game-collaborative-theme/",
       "https://www.nintendo.com/us/whatsnew/play-the-54th-maximus-cup-online-event-and-you-could-earn-an-in-game-collaborative-theme/",
       "https://www.nintendo.com/us/whatsnew/play-the-55th-maximus-cup-online-event-and-you-could-earn-an-in-game-collaborative-theme/",
