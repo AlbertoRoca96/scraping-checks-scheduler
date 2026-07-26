@@ -2,14 +2,12 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-07-26T20:54:33.531Z",
+  "checkedAt": "2026-07-26T22:56:57.436Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 1,
+    "nowCount": 0,
     "prevCount": 0,
-    "added": [
-      "https://www.nintendo.com/us/whatsnew/nintendo-and-laced-records-announce-the-legend-of-zelda-breath-of-the-wild-vinyl-soundtrack-collection/"
-    ],
+    "added": [],
     "removed": []
   }
 }
