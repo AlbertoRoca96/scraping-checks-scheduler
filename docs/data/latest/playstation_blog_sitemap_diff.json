@@ -2,18 +2,15 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-07-28T13:58:28.970Z",
+  "checkedAt": "2026-07-28T16:06:16.114Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2025/02/12/announcing-saros-the-next-game-from-housemarque-coming-2026/",
-      "https://blog.playstation.com/2025/02/12/days-gone-remastered-announced-for-ps5-launches-april-25/",
-      "https://blog.playstation.com/2025/02/12/metal-eden-is-a-sci-fi-adrenaline-rush-fps-coming-to-ps5-may-6/",
       "https://blog.playstation.com/2025/02/12/mindseye-launches-summer-2025-on-ps5-debuts-new-gameplay-and-cinematic-trailers/",
       "https://blog.playstation.com/2025/02/12/new-pixeljunk-adventure-dreams-of-another-revealed-for-ps5-and-ps-vr2-out-2025/",
-      "https://blog.playstation.com/2025/02/12/playstation-plus-game-catalog-for-february-star-wars-jedi-survivor-topspin-2k25-lost-records-bloom-rage-tape-1-and-more/",
       "https://blog.playstation.com/2025/02/12/state-of-play-february-2025-all-announcements-trailers/",
       "https://blog.playstation.com/2025/02/12/unveiling-tides-of-annihilation-a-new-ps5-action-adventure-inspired-by-arthurian-legends/",
       "https://blog.playstation.com/2025/02/13/astro-bot-five-new-levels-and-special-bots-begin-rolling-out-today/",
@@ -807,7 +804,10 @@
       "https://blog.playstation.com/2026/07/23/dragon-ball-sparking-zeros-super-limit-breaking-neo-dlc-out-july-30/",
       "https://blog.playstation.com/2026/07/23/marvels-wolverine-story-trailer-new-art-composer-details-and-more/",
       "https://blog.playstation.com/2026/07/23/phoenix-cyclops-revealed-as-marvel-tokon-fighting-souls-first-year-1-dlc-character/",
-      "https://blog.playstation.com/2026/07/24/share-of-the-week-assassins-creed-black-flag-resynced/"
+      "https://blog.playstation.com/2026/07/24/share-of-the-week-assassins-creed-black-flag-resynced/",
+      "https://blog.playstation.com/2026/07/28/ball-x-pit-final-update-the-naturalist-arrives-august-6/",
+      "https://blog.playstation.com/2026/07/28/flamecraft-is-coming-to-ps5-this-year-demo-available-today/",
+      "https://blog.playstation.com/2026/07/28/playstation-plus-monthly-games-for-august-dying-light-2-stay-human-reloaded-edition-big-walk-signalis/"
     ],
     "removed": []
   }
