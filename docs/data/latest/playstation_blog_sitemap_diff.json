@@ -2,14 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-07-29T06:28:04.667Z",
+  "checkedAt": "2026-07-29T10:35:20.379Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2025/02/12/announcing-saros-the-next-game-from-housemarque-coming-2026/",
-      "https://blog.playstation.com/2025/02/12/metal-eden-is-a-sci-fi-adrenaline-rush-fps-coming-to-ps5-may-6/",
       "https://blog.playstation.com/2025/02/12/mindseye-launches-summer-2025-on-ps5-debuts-new-gameplay-and-cinematic-trailers/",
       "https://blog.playstation.com/2025/02/12/new-pixeljunk-adventure-dreams-of-another-revealed-for-ps5-and-ps-vr2-out-2025/",
       "https://blog.playstation.com/2025/02/12/state-of-play-february-2025-all-announcements-trailers/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/07/24/share-of-the-week-assassins-creed-black-flag-resynced/",
       "https://blog.playstation.com/2026/07/28/ball-x-pit-final-update-the-naturalist-arrives-august-6/",
       "https://blog.playstation.com/2026/07/28/flamecraft-is-coming-to-ps5-this-year-demo-available-today/",
-      "https://blog.playstation.com/2026/07/28/playstation-plus-monthly-games-for-august-dying-light-2-stay-human-reloaded-edition-big-walk-signalis/"
+      "https://blog.playstation.com/2026/07/28/playstation-plus-monthly-games-for-august-dying-light-2-stay-human-reloaded-edition-big-walk-signalis/",
+      "https://blog.playstation.com/2026/07/29/silent-hill-townfall-hands-on-report/"
     ],
     "removed": []
   }
