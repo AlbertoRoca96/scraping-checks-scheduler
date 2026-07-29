@@ -1,6 +1,6 @@
-# Scrape Report (2026-07-29T17:12:45.037Z)
+# Scrape Report (2026-07-29T19:11:00.863Z)
 
-Group: `compliance`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/30474174612
+Group: `compliance`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/30483160622
 
 | Check | Changed | Keys | Error |
 |---|:---:|:--|:--|
@@ -8,4 +8,4 @@ Group: `compliance`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-sc
 Call log:
   - waiting for locator('table') to be visible
 ` |
-| `sec_aapl_8k_list_hash` | ✅ | hash |  |
+| `sec_aapl_8k_list_hash` | ✅ | hash, length |  |
