@@ -1,13 +1,19 @@
 {
-  "generatedAt": "2026-07-29T19:47:07.015Z",
+  "generatedAt": "2026-07-29T20:39:00.858Z",
   "group": "stocks",
   "summary": [
     {
       "name": "stock_ntdoy_global_quote",
       "type": "stock_quote",
-      "changed": false,
-      "changedKeys": [],
-      "error": "Error: alphaVantage.globalQuote failed after 3 attempts: Error: HTTP 503"
+      "changed": true,
+      "changedKeys": [
+        "change",
+        "changePercent",
+        "price",
+        "source",
+        "symbol"
+      ],
+      "error": null
     }
   ]
 }
