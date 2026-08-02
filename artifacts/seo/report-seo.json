@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-02T13:13:46.915Z",
+  "generatedAt": "2026-08-02T14:59:23.026Z",
   "group": "seo",
   "summary": [
     {
@@ -7,7 +7,7 @@
       "type": "sitemap_diff",
       "changed": false,
       "changedKeys": [],
-      "error": null
+      "error": "Error: Sitemap fetch failed: HTTP 403 Forbidden"
     },
     {
       "name": "nintendo_us_news_sitemap_diff",
