@@ -1,8 +1,8 @@
-# Scrape Report (2026-08-02T14:59:23.027Z)
+# Scrape Report (2026-08-02T16:55:06.049Z)
 
-Group: `seo`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/30753301551
+Group: `seo`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/30757677496
 
 | Check | Changed | Keys | Error |
 |---|:---:|:--|:--|
-| `playstation_blog_sitemap_diff` | — |  | `Error: Sitemap fetch failed: HTTP 403 Forbidden` |
+| `playstation_blog_sitemap_diff` | ✅ | added, nowCount, prevCount, removed, source |  |
 | `nintendo_us_news_sitemap_diff` | — |  |  |
