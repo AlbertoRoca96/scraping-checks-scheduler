@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-08-03T06:56:17.708Z",
+  "checkedAt": "2026-08-03T11:19:02.216Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/02/12/new-pixeljunk-adventure-dreams-of-another-revealed-for-ps5-and-ps-vr2-out-2025/",
       "https://blog.playstation.com/2025/02/12/state-of-play-february-2025-all-announcements-trailers/",
       "https://blog.playstation.com/2025/02/13/astro-bot-five-new-levels-and-special-bots-begin-rolling-out-today/",
       "https://blog.playstation.com/2025/02/13/split-fiction-meet-co-op-protagonists-mio-and-zoe/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/07/28/flamecraft-is-coming-to-ps5-this-year-demo-available-today/",
       "https://blog.playstation.com/2026/07/28/playstation-plus-monthly-games-for-august-dying-light-2-stay-human-reloaded-edition-big-walk-signalis/",
       "https://blog.playstation.com/2026/07/29/silent-hill-townfall-hands-on-report/",
-      "https://blog.playstation.com/2026/07/30/silent-hill-townfall-developers-discuss-the-scottish-setting-retro-technology-first-person-combat/"
+      "https://blog.playstation.com/2026/07/30/silent-hill-townfall-developers-discuss-the-scottish-setting-retro-technology-first-person-combat/",
+      "https://blog.playstation.com/2026/08/03/beast-of-reincarnation-hands-on-parry-rich-combat-and-the-cutest-mutant-pup/"
     ],
     "removed": []
   }
