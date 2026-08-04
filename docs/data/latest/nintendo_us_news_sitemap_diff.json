@@ -2,12 +2,13 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-08-04T14:02:44.986Z",
+  "checkedAt": "2026-08-04T17:44:36.401Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 3,
+    "nowCount": 4,
     "prevCount": 0,
     "added": [
+      "https://www.nintendo.com/us/whatsnew/fire-emblem-fortunes-weave-direct-threads-together-strategic-combat-with-a-story-of-gods-and-heroes-only-on-nintendo-switch-2/",
       "https://www.nintendo.com/us/whatsnew/my-nintendo-july-wrap-up-2026/",
       "https://www.nintendo.com/us/whatsnew/new-update-for-nintendo-switch-online-expansion-pack-members-august-2026/",
       "https://www.nintendo.com/us/whatsnew/play-the-56th-maximus-cup-online-event-or-catch-up-on-past-in-game-collaborative-themes/"

@@ -2,14 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-08-04T14:02:42.179Z",
+  "checkedAt": "2026-08-04T17:44:31.897Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/02/13/astro-bot-five-new-levels-and-special-bots-begin-rolling-out-today/",
-      "https://blog.playstation.com/2025/02/13/split-fiction-meet-co-op-protagonists-mio-and-zoe/",
       "https://blog.playstation.com/2025/02/14/official-playstation-podcast-episode-508-come-back-stronger/",
       "https://blog.playstation.com/2025/02/14/share-of-the-week-romance-2/",
       "https://blog.playstation.com/2025/02/14/split-fiction-hands-on-report/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2026/07/29/silent-hill-townfall-hands-on-report/",
       "https://blog.playstation.com/2026/07/30/silent-hill-townfall-developers-discuss-the-scottish-setting-retro-technology-first-person-combat/",
       "https://blog.playstation.com/2026/08/03/beast-of-reincarnation-hands-on-parry-rich-combat-and-the-cutest-mutant-pup/",
-      "https://blog.playstation.com/2026/08/03/players-choice-vote-for-july-2026s-best-new-game/"
+      "https://blog.playstation.com/2026/08/03/players-choice-vote-for-july-2026s-best-new-game/",
+      "https://blog.playstation.com/2026/08/04/crimson-moon-battles-demonic-corruption-on-september-1/",
+      "https://blog.playstation.com/2026/08/04/gameplay-first-look-mafia-the-old-countrys-man-of-honor-expansion/"
     ],
     "removed": []
   }
