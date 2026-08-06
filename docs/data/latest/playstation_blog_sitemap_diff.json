@@ -2,12 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-08-05T22:56:01.401Z",
+  "checkedAt": "2026-08-06T02:13:39.031Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
+      "https://blog.playstation.com/2025/02/13/split-fiction-meet-co-op-protagonists-mio-and-zoe/",
       "https://blog.playstation.com/2025/02/14/official-playstation-podcast-episode-508-come-back-stronger/",
       "https://blog.playstation.com/2025/02/14/share-of-the-week-romance-2/",
       "https://blog.playstation.com/2025/02/14/split-fiction-hands-on-report/",
@@ -774,7 +775,6 @@
       "https://blog.playstation.com/2026/07/02/what-dune-awakening-brings-to-playstation-5-sept-22/",
       "https://blog.playstation.com/2026/07/03/playstation-store-june-2026s-top-downloads/",
       "https://blog.playstation.com/2026/07/03/share-of-the-week-sparks/",
-      "https://blog.playstation.com/2026/07/07/the-blood-of-dawnwalker-unique-time-driven-quest-system-and-player-choice-detailed/",
       "https://blog.playstation.com/2026/07/09/get-ready-for-playstation-at-comic-con-2026-in-san-diego/",
       "https://blog.playstation.com/2026/07/10/share-of-the-week-portraits-2/",
       "https://blog.playstation.com/2026/07/13/call-of-duty-black-ops-7-and-warzone-season-5-launches-july-23-full-details/",
