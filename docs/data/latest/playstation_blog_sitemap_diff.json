@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-08-07T14:50:16.339Z",
+  "checkedAt": "2026-08-07T16:50:57.808Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/02/17/promise-mascot-agency-ps5-demo-out-today/",
       "https://blog.playstation.com/2025/02/18/karma-the-dark-world-out-on-ps5-march-27/",
       "https://blog.playstation.com/2025/02/20/like-a-dragon-pirate-yakuza-in-hawaii-interview-2/",
       "https://blog.playstation.com/2025/02/21/fortnite-battle-royale-chapter-6-season-2-lawless-detailed-live-now/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/08/04/gameplay-first-look-mafia-the-old-countrys-man-of-honor-expansion/",
       "https://blog.playstation.com/2026/08/06/celebrate-30-years-of-quake-with-a-brand-new-episode-available-today/",
       "https://blog.playstation.com/2026/08/06/ghost-recon-wildlands-last-rites-everything-you-need-to-know/",
-      "https://blog.playstation.com/2026/08/06/onimusha-way-of-the-sword-opens-up-in-the-final-preview/"
+      "https://blog.playstation.com/2026/08/06/onimusha-way-of-the-sword-opens-up-in-the-final-preview/",
+      "https://blog.playstation.com/2026/08/07/share-of-the-week-assassins-creed-black-flag-resynced-jackdaw/"
     ],
     "removed": []
   }
