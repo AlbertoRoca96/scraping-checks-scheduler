@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T22:33:23.073Z",
+  "generatedAt": "2026-08-09T23:13:02.911Z",
   "group": "stocks",
   "summary": [
     {
@@ -7,7 +7,7 @@
       "type": "stock_quote",
       "changed": false,
       "changedKeys": [],
-      "error": null
+      "error": "Error: quote missing price"
     }
   ]
 }
