@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-08-12T01:40:28.387Z",
+  "checkedAt": "2026-08-12T04:03:34.457Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/02/20/like-a-dragon-pirate-yakuza-in-hawaii-interview-2/",
       "https://blog.playstation.com/2025/02/21/fortnite-battle-royale-chapter-6-season-2-lawless-detailed-live-now/",
       "https://blog.playstation.com/2025/02/21/share-of-the-week-tomb-raider-iv-vi-remastered/",
       "https://blog.playstation.com/2025/02/24/annapurna-interactive-showcase-2025-recap/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/08/07/share-of-the-week-assassins-creed-black-flag-resynced-jackdaw/",
       "https://blog.playstation.com/2026/08/10/no-mans-sky-developer-hello-games-celebrates-10-year-anniversary/",
       "https://blog.playstation.com/2026/08/10/playstation-store-july-2026s-top-downloads/",
-      "https://blog.playstation.com/2026/08/11/first-look-at-marvels-wolverine-limited-edition-ps5-console-bundle-and-accessories/"
+      "https://blog.playstation.com/2026/08/11/first-look-at-marvels-wolverine-limited-edition-ps5-console-bundle-and-accessories/",
+      "https://blog.playstation.com/2026/08/11/watch-the-phantom-blade-zero-gameplay-deep-dive-state-of-play-on-august-17-pre-orders-live-today/"
     ],
     "removed": []
   }
