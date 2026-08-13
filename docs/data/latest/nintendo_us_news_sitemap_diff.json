@@ -2,15 +2,16 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-08-12T22:36:35.869Z",
+  "checkedAt": "2026-08-13T01:42:44.417Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 4,
+    "nowCount": 5,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/play-the-56th-maximus-cup-online-event-or-catch-up-on-past-in-game-collaborative-themes/",
       "https://www.nintendo.com/us/whatsnew/pokemon-pokopia-expansion-pass-paid-dlc-keep-the-cozy-life-going-with-a-brand-new-underwater-area/",
       "https://www.nintendo.com/us/whatsnew/rise-with-elden-ring-tarnished-edition-launching-aug-28-on-nintendo-switch-2/",
+      "https://www.nintendo.com/us/whatsnew/the-elder-scrolls-iv-oblivion-remastered-arrives-on-nintendo-switch-2/",
       "https://www.nintendo.com/us/whatsnew/try-the-latest-game-trial-nba-2k26/"
     ],
     "removed": []
