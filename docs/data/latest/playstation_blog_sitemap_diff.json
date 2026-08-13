@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-08-13T14:53:47.761Z",
+  "checkedAt": "2026-08-13T16:53:21.525Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/02/24/annapurna-interactive-showcase-2025-recap/",
       "https://blog.playstation.com/2025/02/26/gran-turismo-7-update-1-56-available-today/",
       "https://blog.playstation.com/2025/02/26/playstation-plus-monthly-games-for-march-dragon-age-the-veilguard-sonic-colors-ultimate-teenage-mutant-ninja-turtles-the-cowabunga-collection/",
       "https://blog.playstation.com/2025/02/27/a-great-new-price-for-playstation-vr2/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/08/12/ghost-of-yotei-complete-edition-comes-to-ps5-october-1/",
       "https://blog.playstation.com/2026/08/12/helldivers-2-joins-playstation-plus-game-catalog-today-devoid-of-liberty-update-out-now/",
       "https://blog.playstation.com/2026/08/12/kinetic-publishing-showcase-recap-5-new-indie-games-coming-to-ps5/",
-      "https://blog.playstation.com/2026/08/12/playstation-plus-game-catalog-for-august-helldivers-2-kingdom-come-deliverance-ii-vampire-survivors-hell-is-us-and-more/"
+      "https://blog.playstation.com/2026/08/12/playstation-plus-game-catalog-for-august-helldivers-2-kingdom-come-deliverance-ii-vampire-survivors-hell-is-us-and-more/",
+      "https://blog.playstation.com/2026/08/13/hands-on-report-marvels-wolverine/"
     ],
     "removed": []
   }
