@@ -2,7 +2,7 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-08-17T10:28:19.214Z",
+  "checkedAt": "2026-08-17T12:36:45.605Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
@@ -10,7 +10,6 @@
     "added": [
       "https://blog.playstation.com/2025/02/27/bloody-boots-and-lokko-two-new-india-developed-games-are-coming-to-ps5/",
       "https://blog.playstation.com/2025/02/27/monster-hunter-wilds-ready-for-the-hunt-on-feb-28/",
-      "https://blog.playstation.com/2025/02/27/terminator-2d-no-fate-launches-september-5-on-ps5-and-ps4/",
       "https://blog.playstation.com/2025/02/28/official-playstation-podcast-episode-509-here-be-monsters/",
       "https://blog.playstation.com/2025/02/28/share-of-the-week-pirates/",
       "https://blog.playstation.com/2025/03/03/players-choice-vote-for-february-2025s-best-new-game/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/08/12/playstation-plus-game-catalog-for-august-helldivers-2-kingdom-come-deliverance-ii-vampire-survivors-hell-is-us-and-more/",
       "https://blog.playstation.com/2026/08/13/hands-on-report-marvels-wolverine/",
       "https://blog.playstation.com/2026/08/14/official-playstation-podcast-episode-545-walk-and-talk/",
-      "https://blog.playstation.com/2026/08/14/share-of-the-week-big-walk/"
+      "https://blog.playstation.com/2026/08/14/share-of-the-week-big-walk/",
+      "https://blog.playstation.com/2026/08/17/new-it-happens-on-ps5-campaign-highlights-the-biggest-moments-of-play/"
     ],
     "removed": []
   }
