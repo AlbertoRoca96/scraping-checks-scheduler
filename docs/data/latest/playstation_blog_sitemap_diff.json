@@ -2,14 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-08-17T20:22:04.472Z",
+  "checkedAt": "2026-08-18T04:31:23.557Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2025/02/27/bloody-boots-and-lokko-two-new-india-developed-games-are-coming-to-ps5/",
-      "https://blog.playstation.com/2025/02/27/monster-hunter-wilds-ready-for-the-hunt-on-feb-28/",
       "https://blog.playstation.com/2025/02/28/official-playstation-podcast-episode-509-here-be-monsters/",
       "https://blog.playstation.com/2025/02/28/share-of-the-week-pirates/",
       "https://blog.playstation.com/2025/03/03/players-choice-vote-for-february-2025s-best-new-game/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/08/13/hands-on-report-marvels-wolverine/",
       "https://blog.playstation.com/2026/08/14/official-playstation-podcast-episode-545-walk-and-talk/",
       "https://blog.playstation.com/2026/08/14/share-of-the-week-big-walk/",
-      "https://blog.playstation.com/2026/08/17/new-it-happens-on-ps5-campaign-highlights-the-biggest-moments-of-play/"
+      "https://blog.playstation.com/2026/08/17/new-it-happens-on-ps5-campaign-highlights-the-biggest-moments-of-play/",
+      "https://blog.playstation.com/2026/08/17/phantom-blade-zero-state-of-play-dives-deep-into-combat-and-the-wulin-world/"
     ],
     "removed": []
   }
