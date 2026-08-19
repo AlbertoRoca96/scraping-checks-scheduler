@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-08-19T12:38:48.075Z",
+  "checkedAt": "2026-08-19T20:25:33.394Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/03/03/players-choice-vote-for-february-2025s-best-new-game/",
       "https://blog.playstation.com/2025/03/04/registration-for-new-beta-program-at-playstation-starts-today/",
       "https://blog.playstation.com/2025/03/04/tony-hawks-pro-skater-3-4-launches-july-11-on-ps5-and-ps4/",
       "https://blog.playstation.com/2025/03/05/tekken-a-playstation-history/",
@@ -807,6 +806,7 @@
       "https://blog.playstation.com/2026/08/18/helldivers-2-a-deep-dive-into-the-illuminate-void/",
       "https://blog.playstation.com/2026/08/18/meet-the-lovecraftian-monstrosities-of-the-sinking-city-2-out-today-on-ps5/",
       "https://blog.playstation.com/2026/08/18/new-nba-2k27-gameplay-details-on-the-city-co-op-mynba-eras-and-more/",
+      "https://blog.playstation.com/2026/08/19/a-field-guide-to-gran-turismo-7s-1-71-update-out-today/",
       "https://blog.playstation.com/2026/08/19/inside-the-brutal-puzzles-of-clive-barkers-hellraiser-revival/"
     ],
     "removed": []
