@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-08-20T12:40:29.041Z",
+  "checkedAt": "2026-08-20T14:32:22.081Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/03/04/registration-for-new-beta-program-at-playstation-starts-today/",
       "https://blog.playstation.com/2025/03/04/tony-hawks-pro-skater-3-4-launches-july-11-on-ps5-and-ps4/",
       "https://blog.playstation.com/2025/03/05/tekken-a-playstation-history/",
       "https://blog.playstation.com/2025/03/06/assassins-creed-shadows-20-minutes-of-new-castle-gameplay-launches-march-20/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/08/18/meet-the-lovecraftian-monstrosities-of-the-sinking-city-2-out-today-on-ps5/",
       "https://blog.playstation.com/2026/08/18/new-nba-2k27-gameplay-details-on-the-city-co-op-mynba-eras-and-more/",
       "https://blog.playstation.com/2026/08/19/a-field-guide-to-gran-turismo-7s-1-71-update-out-today/",
-      "https://blog.playstation.com/2026/08/19/inside-the-brutal-puzzles-of-clive-barkers-hellraiser-revival/"
+      "https://blog.playstation.com/2026/08/19/inside-the-brutal-puzzles-of-clive-barkers-hellraiser-revival/",
+      "https://blog.playstation.com/2026/08/20/code-vein-ii-mask-of-idris-dlc-launches-september-9/"
     ],
     "removed": []
   }
