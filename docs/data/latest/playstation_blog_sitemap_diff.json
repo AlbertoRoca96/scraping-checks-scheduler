@@ -2,14 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-08-21T16:28:50.331Z",
+  "checkedAt": "2026-08-21T18:31:36.294Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/03/05/tekken-a-playstation-history/",
-      "https://blog.playstation.com/2025/03/06/assassins-creed-shadows-20-minutes-of-new-castle-gameplay-launches-march-20/",
       "https://blog.playstation.com/2025/03/06/first-look-at-the-dualsense-wireless-controller-the-last-of-us-limited-edition/",
       "https://blog.playstation.com/2025/03/07/blades-of-fire-hands-on-report/",
       "https://blog.playstation.com/2025/03/07/share-of-the-week-lost-records-bloom-rage/",
@@ -807,6 +805,8 @@
       "https://blog.playstation.com/2026/08/19/a-field-guide-to-gran-turismo-7s-1-71-update-out-today/",
       "https://blog.playstation.com/2026/08/19/inside-the-brutal-puzzles-of-clive-barkers-hellraiser-revival/",
       "https://blog.playstation.com/2026/08/20/code-vein-ii-mask-of-idris-dlc-launches-september-9/",
+      "https://blog.playstation.com/2026/08/21/call-of-duty-modern-warfare-4-new-multiplayer-and-early-access-beta-details/",
+      "https://blog.playstation.com/2026/08/21/share-of-the-week-katana/",
       "https://blog.playstation.com/2026/08/21/tails-of-iron-2-blood-brine-free-expansion/"
     ],
     "removed": []
