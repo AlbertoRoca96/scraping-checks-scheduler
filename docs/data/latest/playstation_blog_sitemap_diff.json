@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-08-24T12:41:52.611Z",
+  "checkedAt": "2026-08-24T14:37:34.942Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/03/07/blades-of-fire-hands-on-report/",
       "https://blog.playstation.com/2025/03/07/share-of-the-week-lost-records-bloom-rage/",
       "https://blog.playstation.com/2025/03/09/death-stranding-2-on-the-beach-launches-june-26-collectors-edition-revealed/",
       "https://blog.playstation.com/2025/03/10/playstation-store-february-2025s-top-downloads/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/08/20/code-vein-ii-mask-of-idris-dlc-launches-september-9/",
       "https://blog.playstation.com/2026/08/21/call-of-duty-modern-warfare-4-new-multiplayer-and-early-access-beta-details/",
       "https://blog.playstation.com/2026/08/21/share-of-the-week-katana/",
-      "https://blog.playstation.com/2026/08/21/tails-of-iron-2-blood-brine-free-expansion/"
+      "https://blog.playstation.com/2026/08/21/tails-of-iron-2-blood-brine-free-expansion/",
+      "https://blog.playstation.com/2026/08/24/vr-shooter-into-the-radius-2-hits-ps-vr2-september-24/"
     ],
     "removed": []
   }
