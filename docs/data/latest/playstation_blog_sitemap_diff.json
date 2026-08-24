@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-08-24T01:04:41.243Z",
+  "checkedAt": "2026-08-24T02:59:39.177Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/03/06/first-look-at-the-dualsense-wireless-controller-the-last-of-us-limited-edition/",
       "https://blog.playstation.com/2025/03/07/blades-of-fire-hands-on-report/",
       "https://blog.playstation.com/2025/03/07/share-of-the-week-lost-records-bloom-rage/",
       "https://blog.playstation.com/2025/03/09/death-stranding-2-on-the-beach-launches-june-26-collectors-edition-revealed/",
@@ -773,6 +772,7 @@
       "https://blog.playstation.com/2026/07/23/dragon-ball-sparking-zeros-super-limit-breaking-neo-dlc-out-july-30/",
       "https://blog.playstation.com/2026/07/23/marvels-wolverine-story-trailer-new-art-composer-details-and-more/",
       "https://blog.playstation.com/2026/07/23/phoenix-cyclops-revealed-as-marvel-tokon-fighting-souls-first-year-1-dlc-character/",
+      "https://blog.playstation.com/2026/07/24/share-of-the-week-assassins-creed-black-flag-resynced/",
       "https://blog.playstation.com/2026/07/28/ball-x-pit-final-update-the-naturalist-arrives-august-6/",
       "https://blog.playstation.com/2026/07/28/flamecraft-is-coming-to-ps5-this-year-demo-available-today/",
       "https://blog.playstation.com/2026/07/28/playstation-plus-monthly-games-for-august-dying-light-2-stay-human-reloaded-edition-big-walk-signalis/",
