@@ -2,14 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-08-25T18:34:59.086Z",
+  "checkedAt": "2026-08-25T20:24:28.048Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/03/07/share-of-the-week-lost-records-bloom-rage/",
-      "https://blog.playstation.com/2025/03/09/death-stranding-2-on-the-beach-launches-june-26-collectors-edition-revealed/",
       "https://blog.playstation.com/2025/03/10/playstation-store-february-2025s-top-downloads/",
       "https://blog.playstation.com/2025/03/11/dead-by-daylights-new-tokyo-ghoul-collaboration-killer-launches-april-2/",
       "https://blog.playstation.com/2025/03/11/meet-the-new-legends-of-mlb-the-show-25-out-march-18/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2026/08/21/call-of-duty-modern-warfare-4-new-multiplayer-and-early-access-beta-details/",
       "https://blog.playstation.com/2026/08/21/share-of-the-week-katana/",
       "https://blog.playstation.com/2026/08/21/tails-of-iron-2-blood-brine-free-expansion/",
-      "https://blog.playstation.com/2026/08/24/vr-shooter-into-the-radius-2-hits-ps-vr2-september-24/"
+      "https://blog.playstation.com/2026/08/24/vr-shooter-into-the-radius-2-hits-ps-vr2-september-24/",
+      "https://blog.playstation.com/2026/08/25/gamescom-opening-night-live-highlights-19-games-coming-to-playstation/",
+      "https://blog.playstation.com/2026/08/25/onimusha-way-of-the-sword-interview-demo-update-detailed-new-trailer-revealed/"
     ],
     "removed": []
   }
