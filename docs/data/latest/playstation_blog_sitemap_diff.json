@@ -2,14 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-08-27T07:08:52.833Z",
+  "checkedAt": "2026-08-27T18:48:28.488Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/03/11/dead-by-daylights-new-tokyo-ghoul-collaboration-killer-launches-april-2/",
-      "https://blog.playstation.com/2025/03/11/meet-the-new-legends-of-mlb-the-show-25-out-march-18/",
       "https://blog.playstation.com/2025/03/11/out-of-sight-vr-roboquest-vr-surviving-mars-pioneer-and-more-ps-vr2-games-announced-from-flat2vr-studios/",
       "https://blog.playstation.com/2025/03/11/playstation-store-mega-march-promotion-starts-march-12/",
       "https://blog.playstation.com/2025/03/12/armored-core-a-history-of-from-softwares-mech-saga/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2026/08/26/hands-on-report-mega-man-dual-override-and-dragons-dogma-2-dark-arisen/",
       "https://blog.playstation.com/2026/08/26/hands-on-report-star-wars-zero-company/",
       "https://blog.playstation.com/2026/08/26/playstation-plus-monthly-games-for-september-sniper-elite-resistance-mlb-the-show-26-wobbly-life-chained-echoes/",
-      "https://blog.playstation.com/2026/08/26/sega-gameplay-updates-persona-4-revival-crazy-taxi-world-tour-total-war-warhammer-40000-and-more/"
+      "https://blog.playstation.com/2026/08/26/sega-gameplay-updates-persona-4-revival-crazy-taxi-world-tour-total-war-warhammer-40000-and-more/",
+      "https://blog.playstation.com/2026/08/27/scott-pilgrim-ex-bringing-three-new-heroes-to-life-in-back-in-the-band-dlc/",
+      "https://blog.playstation.com/2026/08/27/whisper-of-the-house-opens-its-doors-on-ps5-today/"
     ],
     "removed": []
   }
