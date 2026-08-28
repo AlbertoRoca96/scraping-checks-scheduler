@@ -2,7 +2,7 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-08-27T18:48:30.514Z",
+  "checkedAt": "2026-08-28T04:01:08.425Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
     "nowCount": 4,
@@ -10,8 +10,8 @@
     "added": [
       "https://www.nintendo.com/us/whatsnew/blockbuster-sale-save-big-on-select-digital-games/",
       "https://www.nintendo.com/us/whatsnew/play-the-call-of-duty-modern-warfare-4-open-beta-this-weekend/",
-      "https://www.nintendo.com/us/whatsnew/the-lego-group-unveils-new-lego-super-mario-range-featuring-highly-anticipated-lego-minifigures/",
-      "https://www.nintendo.com/us/whatsnew/two-new-nintendo-switch-2-bundles-deliver-sun-soaked-sports-high-speed-thrills-and-extra-value/"
+      "https://www.nintendo.com/us/whatsnew/the-classic-stealth-action-series-returns-with-metal-gear-solid-master-collection-vol-2/",
+      "https://www.nintendo.com/us/whatsnew/the-lego-group-unveils-new-lego-super-mario-range-featuring-highly-anticipated-lego-minifigures/"
     ],
     "removed": []
   }
