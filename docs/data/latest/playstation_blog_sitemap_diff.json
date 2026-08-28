@@ -2,16 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-08-28T04:01:06.158Z",
+  "checkedAt": "2026-08-28T18:10:13.073Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/03/12/armored-core-a-history-of-from-softwares-mech-saga/",
-      "https://blog.playstation.com/2025/03/12/playstation-plus-game-catalog-for-march-ufc-5-prince-of-persia-the-lost-crown-captain-tsubasa-rise-of-new-champions-and-more/",
-      "https://blog.playstation.com/2025/03/14/celebrate-god-of-wars-20th-anniversary-with-god-of-war-ragnarok-dark-odyssey-collection/",
-      "https://blog.playstation.com/2025/03/14/mlb-the-show-25-early-access-is-live-today-heres-everything-you-need-to-know/",
       "https://blog.playstation.com/2025/03/14/official-playstation-podcast-episode-510-cereal-monsters/",
       "https://blog.playstation.com/2025/03/14/share-of-the-week-monster-hunter-wilds/",
       "https://blog.playstation.com/2025/03/17/assassins-creed-series-retrospective/",
@@ -807,7 +803,11 @@
       "https://blog.playstation.com/2026/08/26/playstation-plus-monthly-games-for-september-sniper-elite-resistance-mlb-the-show-26-wobbly-life-chained-echoes/",
       "https://blog.playstation.com/2026/08/26/sega-gameplay-updates-persona-4-revival-crazy-taxi-world-tour-total-war-warhammer-40000-and-more/",
       "https://blog.playstation.com/2026/08/27/scott-pilgrim-ex-bringing-three-new-heroes-to-life-in-back-in-the-band-dlc/",
-      "https://blog.playstation.com/2026/08/27/whisper-of-the-house-opens-its-doors-on-ps5-today/"
+      "https://blog.playstation.com/2026/08/27/whisper-of-the-house-opens-its-doors-on-ps5-today/",
+      "https://blog.playstation.com/2026/08/28/a-new-look-at-fables-style-weaving-combat/",
+      "https://blog.playstation.com/2026/08/28/marvels-wolverine-details-on-logans-mutant-abilities-game-features-and-more/",
+      "https://blog.playstation.com/2026/08/28/official-playstation-podcast-episode-546-path-of-gamescom/",
+      "https://blog.playstation.com/2026/08/28/share-of-the-week-breathtaking-views/"
     ],
     "removed": []
   }
