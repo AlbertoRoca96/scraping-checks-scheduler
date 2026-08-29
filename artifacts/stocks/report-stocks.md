@@ -1,7 +1,7 @@
-# Scrape Report (2026-08-28T21:29:34.940Z)
+# Scrape Report (2026-08-29T02:40:26.069Z)
 
-Group: `stocks`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/33212739696
+Group: `stocks`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/33229512585
 
 | Check | Changed | Keys | Error |
 |---|:---:|:--|:--|
-| `stock_ntdoy_global_quote` | — |  |  |
+| `stock_ntdoy_global_quote` | ✅ | change, changePercent, price |  |
