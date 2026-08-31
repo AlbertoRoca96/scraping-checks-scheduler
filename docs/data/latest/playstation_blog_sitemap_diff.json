@@ -2,15 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-08-31T10:28:28.729Z",
+  "checkedAt": "2026-08-31T18:43:00.606Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/03/14/official-playstation-podcast-episode-510-cereal-monsters/",
       "https://blog.playstation.com/2025/03/17/assassins-creed-series-retrospective/",
-      "https://blog.playstation.com/2025/03/17/hitman-world-of-assassination-ps-vr2-qa/",
       "https://blog.playstation.com/2025/03/18/helldivers-2-borderline-justice-warbond-launches-march-20/",
       "https://blog.playstation.com/2025/03/18/lunar-remastered-collection-bringing-new-fans-to-an-old-favorite/",
       "https://blog.playstation.com/2025/03/19/forever-skies-launches-on-playstation-5-on-april-14/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2026/08/28/a-new-look-at-fables-style-weaving-combat/",
       "https://blog.playstation.com/2026/08/28/marvels-wolverine-details-on-logans-mutant-abilities-game-features-and-more/",
       "https://blog.playstation.com/2026/08/28/official-playstation-podcast-episode-546-path-of-gamescom/",
-      "https://blog.playstation.com/2026/08/28/share-of-the-week-breathtaking-views/"
+      "https://blog.playstation.com/2026/08/28/share-of-the-week-breathtaking-views/",
+      "https://blog.playstation.com/2026/08/31/live-tv-on-ps5-launches-today-bringing-free-ad-supported-tv-to-ps5-players-in-the-u-s/",
+      "https://blog.playstation.com/2026/08/31/state-of-play-state-of-play-japan-return-on-september-3/"
     ],
     "removed": []
   }
