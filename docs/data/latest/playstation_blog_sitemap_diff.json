@@ -2,14 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-09-02T14:03:10.880Z",
+  "checkedAt": "2026-09-02T19:12:06.929Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/03/18/helldivers-2-borderline-justice-warbond-launches-march-20/",
-      "https://blog.playstation.com/2025/03/18/lunar-remastered-collection-bringing-new-fans-to-an-old-favorite/",
       "https://blog.playstation.com/2025/03/19/forever-skies-launches-on-playstation-5-on-april-14/",
       "https://blog.playstation.com/2025/03/19/possessors-action-packed-side-scroller-comes-to-ps5-this-year/",
       "https://blog.playstation.com/2025/03/19/reveals-and-updates-on-indie-games-coming-to-playstation/",
@@ -807,6 +805,8 @@
       "https://blog.playstation.com/2026/08/31/state-of-play-state-of-play-japan-return-on-september-3/",
       "https://blog.playstation.com/2026/09/01/halloween-the-game-first-look-at-the-east-haddonfield-map/",
       "https://blog.playstation.com/2026/09/01/marvels-wolverine-inside-insomniac-games-location-scanning-trip-to-japan/",
+      "https://blog.playstation.com/2026/09/02/ontos-devs-on-the-centered-around-a-server-of-ratspsychological-gameplay/",
+      "https://blog.playstation.com/2026/09/02/players-choice-vote-for-augusts-best-new-game-3/",
       "https://blog.playstation.com/2026/09/02/spooky-cute-puzzler-fangtopia-launches-on-ps5-october-26/"
     ],
     "removed": []
