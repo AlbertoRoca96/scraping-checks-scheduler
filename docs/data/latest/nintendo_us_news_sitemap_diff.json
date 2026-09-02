@@ -2,14 +2,16 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-09-02T02:44:56.324Z",
+  "checkedAt": "2026-09-02T08:21:51.999Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 2,
+    "nowCount": 4,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/cause-a-bit-of-chaos-with-these-example-builds-for-splatoon-raiders/",
-      "https://www.nintendo.com/us/whatsnew/my-nintendo-august-wrap-up-aug-2026/"
+      "https://www.nintendo.com/us/whatsnew/free-update-now-available-for-mario-kart-8-deluxe/",
+      "https://www.nintendo.com/us/whatsnew/my-nintendo-august-wrap-up-aug-2026/",
+      "https://www.nintendo.com/us/whatsnew/new-update-for-nintendo-switch-online-members-09-2026/"
     ],
     "removed": []
   }
