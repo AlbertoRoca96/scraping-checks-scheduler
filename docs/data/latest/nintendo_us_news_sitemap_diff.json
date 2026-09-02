@@ -2,15 +2,14 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-09-01T22:21:30.114Z",
+  "checkedAt": "2026-09-02T02:44:56.324Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 3,
+    "nowCount": 2,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/cause-a-bit-of-chaos-with-these-example-builds-for-splatoon-raiders/",
-      "https://www.nintendo.com/us/whatsnew/my-nintendo-august-wrap-up-aug-2026/",
-      "https://www.nintendo.com/us/whatsnew/nintendo-switch-2-choose-your-game-bundle-launches-this-summer/"
+      "https://www.nintendo.com/us/whatsnew/my-nintendo-august-wrap-up-aug-2026/"
     ],
     "removed": []
   }
