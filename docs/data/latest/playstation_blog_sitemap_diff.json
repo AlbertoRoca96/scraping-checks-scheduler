@@ -2,15 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-09-03T14:06:00.638Z",
+  "checkedAt": "2026-09-03T19:04:52.693Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/03/21/share-of-the-week-monster-hunter-wilds-monsters/",
       "https://blog.playstation.com/2025/03/25/monster-hunter-wilds-a-new-monster-challenges-and-more-content-arrives-on-april-4/",
-      "https://blog.playstation.com/2025/03/25/tales-of-the-shire-a-the-lord-of-the-rings-game-community-building-and-shared-meals-gameplay-details/",
       "https://blog.playstation.com/2025/03/25/the-spring-sale-comes-to-playstation-store-march-26/",
       "https://blog.playstation.com/2025/03/26/gran-turismo-7-update-1-57-available-today/",
       "https://blog.playstation.com/2025/03/26/playstation-plus-monthly-games-for-april-robocop-rogue-city-the-texas-chain-saw-massacre-digimon-story-cyber-sleuth-hackers-memory/",
@@ -805,6 +803,8 @@
       "https://blog.playstation.com/2026/09/03/jin-sakai-returns-in-ghost-of-yotei-most-wanted/",
       "https://blog.playstation.com/2026/09/03/metro-2039-launches-february-4-2027-ps5-pro-gameplay-revealed/",
       "https://blog.playstation.com/2026/09/03/monster-hunter-wilds-ascendance-reveals-new-monsters-story-details-and-gameplay/",
+      "https://blog.playstation.com/2026/09/03/rhapsody-in-scarlet-announced-for-ps5/",
+      "https://blog.playstation.com/2026/09/03/state-of-play-state-of-play-japan-all-announcements-trailers/",
       "https://blog.playstation.com/2026/09/03/tear-through-neptunes-kingdom-in-maneater-2-coming-2027/",
       "https://blog.playstation.com/2026/09/03/uncover-the-secrets-of-uncanyon-a-new-ps5-adventure-game-coming-2027/",
       "https://blog.playstation.com/2026/09/03/until-dawn-2-launches-january-28/"
