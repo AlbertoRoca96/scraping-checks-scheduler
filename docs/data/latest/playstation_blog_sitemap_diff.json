@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-09-04T08:34:01.703Z",
+  "checkedAt": "2026-09-04T13:58:58.077Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/03/26/gran-turismo-7-update-1-57-available-today/",
       "https://blog.playstation.com/2025/03/26/playstation-plus-monthly-games-for-april-robocop-rogue-city-the-texas-chain-saw-massacre-digimon-story-cyber-sleuth-hackers-memory/",
       "https://blog.playstation.com/2025/03/26/verdansk-returns-in-season-3-of-call-of-duty-black-ops-6-and-warzone-on-april-2/",
       "https://blog.playstation.com/2025/03/27/pac-man-inspired-action-platformer-shadow-labyrinth-launches-july-18-on-ps5/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/09/03/state-of-play-state-of-play-japan-all-announcements-trailers/",
       "https://blog.playstation.com/2026/09/03/tear-through-neptunes-kingdom-in-maneater-2-coming-2027/",
       "https://blog.playstation.com/2026/09/03/uncover-the-secrets-of-uncanyon-a-new-ps5-adventure-game-coming-2027/",
-      "https://blog.playstation.com/2026/09/03/until-dawn-2-launches-january-28/"
+      "https://blog.playstation.com/2026/09/03/until-dawn-2-launches-january-28/",
+      "https://blog.playstation.com/2026/09/04/playstation-store-august-2026s-top-downloads/"
     ],
     "removed": []
   }
