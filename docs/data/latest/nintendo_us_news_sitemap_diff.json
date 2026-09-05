@@ -2,14 +2,15 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-09-05T02:50:18.198Z",
+  "checkedAt": "2026-09-05T08:01:25.584Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 2,
+    "nowCount": 3,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/ball-over-everything-in-nba-2k27/",
-      "https://www.nintendo.com/us/whatsnew/blast-off-on-an-out-of-this-world-adventure-in-orbitals/"
+      "https://www.nintendo.com/us/whatsnew/blast-off-on-an-out-of-this-world-adventure-in-orbitals/",
+      "https://www.nintendo.com/us/whatsnew/nintendo-and-laced-records-the-legend-of-zelda-breath-of-the-wild-vinyl-soundtrack-collection-available-today-switch/"
     ],
     "removed": []
   }
