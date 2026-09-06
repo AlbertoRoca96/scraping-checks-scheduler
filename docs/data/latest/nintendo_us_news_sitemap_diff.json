@@ -2,13 +2,12 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-09-06T16:41:33.289Z",
+  "checkedAt": "2026-09-06T19:58:05.939Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 2,
+    "nowCount": 1,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/ball-over-everything-in-nba-2k27/",
       "https://www.nintendo.com/us/whatsnew/nintendo-and-laced-records-the-legend-of-zelda-breath-of-the-wild-vinyl-soundtrack-collection-available-today-switch/"
     ],
     "removed": []
