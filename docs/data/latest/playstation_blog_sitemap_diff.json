@@ -2,14 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-09-09T08:35:26.225Z",
+  "checkedAt": "2026-09-09T14:08:19.721Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/03/26/playstation-plus-monthly-games-for-april-robocop-rogue-city-the-texas-chain-saw-massacre-digimon-story-cyber-sleuth-hackers-memory/",
-      "https://blog.playstation.com/2025/03/26/verdansk-returns-in-season-3-of-call-of-duty-black-ops-6-and-warzone-on-april-2/",
       "https://blog.playstation.com/2025/03/27/pac-man-inspired-action-platformer-shadow-labyrinth-launches-july-18-on-ps5/",
       "https://blog.playstation.com/2025/03/28/baby-steps-hands-on-report/",
       "https://blog.playstation.com/2025/03/28/into-black-announced-for-ps-vr2/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2026/09/03/until-dawn-2-launches-january-28/",
       "https://blog.playstation.com/2026/09/04/playstation-store-august-2026s-top-downloads/",
       "https://blog.playstation.com/2026/09/04/share-of-the-week-trees/",
-      "https://blog.playstation.com/2026/09/08/call-of-duty-black-ops-7-and-warzone-season-06-launches-the-haunting-september-17/"
+      "https://blog.playstation.com/2026/09/08/call-of-duty-black-ops-7-and-warzone-season-06-launches-the-haunting-september-17/",
+      "https://blog.playstation.com/2026/09/09/introducing-dead-or-alive-6-last-rounds-new-fighter-minato/",
+      "https://blog.playstation.com/2026/09/09/introducing-no-mans-sky-cosmos-update-live-on-ps5-today/"
     ],
     "removed": []
   }
