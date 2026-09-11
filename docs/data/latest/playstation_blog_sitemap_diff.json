@@ -2,15 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-09-11T14:02:03.431Z",
+  "checkedAt": "2026-09-11T18:57:35.890Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2025/03/28/baby-steps-hands-on-report/",
-      "https://blog.playstation.com/2025/03/28/into-black-announced-for-ps-vr2/",
-      "https://blog.playstation.com/2025/03/28/masters-of-light-hand-tracking-update-available-now-on-ps-vr2/",
       "https://blog.playstation.com/2025/03/28/official-playstation-podcast-episode-511-high-five/",
       "https://blog.playstation.com/2025/03/28/share-of-the-week-assassins-creed-shadows/",
       "https://blog.playstation.com/2025/04/01/players-choice-vote-for-march-2025s-best-new-game/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2026/09/09/playstation-plus-game-catalog-for-september-runescape-dragonwilds-wwe-2k26-ball-x-pit-date-everything-and-more/",
       "https://blog.playstation.com/2026/09/10/muramasa-revenant-blades-launches-february-4-2027/",
       "https://blog.playstation.com/2026/09/10/play-your-way-with-control-resonants-expanded-assist-mode/",
-      "https://blog.playstation.com/2026/09/10/players-choice-vote-for-augusts-best-new-game-3/"
+      "https://blog.playstation.com/2026/09/10/players-choice-vote-for-augusts-best-new-game-3/",
+      "https://blog.playstation.com/2026/09/11/official-playstation-podcast-episode-547-orb-solutely-fabulous/",
+      "https://blog.playstation.com/2026/09/11/share-of-the-week-water/"
     ],
     "removed": []
   }
