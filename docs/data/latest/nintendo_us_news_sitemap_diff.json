@@ -2,16 +2,14 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-09-11T22:13:16.880Z",
+  "checkedAt": "2026-09-12T03:00:22.955Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 6,
+    "nowCount": 4,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/adventure-awaits-nintendo-of-america-announces-customer-appreciation-sale/",
       "https://www.nintendo.com/us/whatsnew/get-exclusive-digital-cards-and-more-from-the-legend-of-zelda-in-the-nintendo-today-app/",
-      "https://www.nintendo.com/us/whatsnew/mario-kart-world-adds-snes-courses-and-knockout-tour-routes-in-a-free-update/",
-      "https://www.nintendo.com/us/whatsnew/nintendo-direct-reveals-metroid-ravenous-kirby-and-the-world-beyond-and-more-games-for-nintendo-switch-2-and-nintendo-switch/",
       "https://www.nintendo.com/us/whatsnew/opposuits-introduces-new-donkey-kong-collection/",
       "https://www.nintendo.com/us/whatsnew/ready-for-fall-to-get-rolling-celebrate-the-change-of-seasons-with-the-mario-kart-tm-world-open-september-2026-event/"
     ],
