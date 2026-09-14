@@ -2,14 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-09-14T09:32:13.521Z",
+  "checkedAt": "2026-09-14T16:08:37.455Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/04/03/sci-fi-shooter-smasher-harpagun-slams-onto-ps-vr2-april-10/",
-      "https://blog.playstation.com/2025/04/04/share-of-the-week-assassins-creed-shadows-landscapes/",
       "https://blog.playstation.com/2025/04/07/playstation-store-march-2025s-top-downloads/",
       "https://blog.playstation.com/2025/04/08/a-tour-of-blue-princes-shifting-rooms-available-april-10-with-playstation-plus-game-catalog/",
       "https://blog.playstation.com/2025/04/09/days-gone-remastered-a-closer-look-at-the-horde-assault-modes-survival-arcade-action/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2026/09/10/play-your-way-with-control-resonants-expanded-assist-mode/",
       "https://blog.playstation.com/2026/09/10/players-choice-vote-for-augusts-best-new-game-3/",
       "https://blog.playstation.com/2026/09/11/official-playstation-podcast-episode-547-orb-solutely-fabulous/",
-      "https://blog.playstation.com/2026/09/11/share-of-the-week-water/"
+      "https://blog.playstation.com/2026/09/11/share-of-the-week-water/",
+      "https://blog.playstation.com/2026/09/14/ace-combat-8-wings-of-theve-annihilation-battle-mode-confirmed-story-trailer-revealed/",
+      "https://blog.playstation.com/2026/09/14/marvels-wolverine-developers-discuss-capturing-the-essence-of-logan-out-september-15/"
     ],
     "removed": []
   }
