@@ -2,7 +2,7 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-09-15T20:50:24.890Z",
+  "checkedAt": "2026-09-15T23:57:07.892Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
@@ -10,7 +10,6 @@
     "added": [
       "https://blog.playstation.com/2025/04/09/days-gone-remastered-a-closer-look-at-the-horde-assault-modes-survival-arcade-action/",
       "https://blog.playstation.com/2025/04/09/playstation-plus-game-catalog-for-april-hogwarts-legacy-blue-prince-the-second-episode-of-lost-records-bloom-rage-and-more/",
-      "https://blog.playstation.com/2025/04/09/playstation-portal-remote-player-system-update-releases-today-with-cloud-game-streaming-beta-ux-enhancements/",
       "https://blog.playstation.com/2025/04/10/an-old-foe-returns-with-the-elder-scrolls-onlines-new-2025-adventure/",
       "https://blog.playstation.com/2025/04/10/duskfades-nostalgic-take-on-action-platforming-is-coming-to-ps5/",
       "https://blog.playstation.com/2025/04/10/the-last-of-us-complete-hits-ps5-today-physical-collectors-edition-coming-july/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/09/14/ace-combat-8-wings-of-theve-annihilation-battle-mode-confirmed-story-trailer-revealed/",
       "https://blog.playstation.com/2026/09/14/marvels-wolverine-developers-discuss-capturing-the-essence-of-logan-out-september-15/",
       "https://blog.playstation.com/2026/09/15/control-resonant-ps5-features-detailed/",
-      "https://blog.playstation.com/2026/09/15/helldivers-2-ironclad-democracy-warbond-launches-sept-22/"
+      "https://blog.playstation.com/2026/09/15/helldivers-2-ironclad-democracy-warbond-launches-sept-22/",
+      "https://blog.playstation.com/2026/09/15/introducing-the-next-line-of-ps5-audio-products-playstation-pulse-and-pulse-edge-wireless-headsets/"
     ],
     "removed": []
   }
