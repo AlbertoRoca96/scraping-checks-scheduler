@@ -2,14 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-09-18T14:04:39.820Z",
+  "checkedAt": "2026-09-18T18:51:02.538Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2025/04/11/assassins-creed-shadows-ubisoft-deep-dives-into-ps5-pro-updates/",
-      "https://blog.playstation.com/2025/04/11/indiana-jones-and-the-great-circle-comes-to-ps5-on-april-17-with-ps5-pro-enhancements/",
       "https://blog.playstation.com/2025/04/11/official-playstation-podcast-episode-512-true-blue/",
       "https://blog.playstation.com/2025/04/11/share-of-the-week-heights/",
       "https://blog.playstation.com/2025/04/12/marathon-developer-interview-bungie-shares-more-on-its-extraction-fps-action/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/09/16/silent-hill-townfall-creators-break-down-ps5-features-out-september-25/",
       "https://blog.playstation.com/2026/09/17/co-op-roguelite-shape-of-dreams-launches-today-on-ps5/",
       "https://blog.playstation.com/2026/09/17/final-fantasy-vii-revelation-hands-on-report-into-the-whirlwind-maze-where-sephiroth-awaits/",
-      "https://blog.playstation.com/2026/09/18/control-resonant-how-remedy-is-going-bigger-and-weirder-with-its-paranatural-horror-sequel-on-september-24/"
+      "https://blog.playstation.com/2026/09/18/control-resonant-how-remedy-is-going-bigger-and-weirder-with-its-paranatural-horror-sequel-on-september-24/",
+      "https://blog.playstation.com/2026/09/18/share-of-the-week-seasons/"
     ],
     "removed": []
   }

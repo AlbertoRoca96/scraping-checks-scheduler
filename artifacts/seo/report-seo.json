@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-18T14:04:41.325Z",
+  "generatedAt": "2026-09-18T18:51:06.048Z",
   "group": "seo",
   "summary": [
     {
@@ -14,8 +14,11 @@
     {
       "name": "nintendo_us_news_sitemap_diff",
       "type": "sitemap_diff",
-      "changed": false,
-      "changedKeys": [],
+      "changed": true,
+      "changedKeys": [
+        "added",
+        "nowCount"
+      ],
       "error": null
     }
   ]
