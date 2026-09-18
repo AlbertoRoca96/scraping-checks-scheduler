@@ -2,14 +2,15 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-09-18T03:04:16.409Z",
+  "checkedAt": "2026-09-18T08:43:48.990Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 3,
+    "nowCount": 4,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/diablo-iv-arrives-on-nintendo-switch-2/",
       "https://www.nintendo.com/us/whatsnew/fire-emblem-fortunes-weave-is-out-now-take-on-the-apocalypse-in-an-rpg-epic/",
+      "https://www.nintendo.com/us/whatsnew/get-exclusive-digital-cards-and-more-from-the-legend-of-zelda-in-the-nintendo-today-app/",
       "https://www.nintendo.com/us/whatsnew/icon-elements-inspired-by-the-fire-emblem-fortunes-weave-game-are-here-for-a-limited-time/"
     ],
     "removed": []
