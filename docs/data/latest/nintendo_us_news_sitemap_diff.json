@@ -2,16 +2,14 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-09-19T16:59:47.712Z",
+  "checkedAt": "2026-09-19T20:00:22.338Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 6,
+    "nowCount": 4,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/fire-emblem-fortunes-weave-is-out-now-take-on-the-apocalypse-in-an-rpg-epic/",
       "https://www.nintendo.com/us/whatsnew/fire-emblem-heroes-celebrates-the-upcoming-release-of-fire-emblem-fortunes-weave-with-new-characters-events-and-goodies/",
       "https://www.nintendo.com/us/whatsnew/get-exclusive-digital-cards-and-more-from-the-legend-of-zelda-in-the-nintendo-today-app/",
-      "https://www.nintendo.com/us/whatsnew/icon-elements-inspired-by-the-fire-emblem-fortunes-weave-game-are-here-for-a-limited-time/",
       "https://www.nintendo.com/us/whatsnew/ready-for-fall-to-get-rolling-celebrate-the-change-of-seasons-with-the-mario-kart-tm-world-open-september-2026-event/",
       "https://www.nintendo.com/us/whatsnew/the-summer-fun-continues-in-the-mario-kart-world-open-august-2026-event/"
     ],
