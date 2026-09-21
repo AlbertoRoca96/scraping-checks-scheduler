@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-09-21T03:11:46.542Z",
+  "checkedAt": "2026-09-21T09:34:33.834Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/04/11/official-playstation-podcast-episode-512-true-blue/",
       "https://blog.playstation.com/2025/04/12/marathon-developer-interview-bungie-shares-more-on-its-extraction-fps-action/",
       "https://blog.playstation.com/2025/04/12/marathon-launches-september-23-on-ps5-steam-and-xbox-series-xs-gameplay-revealed/",
       "https://blog.playstation.com/2025/04/13/ps5-price-to-rise-in-europe-australia-and-new-zealand/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/09/17/co-op-roguelite-shape-of-dreams-launches-today-on-ps5/",
       "https://blog.playstation.com/2026/09/17/final-fantasy-vii-revelation-hands-on-report-into-the-whirlwind-maze-where-sephiroth-awaits/",
       "https://blog.playstation.com/2026/09/18/control-resonant-how-remedy-is-going-bigger-and-weirder-with-its-paranatural-horror-sequel-on-september-24/",
-      "https://blog.playstation.com/2026/09/18/share-of-the-week-seasons/"
+      "https://blog.playstation.com/2026/09/18/share-of-the-week-seasons/",
+      "https://blog.playstation.com/2026/09/21/silent-hill-townfall-9-ways-first-person-changes-the-iconic-horror-formula/"
     ],
     "removed": []
   }
