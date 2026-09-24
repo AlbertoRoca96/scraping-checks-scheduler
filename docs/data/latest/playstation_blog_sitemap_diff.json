@@ -2,14 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-09-24T07:08:24.645Z",
+  "checkedAt": "2026-09-24T13:09:19.766Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2025/04/12/marathon-developer-interview-bungie-shares-more-on-its-extraction-fps-action/",
-      "https://blog.playstation.com/2025/04/12/marathon-launches-september-23-on-ps5-steam-and-xbox-series-xs-gameplay-revealed/",
       "https://blog.playstation.com/2025/04/13/ps5-price-to-rise-in-europe-australia-and-new-zealand/",
       "https://blog.playstation.com/2025/04/14/how-bloom-rage-lost-records-tape-2-takes-a-dark-and-supernatural-turn-on-april-15/",
       "https://blog.playstation.com/2025/04/14/the-making-of-hand-crafted-pixel-art-platformer-bionic-bay-out-april-17-on-ps5/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/09/18/share-of-the-week-seasons/",
       "https://blog.playstation.com/2026/09/21/lisa-x-playstation-arrives-this-october-first-look-at-the-dualsense-wireless-controller-lisa-limited-edition-and-all-new-merchandise/",
       "https://blog.playstation.com/2026/09/21/silent-hill-townfall-9-ways-first-person-changes-the-iconic-horror-formula/",
-      "https://blog.playstation.com/2026/09/22/fading-echo-makes-a-splash-on-playstation-5-today/"
+      "https://blog.playstation.com/2026/09/22/fading-echo-makes-a-splash-on-playstation-5-today/",
+      "https://blog.playstation.com/2026/09/24/luma-island-is-coming-to-ps5/"
     ],
     "removed": []
   }
