@@ -2,10 +2,10 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-09-23T21:02:33.757Z",
+  "checkedAt": "2026-09-24T00:13:05.733Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 32,
+    "nowCount": 31,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-22-splatoon-raiders-part-1/",
@@ -27,6 +27,7 @@
       "https://www.nintendo.com/us/whatsnew/mario-kart-world-update-adds-two-new-routes-to-knockout-tour-and-more/",
       "https://www.nintendo.com/us/whatsnew/my-nintendo-july-wrap-up-2026/",
       "https://www.nintendo.com/us/whatsnew/nintendo-gives-early-access-to-new-games-and-delivers-interactive-adventures-at-san-diego-comic-con-2026/",
+      "https://www.nintendo.com/us/whatsnew/not-sure-what-a-game-key-card-is-lets-talk-about-it/",
       "https://www.nintendo.com/us/whatsnew/play-the-52nd-maximus-cup-online-event-and-you-could-earn-an-in-game-collaborative-theme/",
       "https://www.nintendo.com/us/whatsnew/play-the-53rd-maximus-cup-online-event-and-you-could-earn-an-in-game-collaborative-theme/",
       "https://www.nintendo.com/us/whatsnew/play-the-54th-maximus-cup-online-event-and-you-could-earn-an-in-game-collaborative-theme/",
@@ -36,10 +37,8 @@
       "https://www.nintendo.com/us/whatsnew/splatoon-raiders-is-out-now-hunt-for-treasure-in-a-wild-new-single-player-adventure/",
       "https://www.nintendo.com/us/whatsnew/splatoon-raiders-makes-a-splash-with-a-new-treasure-hunting-trailer/",
       "https://www.nintendo.com/us/whatsnew/the-mario-kart-world-open-july-2026-event-results-are-in/",
-      "https://www.nintendo.com/us/whatsnew/try-the-latest-game-trial-prince-of-persia-the-lost-crown/",
       "https://www.nintendo.com/us/whatsnew/turn-up-the-heat-this-summer-in-the-mario-kart-world-open-july-2026-event/",
-      "https://www.nintendo.com/us/whatsnew/two-new-splatoon-raiders-themed-custom-designs-are-now-available-in-animal-crossing-new-horizons/",
-      "https://www.nintendo.com/us/whatsnew/wilderness-bound-game-drop-is-now-available-for-minecraft-on-nintendo-switch/"
+      "https://www.nintendo.com/us/whatsnew/two-new-splatoon-raiders-themed-custom-designs-are-now-available-in-animal-crossing-new-horizons/"
     ],
     "removed": []
   }
