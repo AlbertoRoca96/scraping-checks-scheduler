@@ -2,14 +2,15 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-09-25T19:48:21.480Z",
+  "checkedAt": "2026-09-25T23:03:43.736Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 2,
+    "nowCount": 3,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/not-sure-what-a-game-key-card-is-lets-talk-about-it/",
-      "https://www.nintendo.com/us/whatsnew/try-the-latest-game-trial-prince-of-persia-the-lost-crown/"
+      "https://www.nintendo.com/us/whatsnew/maximize-your-game-with-nba-2k27-on-the-nintendo-switch-2-system/",
+      "https://www.nintendo.com/us/whatsnew/try-the-latest-game-trial-prince-of-persia-the-lost-crown/",
+      "https://www.nintendo.com/us/whatsnew/welcome-to-the-worlds-game-in-ea-sports-fc-27/"
     ],
     "removed": []
   }
