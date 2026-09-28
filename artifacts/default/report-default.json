@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T10:30:59.096Z",
+  "generatedAt": "2026-09-28T19:13:32.075Z",
   "group": "default",
   "summary": [
     {
@@ -7,7 +7,7 @@
       "type": "page",
       "changed": false,
       "changedKeys": [],
-      "error": null
+      "error": "TimeoutError: page.waitForSelector: Timeout 45000ms exceeded.\nCall log:\n  - waiting for locator('h1') to be visible\n"
     }
   ]
 }

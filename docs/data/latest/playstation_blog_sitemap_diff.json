@@ -2,14 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-09-28T10:30:53.013Z",
+  "checkedAt": "2026-09-28T19:12:45.988Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/04/15/cozy-adventure-palia-opens-its-doors-may-13-on-ps5/",
-      "https://blog.playstation.com/2025/04/16/ninja-gaiden-ragebound-unveils-a-second-playable-protagonist/",
       "https://blog.playstation.com/2025/04/18/bringing-stadium-to-overwatch-2-on-april-22/",
       "https://blog.playstation.com/2025/04/18/share-of-the-week-the-last-of-us-complete/",
       "https://blog.playstation.com/2025/04/21/fatal-fury-city-of-the-wolves-combo-showcase/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2026/09/24/luma-island-is-coming-to-ps5/",
       "https://blog.playstation.com/2026/09/25/how-ace-combat-8-wings-of-theve-uses-first-person-to-tell-a-more-personal-story/",
       "https://blog.playstation.com/2026/09/25/official-playstation-podcast-episode-548-september-selects/",
-      "https://blog.playstation.com/2026/09/25/share-of-the-week-marvels-wolverine/"
+      "https://blog.playstation.com/2026/09/25/share-of-the-week-marvels-wolverine/",
+      "https://blog.playstation.com/2026/09/28/god-of-war-laufey-pre-orders-available-starting-september-29-editions-detailed/",
+      "https://blog.playstation.com/2026/09/28/suri-the-seventh-note-launches-oct-30-on-ps5/"
     ],
     "removed": []
   }
