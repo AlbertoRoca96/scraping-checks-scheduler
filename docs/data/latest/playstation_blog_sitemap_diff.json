@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-09-29T07:51:05.356Z",
+  "checkedAt": "2026-09-29T14:35:55.764Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/04/18/bringing-stadium-to-overwatch-2-on-april-22/",
       "https://blog.playstation.com/2025/04/18/share-of-the-week-the-last-of-us-complete/",
       "https://blog.playstation.com/2025/04/21/fatal-fury-city-of-the-wolves-combo-showcase/",
       "https://blog.playstation.com/2025/04/21/playstation-5-pro-teardown-an-inside-look-at-the-most-advanced-playstation-console-to-date/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/09/25/official-playstation-podcast-episode-548-september-selects/",
       "https://blog.playstation.com/2026/09/25/share-of-the-week-marvels-wolverine/",
       "https://blog.playstation.com/2026/09/28/god-of-war-laufey-pre-orders-available-starting-september-29-editions-detailed/",
-      "https://blog.playstation.com/2026/09/28/suri-the-seventh-note-launches-oct-30-on-ps5/"
+      "https://blog.playstation.com/2026/09/28/suri-the-seventh-note-launches-oct-30-on-ps5/",
+      "https://blog.playstation.com/2026/09/29/how-control-resonants-art-design-and-tech-shaped-its-bosses-paranaturally-twisted-manhattan-and-more/"
     ],
     "removed": []
   }

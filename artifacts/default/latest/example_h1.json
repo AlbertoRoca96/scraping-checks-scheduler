@@ -2,6 +2,6 @@
   "name": "example_h1",
   "type": "page",
   "url": "https://example.com/",
-  "checkedAt": "2026-09-29T07:51:18.860Z",
+  "checkedAt": "2026-09-29T14:35:28.646Z",
   "error": "TimeoutError: page.waitForSelector: Timeout 45000ms exceeded.\nCall log:\n  - waiting for locator('h1') to be visible\n"
 }
