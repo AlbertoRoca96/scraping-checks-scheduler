@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-09-30T14:35:46.484Z",
+  "checkedAt": "2026-09-30T20:35:08.092Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/04/16/ninja-gaiden-ragebound-unveils-a-second-playable-protagonist/",
       "https://blog.playstation.com/2025/04/18/bringing-stadium-to-overwatch-2-on-april-22/",
       "https://blog.playstation.com/2025/04/18/share-of-the-week-the-last-of-us-complete/",
       "https://blog.playstation.com/2025/04/21/fatal-fury-city-of-the-wolves-combo-showcase/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/09/25/share-of-the-week-marvels-wolverine/",
       "https://blog.playstation.com/2026/09/28/god-of-war-laufey-pre-orders-available-starting-september-29-editions-detailed/",
       "https://blog.playstation.com/2026/09/28/suri-the-seventh-note-launches-oct-30-on-ps5/",
-      "https://blog.playstation.com/2026/09/29/how-control-resonants-art-design-and-tech-shaped-its-bosses-paranaturally-twisted-manhattan-and-more/"
+      "https://blog.playstation.com/2026/09/29/how-control-resonants-art-design-and-tech-shaped-its-bosses-paranaturally-twisted-manhattan-and-more/",
+      "https://blog.playstation.com/2026/09/30/playstation-plus-monthly-games-for-october-f1-25-hunt-showdown-1896-earth-defense-force-world-brothers-2/"
     ],
     "removed": []
   }
