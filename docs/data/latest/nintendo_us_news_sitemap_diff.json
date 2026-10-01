@@ -2,15 +2,14 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-10-01T16:54:31.676Z",
+  "checkedAt": "2026-10-01T22:19:18.677Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 3,
+    "nowCount": 2,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/blast-off-into-high-octane-adventure-with-added-multiplayer-content-for-star-fox-available-now-on-nintendo-switch-2/",
       "https://www.nintendo.com/us/whatsnew/minecraft-dungeons-ii-has-arrived/",
-      "https://www.nintendo.com/us/whatsnew/play-the-57th-maximus-cup-online-event-and-you-could-earn-an-in-game-collaborative-theme/"
+      "https://www.nintendo.com/us/whatsnew/my-nintendo-september-wrap-up-2026/"
     ],
     "removed": []
   }
