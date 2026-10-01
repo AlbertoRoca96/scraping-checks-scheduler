@@ -2,16 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-10-01T08:16:31.925Z",
+  "checkedAt": "2026-10-01T16:54:30.809Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/04/18/bringing-stadium-to-overwatch-2-on-april-22/",
-      "https://blog.playstation.com/2025/04/18/share-of-the-week-the-last-of-us-complete/",
-      "https://blog.playstation.com/2025/04/21/fatal-fury-city-of-the-wolves-combo-showcase/",
-      "https://blog.playstation.com/2025/04/21/playstation-5-pro-teardown-an-inside-look-at-the-most-advanced-playstation-console-to-date/",
       "https://blog.playstation.com/2025/04/22/big-games-big-deals-promotion-comes-to-playstation-store-april-23/",
       "https://blog.playstation.com/2025/04/22/days-gone-remastered-accessibility-features-detailed/",
       "https://blog.playstation.com/2025/04/22/onimusha-2-samurais-destiny-remastered-interview-with-director-motohide-eshiro/",
@@ -807,7 +803,11 @@
       "https://blog.playstation.com/2026/09/28/god-of-war-laufey-pre-orders-available-starting-september-29-editions-detailed/",
       "https://blog.playstation.com/2026/09/28/suri-the-seventh-note-launches-oct-30-on-ps5/",
       "https://blog.playstation.com/2026/09/29/how-control-resonants-art-design-and-tech-shaped-its-bosses-paranaturally-twisted-manhattan-and-more/",
-      "https://blog.playstation.com/2026/09/30/playstation-plus-monthly-games-for-october-f1-25-hunt-showdown-1896-earth-defense-force-world-brothers-2/"
+      "https://blog.playstation.com/2026/09/30/playstation-plus-monthly-games-for-october-f1-25-hunt-showdown-1896-earth-defense-force-world-brothers-2/",
+      "https://blog.playstation.com/2026/10/01/ai-upscaling-is-coming-to-ps5/",
+      "https://blog.playstation.com/2026/10/01/kena-scars-of-kosmora-launches-2027-ember-lab-shares-story-overview/",
+      "https://blog.playstation.com/2026/10/01/martial-arts-meet-fluid-platforming-in-elta-defy-all-gods-with-a-free-ps5-demo-out-today/",
+      "https://blog.playstation.com/2026/10/01/return-to-fabletown-with-the-wolf-among-us-remastered-out-october-29/"
     ],
     "removed": []
   }
