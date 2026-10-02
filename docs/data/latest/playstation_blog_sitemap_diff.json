@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-10-02T17:24:31.605Z",
+  "checkedAt": "2026-10-02T21:47:47.086Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/04/22/onimusha-2-samurais-destiny-remastered-interview-with-director-motohide-eshiro/",
       "https://blog.playstation.com/2025/04/23/ghost-of-yotei-comes-to-playstation-5-on-october-2/",
       "https://blog.playstation.com/2025/04/23/new-ps5-system-software-update-features-audio-focus-and-the-return-of-the-classic-console-ui-customizations/",
       "https://blog.playstation.com/2025/04/24/ea-sports-f1-25-details-on-massively-revamped-my-team-mode-and-more-launching-may-30/",
@@ -807,6 +806,7 @@
       "https://blog.playstation.com/2026/10/01/martial-arts-meet-fluid-platforming-in-elta-defy-all-gods-with-a-free-ps5-demo-out-today/",
       "https://blog.playstation.com/2026/10/01/return-to-fabletown-with-the-wolf-among-us-remastered-out-october-29/",
       "https://blog.playstation.com/2026/10/02/ghost-of-yotei-complete-edition-erika-ishii-interview/",
+      "https://blog.playstation.com/2026/10/02/official-playstation-podcast-episode-549-friendly-ghosts/",
       "https://blog.playstation.com/2026/10/02/share-of-the-week-marvels-wolverine-logan/"
     ],
     "removed": []
