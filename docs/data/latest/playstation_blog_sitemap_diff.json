@@ -2,14 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-10-05T08:15:59.160Z",
+  "checkedAt": "2026-10-05T19:02:45.943Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/04/24/ea-sports-f1-25-details-on-massively-revamped-my-team-mode-and-more-launching-may-30/",
-      "https://blog.playstation.com/2025/04/24/robocop-rogue-city-unfinished-business-coming-to-ps5-july-17/",
       "https://blog.playstation.com/2025/04/25/official-playstation-podcast-episode-513-doomed-days/",
       "https://blog.playstation.com/2025/04/25/revealing-cosmic-realm-gameplay-from-doom-the-dark-ages-out-may-15/",
       "https://blog.playstation.com/2025/04/25/share-of-the-week-nature/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2026/10/01/return-to-fabletown-with-the-wolf-among-us-remastered-out-october-29/",
       "https://blog.playstation.com/2026/10/02/ghost-of-yotei-complete-edition-erika-ishii-interview/",
       "https://blog.playstation.com/2026/10/02/official-playstation-podcast-episode-549-friendly-ghosts/",
-      "https://blog.playstation.com/2026/10/02/share-of-the-week-marvels-wolverine-logan/"
+      "https://blog.playstation.com/2026/10/02/share-of-the-week-marvels-wolverine-logan/",
+      "https://blog.playstation.com/2026/10/05/everything-you-need-to-know-about-dmz-mode-in-call-of-duty-modern-warfare-4/",
+      "https://blog.playstation.com/2026/10/05/players-choice-vote-for-septembers-best-new-game-4/"
     ],
     "removed": []
   }
