@@ -2,14 +2,15 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-10-07T23:59:56.363Z",
+  "checkedAt": "2026-10-08T05:50:12.608Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 2,
+    "nowCount": 3,
     "prevCount": 0,
     "added": [
       "https://www.nintendo.com/us/whatsnew/join-the-mario-tennis-fever-open-october-2026/",
-      "https://www.nintendo.com/us/whatsnew/play-the-57th-maximus-cup-online-event-and-you-could-earn-an-in-game-collaborative-theme/"
+      "https://www.nintendo.com/us/whatsnew/play-the-57th-maximus-cup-online-event-and-you-could-earn-an-in-game-collaborative-theme/",
+      "https://www.nintendo.com/us/whatsnew/pre-order-minecraft-for-nintendo-switch-tm-2-today/"
     ],
     "removed": []
   }

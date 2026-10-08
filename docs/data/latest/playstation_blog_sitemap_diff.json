@@ -2,13 +2,14 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-10-07T23:59:55.035Z",
+  "checkedAt": "2026-10-08T05:50:11.223Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2025/04/25/official-playstation-podcast-episode-513-doomed-days/",
+      "https://blog.playstation.com/2025/04/25/share-of-the-week-nature/",
       "https://blog.playstation.com/2025/04/29/watch-the-borderlands-4-gameplay-deep-dive-state-of-play-on-april-30/",
       "https://blog.playstation.com/2025/04/30/borderlands-4-revealing-vault-hunter-skills-new-planet-kairos-and-more/",
       "https://blog.playstation.com/2025/04/30/playstation-plus-monthly-games-for-may-ark-survival-ascended-balatro-warhammer-40000-boltgun/",
@@ -763,7 +764,6 @@
       "https://blog.playstation.com/2026/09/03/until-dawn-2-launches-january-28/",
       "https://blog.playstation.com/2026/09/04/playstation-store-august-2026s-top-downloads/",
       "https://blog.playstation.com/2026/09/04/share-of-the-week-trees/",
-      "https://blog.playstation.com/2026/09/08/call-of-duty-black-ops-7-and-warzone-season-06-launches-the-haunting-september-17/",
       "https://blog.playstation.com/2026/09/09/introducing-dead-or-alive-6-last-rounds-new-fighter-minato/",
       "https://blog.playstation.com/2026/09/09/introducing-no-mans-sky-cosmos-update-live-on-ps5-today/",
       "https://blog.playstation.com/2026/09/09/playstation-plus-game-catalog-for-september-runescape-dragonwilds-wwe-2k26-ball-x-pit-date-everything-and-more/",
