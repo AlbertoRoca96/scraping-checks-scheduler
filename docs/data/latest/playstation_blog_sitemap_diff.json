@@ -2,15 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-10-09T08:26:45.429Z",
+  "checkedAt": "2026-10-09T16:47:49.483Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2025/04/25/official-playstation-podcast-episode-513-doomed-days/",
-      "https://blog.playstation.com/2025/04/25/revealing-cosmic-realm-gameplay-from-doom-the-dark-ages-out-may-15/",
-      "https://blog.playstation.com/2025/04/25/share-of-the-week-nature/",
       "https://blog.playstation.com/2025/04/29/watch-the-borderlands-4-gameplay-deep-dive-state-of-play-on-april-30/",
       "https://blog.playstation.com/2025/04/30/borderlands-4-revealing-vault-hunter-skills-new-planet-kairos-and-more/",
       "https://blog.playstation.com/2025/04/30/playstation-plus-monthly-games-for-may-ark-survival-ascended-balatro-warhammer-40000-boltgun/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2026/10/05/players-choice-vote-for-septembers-best-new-game-4/",
       "https://blog.playstation.com/2026/10/06/warhammer-survivors-launches-november-10-new-characters-revealed/",
       "https://blog.playstation.com/2026/10/07/phoenix-cyclops-joins-marvel-tokon-fighting-souls-on-november-2/",
-      "https://blog.playstation.com/2026/10/08/critical-role-joins-rockbeasts-launching-january-2027/"
+      "https://blog.playstation.com/2026/10/08/critical-role-joins-rockbeasts-launching-january-2027/",
+      "https://blog.playstation.com/2026/10/09/official-playstation-podcast-episode-550-now-this-is-podcasting/",
+      "https://blog.playstation.com/2026/10/09/share-of-the-week-marvels-wolverine-allies-villains/"
     ],
     "removed": []
   }
