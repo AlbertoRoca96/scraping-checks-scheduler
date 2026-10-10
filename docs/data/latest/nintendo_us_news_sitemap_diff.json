@@ -2,17 +2,17 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-10-09T22:12:38.064Z",
+  "checkedAt": "2026-10-10T04:12:54.354Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
     "nowCount": 5,
     "prevCount": 0,
     "added": [
+      "https://www.nintendo.com/us/whatsnew/dig-up-some-fun-with-great-games-for-halloween-2026/",
       "https://www.nintendo.com/us/whatsnew/experience-the-epic-kingdom-hearts-saga/",
       "https://www.nintendo.com/us/whatsnew/hello-kitty-island-adventure/",
       "https://www.nintendo.com/us/whatsnew/keep-up-the-autumn-momentum-with-the-mario-kart-world-open-oct-2026-event/",
-      "https://www.nintendo.com/us/whatsnew/mobile-news-flame-lords-and-book-iv-arrive-in-a-free-update-to-fire-emblem-shadows/",
-      "https://www.nintendo.com/us/whatsnew/pre-order-minecraft-for-nintendo-switch-tm-2-today/"
+      "https://www.nintendo.com/us/whatsnew/mobile-news-flame-lords-and-book-iv-arrive-in-a-free-update-to-fire-emblem-shadows/"
     ],
     "removed": []
   }
