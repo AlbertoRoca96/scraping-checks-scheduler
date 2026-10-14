@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-10-14T14:51:49.103Z",
+  "checkedAt": "2026-10-14T19:57:17.219Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/04/30/borderlands-4-revealing-vault-hunter-skills-new-planet-kairos-and-more/",
       "https://blog.playstation.com/2025/05/01/play-the-fortnite-br-star-wars-season-galactic-battle-may-2/",
       "https://blog.playstation.com/2025/05/01/players-choice-vote-for-april-2025s-best-new-game/",
       "https://blog.playstation.com/2025/05/02/share-of-the-week-days-gone-remastered/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/10/09/share-of-the-week-marvels-wolverine-allies-villains/",
       "https://blog.playstation.com/2026/10/13/escape-academy-2-back-2-school-comes-to-ps5-on-november-5/",
       "https://blog.playstation.com/2026/10/13/helldivers-2-scope-of-authority-premium-warbond-launches-oct-20/",
-      "https://blog.playstation.com/2026/10/14/gran-turismo-7s-spec-iv-part-1-launches-today-and-a-first-look-at-dualsense-wireless-controller-gran-turismo-limited-edition/"
+      "https://blog.playstation.com/2026/10/14/gran-turismo-7s-spec-iv-part-1-launches-today-and-a-first-look-at-dualsense-wireless-controller-gran-turismo-limited-edition/",
+      "https://blog.playstation.com/2026/10/14/playstation-plus-game-catalog-for-october-mafia-the-old-country-horizon-forbidden-west-mycopunk-and-more/"
     ],
     "removed": []
   }
