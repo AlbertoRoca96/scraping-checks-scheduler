@@ -1,9 +1,9 @@
-# Scrape Report (2026-10-15T03:04:46.966Z)
+# Scrape Report (2026-10-15T08:48:46.475Z)
 
-Group: `price`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/38674313591
+Group: `price`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/38708253908
 
 | Check | Changed | Keys | Error |
 |---|:---:|:--|:--|
 | `scrapeme_pikachu_price` | — |  |  |
 | `scrapeme_pikachu_availability` | — |  |  |
-| `psa_charizard_price_gem10` | ✅ | grade, price, row |  |
+| `psa_charizard_price_gem10` | — |  |  |
