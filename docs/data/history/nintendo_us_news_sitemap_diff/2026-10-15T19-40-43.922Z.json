@@ -1,0 +1,20 @@
+{
+  "name": "nintendo_us_news_sitemap_diff",
+  "type": "sitemap_diff",
+  "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
+  "checkedAt": "2026-10-15T19:40:43.922Z",
+  "data": {
+    "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
+    "nowCount": 6,
+    "prevCount": 0,
+    "added": [
+      "https://www.nintendo.com/us/whatsnew/just-arrived-shop-hundreds-of-the-latest-must-have-nintendo-items/",
+      "https://www.nintendo.com/us/whatsnew/my-nintendo-august-wrap-up-aug-2026/",
+      "https://www.nintendo.com/us/whatsnew/my-nintendo-july-wrap-up-2026/",
+      "https://www.nintendo.com/us/whatsnew/my-nintendo-september-wrap-up-2026/",
+      "https://www.nintendo.com/us/whatsnew/paid-dlc-is-coming-to-fire-emblem-fortunes-weave-wave-1-is-out-now/",
+      "https://www.nintendo.com/us/whatsnew/you-have-been-summoned-to-watch-the-new-legend-of-zelda-ocarina-of-time-overview-trailer/"
+    ],
+    "removed": []
+  }
+}
