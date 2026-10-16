@@ -2,14 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-10-16T14:29:58.260Z",
+  "checkedAt": "2026-10-16T19:16:05.957Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/04/30/borderlands-4-revealing-vault-hunter-skills-new-planet-kairos-and-more/",
-      "https://blog.playstation.com/2025/05/01/play-the-fortnite-br-star-wars-season-galactic-battle-may-2/",
       "https://blog.playstation.com/2025/05/01/players-choice-vote-for-april-2025s-best-new-game/",
       "https://blog.playstation.com/2025/05/02/share-of-the-week-days-gone-remastered/",
       "https://blog.playstation.com/2025/05/02/the-midnight-walk-a-stroll-through-the-brand-new-creepy-narrative-adventure/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2026/10/13/helldivers-2-scope-of-authority-premium-warbond-launches-oct-20/",
       "https://blog.playstation.com/2026/10/14/gran-turismo-7s-spec-iv-part-1-launches-today-and-a-first-look-at-dualsense-wireless-controller-gran-turismo-limited-edition/",
       "https://blog.playstation.com/2026/10/14/playstation-plus-game-catalog-for-october-mafia-the-old-country-horizon-forbidden-west-mycopunk-and-more/",
-      "https://blog.playstation.com/2026/10/15/peak-climbs-its-way-onto-ps5-october-22/"
+      "https://blog.playstation.com/2026/10/15/peak-climbs-its-way-onto-ps5-october-22/",
+      "https://blog.playstation.com/2026/10/16/official-playstation-podcast-episode-551-quadruple-duty/",
+      "https://blog.playstation.com/2026/10/16/share-of-the-week-marvels-wolverine-suits/"
     ],
     "removed": []
   }
