@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-10-19T09:33:55.749Z",
+  "checkedAt": "2026-10-19T16:46:26.793Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/05/06/destiny-2-prophecy-and-fate-arrives-june-15-full-details-from-bungie/",
       "https://blog.playstation.com/2025/05/06/next-level-savings-promotion-comes-to-playstation-store-may-7/",
       "https://blog.playstation.com/2025/05/07/elden-ring-nightreign-interview-reimagined-game-design-anchored-by-in-depth-combat/",
       "https://blog.playstation.com/2025/05/07/welcome-teamlfg-to-the-playstation-studios-family/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/10/14/playstation-plus-game-catalog-for-october-mafia-the-old-country-horizon-forbidden-west-mycopunk-and-more/",
       "https://blog.playstation.com/2026/10/15/peak-climbs-its-way-onto-ps5-october-22/",
       "https://blog.playstation.com/2026/10/16/official-playstation-podcast-episode-551-quadruple-duty/",
-      "https://blog.playstation.com/2026/10/16/share-of-the-week-marvels-wolverine-suits/"
+      "https://blog.playstation.com/2026/10/16/share-of-the-week-marvels-wolverine-suits/",
+      "https://blog.playstation.com/2026/10/19/the-saros-zenith-update-out-today-brings-more-ways-to-play-for-newcomers-and-veterans-alike/"
     ],
     "removed": []
   }
