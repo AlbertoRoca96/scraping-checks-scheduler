@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-10-20T13:17:50.220Z",
+  "checkedAt": "2026-10-20T18:18:44.882Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/05/06/next-level-savings-promotion-comes-to-playstation-store-may-7/",
       "https://blog.playstation.com/2025/05/07/elden-ring-nightreign-interview-reimagined-game-design-anchored-by-in-depth-combat/",
       "https://blog.playstation.com/2025/05/07/welcome-teamlfg-to-the-playstation-studios-family/",
       "https://blog.playstation.com/2025/05/08/death-stranding-2-an-interview-with-hideo-kojima/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/10/15/peak-climbs-its-way-onto-ps5-october-22/",
       "https://blog.playstation.com/2026/10/16/official-playstation-podcast-episode-551-quadruple-duty/",
       "https://blog.playstation.com/2026/10/16/share-of-the-week-marvels-wolverine-suits/",
-      "https://blog.playstation.com/2026/10/19/the-saros-zenith-update-out-today-brings-more-ways-to-play-for-newcomers-and-veterans-alike/"
+      "https://blog.playstation.com/2026/10/19/the-saros-zenith-update-out-today-brings-more-ways-to-play-for-newcomers-and-veterans-alike/",
+      "https://blog.playstation.com/2026/10/20/how-final-fantasy-resonance-uses-visions-to-change-how-we-see-the-series/"
     ],
     "removed": []
   }
