@@ -2,12 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-10-21T23:00:07.961Z",
+  "checkedAt": "2026-10-22T03:10:55.486Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
+      "https://blog.playstation.com/2025/05/07/welcome-teamlfg-to-the-playstation-studios-family/",
       "https://blog.playstation.com/2025/05/08/death-stranding-2-an-interview-with-hideo-kojima/",
       "https://blog.playstation.com/2025/05/08/death-stranding-2-on-the-beach-hands-on-report/",
       "https://blog.playstation.com/2025/05/08/mafia-the-old-country-uncovers-the-origins-of-organized-crime-on-august-8/",
@@ -772,7 +773,6 @@
       "https://blog.playstation.com/2026/09/17/final-fantasy-vii-revelation-hands-on-report-into-the-whirlwind-maze-where-sephiroth-awaits/",
       "https://blog.playstation.com/2026/09/18/control-resonant-how-remedy-is-going-bigger-and-weirder-with-its-paranatural-horror-sequel-on-september-24/",
       "https://blog.playstation.com/2026/09/18/share-of-the-week-seasons/",
-      "https://blog.playstation.com/2026/09/22/fading-echo-makes-a-splash-on-playstation-5-today/",
       "https://blog.playstation.com/2026/09/24/luma-island-is-coming-to-ps5/",
       "https://blog.playstation.com/2026/09/25/how-ace-combat-8-wings-of-theve-uses-first-person-to-tell-a-more-personal-story/",
       "https://blog.playstation.com/2026/09/25/official-playstation-podcast-episode-548-september-selects/",
