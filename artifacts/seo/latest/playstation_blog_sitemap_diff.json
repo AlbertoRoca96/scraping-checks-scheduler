@@ -2,16 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-10-22T09:08:07.830Z",
+  "checkedAt": "2026-10-22T15:00:02.793Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/05/08/death-stranding-2-an-interview-with-hideo-kojima/",
       "https://blog.playstation.com/2025/05/08/mafia-the-old-country-uncovers-the-origins-of-organized-crime-on-august-8/",
-      "https://blog.playstation.com/2025/05/08/masters-of-ceremony-warbond-marches-into-helldivers-2-may-15/",
-      "https://blog.playstation.com/2025/05/08/revealing-the-dualsense-wireless-controller-death-stranding-2-on-the-beach-limited-edition/",
       "https://blog.playstation.com/2025/05/08/tomb-raider-x-pinball-fx-raid-the-arcades-on-june-19/",
       "https://blog.playstation.com/2025/05/08/tony-hawks-pro-skater-3-4-a-closer-look-at-nine-skate-parks-coming-july-11/",
       "https://blog.playstation.com/2025/05/09/official-playstation-podcast-episode-514-33-and-a-third/",
@@ -807,7 +804,10 @@
       "https://blog.playstation.com/2026/10/21/once-humans-isles-of-abyss-expansion-launches-on-ps5-tomorrow/",
       "https://blog.playstation.com/2026/10/21/playstation-indies-9-must-play-horror-games-for-the-spooky-season/",
       "https://blog.playstation.com/2026/10/21/playstation-stores-planet-of-the-deals-promotion-is-live-now/",
-      "https://blog.playstation.com/2026/10/21/stranger-than-heaven-hands-on-report-brutal-combat-and-the-glitz-of-show-business-intermix/"
+      "https://blog.playstation.com/2026/10/21/stranger-than-heaven-hands-on-report-brutal-combat-and-the-glitz-of-show-business-intermix/",
+      "https://blog.playstation.com/2026/10/22/marvels-wolverine-photo-mode-guide/",
+      "https://blog.playstation.com/2026/10/22/playstation-store-september-2026s-top-downloads/",
+      "https://blog.playstation.com/2026/10/22/tomb-raider-legacy-of-atlantis-the-evolution-of-lara-crofts-design/"
     ],
     "removed": []
   }
