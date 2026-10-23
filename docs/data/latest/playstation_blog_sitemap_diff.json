@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-10-23T09:04:41.220Z",
+  "checkedAt": "2026-10-23T14:39:03.894Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/05/08/tomb-raider-x-pinball-fx-raid-the-arcades-on-june-19/",
       "https://blog.playstation.com/2025/05/08/tony-hawks-pro-skater-3-4-a-closer-look-at-nine-skate-parks-coming-july-11/",
       "https://blog.playstation.com/2025/05/09/official-playstation-podcast-episode-514-33-and-a-third/",
       "https://blog.playstation.com/2025/05/09/share-of-the-week-days-gone-remastered-deacon/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/10/21/stranger-than-heaven-hands-on-report-brutal-combat-and-the-glitz-of-show-business-intermix/",
       "https://blog.playstation.com/2026/10/22/marvels-wolverine-photo-mode-guide/",
       "https://blog.playstation.com/2026/10/22/playstation-store-september-2026s-top-downloads/",
-      "https://blog.playstation.com/2026/10/22/tomb-raider-legacy-of-atlantis-the-evolution-of-lara-crofts-design/"
+      "https://blog.playstation.com/2026/10/22/tomb-raider-legacy-of-atlantis-the-evolution-of-lara-crofts-design/",
+      "https://blog.playstation.com/2026/10/23/saros-creating-the-epic-overlords-of-carcosa/"
     ],
     "removed": []
   }
