@@ -2,12 +2,19 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-10-22T23:01:18.038Z",
+  "checkedAt": "2026-10-23T03:16:42.523Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 2,
+    "nowCount": 9,
     "prevCount": 0,
     "added": [
+      "https://www.nintendo.com/us/whatsnew/competitive-play-join-the-mario-tennis-fever-open-october-2026/",
+      "https://www.nintendo.com/us/whatsnew/competitive-play-keep-up-the-autumn-momentum-with-the-mario-kart-world-open-oct-2026-event/",
+      "https://www.nintendo.com/us/whatsnew/competitive-play-race-with-players-around-the-globe-in-the-mario-kart-world-global-online-challenge/",
+      "https://www.nintendo.com/us/whatsnew/competitive-play-ready-for-fall-to-get-rolling-celebrate-the-change-of-seasons-with-the-mario-kart-tm-world-open-september-2026-event/",
+      "https://www.nintendo.com/us/whatsnew/competitive-play-splatoon-3-north-american-league-2026/",
+      "https://www.nintendo.com/us/whatsnew/competitive-play-the-summer-fun-continues-in-the-mario-kart-world-open-august-2026-event/",
+      "https://www.nintendo.com/us/whatsnew/competitive-play-turn-up-the-heat-this-summer-in-the-mario-kart-world-open-july-2026-event/",
       "https://www.nintendo.com/us/whatsnew/grab-your-headband-and-get-ready-to-move-in-nintendo-switch-sports-resort/",
       "https://www.nintendo.com/us/whatsnew/icon-elements-inspired-by-the-nintendo-switch-sports-resort-game-are-here-for-a-limited-time/"
     ],
