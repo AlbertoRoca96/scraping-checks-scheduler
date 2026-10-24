@@ -2,12 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-10-23T22:52:06.856Z",
+  "checkedAt": "2026-10-24T03:10:09.098Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
+      "https://blog.playstation.com/2025/05/08/tony-hawks-pro-skater-3-4-a-closer-look-at-nine-skate-parks-coming-july-11/",
       "https://blog.playstation.com/2025/05/09/official-playstation-podcast-episode-514-33-and-a-third/",
       "https://blog.playstation.com/2025/05/09/share-of-the-week-days-gone-remastered-deacon/",
       "https://blog.playstation.com/2025/05/13/helldivers-2-illuminate-set-sights-on-super-earth-new-enemy-types-deployed/",
@@ -768,7 +769,6 @@
       "https://blog.playstation.com/2026/09/21/lisa-x-playstation-arrives-this-october-first-look-at-the-dualsense-wireless-controller-lisa-limited-edition-and-all-new-merchandise/",
       "https://blog.playstation.com/2026/09/21/silent-hill-townfall-9-ways-first-person-changes-the-iconic-horror-formula/",
       "https://blog.playstation.com/2026/09/22/fading-echo-makes-a-splash-on-playstation-5-today/",
-      "https://blog.playstation.com/2026/09/24/luma-island-is-coming-to-ps5/",
       "https://blog.playstation.com/2026/09/25/how-ace-combat-8-wings-of-theve-uses-first-person-to-tell-a-more-personal-story/",
       "https://blog.playstation.com/2026/09/25/official-playstation-podcast-episode-548-september-selects/",
       "https://blog.playstation.com/2026/09/25/share-of-the-week-marvels-wolverine/",
