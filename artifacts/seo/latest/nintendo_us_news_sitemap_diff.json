@@ -2,20 +2,13 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-10-24T23:58:46.045Z",
+  "checkedAt": "2026-10-25T04:05:07.196Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-    "nowCount": 8,
+    "nowCount": 1,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/call-of-duty-r-modern-warfare-r-4-is-out-now-for-nintendo-switch-2-stay-frosty/",
-      "https://www.nintendo.com/us/whatsnew/competitive-play-join-the-mario-tennis-fever-open-october-2026/",
-      "https://www.nintendo.com/us/whatsnew/competitive-play-keep-up-the-autumn-momentum-with-the-mario-kart-world-open-oct-2026-event/",
-      "https://www.nintendo.com/us/whatsnew/competitive-play-race-with-players-around-the-globe-in-the-mario-kart-world-global-online-challenge/",
-      "https://www.nintendo.com/us/whatsnew/competitive-play-ready-for-fall-to-get-rolling-celebrate-the-change-of-seasons-with-the-mario-kart-tm-world-open-september-2026-event/",
-      "https://www.nintendo.com/us/whatsnew/competitive-play-splatoon-3-north-american-league-2026/",
-      "https://www.nintendo.com/us/whatsnew/competitive-play-the-summer-fun-continues-in-the-mario-kart-world-open-august-2026-event/",
-      "https://www.nintendo.com/us/whatsnew/competitive-play-turn-up-the-heat-this-summer-in-the-mario-kart-world-open-july-2026-event/"
+      "https://www.nintendo.com/us/whatsnew/call-of-duty-r-modern-warfare-r-4-is-out-now-for-nintendo-switch-2-stay-frosty/"
     ],
     "removed": []
   }
