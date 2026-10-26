@@ -1,6 +1,6 @@
-# Scrape Report (2026-10-25T22:21:00.203Z)
+# Scrape Report (2026-10-26T03:09:44.486Z)
 
-Group: `price`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/40239361200
+Group: `price`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/40262234769
 
 | Check | Changed | Keys | Error |
 |---|:---:|:--|:--|
@@ -12,4 +12,4 @@ Call log:
 Call log:
   - navigating to "https://scrapeme.live/shop/Pikachu/", waiting until "domcontentloaded"
 ` |
-| `psa_charizard_price_gem10` | ✅ | grade, price, row |  |
+| `psa_charizard_price_gem10` | — |  |  |
