@@ -2,14 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-10-26T09:49:12.650Z",
+  "checkedAt": "2026-10-26T16:38:28.082Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/05/09/official-playstation-podcast-episode-514-33-and-a-third/",
-      "https://blog.playstation.com/2025/05/09/share-of-the-week-days-gone-remastered-deacon/",
       "https://blog.playstation.com/2025/05/13/helldivers-2-illuminate-set-sights-on-super-earth-new-enemy-types-deployed/",
       "https://blog.playstation.com/2025/05/14/fbc-firebreak-hands-on-report/",
       "https://blog.playstation.com/2025/05/14/gran-turismo-7-update-1-59-available-today/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2026/10/22/playstation-store-september-2026s-top-downloads/",
       "https://blog.playstation.com/2026/10/22/tomb-raider-legacy-of-atlantis-the-evolution-of-lara-crofts-design/",
       "https://blog.playstation.com/2026/10/23/saros-creating-the-epic-overlords-of-carcosa/",
-      "https://blog.playstation.com/2026/10/23/share-of-the-week-007-first-light/"
+      "https://blog.playstation.com/2026/10/23/share-of-the-week-007-first-light/",
+      "https://blog.playstation.com/2026/10/26/celebrate-helldivers-2-liberty-day-2026-with-in-game-gifts-today/",
+      "https://blog.playstation.com/2026/10/26/new-marvel-cosmic-invasion-the-siege-of-castle-doom-gameplay-details/"
     ],
     "removed": []
   }
