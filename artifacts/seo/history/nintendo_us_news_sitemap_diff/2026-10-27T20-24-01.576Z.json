@@ -1,0 +1,17 @@
+{
+  "name": "nintendo_us_news_sitemap_diff",
+  "type": "sitemap_diff",
+  "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
+  "checkedAt": "2026-10-27T20:24:01.576Z",
+  "data": {
+    "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
+    "nowCount": 3,
+    "prevCount": 0,
+    "added": [
+      "https://www.nintendo.com/us/whatsnew/bring-some-monstrous-aura-to-tomodachi-life-living-the-dream/",
+      "https://www.nintendo.com/us/whatsnew/competitive-play-compete-for-prizes-in-the-splatoon-3-golden-egg-feast-2026-tournament/",
+      "https://www.nintendo.com/us/whatsnew/new-update-for-nintendo-switch-online-expansion-pack-members-october-2026/"
+    ],
+    "removed": []
+  }
+}
