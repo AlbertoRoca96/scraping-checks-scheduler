@@ -2,6 +2,6 @@
   "name": "scrapeme_pikachu_availability",
   "type": "availability",
   "url": "https://scrapeme.live/shop/Pikachu/",
-  "checkedAt": "2026-10-27T03:38:35.528Z",
+  "checkedAt": "2026-10-27T09:37:35.934Z",
   "error": "Error: page.goto failed after 3 attempts: Error: page.goto: net::ERR_CONNECTION_TIMED_OUT at https://scrapeme.live/shop/Pikachu/\nCall log:\n  - navigating to \"https://scrapeme.live/shop/Pikachu/\", waiting until \"domcontentloaded\"\n"
 }
