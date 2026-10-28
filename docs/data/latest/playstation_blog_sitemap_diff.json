@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-10-28T07:53:31.399Z",
+  "checkedAt": "2026-10-28T14:49:17.766Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/05/14/gran-turismo-7-update-1-59-available-today/",
       "https://blog.playstation.com/2025/05/14/playstation-plus-game-catalog-for-may-sand-land-soul-hackers-2-five-nights-at-freddys-help-wanted-battlefield-v-and-more/",
       "https://blog.playstation.com/2025/05/15/ghost-of-yotei-how-sucker-punch-chose-hokkaido-for-the-games-setting/",
       "https://blog.playstation.com/2025/05/15/stellar-blade-launches-june-11-on-pc-specs-and-features-revealed/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/10/27/aloft-and-conan-exiles-enhanced-launch-on-ps5-in-early-2027/",
       "https://blog.playstation.com/2026/10/27/terrible-lizards-dev-discusses-twisting-familiar-dinosaur-designs-out-oct-29/",
       "https://blog.playstation.com/2026/10/27/the-sound-of-saros-building-an-audio-identity-for-carcosa/",
-      "https://blog.playstation.com/2026/10/27/where-winds-meets-climactic-hutuo-battlefield-narrative-arc-revealed-out-nov-13/"
+      "https://blog.playstation.com/2026/10/27/where-winds-meets-climactic-hutuo-battlefield-narrative-arc-revealed-out-nov-13/",
+      "https://blog.playstation.com/2026/10/28/suit-up-as-astro-bot-in-rayman-legends-retold/"
     ],
     "removed": []
   }
