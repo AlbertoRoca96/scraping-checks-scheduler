@@ -2,12 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-10-28T20:45:07.284Z",
+  "checkedAt": "2026-10-29T01:30:22.470Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
+      "https://blog.playstation.com/2025/05/15/stellar-blade-launches-june-11-on-pc-specs-and-features-revealed/",
       "https://blog.playstation.com/2025/05/16/share-of-the-week-days-gone-remastered-landscapes/",
       "https://blog.playstation.com/2025/05/20/helldivers-2-heart-of-democracy-update-live-brings-the-fight-to-the-streets-of-super-earth/",
       "https://blog.playstation.com/2025/05/21/call-of-duty-black-ops-6-and-warzone-season-4-full-details-live-may-29/",
@@ -764,7 +765,6 @@
       "https://blog.playstation.com/2026/09/25/how-ace-combat-8-wings-of-theve-uses-first-person-to-tell-a-more-personal-story/",
       "https://blog.playstation.com/2026/09/25/official-playstation-podcast-episode-548-september-selects/",
       "https://blog.playstation.com/2026/09/25/share-of-the-week-marvels-wolverine/",
-      "https://blog.playstation.com/2026/09/29/how-control-resonants-art-design-and-tech-shaped-its-bosses-paranaturally-twisted-manhattan-and-more/",
       "https://blog.playstation.com/2026/09/30/playstation-plus-monthly-games-for-october-f1-25-hunt-showdown-1896-earth-defense-force-world-brothers-2/",
       "https://blog.playstation.com/2026/10/01/ai-upscaling-is-coming-to-ps5/",
       "https://blog.playstation.com/2026/10/01/kena-scars-of-kosmora-launches-2027-ember-lab-shares-story-overview/",
