@@ -1,0 +1,10 @@
+{
+  "name": "scrapeme_pikachu_price",
+  "type": "price",
+  "url": "https://scrapeme.live/shop/Pikachu/",
+  "checkedAt": "2026-10-29T15:04:52.165Z",
+  "data": {
+    "price": 37,
+    "raw": "£37.00"
+  }
+}

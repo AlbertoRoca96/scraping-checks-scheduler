@@ -2,6 +2,9 @@
   "name": "scrapeme_pikachu_availability",
   "type": "availability",
   "url": "https://scrapeme.live/shop/Pikachu/",
-  "checkedAt": "2026-10-29T08:00:59.393Z",
-  "error": "Error: page.goto failed after 3 attempts: Error: page.goto: net::ERR_CONNECTION_TIMED_OUT at https://scrapeme.live/shop/Pikachu/\nCall log:\n  - navigating to \"https://scrapeme.live/shop/Pikachu/\", waiting until \"domcontentloaded\"\n"
+  "checkedAt": "2026-10-29T15:04:52.898Z",
+  "data": {
+    "available": true,
+    "raw": "254 in stock"
+  }
 }

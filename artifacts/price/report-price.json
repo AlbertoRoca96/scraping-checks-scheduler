@@ -1,27 +1,37 @@
 {
-  "generatedAt": "2026-10-29T08:03:59.973Z",
+  "generatedAt": "2026-10-29T15:05:04.834Z",
   "group": "price",
   "summary": [
     {
       "name": "scrapeme_pikachu_price",
       "type": "price",
-      "changed": false,
-      "changedKeys": [],
-      "error": "Error: page.goto failed after 3 attempts: Error: page.goto: net::ERR_CONNECTION_TIMED_OUT at https://scrapeme.live/shop/Pikachu/\nCall log:\n  - navigating to \"https://scrapeme.live/shop/Pikachu/\", waiting until \"domcontentloaded\"\n"
+      "changed": true,
+      "changedKeys": [
+        "price",
+        "raw"
+      ],
+      "error": null
     },
     {
       "name": "scrapeme_pikachu_availability",
       "type": "availability",
-      "changed": false,
-      "changedKeys": [],
-      "error": "Error: page.goto failed after 3 attempts: Error: page.goto: net::ERR_CONNECTION_TIMED_OUT at https://scrapeme.live/shop/Pikachu/\nCall log:\n  - navigating to \"https://scrapeme.live/shop/Pikachu/\", waiting until \"domcontentloaded\"\n"
+      "changed": true,
+      "changedKeys": [
+        "available",
+        "raw"
+      ],
+      "error": null
     },
     {
       "name": "psa_charizard_price_gem10",
       "type": "psa_price_row",
-      "changed": false,
-      "changedKeys": [],
-      "error": "TimeoutError: page.waitForSelector: Timeout 45000ms exceeded.\nCall log:\n  - waiting for locator('table') to be visible\n"
+      "changed": true,
+      "changedKeys": [
+        "grade",
+        "price",
+        "row"
+      ],
+      "error": null
     }
   ]
 }
