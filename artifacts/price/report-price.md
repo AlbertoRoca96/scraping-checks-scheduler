@@ -1,6 +1,6 @@
-# Scrape Report (2026-10-29T01:34:51.387Z)
+# Scrape Report (2026-10-29T08:03:59.973Z)
 
-Group: `price`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/40800757068
+Group: `price`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/40838838021
 
 | Check | Changed | Keys | Error |
 |---|:---:|:--|:--|
@@ -12,4 +12,7 @@ Call log:
 Call log:
   - navigating to "https://scrapeme.live/shop/Pikachu/", waiting until "domcontentloaded"
 ` |
-| `psa_charizard_price_gem10` | — |  |  |
+| `psa_charizard_price_gem10` | — |  | `TimeoutError: page.waitForSelector: Timeout 45000ms exceeded.
+Call log:
+  - waiting for locator('table') to be visible
+` |
