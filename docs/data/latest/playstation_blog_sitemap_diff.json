@@ -2,12 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-10-29T20:50:17.687Z",
+  "checkedAt": "2026-10-30T01:31:26.392Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
+      "https://blog.playstation.com/2025/05/20/helldivers-2-heart-of-democracy-update-live-brings-the-fight-to-the-streets-of-super-earth/",
       "https://blog.playstation.com/2025/05/21/call-of-duty-black-ops-6-and-warzone-season-4-full-details-live-may-29/",
       "https://blog.playstation.com/2025/05/21/mukti-ps5-gameplay-revealed/",
       "https://blog.playstation.com/2025/05/21/playstation-stars-coming-to-a-close-as-sie-evaluates-new-ways-to-evolve-future-loyalty-program-efforts/",
@@ -764,7 +765,6 @@
       "https://blog.playstation.com/2026/09/25/share-of-the-week-marvels-wolverine/",
       "https://blog.playstation.com/2026/09/28/god-of-war-laufey-pre-orders-available-starting-september-29-editions-detailed/",
       "https://blog.playstation.com/2026/09/28/suri-the-seventh-note-launches-oct-30-on-ps5/",
-      "https://blog.playstation.com/2026/09/30/playstation-plus-monthly-games-for-october-f1-25-hunt-showdown-1896-earth-defense-force-world-brothers-2/",
       "https://blog.playstation.com/2026/10/01/ai-upscaling-is-coming-to-ps5/",
       "https://blog.playstation.com/2026/10/01/kena-scars-of-kosmora-launches-2027-ember-lab-shares-story-overview/",
       "https://blog.playstation.com/2026/10/01/martial-arts-meet-fluid-platforming-in-elta-defy-all-gods-with-a-free-ps5-demo-out-today/",

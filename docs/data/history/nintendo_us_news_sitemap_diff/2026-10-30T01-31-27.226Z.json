@@ -1,0 +1,17 @@
+{
+  "name": "nintendo_us_news_sitemap_diff",
+  "type": "sitemap_diff",
+  "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
+  "checkedAt": "2026-10-30T01:31:27.226Z",
+  "data": {
+    "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
+    "nowCount": 3,
+    "prevCount": 0,
+    "added": [
+      "https://www.nintendo.com/us/whatsnew/jesser-vs-johnny-in-nintendo-switch-sports-resort/",
+      "https://www.nintendo.com/us/whatsnew/new-indie-world-showcase-features-cozy-and-chaotic-fun-for-nintendo-switch-2-and-nintendo-switch/",
+      "https://www.nintendo.com/us/whatsnew/pikmin-in-nashville/"
+    ],
+    "removed": []
+  }
+}
