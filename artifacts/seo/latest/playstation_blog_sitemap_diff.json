@@ -2,14 +2,13 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-10-30T08:00:55.524Z",
+  "checkedAt": "2026-10-30T16:31:13.631Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2025/05/21/call-of-duty-black-ops-6-and-warzone-season-4-full-details-live-may-29/",
-      "https://blog.playstation.com/2025/05/21/mukti-ps5-gameplay-revealed/",
       "https://blog.playstation.com/2025/05/21/playstation-stars-coming-to-a-close-as-sie-evaluates-new-ways-to-evolve-future-loyalty-program-efforts/",
       "https://blog.playstation.com/2025/05/23/official-playstation-podcast-episode-515-justice-for-super-mirth/",
       "https://blog.playstation.com/2025/05/23/share-of-the-week-afterlife/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/10/28/modern-warfare-4-season-1-everything-you-need-to-know-for-november-6-launch/",
       "https://blog.playstation.com/2026/10/28/phantom-blade-zero-how-boss-weapons-transform-combat-and-exploration/",
       "https://blog.playstation.com/2026/10/28/playstation-plus-monthly-games-for-november-dead-island-2-tomb-raider-iv-vi-remastered-monster-train-2/",
-      "https://blog.playstation.com/2026/10/28/suit-up-as-astro-bot-in-rayman-legends-retold/"
+      "https://blog.playstation.com/2026/10/28/suit-up-as-astro-bot-in-rayman-legends-retold/",
+      "https://blog.playstation.com/2026/10/30/share-of-the-week-costumes-3/"
     ],
     "removed": []
   }
