@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-10-31T01:24:51.655Z",
+  "checkedAt": "2026-10-31T07:57:59.279Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/05/16/share-of-the-week-days-gone-remastered-landscapes/",
       "https://blog.playstation.com/2025/05/20/helldivers-2-heart-of-democracy-update-live-brings-the-fight-to-the-streets-of-super-earth/",
       "https://blog.playstation.com/2025/05/21/call-of-duty-black-ops-6-and-warzone-season-4-full-details-live-may-29/",
       "https://blog.playstation.com/2025/05/21/mukti-ps5-gameplay-revealed/",
@@ -767,6 +766,7 @@
       "https://blog.playstation.com/2026/09/28/god-of-war-laufey-pre-orders-available-starting-september-29-editions-detailed/",
       "https://blog.playstation.com/2026/09/28/suri-the-seventh-note-launches-oct-30-on-ps5/",
       "https://blog.playstation.com/2026/09/29/how-control-resonants-art-design-and-tech-shaped-its-bosses-paranaturally-twisted-manhattan-and-more/",
+      "https://blog.playstation.com/2026/09/30/playstation-plus-monthly-games-for-october-f1-25-hunt-showdown-1896-earth-defense-force-world-brothers-2/",
       "https://blog.playstation.com/2026/10/02/ghost-of-yotei-complete-edition-erika-ishii-interview/",
       "https://blog.playstation.com/2026/10/02/official-playstation-podcast-episode-549-friendly-ghosts/",
       "https://blog.playstation.com/2026/10/02/share-of-the-week-marvels-wolverine-logan/",
