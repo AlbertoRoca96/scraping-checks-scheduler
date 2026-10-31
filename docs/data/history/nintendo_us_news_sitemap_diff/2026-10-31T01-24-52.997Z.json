@@ -1,0 +1,18 @@
+{
+  "name": "nintendo_us_news_sitemap_diff",
+  "type": "sitemap_diff",
+  "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
+  "checkedAt": "2026-10-31T01:24:52.997Z",
+  "data": {
+    "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
+    "nowCount": 4,
+    "prevCount": 0,
+    "added": [
+      "https://www.nintendo.com/us/whatsnew/call-of-duty-r-modern-warfare-r-4-is-out-now-for-nintendo-switch-2-stay-frosty/",
+      "https://www.nintendo.com/us/whatsnew/disguise-announces-new-yoshi-costumes-just-in-time-for-halloween/",
+      "https://www.nintendo.com/us/whatsnew/my-nintendo-october-wrap-up-2026/",
+      "https://www.nintendo.com/us/whatsnew/pikmin-in-nashville/"
+    ],
+    "removed": []
+  }
+}
