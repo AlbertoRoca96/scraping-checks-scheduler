@@ -2,14 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-11-03T13:34:56.563Z",
+  "checkedAt": "2026-11-03T20:24:17.565Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/05/28/find-the-elden-ring-nightreign-class-thats-right-for-you/",
-      "https://blog.playstation.com/2025/05/28/playstation-plus-monthly-games-for-june-nba-2k25-alone-in-the-dark-bomb-rush-cyberfunk-destiny-2-the-final-shape/",
       "https://blog.playstation.com/2025/05/29/wuchang-fallen-feathers-a-closer-look-at-the-soulslike-combat/",
       "https://blog.playstation.com/2025/05/30/share-of-the-week-expressive/",
       "https://blog.playstation.com/2025/06/02/players-choice-vote-for-may-2025s-best-new-game/",
@@ -806,8 +804,10 @@
       "https://blog.playstation.com/2026/11/02/90s-style-sci-fi-horror-derelikt-launches-nov-13-on-ps5/",
       "https://blog.playstation.com/2026/11/02/godzilla-destroy-all-monsters-melee-remastered-fighter-guide/",
       "https://blog.playstation.com/2026/11/02/players-choice-vote-for-octobers-best-new-game-4/",
+      "https://blog.playstation.com/2026/11/03/grand-theft-auto-vi-pre-download-begins-november-10/",
       "https://blog.playstation.com/2026/11/03/helldivers-2-new-poisonous-terminid-types-more-bug-caves-spawn-across-the-galaxy-today/",
-      "https://blog.playstation.com/2026/11/03/playstations-black-friday-deals-2026/"
+      "https://blog.playstation.com/2026/11/03/playstations-black-friday-deals-2026/",
+      "https://blog.playstation.com/2026/11/03/sonic-racing-crossworlds-year-two-begins-today-with-duel-mode-new-characters-gadgets-and-more/"
     ],
     "removed": []
   }
