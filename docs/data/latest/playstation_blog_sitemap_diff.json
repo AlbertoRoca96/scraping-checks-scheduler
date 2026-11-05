@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-11-05T13:56:57.937Z",
+  "checkedAt": "2026-11-05T20:56:48.280Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/05/30/share-of-the-week-expressive/",
       "https://blog.playstation.com/2025/06/02/players-choice-vote-for-may-2025s-best-new-game/",
       "https://blog.playstation.com/2025/06/03/destiny-2-the-edge-of-fate-hands-on-report/",
       "https://blog.playstation.com/2025/06/03/state-of-play-returns-june-4/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/11/03/playstations-black-friday-deals-2026/",
       "https://blog.playstation.com/2026/11/03/sonic-racing-crossworlds-year-two-begins-today-with-duel-mode-new-characters-gadgets-and-more/",
       "https://blog.playstation.com/2026/11/04/bringing-jin-sakai-back-to-life-for-ghost-of-yotei-most-wanted/",
-      "https://blog.playstation.com/2026/11/04/playstation-store-october-2026s-top-downloads/"
+      "https://blog.playstation.com/2026/11/04/playstation-store-october-2026s-top-downloads/",
+      "https://blog.playstation.com/2026/11/05/assassins-creed-valhalla-new-update-brings-new-game-upgraded-pssr-support-for-ps5-pro-today/"
     ],
     "removed": []
   }
