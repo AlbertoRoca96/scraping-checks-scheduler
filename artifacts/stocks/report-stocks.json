@@ -1,12 +1,16 @@
 {
-  "generatedAt": "2026-11-04T23:10:20.126Z",
+  "generatedAt": "2026-11-05T02:51:44.131Z",
   "group": "stocks",
   "summary": [
     {
       "name": "stock_ntdoy_global_quote",
       "type": "stock_quote",
-      "changed": false,
-      "changedKeys": [],
+      "changed": true,
+      "changedKeys": [
+        "change",
+        "changePercent",
+        "price"
+      ],
       "error": null
     }
   ]
