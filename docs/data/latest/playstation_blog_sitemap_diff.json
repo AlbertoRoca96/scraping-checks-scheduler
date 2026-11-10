@@ -2,7 +2,7 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-11-10T16:03:36.846Z",
+  "checkedAt": "2026-11-10T22:47:50.774Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
@@ -11,7 +11,6 @@
       "https://blog.playstation.com/2025/06/04/astro-bot-five-new-vicious-void-galaxy-levels-special-bots-launch-this-july/",
       "https://blog.playstation.com/2025/06/04/bloodstained-the-scarlet-engagement-revealed-launches-on-ps5-in-2026/",
       "https://blog.playstation.com/2025/06/04/final-fantasy-tactics-the-ivalice-chronicles-comes-to-ps5-and-ps4-september-30-2025/",
-      "https://blog.playstation.com/2025/06/04/gran-turismo-world-series-2025-round-1-takes-place-in-london-this-saturday/",
       "https://blog.playstation.com/2025/06/04/grasshopper-manufactures-new-action-title-romeo-is-a-dead-man-launches-on-ps5-next-year/",
       "https://blog.playstation.com/2025/06/04/introducing-project-defiant-the-first-wireless-fight-stick-designed-by-sony-interactive-entertainment-for-ps5-and-pc/",
       "https://blog.playstation.com/2025/06/04/lumines-arise-bursts-onto-playstation-5-this-fall/",
@@ -20,7 +19,6 @@
       "https://blog.playstation.com/2025/06/04/nioh-3-announced-for-ps5-limited-time-demo-available-today/",
       "https://blog.playstation.com/2025/06/04/oceanic-action-rpg-sea-of-remnants-revealed-for-ps5/",
       "https://blog.playstation.com/2025/06/04/pragmata-coming-to-ps5-2026-new-gameplay-revealed/",
-      "https://blog.playstation.com/2025/06/04/rematch-hands-on-report/",
       "https://blog.playstation.com/2025/06/04/silent-hill-f-launches-september-25-ps5-gameplay-revealed/",
       "https://blog.playstation.com/2025/06/04/state-of-play-ghost-of-yotei-gameplay-deep-dive-coming-july-2025/",
       "https://blog.playstation.com/2025/06/04/state-of-play-june-2025-all-announcements-trailers/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2026/11/06/hozy-brings-calm-tactile-home-restoration-to-ps5-on-november-9/",
       "https://blog.playstation.com/2026/11/06/share-of-the-week-shadows-2/",
       "https://blog.playstation.com/2026/11/10/marathon-symbiosis-update-launches-december-8-adding-new-pve-and-pvp-modes-weapons-and-more/",
-      "https://blog.playstation.com/2026/11/10/pre-load-grand-theft-auto-vi-on-ps5-starting-today/"
+      "https://blog.playstation.com/2026/11/10/playstation-plus-game-catalog-for-november-death-stranding-2-on-the-beach-like-a-dragon-pirate-yakuza-in-hawaii-atomfall-dragon-quest-iii-hd-2d-remake-and-more/",
+      "https://blog.playstation.com/2026/11/10/pre-load-grand-theft-auto-vi-on-ps5-starting-today/",
+      "https://blog.playstation.com/2026/11/10/the-outer-worlds-2s-first-dlc-arrives-december-2/"
     ],
     "removed": []
   }
