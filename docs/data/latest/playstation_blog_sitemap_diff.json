@@ -2,13 +2,12 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-11-10T06:12:07.592Z",
+  "checkedAt": "2026-11-10T16:03:36.846Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
-      "https://blog.playstation.com/2025/06/03/the-witcher-4-unreal-engine-5-tech-demo-on-ps5-revealed/",
       "https://blog.playstation.com/2025/06/04/astro-bot-five-new-vicious-void-galaxy-levels-special-bots-launch-this-july/",
       "https://blog.playstation.com/2025/06/04/bloodstained-the-scarlet-engagement-revealed-launches-on-ps5-in-2026/",
       "https://blog.playstation.com/2025/06/04/final-fantasy-tactics-the-ivalice-chronicles-comes-to-ps5-and-ps4-september-30-2025/",
@@ -20,7 +19,6 @@
       "https://blog.playstation.com/2025/06/04/mortal-kombat-legacy-collection-launches-on-ps5-ps4-this-year/",
       "https://blog.playstation.com/2025/06/04/nioh-3-announced-for-ps5-limited-time-demo-available-today/",
       "https://blog.playstation.com/2025/06/04/oceanic-action-rpg-sea-of-remnants-revealed-for-ps5/",
-      "https://blog.playstation.com/2025/06/04/playstation-store-may-2025s-top-downloads/",
       "https://blog.playstation.com/2025/06/04/pragmata-coming-to-ps5-2026-new-gameplay-revealed/",
       "https://blog.playstation.com/2025/06/04/rematch-hands-on-report/",
       "https://blog.playstation.com/2025/06/04/silent-hill-f-launches-september-25-ps5-gameplay-revealed/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2026/11/04/playstation-store-october-2026s-top-downloads/",
       "https://blog.playstation.com/2026/11/05/assassins-creed-valhalla-new-update-brings-new-game-upgraded-pssr-support-for-ps5-pro-today/",
       "https://blog.playstation.com/2026/11/06/hozy-brings-calm-tactile-home-restoration-to-ps5-on-november-9/",
-      "https://blog.playstation.com/2026/11/06/share-of-the-week-shadows-2/"
+      "https://blog.playstation.com/2026/11/06/share-of-the-week-shadows-2/",
+      "https://blog.playstation.com/2026/11/10/marathon-symbiosis-update-launches-december-8-adding-new-pve-and-pvp-modes-weapons-and-more/",
+      "https://blog.playstation.com/2026/11/10/pre-load-grand-theft-auto-vi-on-ps5-starting-today/"
     ],
     "removed": []
   }
