@@ -1,6 +1,6 @@
-# Scrape Report (2026-11-10T22:48:44.979Z)
+# Scrape Report (2026-11-11T04:36:29.263Z)
 
-Group: `compliance`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/42917729728
+Group: `compliance`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/42960201151
 
 | Check | Changed | Keys | Error |
 |---|:---:|:--|:--|
