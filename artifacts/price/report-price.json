@@ -1,25 +1,19 @@
 {
-  "generatedAt": "2026-11-13T02:23:47.845Z",
+  "generatedAt": "2026-11-13T11:53:08.483Z",
   "group": "price",
   "summary": [
     {
       "name": "scrapeme_pikachu_price",
       "type": "price",
-      "changed": true,
-      "changedKeys": [
-        "price",
-        "raw"
-      ],
+      "changed": false,
+      "changedKeys": [],
       "error": null
     },
     {
       "name": "scrapeme_pikachu_availability",
       "type": "availability",
-      "changed": true,
-      "changedKeys": [
-        "available",
-        "raw"
-      ],
+      "changed": false,
+      "changedKeys": [],
       "error": null
     },
     {
