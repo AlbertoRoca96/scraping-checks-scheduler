@@ -1,15 +1,12 @@
-# Scrape Report (2026-11-12T21:22:06.785Z)
+# Scrape Report (2026-11-13T02:23:47.846Z)
 
-Group: `price`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/43308652921
+Group: `price`  |  Run: https://github.com/AlbertoRoca96/scraping-checks-scheduler/actions/runs/43351506901
 
 | Check | Changed | Keys | Error |
 |---|:---:|:--|:--|
-| `scrapeme_pikachu_price` | — |  | `Error: page.goto failed after 3 attempts: TimeoutError: page.goto: Timeout 45000ms exceeded.
+| `scrapeme_pikachu_price` | ✅ | price, raw |  |
+| `scrapeme_pikachu_availability` | ✅ | available, raw |  |
+| `psa_charizard_price_gem10` | — |  | `TimeoutError: page.waitForSelector: Timeout 45000ms exceeded.
 Call log:
-  - navigating to "https://scrapeme.live/shop/Pikachu/", waiting until "domcontentloaded"
+  - waiting for locator('table') to be visible
 ` |
-| `scrapeme_pikachu_availability` | — |  | `Error: page.goto failed after 3 attempts: TimeoutError: page.goto: Timeout 45000ms exceeded.
-Call log:
-  - navigating to "https://scrapeme.live/shop/Pikachu/", waiting until "domcontentloaded"
-` |
-| `psa_charizard_price_gem10` | — |  |  |

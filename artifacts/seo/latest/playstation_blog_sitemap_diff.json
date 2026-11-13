@@ -2,7 +2,7 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-11-12T21:17:17.257Z",
+  "checkedAt": "2026-11-13T02:21:19.105Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
@@ -19,7 +19,6 @@
       "https://blog.playstation.com/2025/06/04/nioh-3-announced-for-ps5-limited-time-demo-available-today/",
       "https://blog.playstation.com/2025/06/04/oceanic-action-rpg-sea-of-remnants-revealed-for-ps5/",
       "https://blog.playstation.com/2025/06/04/pragmata-coming-to-ps5-2026-new-gameplay-revealed/",
-      "https://blog.playstation.com/2025/06/04/rematch-hands-on-report/",
       "https://blog.playstation.com/2025/06/04/silent-hill-f-launches-september-25-ps5-gameplay-revealed/",
       "https://blog.playstation.com/2025/06/04/state-of-play-ghost-of-yotei-gameplay-deep-dive-coming-july-2025/",
       "https://blog.playstation.com/2025/06/04/state-of-play-june-2025-all-announcements-trailers/",
@@ -761,8 +760,8 @@
       "https://blog.playstation.com/2026/10/08/critical-role-joins-rockbeasts-launching-january-2027/",
       "https://blog.playstation.com/2026/10/09/official-playstation-podcast-episode-550-now-this-is-podcasting/",
       "https://blog.playstation.com/2026/10/09/share-of-the-week-marvels-wolverine-allies-villains/",
-      "https://blog.playstation.com/2026/10/14/gran-turismo-7s-spec-iv-part-1-launches-today-and-a-first-look-at-dualsense-wireless-controller-gran-turismo-limited-edition/",
-      "https://blog.playstation.com/2026/10/14/playstation-plus-game-catalog-for-october-mafia-the-old-country-horizon-forbidden-west-mycopunk-and-more/",
+      "https://blog.playstation.com/2026/10/13/escape-academy-2-back-2-school-comes-to-ps5-on-november-5/",
+      "https://blog.playstation.com/2026/10/13/helldivers-2-scope-of-authority-premium-warbond-launches-oct-20/",
       "https://blog.playstation.com/2026/10/15/peak-climbs-its-way-onto-ps5-october-22/",
       "https://blog.playstation.com/2026/10/16/official-playstation-podcast-episode-551-quadruple-duty/",
       "https://blog.playstation.com/2026/10/16/share-of-the-week-marvels-wolverine-suits/",
@@ -807,6 +806,7 @@
       "https://blog.playstation.com/2026/11/10/playstation-plus-game-catalog-for-november-death-stranding-2-on-the-beach-like-a-dragon-pirate-yakuza-in-hawaii-atomfall-dragon-quest-iii-hd-2d-remake-and-more/",
       "https://blog.playstation.com/2026/11/10/pre-load-grand-theft-auto-vi-on-ps5-starting-today/",
       "https://blog.playstation.com/2026/11/10/the-outer-worlds-2s-first-dlc-arrives-december-2/",
+      "https://blog.playstation.com/2026/11/12/once-human-season-5-gameplay-showcases-co-op-colossus-boss-battle-live-november-18/",
       "https://blog.playstation.com/2026/11/12/vindictus-defying-fate-comes-to-ps5-next-year/"
     ],
     "removed": []

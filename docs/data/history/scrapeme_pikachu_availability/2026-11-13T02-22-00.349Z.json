@@ -1,0 +1,10 @@
+{
+  "name": "scrapeme_pikachu_availability",
+  "type": "availability",
+  "url": "https://scrapeme.live/shop/Pikachu/",
+  "checkedAt": "2026-11-13T02:22:00.349Z",
+  "data": {
+    "available": true,
+    "raw": "254 in stock"
+  }
+}

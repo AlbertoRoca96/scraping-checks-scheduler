@@ -1,27 +1,33 @@
 {
-  "generatedAt": "2026-11-12T21:22:06.785Z",
+  "generatedAt": "2026-11-13T02:23:47.845Z",
   "group": "price",
   "summary": [
     {
       "name": "scrapeme_pikachu_price",
       "type": "price",
-      "changed": false,
-      "changedKeys": [],
-      "error": "Error: page.goto failed after 3 attempts: TimeoutError: page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://scrapeme.live/shop/Pikachu/\", waiting until \"domcontentloaded\"\n"
+      "changed": true,
+      "changedKeys": [
+        "price",
+        "raw"
+      ],
+      "error": null
     },
     {
       "name": "scrapeme_pikachu_availability",
       "type": "availability",
-      "changed": false,
-      "changedKeys": [],
-      "error": "Error: page.goto failed after 3 attempts: TimeoutError: page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://scrapeme.live/shop/Pikachu/\", waiting until \"domcontentloaded\"\n"
+      "changed": true,
+      "changedKeys": [
+        "available",
+        "raw"
+      ],
+      "error": null
     },
     {
       "name": "psa_charizard_price_gem10",
       "type": "psa_price_row",
       "changed": false,
       "changedKeys": [],
-      "error": null
+      "error": "TimeoutError: page.waitForSelector: Timeout 45000ms exceeded.\nCall log:\n  - waiting for locator('table') to be visible\n"
     }
   ]
 }

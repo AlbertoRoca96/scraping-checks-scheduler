@@ -2,6 +2,9 @@
   "name": "scrapeme_pikachu_price",
   "type": "price",
   "url": "https://scrapeme.live/shop/Pikachu/",
-  "checkedAt": "2026-11-12T21:17:16.283Z",
-  "error": "Error: page.goto failed after 3 attempts: TimeoutError: page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://scrapeme.live/shop/Pikachu/\", waiting until \"domcontentloaded\"\n"
+  "checkedAt": "2026-11-13T02:21:18.585Z",
+  "data": {
+    "price": 37,
+    "raw": "£37.00"
+  }
 }
