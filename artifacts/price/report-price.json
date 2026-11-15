@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T21:56:47.997Z",
+  "generatedAt": "2026-11-15T01:32:15.717Z",
   "group": "price",
   "summary": [
     {
@@ -19,13 +19,9 @@
     {
       "name": "psa_charizard_price_gem10",
       "type": "psa_price_row",
-      "changed": true,
-      "changedKeys": [
-        "grade",
-        "price",
-        "row"
-      ],
-      "error": null
+      "changed": false,
+      "changedKeys": [],
+      "error": "TimeoutError: page.waitForSelector: Timeout 45000ms exceeded.\nCall log:\n  - waiting for locator('table') to be visible\n"
     }
   ]
 }
