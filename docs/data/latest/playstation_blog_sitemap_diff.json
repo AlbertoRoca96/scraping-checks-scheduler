@@ -2,17 +2,15 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-11-17T07:08:18.808Z",
+  "checkedAt": "2026-11-17T17:20:53.662Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
     "prevCount": 0,
     "added": [
       "https://blog.playstation.com/2025/06/04/astro-bot-five-new-vicious-void-galaxy-levels-special-bots-launch-this-july/",
-      "https://blog.playstation.com/2025/06/04/final-fantasy-tactics-the-ivalice-chronicles-comes-to-ps5-and-ps4-september-30-2025/",
       "https://blog.playstation.com/2025/06/04/introducing-project-defiant-the-first-wireless-fight-stick-designed-by-sony-interactive-entertainment-for-ps5-and-pc/",
       "https://blog.playstation.com/2025/06/04/marvel-tokon-fighting-souls-launches-2026-on-ps5-steam-and-epic/",
-      "https://blog.playstation.com/2025/06/04/mortal-kombat-legacy-collection-launches-on-ps5-ps4-this-year/",
       "https://blog.playstation.com/2025/06/04/nioh-3-announced-for-ps5-limited-time-demo-available-today/",
       "https://blog.playstation.com/2025/06/04/oceanic-action-rpg-sea-of-remnants-revealed-for-ps5/",
       "https://blog.playstation.com/2025/06/04/state-of-play-ghost-of-yotei-gameplay-deep-dive-coming-july-2025/",
@@ -807,7 +805,9 @@
       "https://blog.playstation.com/2026/11/12/vindictus-defying-fate-comes-to-ps5-next-year/",
       "https://blog.playstation.com/2026/11/13/guild-saga-vanished-worlds-brings-tactical-adventure-to-ps5-in-may-2027/",
       "https://blog.playstation.com/2026/11/13/qssr-arrives-in-marvels-spider-man-2-control-resonant-the-finals-arc-raiders-and-hell-let-loose-vietnam/",
-      "https://blog.playstation.com/2026/11/13/share-of-the-week-lights/"
+      "https://blog.playstation.com/2026/11/13/share-of-the-week-lights/",
+      "https://blog.playstation.com/2026/11/17/first-details-on-mlb-the-show-27/",
+      "https://blog.playstation.com/2026/11/17/introducing-hounded-crafting-the-dog-adventure-coming-to-ps5-in-2027/"
     ],
     "removed": []
   }
