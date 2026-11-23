@@ -2,13 +2,13 @@
   "name": "nintendo_us_news_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
-  "checkedAt": "2026-11-22T20:39:22.549Z",
+  "checkedAt": "2026-11-23T02:11:55.108Z",
   "data": {
     "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
     "nowCount": 1,
     "prevCount": 0,
     "added": [
-      "https://www.nintendo.com/us/whatsnew/hits-for-the-holidays-sale-save-up-to-50-on-select-games/"
+      "https://www.nintendo.com/us/whatsnew/gather-the-crew-for-a-little-multiplayer-mayhem/"
     ],
     "removed": []
   }
