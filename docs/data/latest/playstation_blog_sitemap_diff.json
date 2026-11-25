@@ -2,7 +2,7 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-11-25T06:53:31.664Z",
+  "checkedAt": "2026-11-25T18:23:36.059Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
@@ -10,7 +10,6 @@
     "added": [
       "https://blog.playstation.com/2025/06/04/astro-bot-five-new-vicious-void-galaxy-levels-special-bots-launch-this-july/",
       "https://blog.playstation.com/2025/06/04/marvel-tokon-fighting-souls-launches-2026-on-ps5-steam-and-epic/",
-      "https://blog.playstation.com/2025/06/04/nioh-3-announced-for-ps5-limited-time-demo-available-today/",
       "https://blog.playstation.com/2025/06/04/oceanic-action-rpg-sea-of-remnants-revealed-for-ps5/",
       "https://blog.playstation.com/2025/06/04/state-of-play-ghost-of-yotei-gameplay-deep-dive-coming-july-2025/",
       "https://blog.playstation.com/2025/06/04/state-of-play-june-2025-all-announcements-trailers/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/11/18/grand-theft-auto-vi-launches-tomorrow-november-19/",
       "https://blog.playstation.com/2026/11/20/official-playstation-podcast-episode-553-peak-gaming/",
       "https://blog.playstation.com/2026/11/20/share-of-the-week-texture/",
-      "https://blog.playstation.com/2026/11/23/thank-you-for-making-grand-theft-auto-vi-the-biggest-launch-in-playstation-history/"
+      "https://blog.playstation.com/2026/11/23/thank-you-for-making-grand-theft-auto-vi-the-biggest-launch-in-playstation-history/",
+      "https://blog.playstation.com/2026/11/25/playstation-plus-monthly-games-for-december-tony-hawks-pro-skater-34-dragon-ball-xenoverse-2-amnesia-the-bunker/"
     ],
     "removed": []
   }
