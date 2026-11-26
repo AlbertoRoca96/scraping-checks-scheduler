@@ -2,7 +2,7 @@
   "name": "playstation_blog_sitemap_diff",
   "type": "sitemap_diff",
   "url": "https://blog.playstation.com/sitemap_index.xml",
-  "checkedAt": "2026-11-26T13:30:35.409Z",
+  "checkedAt": "2026-11-26T22:46:42.197Z",
   "data": {
     "source": "https://blog.playstation.com/wp-sitemap.xml",
     "nowCount": 800,
@@ -14,7 +14,6 @@
       "https://blog.playstation.com/2025/06/04/oceanic-action-rpg-sea-of-remnants-revealed-for-ps5/",
       "https://blog.playstation.com/2025/06/04/state-of-play-ghost-of-yotei-gameplay-deep-dive-coming-july-2025/",
       "https://blog.playstation.com/2025/06/04/state-of-play-june-2025-all-announcements-trailers/",
-      "https://blog.playstation.com/2025/06/04/survival-climber-cairn-ascends-to-ps5-november-5/",
       "https://blog.playstation.com/2025/06/04/sword-of-the-sea-launches-august-19-on-ps5-as-part-of-playstation-plus-game-catalog/",
       "https://blog.playstation.com/2025/06/04/thief-vr-legacy-of-shadow-announced-for-ps-vr2-out-2025/",
       "https://blog.playstation.com/2025/06/04/tides-of-tomorrow-reimagines-multiplayer-storytelling-out-feb-24-2026-on-ps5/",
@@ -807,7 +806,8 @@
       "https://blog.playstation.com/2026/11/20/official-playstation-podcast-episode-553-peak-gaming/",
       "https://blog.playstation.com/2026/11/20/share-of-the-week-texture/",
       "https://blog.playstation.com/2026/11/23/thank-you-for-making-grand-theft-auto-vi-the-biggest-launch-in-playstation-history/",
-      "https://blog.playstation.com/2026/11/25/playstation-plus-monthly-games-for-december-tony-hawks-pro-skater-34-dragon-ball-xenoverse-2-amnesia-the-bunker/"
+      "https://blog.playstation.com/2026/11/25/playstation-plus-monthly-games-for-december-tony-hawks-pro-skater-34-dragon-ball-xenoverse-2-amnesia-the-bunker/",
+      "https://blog.playstation.com/2026/11/26/infinity-nikki-version-3-0-of-yesterday-and-tomorrow-update-live-today-on-ps5/"
     ],
     "removed": []
   }
