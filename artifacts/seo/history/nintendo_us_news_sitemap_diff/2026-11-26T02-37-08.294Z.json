@@ -1,0 +1,20 @@
+{
+  "name": "nintendo_us_news_sitemap_diff",
+  "type": "sitemap_diff",
+  "url": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
+  "checkedAt": "2026-11-26T02:37:08.294Z",
+  "data": {
+    "source": "https://noa-prod-graph-sitemaps.s3.amazonaws.com/nintendo.com/us/news/sitemap.xml",
+    "nowCount": 6,
+    "prevCount": 0,
+    "added": [
+      "https://www.nintendo.com/us/whatsnew/a-storm-is-brewing-heres-the-latest-update-for-nintendo-switch-online-expansion-pack-members/",
+      "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-24-the-legend-of-zelda-ocarina-of-time-part-3/",
+      "https://www.nintendo.com/us/whatsnew/ask-the-developer-vol-24-the-legend-of-zelda-ocarina-of-time-part-4/",
+      "https://www.nintendo.com/us/whatsnew/customize-your-style-and-wow-the-competition-in-nintendo-switch-sports-resort/",
+      "https://www.nintendo.com/us/whatsnew/mario-kart-world-update-adds-eight-courses-and-more/",
+      "https://www.nintendo.com/us/whatsnew/play-the-58th-maximus-cup-online-event-and-you-could-earn-an-in-game-collaborative-theme/"
+    ],
+    "removed": []
+  }
+}
